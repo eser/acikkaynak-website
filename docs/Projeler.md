@@ -13,7 +13,7 @@
 	    
 	-   Her 5 proje altında tümünü gör şeklinde bir seçenek olacak ve o kategoriye ait tüm projeler listelenecektir.
     
-
+ 
 -   Sayfanın en üst kısmında yazdıkça arama yapan bır yapı olacaktır.
     
 -   Aynı zamanda kendi projelerini filtreleyebileceği bir sistem olacaktır.
