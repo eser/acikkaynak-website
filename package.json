@@ -1,0 +1,70 @@
+{
+  "name": "darty-react-app",
+  "description": "Darty React App",
+  "keywords": [
+    "typescript",
+    "react",
+    "hooks",
+    "spa",
+    "boilerplate",
+    "starter"
+  ],
+  "version": "0.10.1",
+  "homepage": "http://darty-react-app.s3-website-eu-west-1.amazonaws.com",
+  "author": "Eser Ozvataf <eser@ozvataf.com> (https://twitter.com/eser)",
+  "contributors": [
+    {
+      "name": "Eser Ozvataf",
+      "email": "eser@ozvataf.com",
+      "url": "http://eser.ozvataf.com/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eserozvataf/darty-react-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eserozvataf/darty-react-app/issues"
+  },
+  "license": "Apache-2.0",
+  "main": "./dist/index.js",
+  "engines": {
+    "node": ">=8.10.0"
+  },
+  "scripts": {
+    "start": "darty start",
+    "dev": "darty dev",
+    "lint": "darty lint",
+    "test": "darty test",
+    "bundle": "darty bundle",
+    "bundle:prod": "darty bundle:prod",
+    "containerize": "darty containerize",
+    "aws:copy": "aws s3 sync ./dist s3://darty-react-app",
+    "aws:open": "start http://darty-react-app.s3-website-eu-west-1.amazonaws.com"
+  },
+  "dependencies": {
+    "darty": "^0.50.2",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^3.9.1",
+    "@types/jest": "^24.0.11",
+    "@types/react": "^16.8.10",
+    "@types/react-router": "^4.4.5",
+    "@typescript-eslint/parser": "^1.5.0",
+    "bulma": "^0.7.4",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "eslint-config-eser-react": "^2.1.1",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "font-awesome": "^4.7.0",
+    "history": "^4.9.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-native-web": "^0.11.2",
+    "react-redux": "^6.0.1",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0"
+  }
+}
