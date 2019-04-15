@@ -5,9 +5,15 @@ import * as bulmaStyles from 'bulma';
 function Home() {
     return (
         <>
-            <h1 className={bulmaStyles.title}>Home</h1>
+       <br/><br/> <p>
+       Merhaba, <br/><br/>
 
-            ...test test test
+Şu anda  altyapımızı yenilemekle meşguluz. <br/><br/>
+
+ Şimdilik Hakkımızda bölümünden bizimle ilgili bilgi alabilir veya Projeler bağlantısı altından açık kaynak proje indeksimize ulaşabilirsiniz. <br/><br/>
+
+Biz çalışırken açık kaynak dünyasından ve organizasyonumuzdan uzakta kalmamak için Twitter Hesabımızı takibe alabileceğiniz gibi,  <br/>
+Slack grubumuza katılmak için davetiye talebinde de bulunabilirsiniz.</p>
         </>
     );
 }
