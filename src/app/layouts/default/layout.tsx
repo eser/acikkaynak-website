@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import './assets/fonts/arbutus-slab.scss';
@@ -7,19 +7,12 @@ import bulmaStyles from 'bulma';
 import layoutStyles from './assets/styles.scss';
 
 function Layout(props) {
-    // the JSX syntax is quite intuitive but check out
-    // https://facebook.github.io/react/docs/jsx-in-depth.html
-    // if you need additional help
-
     return (
         <div className={`${bulmaStyles.hero} ${bulmaStyles.isFullheight} ${layoutStyles.isFullheight}`}>
             <header className={`${bulmaStyles.heroHead} ${layoutStyles.heroHead}`}>
                 <nav className={`${bulmaStyles.navbar} ${bulmaStyles.isTransparent}`} role="navigation" aria-label="main navigation">
                     <div className={bulmaStyles.container}>
                         <div className={bulmaStyles.navbarBrand}>
-                            {/* <div className={bulmaStyles.navbarItem}>
-                                Darty React Hooks App
-                            </div> */}
                             <span className={bulmaStyles.navbarBurger} role="button" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
                                 <span aria-hidden="true"></span>
                                 <span aria-hidden="true"></span>
@@ -29,13 +22,14 @@ function Layout(props) {
                         <div className={bulmaStyles.navbarMenu}>
                             <div className={bulmaStyles.navbarStart}>
                                 <NavLink exact={true} to="/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Home</NavLink>
-                                <NavLink to="/dummy/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Dummy</NavLink>
+                                <NavLink to="/news/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Haberler</NavLink>
+                                <NavLink to="/aboutus/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Hakkımızda</NavLink>
                             </div>
                             <div className={bulmaStyles.navbarEnd}>
-                                <a className={bulmaStyles.navbarItem} href="https://github.com/eserozvataf/darty-react-hooks-app">
-                                    <span className={bulmaStyles.icon}><i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faCodeFork} ${fontAwesomeStyles.faFw}`} aria-hidden="true"></i></span>
-                                    GitHub
-                                </a>
+                                 <a className={bulmaStyles.navbarItem} href='https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acikkaynak.info%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state='>
+                                 <span className={bulmaStyles.icon}><i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faCodeFork} ${fontAwesomeStyles.faFw}`} aria-hidden="true"></i></span>
+                                    Github ile Giriş
+                                 </a> 
                             </div>
                         </div>
                     </div>
