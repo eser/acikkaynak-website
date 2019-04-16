@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import NewDetailView from './NewDetailView';
 import * as bulmaStyles from 'bulma';
-import layoutStyles from '../../layouts/default/assets/styles.scss'
 import { stat } from 'fs';
+import customNewsStyle from './style.scss';
+
 
 function ListView(props) {
 
@@ -59,12 +60,12 @@ function ListView(props) {
             <>
                 <h1 className={bulmaStyles.title}>Tüm Haberler</h1>
                 Etiketler :  {tags.map((tagItem, k) =>
-                    <a onClick={() => listTagNews(tagItem)} key={k}>{tagItem}&nbsp;&nbsp;&nbsp;&nbsp;</a>
+                    <a className={customNewsStyle.tag} onClick={() => listTagNews(tagItem)} key={k}>{tagItem}</a>
                 )}
                 {filterState == true ? <a onClick={() => {setData(props.news);setFilterState(false)}}>Filtre Kaldır</a> :''}
                 <ul>
                     {data.map((item, i) =>
-                        <li key={i} ><a key={i} onClick={() => openDetailPage(item, true)}>{item.title}</a>
+                        <li className={customNewsStyle.new} key={i} ><a key={i} onClick={() => openDetailPage(item, true)}>{item.title}</a>
                         </li>
                     )}
                 </ul>
@@ -79,12 +80,12 @@ function ListView(props) {
                     {data.map((item, i) => {
                         if (i < 2)
                             return (
-                                <li key={i} ><a key={i} onClick={() => openDetailPage(item, false)}>{item.title}</a>
+                                <li className={customNewsStyle.new} key={i} onClick={() => openDetailPage(item, false)} >{item.title}
                                 </li>
                             );
                         if (i >= 2)
                             return (
-                                <button key={"showAllNews"} onClick={() => showAllNews(i)}>
+                                <button className={customNewsStyle.seeAllNews} key={"showAllNews"} onClick={() => showAllNews(i)}>
                                     Tüm haberleri gör
                                  </button>
                             )
