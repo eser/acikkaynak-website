@@ -16,8 +16,6 @@
     background-color: white;
     font-size: 100%;
 }
-
-
 .tag {
     background: #eee;
     border-radius: 3px 0 0 3px;
@@ -32,12 +30,9 @@
     -webkit-transition: color 0.2s;
     box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
   }
-  
-  
   .tag:hover {
     background-color: white;
   }
-  
   .tag:hover::after {
      border-left-color: crimson; 
   }

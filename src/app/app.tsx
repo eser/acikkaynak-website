@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router';
 import Layout from './layouts/default/layout';
 import Home from './pages/home/home';
 import News from './pages/news/news';
-import AboutUs from './pages/aboutus/aboutus';
+import About from './pages/about/about';
 import NotFound from './pages/notFound/notFound';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
             <Route path="/" exact={true} strict={true} render={() => <Layout><Home /></Layout>} />
 
             <Route path="/news/" exact={true} strict={true} render={() => <Layout><News /></Layout>} />
-            <Route path="/aboutus/" exact={true} strict={true} render={() => <Layout><AboutUs /></Layout>} />
+            <Route path="/about/" exact={true} strict={true} render={() => <Layout><About /></Layout>} />
 
             <Route render={() => <NotFound />} />
         </Switch>

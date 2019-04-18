@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-
 import './assets/fonts/arbutus-slab.scss';
 import fontAwesomeStyles from 'font-awesome/scss/font-awesome.scss';
 import bulmaStyles from 'bulma';
@@ -23,13 +22,13 @@ function Layout(props) {
                             <div className={bulmaStyles.navbarStart}>
                                 <NavLink exact={true} to="/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Home</NavLink>
                                 <NavLink to="/news/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Haberler</NavLink>
-                                <NavLink to="/aboutus/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Hakkımızda</NavLink>
+                                <NavLink to="/about/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Hakkımızda</NavLink>
                             </div>
                             <div className={bulmaStyles.navbarEnd}>
-                                 <a className={bulmaStyles.navbarItem} href='https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acikkaynak.info%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state='>
-                                 <span className={bulmaStyles.icon}><i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faCodeFork} ${fontAwesomeStyles.faFw}`} aria-hidden="true"></i></span>
-                                    Github ile Giriş
-                                 </a> 
+                                <a className={bulmaStyles.navbarItem} href="https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acikkaynak.info%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state=">
+                                    <span className={bulmaStyles.icon}><i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faCodeFork} ${fontAwesomeStyles.faFw}`} aria-hidden="true"></i></span>
+                                    GitHub ile Giriş
+                                    </a>
                             </div>
                         </div>
                     </div>
