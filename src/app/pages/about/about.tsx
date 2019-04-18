@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import * as bulmaStyles from 'bulma';
 
 
-import * as bulmaStyles from '../../../../node_modules/bulma';
-
-function AboutUs() {
+function About() {
     return (
         <>
-            <h1 className={bulmaStyles.title}>Hakkimizda</h1>
-
+            <h1 className={bulmaStyles.title}>Hakkında</h1>
             <p>
                 Bu organizasyon <b>GitHub'ın</b> kendi doğal araçları kullanılarak açık kaynak'a katkı sağlamak amacıyla oluşturulmuştur.</p>
 
@@ -30,5 +28,5 @@ function AboutUs() {
 }
 
 export {
-    AboutUs as default,
+    About as default,
 };

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import News from './news';
 import * as bulmaStyles from 'bulma';
+import customNewsStyle from './style.scss';
+
 
 function NewDetailView(props) {
     const [isDetailOpen, setDetail] = useState(true);
@@ -19,7 +21,7 @@ function NewDetailView(props) {
         return (
             <>
                 <div>
-                    <button onClick={() => {
+                    <button  onClick={() => {
                         setDetail(false)
                         setclickedNew(null)
                     }}>
