@@ -7,56 +7,68 @@ function ListView(props) {
 
     const [isDetailOpen, setDetail] = useState(false);
     const [clickedNew, setclickedNew] = useState(props.news[0]);
-    const [fromAllNews, getFromAllNews] = useState(false);
-    const [seeAllNews, setAllNews] = useState(false);
     const [data, setData] = useState(props.news);
     const [filterState, setFilterState] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [newsPerPage, setNewsPerPage] = useState(2);
 
+    const indexOfLastTodo = currentPage * newsPerPage;
+    const indexOfFirstTodo = indexOfLastTodo - newsPerPage;
+    const currentTodos = data.slice(indexOfFirstTodo, indexOfLastTodo);
+    const pageNumbers = [];
     const newsList = props.news;
     const tags = newsList.reduce(
         (acc, cur) => [...acc, ...cur.tags.filter(x => !acc.includes(x))],
         []
     );
-
-    function showAllNews(i) {
-        setDetail(false)
-        setclickedNew(props.news[i])
-        setAllNews(true)
-    }
-    function openDetailPage(item, allNewsShow) {
+    function openDetailPage(item) {
         setDetail(true)
         setclickedNew(item)
-        if (allNewsShow)
-            setAllNews(true)
-        else
-            setAllNews(false)
     }
     function listTagNews(tagItem) {
         setData(props.news.filter(item => { if (item.tags.includes(tagItem)) return item; }));
         setData(newsList)
         setFilterState(true)
     }
+
+
+    const renderTodos = currentTodos.map((newItem, index) => {
+        return <li className={customNewsStyle.new} key={index} onClick={() => openDetailPage(newItem)}>{newItem.title}</li>;
+    });
+    for (let i = 1; i <= Math.ceil(data.length / newsPerPage); i++) {
+        pageNumbers.push(i);
+    }
+
+
+    const renderPageNumbers = pageNumbers.map(number => {
+        return (
+            <li
+                className={customNewsStyle.pagingItems}
+                key={number}
+                id={number}
+                onClick={() => setCurrentPage(number)}
+            >
+                {number}
+            </li>
+        );
+    });
     if (isDetailOpen) {
         return (
-            <>
-                <div>
-                    <NewDetailView content={clickedNew} />
-                </div>
-            </>
+
+            <NewDetailView content={clickedNew} />
         )
     }
     return (
         <div>
-            <h2 className={bulmaStyles.title}>Haberler</h2>
-            {data.map((item, i) => {
-                return (
-                    <li className={customNewsStyle.new} key={i} onClick={() => openDetailPage(item, false)} >{item.title}
-                    </li>
-                );
-            }
-            )}
+            <h5>{currentPage}. sayfa haberleri</h5>
+            <ul className={customNewsStyle.newsList}>
+                {renderTodos}
+            </ul>
+            <ul id="page-numbers" className={customNewsStyle.paging}>
+                {renderPageNumbers}
+            </ul>
         </div>
-    )
+    );
 }
 export {
     ListView as default,

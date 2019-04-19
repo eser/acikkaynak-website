@@ -21,6 +21,12 @@ function News() {
             title: "test",
             content: "Spor Toto Süper Lig'in 28. haftasında 14 Nisan Pazar günü Fenerbahçe'ye konuk olacak Galatasaray'da son 7 kulüp başkanı, Kadıköy'de galibiyet sevinci yaşamadı.",
             tags: ["GS", "FB"]
+        },
+        {
+            id: 4,
+            title: "haber",
+            content: "Spor Toto Süper Lig'in 28. haftasında 14 Nisan Pazar günü Fenerbahçe'ye konuk olacak Galatasaray'da son 7 kulüp başkanı, Kadıköy'de galibiyet sevinci yaşamadı.",
+            tags: ["GS", "FB"]
         }
     ]);
     return (
