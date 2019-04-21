@@ -1,56 +1,74 @@
 :root {
-  --tag-border-color: crimson;
-  --white-color:white;
-  --black-color :black;
+    --tag-border-color: crimson;
+    --white-color: white;
+    --black-color: black;
 }
 
 .new {
-  width: 100%;
-  border-radius: 1px;
-  list-style-type: none;
-  padding: 2%;
-  margin-top:2% !important;
-  box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.3);
-  background-color: var(--white-color);
+    width: 100%;
+    border-radius: 1px;
+    list-style-type: none;
+    padding: 2%;
+    margin-top: 2% !important;
+    box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.3);
+    background-color: var(--white-color);
 }
-.newsList{
-margin:0px auto !important;
+
+.newsList {
+    margin: 0px auto !important;
 }
 
 .tag {
-  background: #eee;
-  border-radius: 3px 0 0 3px;
-  color: #999;
-  display: inline-block;
-  height: 26px;
-  line-height: 26px;
-  padding: 0 20px 0 23px;
-  position: relative;
-  margin: 0 10px 10px 0;
-  text-decoration: none;
-  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
+    background: #eee;
+    border-radius: 3px;
+    color: #999;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 20px 0 23px;
+    position: relative;
+    margin: 0.5%;
+    text-decoration: none;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
 }
 
 .tag:hover {
-  background-color: var(--white-color);
+    background-color: var(--white-color);
 }
 
 .tag:hover::after {
-  border-left-color: var(--tag-border-color);
+    border-left-color: var(--tag-border-color);
 }
+.tagBox{
+  white-space: nowrap;
+  margin-top: 1% !important;
+  margin-left: -0.5% !important;}
 
 .paging {
-white-space:nowrap;
-margin-top:3% !important;
-margin-left:-1% !important;
+    white-space: nowrap;
+    margin-left: -1% !important;
 
 }
-.pagingItems{
-display:inline; 
-border:1px solid var(--black-color);
-padding: 1%;
-margin-left:1%;
-&:hover{
-  background-color:var(--white-color);
-}
+
+.pagingItems {
+    background: #eee;
+    border-radius: 3px;
+    color: #999;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 20px 0 23px;
+    position: relative;
+    margin-left: 1%;
+    text-decoration: none;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.3);
+
+    &:hover {
+        background-color: var(--white-color);
+
+        &:after {
+            border-left-color: var(--tag-border-color);
+
+        }
+    }
 }

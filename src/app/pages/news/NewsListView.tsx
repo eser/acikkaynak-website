@@ -8,7 +8,7 @@ function ListView(props) {
     const [isDetailOpen, setDetail] = useState(false);
     const [clickedNew, setclickedNew] = useState(props.news[0]);
     const [data, setData] = useState(props.news);
-    const [filterState, setFilterState] = useState(false);
+    const [tag, setCurrentTag] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [newsPerPage, setNewsPerPage] = useState(2);
 
@@ -26,19 +26,37 @@ function ListView(props) {
         setclickedNew(item)
     }
     function listTagNews(tagItem) {
-        setData(props.news.filter(item => { if (item.tags.includes(tagItem)) return item; }));
-        setData(newsList)
-        setFilterState(true)
+        console.log(tagItem);
+        setData(newsList.filter(item => { if (item.tags.includes(tagItem)) return item; }));
+    }
+    function deleteFilter() {
+        setData(props.news);
     }
 
+    useEffect(() => {
 
+    }, ["data"]);
     const renderTodos = currentTodos.map((newItem, index) => {
         return <li className={customNewsStyle.new} key={index} onClick={() => openDetailPage(newItem)}>{newItem.title}</li>;
     });
     for (let i = 1; i <= Math.ceil(data.length / newsPerPage); i++) {
         pageNumbers.push(i);
     }
-
+    let tagsArea = null;
+    if (tags.length > 0) {
+        tagsArea = tags.map((tagItem, number) => {
+            return (
+                <li
+                    className={customNewsStyle.tag}
+                    key={number}
+                    id={number}
+                    onClick={function () { setCurrentTag(number); listTagNews(tagItem) }}
+                >
+                    {tagItem}
+                </li>
+            );
+        });
+    }
 
     const renderPageNumbers = pageNumbers.map(number => {
         return (
@@ -64,6 +82,9 @@ function ListView(props) {
             <ul className={customNewsStyle.newsList}>
                 {renderTodos}
             </ul>
+            <ul className={customNewsStyle.tagBox}>{tagsArea}</ul>
+            <p className={customNewsStyle.tag}
+                onClick={() => deleteFilter()}> X </p>
             <ul id="page-numbers" className={customNewsStyle.paging}>
                 {renderPageNumbers}
             </ul>
