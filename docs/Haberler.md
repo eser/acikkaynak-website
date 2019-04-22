@@ -11,9 +11,8 @@
 		 - Bu seçenek ile yetkili işlemlerini yöneteceği sayfaya gidecektir.
 		 - Yönetici bu sayfada yeni eklenmiş haberleri listeleyecek ve
 		   onaylama ya da düzenleme işlemi yapacaktır.
- -  Son 5 haber kısa şekilde görüntülenecektir.
-	 - Haberler menüsü altında 5 adet haberin başlık ve altında 2-3 cümle  
-	   içerik olacaktır.
+	 -  Haberler sayfasında 10 adet haber goruntulenecektir.
+ 	 -  Sayfalama yapısında her sayfada 10 haber yer alacaktır.
 	
 	 - Devamını görüntüle seçeneği ile haberin detayına gidilecektir.
 	 
