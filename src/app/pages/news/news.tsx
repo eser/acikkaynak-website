@@ -40,16 +40,15 @@ function News(props) {
 
         // as long as content exists...
         if (currentNewsItem !== undefined) {
-            return <NewsDetailView content={currentNewsItem} />
+            return (
+                <NewsDetailView content={currentNewsItem} />
+            );
         }
-    }
-    if(props.pageNumber !== undefined){
-        return <NewsListView news={news} {...props}  />
     }
 
     return (
         <NewsListView news={news} {...props} />
-    )
+    );
 };
 
 export {
