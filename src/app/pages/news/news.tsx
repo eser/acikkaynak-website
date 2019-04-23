@@ -43,6 +43,9 @@ function News(props) {
             return <NewsDetailView content={currentNewsItem} />
         }
     }
+    if(props.pageNumber !== undefined){
+        return <NewsListView news={news} {...props}  />
+    }
 
     return (
         <NewsListView news={news} {...props} />
