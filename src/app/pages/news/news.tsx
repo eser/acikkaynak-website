@@ -45,6 +45,9 @@ function News(props) {
             );
         }
     }
+    if(props.pageNumber !== undefined){
+        return <NewsListView news={news} {...props}  />
+    }
 
     return (
         <NewsListView news={news} {...props} />
