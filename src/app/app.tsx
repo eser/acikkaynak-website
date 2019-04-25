@@ -6,6 +6,7 @@ import Home from './pages/home/home';
 import News from './pages/news/News';
 import About from './pages/about/about';
 import NotFound from './pages/notFound/notFound';
+import AddNews from './pages/addNews/AddNews';
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/news/tags/:tag/" exact={false} strict={true} render={(props) => <Layout><News {...props.match.params} /></Layout>} />
             <Route path="/news/:pageNumber" exact={false} strict={true} render={(props) => <Layout><News {...props.match.params} /></Layout>} />
             <Route path="/news/" exact={true} strict={true} render={() => <Layout><News /></Layout>} />
+            <Route path="/addNews/" exact={true} strict={true} render={() => <Layout><AddNews /></Layout>} />
 
             {/* about */}
             <Route path="/about/" exact={true} strict={true} render={() => <Layout><About /></Layout>} />
