@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+
+     .field {
+        display: flex;
+        height: 100%;
+        width: 70%;
+        align-items: center;
+
+         .eventsTitle {
+            width: 100%;
+            padding: 1%;
+            resize: none;
+        }
+
+         .eventsContent {
+            width: 100%;
+            padding: 1%;
+            resize: none;
+        }
+
+         .category {
+            width: 100%;
+            padding: 1%;
+            resize: none;
+        }
+
+         p {
+            width: 40%;
+        }
+    }
+
+
+     button {
+        height: 50px;
+        text-align: center;
+        width: 150px;
+        margin-top: 2%;
+    }
+}

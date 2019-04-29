@@ -6,6 +6,7 @@ import Home from './pages/home/home';
 import News from './pages/news/News';
 import About from './pages/about/about';
 import NotFound from './pages/notFound/notFound';
+import AddEvents from './pages/addEvents/AddEvents';
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
             {/* about */}
             <Route path="/about/" exact={true} strict={true} render={() => <Layout><About /></Layout>} />
 
+            <Route path="/addEvents/" exact={true} strict={true} render={() => <Layout><AddEvents /></Layout>} />
             {/* not found */}
             <Route render={() => <NotFound />} />
         </Switch>
