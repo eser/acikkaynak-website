@@ -5,6 +5,7 @@ import Layout from './layouts/default/layout';
 import Home from './pages/home/home';
 import News from './pages/news/News';
 import About from './pages/about/about';
+import Events from './pages/events/Events';
 import NotFound from './pages/notFound/notFound';
 
 function App() {
@@ -20,8 +21,15 @@ function App() {
             <Route path="/news/:pageNumber" exact={false} strict={true} render={(props) => <Layout><News {...props.match.params} /></Layout>} />
             <Route path="/news/" exact={true} strict={true} render={() => <Layout><News /></Layout>} />
 
+
+            {/* events */}
+            <Route path="/events/" exact={true} strict={true} render={() => <Layout><Events /></Layout>} />
+            <Route path="/events/detail/:slug" exact={false} strict={true} render={(props) => <Layout><Events {...props.match.params} /></Layout>} />
+
+
             {/* about */}
             <Route path="/about/" exact={true} strict={true} render={() => <Layout><About /></Layout>} />
+
 
             {/* not found */}
             <Route render={() => <NotFound />} />
