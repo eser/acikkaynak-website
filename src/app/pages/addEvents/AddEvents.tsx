@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import customAddNewsStyle from './style.scss';
+import customAddEventsStyle from './style.scss';
 
 function AddEvents(props) {
 
@@ -12,29 +12,29 @@ function AddEvents(props) {
     }
     return (
         <>
-            <div className={customAddNewsStyle.container}>
-                <div className={customAddNewsStyle.form}>
+            <div className={customAddEventsStyle.container}>
+                <div className={customAddEventsStyle.form}>
                     <h3>Etkinlik Ekle</h3>
-                    <div className={customAddNewsStyle.field}>
+                    <div className={customAddEventsStyle.field}>
                         <p>Etkinlik Başlığı</p>
                         <textarea  onChange={(e) => setEventsTitle(e.target.value)}
-                         className={customAddNewsStyle.eventsTitle} cols={40} rows={3} ></textarea>
+                         className={customAddEventsStyle.eventsTitle} cols={40} rows={3} ></textarea>
                     </div>
-                    <div className={customAddNewsStyle.field}>
+                    <div className={customAddEventsStyle.field}>
                         <p>Etkinlik İçeriği</p>
                         <textarea onChange={(e) => setEventsContent(e.target.value)}
-                         className={customAddNewsStyle.eventsContent} cols={40} rows={10} ></textarea>
+                         className={customAddEventsStyle.eventsContent} cols={40} rows={10} ></textarea>
                     </div>
-                    <div className={customAddNewsStyle.field}>
+                    <div className={customAddEventsStyle.field}>
                         <p>Etkinlik Kategorisi Etiketleri</p>
                         <select type="combobox" onChange={(e) => setEventsCategory(e.target.value)}
-                         className={customAddNewsStyle.category}>
+                         className={customAddEventsStyle.category}>
                          <option value="0">Meetup </option>
                          <option value="1">Software</option>
                          </select>
                     </div>
                 </div>
-                <div className={customAddNewsStyle.button}>
+                <div className={customAddEventsStyle.button}>
                 <button onClick={addEvents}> Ekle</button>
                 </div>
             </div>
