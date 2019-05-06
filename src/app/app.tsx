@@ -3,10 +3,10 @@ import { Route, Switch } from 'react-router';
 
 import Layout from './layouts/default/layout';
 import Home from './pages/home/home';
-import News from './pages/news/News';
+import News from './pages/news/news';
 import About from './pages/about/about';
 import NotFound from './pages/notFound/notFound';
-import AddEvents from './pages/addEvents/AddEvents';
+import AddEvents from './pages/addEvents/addEvents';
 
 function App() {
     return (
@@ -24,7 +24,7 @@ function App() {
             {/* about */}
             <Route path="/about/" exact={true} strict={true} render={() => <Layout><About /></Layout>} />
 
-            <Route path="/addEvents/" exact={true} strict={true} render={() => <Layout><AddEvents /></Layout>} />
+            <Route path="/events/add" exact={false} strict={true} render={() => <Layout><AddEvents /></Layout>} />
             {/* not found */}
             <Route render={() => <NotFound />} />
         </Switch>
