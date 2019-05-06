@@ -68,7 +68,7 @@ function NewsListView(props) {
                     </li>
                 </NavLink>
             </ul>
-            <Link to={'/addNews/'}>
+            <Link to={'/news/add/'}>
                 <p>Haber Ekle</p>
              </Link>
             <ul className={customNewsStyle.newsList}>
