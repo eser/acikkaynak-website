@@ -6,8 +6,6 @@ function EventsListView(props) {
     console.log(props);
     let events = props.events;
 
-
-
     const categories = props.events
         .map(e => e.category)
         .filter((e, i, a) => a.indexOf(e) === i);

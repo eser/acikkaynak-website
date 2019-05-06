@@ -69,6 +69,10 @@ function NewsListView(props) {
                 </NavLink>
             </ul>
 
+            <Link to={'/news/add/'}>
+                <p>Haber Ekle</p>
+            </Link>
+
             <ul className={customNewsStyle.newsList}>
                 {news.map((newsItem, number) => {
                     return (
