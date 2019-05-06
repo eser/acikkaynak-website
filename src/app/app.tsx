@@ -17,7 +17,7 @@ function App() {
 
 
             {/* news */}
-                        <Route path="/news/add/" exact={false} strict={true} render={() => <Layout><AddNews /></Layout>} />
+            <Route path="/news/add/" exact={false} strict={true} render={() => <Layout><AddNews /></Layout>} />
             <Route path="/news/detail/:slug" exact={false} strict={true} render={(props) => <Layout><News {...props.match.params} /></Layout>} />
             <Route path="/news/tags/:tag/:pageNumber" exact={false} strict={true} render={(props) => <Layout><News {...props.match.params} /></Layout>} />
             <Route path="/news/tags/:tag/" exact={false} strict={true} render={(props) => <Layout><News {...props.match.params} /></Layout>} />
