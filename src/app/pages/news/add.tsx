@@ -3,6 +3,7 @@ import NewsListView from './newsListView';
 import NewsDetailView from './newsDetailView';
 import * as bulmaStyles from 'bulma';
 import customAddNewsStyle from './add.scss';
+import { NavLink } from 'react-router-dom';
 
 function NewsAdd(props) {
     const [newsTitle, setNewsTitle] = useState('');
@@ -12,10 +13,17 @@ function NewsAdd(props) {
     function addNews() {
         // TODO Add new development
     }
+    function goBackButton(event) {
+        history.back();
+        event.preventDefault();
+    }
 
     return (
         <>
             <div className={customAddNewsStyle.container}>
+                <NavLink key="0" to={`/news/`} onClick={goBackButton}>
+                        Geri Dön
+                </NavLink>
                 <div className={customAddNewsStyle.form}>
                     <h3>Haber Ekle</h3>
                     <div className={customAddNewsStyle.field}>
