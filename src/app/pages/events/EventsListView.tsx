@@ -3,7 +3,6 @@ import { NavLink, Link } from 'react-router-dom';
 import * as bulmaStyles from 'bulma';
 
 function EventsListView(props) {
-    console.log(props);
     let events = props.events;
 
     const categories = props.events
@@ -13,6 +12,9 @@ function EventsListView(props) {
     return (
         <>
             <h3 className={bulmaStyles.title}>Etkinlikler</h3>
+            <Link to={'/events/add/'}>
+                <p>Etkinlik Ekle</p>
+            </Link>
             <ul>
                 {categories.map((category, number) => {
                     return (<li key={number}>{category}
