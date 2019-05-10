@@ -8,6 +8,7 @@ import NewsAdd from './pages/news/add';
 import About from './pages/about/index';
 import Events from './pages/events/index';
 import EventsAdd from './pages/events/add';
+import EventsEdit from './pages/events/edit';
 import NotFound from './pages/notFound/index';
 
 function App() {
@@ -26,8 +27,9 @@ function App() {
 
 
             {/* events */}
-            <Route path="/events/add/" exact={false} strict={true} render={() => <Layout><EventsAdd /></Layout>} />
+            <Route path="/events/add/" exact={false} strict={true} render={() => <Layout><EventsAdd  {...props.match.params}/></Layout>} />
             <Route path="/events/detail/:slug" exact={false} strict={true} render={(props) => <Layout><Events {...props.match.params} /></Layout>} />
+            <Route path="/events/edit/:slug/:type" exact={false} strict={true} render={(props) => <Layout><Events {...props.match.params} /></Layout>} />
             <Route path="/events/" exact={true} strict={true} render={() => <Layout><Events /></Layout>} />
 
 
