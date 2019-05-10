@@ -15,26 +15,31 @@ function EventsListView(props) {
             <Link to={'/events/add/'}>
                 <p>Etkinlik Ekle</p>
             </Link>
+           
             <ul>
                 {categories.map((category, number) => {
-                    return (<li key={number}>{category}
+                    return (
+                    <li key={number}>{category}
                         <ul>
 
                             {events.filter((x) => x.category === category).map((eventItem, number) => {
                                 return (
+                                    <div key={number}>
                                     <Link key={number} to={`/events/detail/${encodeURIComponent(eventItem.slug)}/`}>
-                                        <li key={number}>{eventItem.title} ->  {eventItem.content}
-                                        </li>
-                                    </Link>
+                                        <li key={number}>{eventItem.title}->{eventItem.content}</li>
+                                    </Link> 
+                                    <Link key={number+1} to={`/events/edit/${encodeURIComponent(eventItem.slug)}/1`}>Etkinlik Düzenle</Link> 
+                                    </div>
                                 )
                             })}
 
                         </ul>
-                    </li>)
+                    </li>
+                    )
                 })}
 
             </ul>
-        </>
+            </>
     );
 }
 

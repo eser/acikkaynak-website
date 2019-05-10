@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as bulmaStyles from 'bulma';
 import EventsListView from './eventsListView'
 import EventsDetailView from './eventsDetailView'
+import EventsEdit from './edit'
 
 function Events(props) {
     const [events, setEvents] = useState([
@@ -22,13 +23,18 @@ function Events(props) {
     ]);
     if (props.slug !== undefined) {
         const currentEvents = events.find(x => x.slug === props.slug);
-
-        // as long as content exists...
         if (currentEvents !== undefined) {
-            return (
-                <EventsDetailView content={currentEvents} />
-            );
-        }
+                if(props.type === "1"){
+                    return (
+                        <EventsEdit content={currentEvents} />
+                    );
+                }
+                else {
+                    return (
+                     <EventsDetailView content={currentEvents} />
+                    );
+                }
+        }        
     }
     return (
         <EventsListView events={events} />
