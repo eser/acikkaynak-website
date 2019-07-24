@@ -23,6 +23,7 @@ function Layout(props) {
                                 <NavLink exact={true} to="/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Home</NavLink>
                                 <NavLink to="/news/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Haberler</NavLink>
                                 <NavLink to="/events/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Etkinlikler</NavLink>
+                                <NavLink to="/orgs/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Organizasyonlar</NavLink>
                                 <NavLink to="/about/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Hakkımızda</NavLink>
                             </div>
                             <div className={bulmaStyles.navbarEnd}>
