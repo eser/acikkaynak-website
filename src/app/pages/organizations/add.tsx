@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
- import customAddOrgsStyle from './add.scss';
+import customAddOrgsStyle from './add.scss';
 import { NavLink } from 'react-router-dom';
 
 function OrgsAdd(props) {
@@ -19,7 +19,7 @@ function OrgsAdd(props) {
         <>
             <div className={customAddOrgsStyle.container}>
                 <NavLink key="0" to={`/events/`} onClick={goBackButton}>
-                        Geri Dön
+                    Geri Dön
                 </NavLink>
                 <div className={customAddOrgsStyle.form}>
                     <h3>Etkinlik Ekle</h3>

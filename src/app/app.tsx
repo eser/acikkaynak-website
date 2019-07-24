@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
-
 import Layout from './layouts/default/layout';
 import Home from './pages/home/index';
 import News from './pages/news';
@@ -29,7 +28,6 @@ function App() {
             <Route path="/news/:pageNumber" exact={false} strict={true} render={(props) => <Layout><News {...props.match.params} /></Layout>} />
             <Route path="/news/" exact={true} strict={true} render={() => <Layout><News /></Layout>} />
 
-
             {/* events */}
             <Route path="/events/add/" exact={false} strict={true} render={() => <Layout><EventsAdd/></Layout>} />
             <Route path="/events/detail/:slug" exact={false} strict={true} render={(props) => <Layout><Events {...props.match.params} /></Layout>} />
@@ -44,7 +42,6 @@ function App() {
 
             {/* about */}
             <Route path="/about/" exact={true} strict={true} render={() => <Layout><About /></Layout>} />
-
 
             {/* not found */}
             <Route render={() => <NotFound />} />

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import * as bulmaStyles from 'bulma';
 import OrgsListView from './orgsListView';
 import OrgDetailView from './orgDetailView';
 import OrgEdit from './edit'
@@ -28,21 +27,21 @@ function Organizations(props) {
             category: "Hardware"
         }
     ]);
-     if (props.slug !== undefined) {
-         const currentOrgs = orgs.find(x => x.slug === props.slug);
-         if (currentOrgs !== undefined) {
-                 if(props.type === "1"){
-                     return (
-                         <OrgEdit content={currentOrgs} />
-                     );
-                 }
-                 else {
-                     return (
-                      <OrgDetailView content={currentOrgs} />
-                     );
-                 }
-         }        
-     }
+    if (props.slug !== undefined) {
+        const currentOrgs = orgs.find(x => x.slug === props.slug);
+        if (currentOrgs !== undefined) {
+            if (props.type === "1") {
+                return (
+                    <OrgEdit content={currentOrgs} />
+                );
+            }
+            else {
+                return (
+                    <OrgDetailView content={currentOrgs} />
+                );
+            }
+        }
+    }
     return (
         <OrgsListView orgs={orgs} />
     );
