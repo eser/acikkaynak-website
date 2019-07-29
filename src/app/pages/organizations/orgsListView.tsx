@@ -18,24 +18,20 @@ function OrgsListView(props) {
                 <p>Organizasyon Ekle</p>
             </Link>
             <ul>
-                {categories.map((category, number) => {
-                    return (
+                {categories.map((category, number) => 
                         <li key={number}>{category}
                             <ul>
-                                {orgs.filter((x) => x.category === category).map((orgItem, number) => {
-                                    return (
+                                {orgs.filter((x) => x.category === category).map((orgItem, number) => 
                                         <div key={number}>
                                             <Link key={number} to={`/orgs/detail/${encodeURIComponent(orgItem.slug)}/`}>
                                                 <li key={number}>{orgItem.title}->{orgItem.content}</li>
                                             </Link>
-                                            <Link key={number + 1} to={`/orgs/edit/${encodeURIComponent(orgItem.slug)}/1`}>Etkinlik Düzenle</Link>
+                                            <Link key={number + 1} to={`/orgs/edit/${encodeURIComponent(orgItem.slug)}/editOrg`}>Etkinlik Düzenle</Link>
                                         </div>
-                                    )
-                                })}
+                                )}
                             </ul>
                         </li>
-                    )
-                })}
+                )}
 
             </ul>
         </>

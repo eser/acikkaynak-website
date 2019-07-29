@@ -12,6 +12,7 @@ function OrgsEdit(props) {
         history.back();
         event.preventDefault();
     }
+
     return (
         <>
             <div className={"container"}>
@@ -33,15 +34,15 @@ function OrgsEdit(props) {
                     <p>Etkinlik Kategorisi Etiketleri</p>
                     <select value={orgsCategory} type="combobox" onChange={(e) => setOrgsCategory(e.target.value)}
                         className={customAddOrgStyle.category}>
-                        <option value="0">Software </option>
+                        <option value="0">Software</option>
                         <option value="1">Hardware</option>
                     </select>
                 </div>
                 <div className={customAddOrgStyle.button}>
-                    <button > Düzenlemeyi kaydet</button>
+                    <button>Düzenlemeyi kaydet</button>
                 </div>
                 <div>
-                    {"'" + orgsTitle + "','" + orgsContent + "','" + orgsCategory + "'"}
+                    {`${orgsTitle} ,${orgsContent} ,${orgsCategory}`}
                 </div>
             </div>
         </>

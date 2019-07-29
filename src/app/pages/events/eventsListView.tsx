@@ -28,7 +28,7 @@ function EventsListView(props) {
                                     <Link key={number} to={`/events/detail/${encodeURIComponent(eventItem.slug)}/`}>
                                         <li key={number}>{eventItem.title}->{eventItem.content}</li>
                                     </Link> 
-                                    <Link key={number+1} to={`/events/edit/${encodeURIComponent(eventItem.slug)}/1`}>Etkinlik Düzenle</Link> 
+                                    <Link key={number+1} to={`/events/edit/${encodeURIComponent(eventItem.slug)}/editEvent`}>Etkinlik Düzenle</Link> 
                                     </div>
                                 )
                             })}

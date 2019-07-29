@@ -26,18 +26,18 @@ function OrgsAdd(props) {
                     <div className={customAddOrgsStyle.field}>
                         <p>Etkinlik Başlığı</p>
                         <textarea onChange={(e) => setorgsTitle(e.target.value)}
-                            className={customAddOrgsStyle.orgsTitle} cols={40} rows={3} ></textarea>
+                            className={customAddOrgsStyle.orgsTitle} cols="40" rows="3" ></textarea>
                     </div>
                     <div className={customAddOrgsStyle.field}>
                         <p>Etkinlik İçeriği</p>
                         <textarea onChange={(e) => setorgsContent(e.target.value)}
-                            className={customAddOrgsStyle.orgsContent} cols={40} rows={10} ></textarea>
+                            className={customAddOrgsStyle.orgsContent} cols="40" rows="10" ></textarea>
                     </div>
                     <div className={customAddOrgsStyle.field}>
                         <p>Etkinlik Kategorisi Etiketleri</p>
                         <select type="combobox" onChange={(e) => setorgsCategory(e.target.value)}
                             className={customAddOrgsStyle.category}>
-                            <option value="0">Software </option>
+                            <option value="0">Software</option>
                             <option value="1">Hardware</option>
                         </select>
                     </div>
@@ -47,7 +47,7 @@ function OrgsAdd(props) {
                 </div>
             </div>
             <div>
-                {"'" + orgsTitle + "','" + orgsContent + "','" + orgsCategory + "'"}
+                {`${orgsTitle} ,${orgsContent} ,${orgsCategory}`}
             </div>
         </>
     );

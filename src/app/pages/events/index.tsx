@@ -24,7 +24,7 @@ function Events(props) {
     if (props.slug !== undefined) {
         const currentEvents = events.find(x => x.slug === props.slug);
         if (currentEvents !== undefined) {
-                if(props.type === "1"){
+                if(props.type === "editEvent"){
                     return (
                         <EventsEdit content={currentEvents} />
                     );

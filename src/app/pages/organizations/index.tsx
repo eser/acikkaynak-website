@@ -27,10 +27,11 @@ function Organizations(props) {
             category: "Hardware"
         }
     ]);
+    
     if (props.slug !== undefined) {
         const currentOrgs = orgs.find(x => x.slug === props.slug);
         if (currentOrgs !== undefined) {
-            if (props.type === "1") {
+            if (props.type === "editOrg") {
                 return (
                     <OrgEdit content={currentOrgs} />
                 );
