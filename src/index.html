@@ -1,9 +1,7 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <title><%= htmlWebpackPlugin.options.title %></title>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,11 +10,9 @@
     <% for (var css in htmlWebpackPlugin.files.css) { %>
     <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[css] %>" /><% } %>
 </head>
-
 <body>
     <app></app>
     <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
     <script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script><% } %>
 </body>
-
 </html>
