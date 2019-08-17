@@ -25,11 +25,40 @@ function Layout(props) {
                                 <NavLink to="/events/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Etkinlikler</NavLink>
                                 <NavLink to="/orgs/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Organizasyonlar</NavLink>
                                 <NavLink to="/about/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Hakkımızda</NavLink>
+                                <a className={bulmaStyles.navbarItem} href="#">
+                                    <span className={bulmaStyles.icon}>
+                                        <i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faTwitterSquare} ${fontAwesomeStyles.faFw}`} aria-hidden="true">
+                                        </i>
+                                    </span> 
+                                </a>
+                                <a className={bulmaStyles.navbarItem} href="#">
+                                    <span className={bulmaStyles.icon}>
+                                        <i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faFacebook} ${fontAwesomeStyles.faFw}`} aria-hidden="true">
+                                        </i>
+                                    </span>
+                                </a>
+                                <a className={bulmaStyles.navbarItem} href="#">
+                                    <span className={bulmaStyles.icon}>
+                                        <i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faInstagram} ${fontAwesomeStyles.faFw}`} aria-hidden="true">
+                                        </i>
+                                    </span>
+                                </a>
+                                <a className={bulmaStyles.navbarItem} href="#">
+                                    <span className={bulmaStyles.icon}>
+                                        <i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faDiscord} ${fontAwesomeStyles.faFw}`} aria-hidden="true">
+                                        Discord
+                                        </i>
+                                    </span>
+                                </a>
                             </div>
                             <div className={bulmaStyles.navbarEnd}>
-                                <a className={bulmaStyles.navbarItem} href="https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acikkaynak.info%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state=">
-                                    <span className={bulmaStyles.icon}><i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faCodeFork} ${fontAwesomeStyles.faFw}`} aria-hidden="true"></i></span>
-                                    GitHub ile Giriş
+                                  
+                                    <a className={bulmaStyles.navbarItem} href="https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acikkaynak.info%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state=">
+                                        <span className={bulmaStyles.icon}>
+                                            <i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faCodeFork} ${fontAwesomeStyles.faFw}`} aria-hidden="true">
+                                            </i>
+                                        </span>
+                                        GitHub ile Giriş   
                                     </a>
                             </div>
                         </div>
