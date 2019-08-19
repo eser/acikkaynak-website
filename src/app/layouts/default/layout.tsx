@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiscord,faFacebook,faTwitch, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import './assets/fonts/arbutus-slab.scss';
 import fontAwesomeStyles from 'font-awesome/scss/font-awesome.scss';
 import bulmaStyles from 'bulma';
@@ -27,27 +29,22 @@ function Layout(props) {
                                 <NavLink to="/about/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Hakkımızda</NavLink>
                                 <a className={bulmaStyles.navbarItem} href="#">
                                     <span className={bulmaStyles.icon}>
-                                        <i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faTwitterSquare} ${fontAwesomeStyles.faFw}`} aria-hidden="true">
-                                        </i>
+                                        <FontAwesomeIcon icon={faTwitch} />
                                     </span> 
                                 </a>
                                 <a className={bulmaStyles.navbarItem} href="#">
                                     <span className={bulmaStyles.icon}>
-                                        <i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faFacebook} ${fontAwesomeStyles.faFw}`} aria-hidden="true">
-                                        </i>
+                                        <FontAwesomeIcon icon={faTwitter} />
                                     </span>
                                 </a>
                                 <a className={bulmaStyles.navbarItem} href="#">
                                     <span className={bulmaStyles.icon}>
-                                        <i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faInstagram} ${fontAwesomeStyles.faFw}`} aria-hidden="true">
-                                        </i>
+                                        <FontAwesomeIcon icon={faFacebook} />
                                     </span>
                                 </a>
                                 <a className={bulmaStyles.navbarItem} href="#">
-                                    <span className={bulmaStyles.icon}>
-                                        <i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faDiscord} ${fontAwesomeStyles.faFw}`} aria-hidden="true">
-                                        Discord
-                                        </i>
+                                    <span className={bulmaStyles.icon}>    
+                                        <FontAwesomeIcon icon={faDiscord} />
                                     </span>
                                 </a>
                             </div>
