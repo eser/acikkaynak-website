@@ -4,6 +4,8 @@ Thumbs.db
 
 # Editor metadata
 .vscode/
+# Jetbrains IDE's metadata
+.idea/
 
 # npm
 node_modules/
