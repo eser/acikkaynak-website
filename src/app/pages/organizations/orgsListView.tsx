@@ -29,12 +29,10 @@ function OrgsListView(props) {
                                 <input className={bulmaStyles.input} onChange={props.handleSearch} value={props.searchInput} type="text" placeholder="Organizasyon bul"/>
                         </div>
                     </div>
-                    <p className={bulmaStyles.levelItem}><a className="button is-success">Organizasyon Ekle</a></p>
+                    
+                    <p className={bulmaStyles.levelItem}><Link to={'/orgs/add/'} className={`${bulmaStyles.button} ${bulmaStyles.isSuccess}`}>Organizasyon Ekle</Link></p>
                 </div>
             </nav>
-            <Link to={'/orgs/add/'}>
-                <p>Organizasyon Ekle</p>
-            </Link>
             <ul>
                 {categories.map((category, number) =>
                         <li key={number}>{category}
