@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import Layout from './layouts/default/layout';
 import Home from './pages/home/index';
+import Projects from './pages/projects';
 import News from './pages/news';
 import NewsAdd from './pages/news/add';
 import About from './pages/about/index';
@@ -19,6 +20,10 @@ function App() {
         <Switch>
             {/* home */}
             <Route path="/" exact={true} strict={true} render={() => <Layout><Home /></Layout>} />
+            
+            {/* projects */}
+            <Route path="/projects/detail/:slug" exact={false} strict={true} render={(props) => <Layout><Projects {...props.match.params} /></Layout>} />
+            <Route path="/projects/" exact={true} strict={true} render={() => <Layout><Projects /></Layout>} />
 
             {/* news */}
             <Route path="/news/add/" exact={false} strict={true} render={() => <Layout><NewsAdd /></Layout>} />
