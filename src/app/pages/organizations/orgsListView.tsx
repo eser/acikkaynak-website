@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import * as bulmaStyles from 'bulma';
-import customNewsStyle from './style.scss';
+import customOrgsStyle from './style.scss';
 
 function OrgsListView(props) {
     let orgs = props.orgs;
@@ -13,15 +13,33 @@ function OrgsListView(props) {
 
     return (
         <>
-            <h3 className={bulmaStyles.title}>Organizasyonlar</h3>
+            {/* Top bar */}
+            <nav className={bulmaStyles.level}>
+                {/* Left side */}
+                <div className={bulmaStyles.levelLeft}>
+                    <div className={bulmaStyles.levelItem}>
+                        <h3 className={bulmaStyles.title}>Organizasyonlar</h3>
+                    </div>
+                </div>
+
+                {/* Right side */}
+                <div className={bulmaStyles.levelRight}>
+                    <div className={`${bulmaStyles.levelItem}`}>
+                        <div className={`${bulmaStyles.field} ${bulmaStyles.hasAddons} ${customOrgsStyle.search}`}>
+                                <input className={bulmaStyles.input} onChange={props.handleSearch} value={props.searchInput} type="text" placeholder="Organizasyon bul"/>
+                        </div>
+                    </div>
+                    <p className={bulmaStyles.levelItem}><a className="button is-success">Organizasyon Ekle</a></p>
+                </div>
+            </nav>
             <Link to={'/orgs/add/'}>
                 <p>Organizasyon Ekle</p>
             </Link>
             <ul>
-                {categories.map((category, number) => 
+                {categories.map((category, number) =>
                         <li key={number}>{category}
                             <ul>
-                                {orgs.filter((x) => x.category === category).map((orgItem, number) => 
+                                {orgs.filter((x) => x.category === category).map((orgItem, number) =>
                                         <div key={number}>
                                             <Link key={number} to={`/orgs/detail/${encodeURIComponent(orgItem.slug)}/`}>
                                                 <li key={number}>{orgItem.title}->{orgItem.content}</li>

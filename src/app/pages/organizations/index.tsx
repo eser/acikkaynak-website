@@ -2,32 +2,81 @@ import React, { useState } from 'react';
 import OrgsListView from './orgsListView';
 import OrgDetailView from './orgDetailView';
 import OrgEdit from './edit'
+import asciify from './asciify'
 
 function Organizations(props) {
-    const [orgs, setOrgs] = useState([
+    const initialOrgs = [
         {
             id: 1,
             slug: "dev-izmir",
             title: "DevIzmir ",
             content: "Dev izmir bir Izmir geliştirici topluluğudur.",
-            category: "Software"
+            category: "Software",
+            city: "İzmir",
+            technologies: ['Node.js'],
+            languages: ['JavaScript'],
+            hardwares: []
         },
         {
             id: 1,
             slug: "ai-izmir",
             title: "AI Izmir",
             content: "AI Izmir, Izmir' de bulunan bir yapay zeka topluluğudur. ",
-            category: "Software"
+            category: "Software",
+            city: "İzmir",
+            technologies: ['Tensorflow', 'Tensorflow.js'],
+            languages: ['Python', 'JavaScript'],
+            hardwares: []
         },
         {
             id: 1,
             slug: "ras-izmir",
             title: "Rasper Izmir",
             content: "Rasper Izmir, Izmir' de bulunan bir Raspery PI toplulugudur.",
-            category: "Hardware"
+            category: "Hardware",
+            city: "İzmir",
+            technologies: [],
+            languages: ['Python'],
+            hardwares: ['Raspberry PI']
         }
-    ]);
-    
+    ];
+
+    const [orgs, setOrgs] = useState(initialOrgs);
+    const [searchInput, setSearchInput] = useState();
+
+    const handleSearchInputChange = (event) => {
+        event.persist();
+        let searchValue = event.target.value;
+        setSearchInput(prevValue => event.target.value);
+        setOrgs( orgs => {
+            if(searchValue.trim().length === 0) {
+                return initialOrgs;
+            } else {
+                return (initialOrgs.filter(org => {
+                    let { slug, title, content, category, city, technologies, languages, hardwares } = org;
+                    searchValue = asciify(searchValue).toLowerCase();
+
+                    return (
+                        asciify(slug).toLowerCase().includes(searchValue) ||
+                        asciify(title).toLowerCase().includes(searchValue) ||
+                        asciify(content).toLowerCase().includes(searchValue) ||
+                        asciify(category).toLowerCase().includes(searchValue) ||
+                        asciify(city).toLowerCase().includes(searchValue) ||
+                        technologies.reduce((accumulator, currentValue) => {
+                            return (asciify(currentValue).toLowerCase().includes(searchValue) || accumulator)
+                        }, false) ||
+                        languages.reduce((accumulator, currentValue) => {
+                            return (asciify(currentValue).toLowerCase().includes(searchValue) || accumulator)
+                        }, false) ||
+                        hardwares.reduce((accumulator, currentValue) => {
+                            return (asciify(currentValue).toLowerCase().includes(searchValue) || accumulator)
+                        }, false)
+                    )
+                }))
+            }
+        })
+    }
+
     if (props.slug !== undefined) {
         const currentOrgs = orgs.find(x => x.slug === props.slug);
         if (currentOrgs !== undefined) {
@@ -44,7 +93,7 @@ function Organizations(props) {
         }
     }
     return (
-        <OrgsListView orgs={orgs} />
+        <OrgsListView orgs={orgs} searchInput={searchInput} handleSearch={handleSearchInputChange} />
     );
 };
 
