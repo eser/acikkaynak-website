@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDiscord,faFacebook,faTwitch, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faDiscord, faFacebook, faTwitch, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './assets/fonts/arbutus-slab.scss';
-import fontAwesomeStyles from 'font-awesome/scss/font-awesome.scss';
 import bulmaStyles from 'bulma';
 import layoutStyles from './assets/styles.scss';
 
@@ -49,14 +48,12 @@ function Layout(props) {
                                 </a>
                             </div>
                             <div className={bulmaStyles.navbarEnd}>
-                                  
-                                    <a className={bulmaStyles.navbarItem} href="https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acikkaynak.info%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state=">
-                                        <span className={bulmaStyles.icon}>
-                                            <i className={`${fontAwesomeStyles.fa} ${fontAwesomeStyles.faCodeFork} ${fontAwesomeStyles.faFw}`} aria-hidden="true">
-                                            </i>
-                                        </span>
-                                        GitHub ile Giriş   
-                                    </a>
+                            <a className={bulmaStyles.navbarItem} href="https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acikkaynak.info%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state=">
+                                    <span className={bulmaStyles.icon}>
+                                        <FontAwesomeIcon icon={faGithub} />
+                                    </span>
+                                    <p>Github ile giriş</p>
+                                </a>
                             </div>
                         </div>
                     </div>
