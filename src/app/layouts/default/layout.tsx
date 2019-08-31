@@ -48,7 +48,7 @@ function Layout(props) {
                                 </a>
                             </div>
                             <div className={bulmaStyles.navbarEnd}>
-                            <a className={bulmaStyles.navbarItem} href="https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acikkaynak.info%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state=">
+                                <a className={bulmaStyles.navbarItem} href="https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acikkaynak.info%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state=">
                                     <span className={bulmaStyles.icon}>
                                         <FontAwesomeIcon icon={faGithub} />
                                     </span>
