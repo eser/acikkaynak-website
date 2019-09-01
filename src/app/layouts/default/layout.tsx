@@ -27,12 +27,12 @@ function Layout(props) {
                                 <NavLink to="/events/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Etkinlikler</NavLink>
                                 <NavLink to="/orgs/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Organizasyonlar</NavLink>
                                 <NavLink to="/about/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Hakkımızda</NavLink>
-                                <a className={bulmaStyles.navbarItem} href="#">
+                                <a className={bulmaStyles.navbarItem} href="https://twitch.tv/laroux">
                                     <span className={bulmaStyles.icon}>
                                         <FontAwesomeIcon icon={faTwitch} />
                                     </span> 
                                 </a>
-                                <a className={bulmaStyles.navbarItem} href="#">
+                                <a className={bulmaStyles.navbarItem} href="https://twitter.com/acikkaynakinfo">
                                     <span className={bulmaStyles.icon}>
                                         <FontAwesomeIcon icon={faTwitter} />
                                     </span>
@@ -42,7 +42,7 @@ function Layout(props) {
                                         <FontAwesomeIcon icon={faFacebook} />
                                     </span>
                                 </a>
-                                <a className={bulmaStyles.navbarItem} href="#">
+                                <a className={bulmaStyles.navbarItem} href="https://discord.gg/KDUQrhv">
                                     <span className={bulmaStyles.icon}>    
                                         <FontAwesomeIcon icon={faDiscord} />
                                     </span>
