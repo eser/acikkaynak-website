@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDiscord, faFacebook, faTwitch, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faTelegram, faDiscord, faSlack, faGithub } from '@fortawesome/free-brands-svg-icons';
 import './assets/fonts/arbutus-slab.scss';
 import bulmaStyles from 'bulma';
 import layoutStyles from './assets/styles.scss';
@@ -21,30 +21,31 @@ function Layout(props) {
                         </div>
                         <div className={bulmaStyles.navbarMenu}>
                             <div className={bulmaStyles.navbarStart}>
-                                <NavLink exact={true} to="/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Home</NavLink>
+                                <NavLink exact={true} to="/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Haberler</NavLink>
+                                <NavLink to="/learn/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Eğitim</NavLink>
                                 <NavLink to="/projects/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Projeler</NavLink>
-                                <NavLink to="/news/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Haberler</NavLink>
-                                <NavLink to="/events/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Etkinlikler</NavLink>
-                                <NavLink to="/orgs/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Organizasyonlar</NavLink>
+                                <NavLink to="/organizations/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Organizasyonlar</NavLink>
+                                <NavLink to="/sponsors/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Sponsorlar</NavLink>
+                                <NavLink to="/stats/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>İstatistikler</NavLink>
                                 <NavLink to="/about/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Hakkımızda</NavLink>
-                                <a className={bulmaStyles.navbarItem} href="#">
-                                    <span className={bulmaStyles.icon}>
-                                        <FontAwesomeIcon icon={faTwitch} />
-                                    </span> 
-                                </a>
-                                <a className={bulmaStyles.navbarItem} href="#">
+                                <a className={bulmaStyles.navbarItem} href="https://twitter.com/acikkaynakinfo">
                                     <span className={bulmaStyles.icon}>
                                         <FontAwesomeIcon icon={faTwitter} />
-                                    </span>
+                                    </span> 
                                 </a>
-                                <a className={bulmaStyles.navbarItem} href="#">
+                                <a className={bulmaStyles.navbarItem} href="https://t.me/acikyayin">
                                     <span className={bulmaStyles.icon}>
-                                        <FontAwesomeIcon icon={faFacebook} />
+                                        <FontAwesomeIcon icon={faTelegram} />
                                     </span>
                                 </a>
-                                <a className={bulmaStyles.navbarItem} href="#">
+                                <a className={bulmaStyles.navbarItem} href="https://discordapp.com/invite/BRtenzs">
                                     <span className={bulmaStyles.icon}>    
                                         <FontAwesomeIcon icon={faDiscord} />
+                                    </span>
+                                </a>
+                                <a className={bulmaStyles.navbarItem} href="https://join.slack.com/t/acikkaynak/shared_invite/enQtNzQ1MjgyNzA5MTA5LWU5ZmVjYzY2MDhkZGZmOWFjMmI1NDc4MjliZTI1YjMwMTQxOGU2MGY1NjliODJlNGJjMDE3NjIwZjQ5NjFlMTA">
+                                    <span className={bulmaStyles.icon}>    
+                                        <FontAwesomeIcon icon={faSlack} />
                                     </span>
                                 </a>
                             </div>
@@ -53,7 +54,7 @@ function Layout(props) {
                                     <span className={bulmaStyles.icon}>
                                         <FontAwesomeIcon icon={faGithub} />
                                     </span>
-                                    <p>Github ile giriş</p>
+                                    <p>GitHub ile giriş</p>
                                 </a>
                             </div>
                         </div>

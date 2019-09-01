@@ -16,7 +16,7 @@ function OrgsEdit(props) {
     return (
         <>
             <div className={"container"}>
-                <NavLink key="0" to={`/orgs/`} onClick={goBackButton}>
+                <NavLink key="0" to={`/organizations/`} onClick={goBackButton}>
                     Geri Dön
                 </NavLink>
                 <h5>{props.content.title} Organizasyonu Düzenle</h5>
