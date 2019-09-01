@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import OrgsListView from './orgsListView';
-import OrgDetailView from './orgDetailView';
+import OrgsListView from './listView';
+import OrgDetailView from './detailView';
 import OrgEdit from './edit'
 import asciify from './asciify'
 
