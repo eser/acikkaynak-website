@@ -1,17 +1,14 @@
 {
-  "name": "darty-react-app",
-  "description": "Darty React App",
+  "name": "acikkaynak-website",
+  "description": "acik kaynak web site",
   "keywords": [
-    "typescript",
-    "react",
-    "hooks",
-    "spa",
-    "boilerplate",
-    "starter"
+    "acik",
+    "kaynak",
+    "info"
   ],
   "version": "0.10.1",
-  "homepage": "http://darty-react-app.s3-website-eu-west-1.amazonaws.com",
-  "author": "Eser Ozvataf <eser@ozvataf.com> (https://twitter.com/eser)",
+  "homepage": "http://acikkaynak.info",
+  "author": "Acik Kaynak Inisiyatifi <info@acikkaynak.info> (https://twitter.com/acikkaynakinfo)",
   "contributors": [
     {
       "name": "Eser Ozvataf",
@@ -21,10 +18,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/eserozvataf/darty-react-app.git"
+    "url": "https://github.com/acikkaynak/acikkaynak-website.git"
   },
   "bugs": {
-    "url": "https://github.com/eserozvataf/darty-react-app/issues"
+    "url": "https://github.com/acikkaynak/acikkaynak-website/issues"
   },
   "license": "Apache-2.0",
   "main": "./dist/index.js",
@@ -32,6 +29,7 @@
     "node": ">=8.10.0"
   },
   "scripts": {
+    "cleanup": "rm -rf yarn.lock node_modules/ dist/",
     "start": "darty start",
     "dev": "darty dev",
     "lint": "darty lint",
@@ -39,35 +37,35 @@
     "bundle": "darty bundle",
     "bundle:prod": "darty bundle:prod",
     "containerize": "darty containerize",
-    "aws:copy": "aws s3 sync ./dist s3://darty-react-app",
-    "aws:open": "start http://darty-react-app.s3-website-eu-west-1.amazonaws.com"
+    "coverage": "jest --coverage && codecov"
   },
   "dependencies": {
     "darty": "^0.50.2",
-    "express": "^4.16.4"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "@types/enzyme": "^3.9.1",
-    "@types/jest": "^24.0.11",
-    "@types/react": "^16.8.10",
-    "@types/react-router": "^4.4.5",
-    "@typescript-eslint/parser": "^1.5.0",
-    "bulma": "^0.7.4",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.11.2",
-    "eslint-config-eser-react": "^2.1.1",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.12.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-brands-svg-icons": "^5.10.2",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@types/enzyme": "^3.10.3",
+    "@types/jest": "^24.0.18",
+    "@types/react": "^16.9.2",
+    "@types/react-router": "^5.0.3",
+    "@typescript-eslint/parser": "^2.0.0",
+    "bulma": "^0.7.5",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint-config-eser-react": "^2.1.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
     "history": "^4.9.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-native-web": "^0.11.2",
-    "react-redux": "^6.0.1",
-    "react-router": "^5.0.0",
-    "react-router-dom": "^5.0.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.21",
-    "@fortawesome/free-brands-svg-icons": "^5.10.1",
-    "@fortawesome/free-solid-svg-icons": "^5.10.1",
-    "@fortawesome/react-fontawesome": "^0.1.4"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-native-web": "^0.11.7",
+    "react-redux": "^7.1.1",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1"
   }
 }

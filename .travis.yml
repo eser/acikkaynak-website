@@ -1,0 +1,25 @@
+sudo: false
+language: node_js
+
+node_js:
+- '12'
+
+# keep the npm cache around to speed up installs
+cache:
+  yarn: true
+  directories:
+  - node_modules
+
+install:
+- yarn install --frozen-lockfile --audit --non-interactive
+
+script:
+- yarn run bundle:prod
+
+deploy:
+  provider: heroku
+  app: acikkaynak
+  api_key: $HEROKU_AUTH_TOKEN
+  on:
+    branch: master
+    node_js: '12'
