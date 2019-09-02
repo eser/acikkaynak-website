@@ -30,7 +30,7 @@ function App() {
             <Route path="/" exact={true} strict={true} render={() => <Layout><News /></Layout>} />
 
             {/* learn */}
-            <Route path="/learn/" exact={true} strict={true} render={() => <Layout><Learn /></Layout>} />
+            <Route path="/learn/*" exact={false} strict={true} render={(props) => <Layout><Learn contentPath={props.match.params[0]} /></Layout>} />
 
             {/* projects */}
             <Route path="/projects/detail/:slug" exact={false} strict={true} render={(props) => <Layout><Projects {...props.match.params} /></Layout>} />
