@@ -13,7 +13,7 @@ function Layout(props) {
                 <nav className={`${bulmaStyles.navbar} ${bulmaStyles.isTransparent}`} role="navigation" aria-label="main navigation">
                     <div className={bulmaStyles.container}>
                         <div className={bulmaStyles.navbarBrand}>
-                            <span className={bulmaStyles.navbarBurger} role="button" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                            <span className={bulmaStyles.navbarBurger} role="button" onclick={ () => {document.querySelector('.navbar-menu').classList.toggle('is-active')}} aria-label="menu" aria-expanded="false" data-target="navbarMenu">
                                 <span aria-hidden="true"></span>
                                 <span aria-hidden="true"></span>
                                 <span aria-hidden="true"></span>
