@@ -7,13 +7,18 @@ import bulmaStyles from 'bulma';
 import layoutStyles from './assets/styles.scss';
 
 function Layout(props) {
+    function navbarToggle () {
+        document.querySelector('.navbar-menu')
+            .classList
+            .toggle('is-active')
+    }
     return (
         <div className={`${bulmaStyles.hero} ${bulmaStyles.isFullheight} ${layoutStyles.isFullheight}`}>
             <header className={`${bulmaStyles.heroHead} ${layoutStyles.heroHead}`}>
                 <nav className={`${bulmaStyles.navbar} ${bulmaStyles.isTransparent}`} role="navigation" aria-label="main navigation">
                     <div className={bulmaStyles.container}>
                         <div className={bulmaStyles.navbarBrand}>
-                            <span className={bulmaStyles.navbarBurger} role="button" onclick={ () => {document.querySelector('.navbar-menu').classList.toggle('is-active')}} aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                            <span className={bulmaStyles.navbarBurger} role="button" onClick={navbarToggle} aria-label="menu" aria-expanded="false" data-target="navbarMenu">
                                 <span aria-hidden="true"></span>
                                 <span aria-hidden="true"></span>
                                 <span aria-hidden="true"></span>
