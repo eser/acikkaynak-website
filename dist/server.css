@@ -7009,7 +7009,9 @@ body {
 
 @media (max-width: 860px) {
   body {
-    font-size: 14px; } }
+    font-size: 14px; }
+    body .navbar-menu {
+      background-color: #55a63a; } }
 
 @media (max-width: 600px) {
   body {
