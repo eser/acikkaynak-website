@@ -38,7 +38,7 @@ function Layout(props) {
                                         <FontAwesomeIcon icon={faTwitter} />
                                     </span> 
                                 </a>
-                                <a className={bulmaStyles.navbarItem} href="https://t.me/acikyayin">
+                                <a className={bulmaStyles.navbarItem} href="https://t.me/acikkaynak">
                                     <span className={bulmaStyles.icon}>
                                         <FontAwesomeIcon icon={faTelegram} />
                                     </span>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import customAddOrgsStyle from './add.scss';
 import { NavLink } from 'react-router-dom';
 
-function OrgsAdd(props) {
+function OrganizationsAdd(props) {
 
     const [orgsTitle, setorgsTitle] = useState('Organizasyon Başlığı');
     const [orgsContent, setorgsContent] = useState('Organizasyon İçeriği');
@@ -54,5 +54,5 @@ function OrgsAdd(props) {
 }
 
 export {
-    OrgsAdd as default,
+    OrganizationsAdd as default,
 };

@@ -3,7 +3,7 @@ import bulma from 'bulma';
 import { NavLink } from 'react-router-dom';
 import customAddOrgStyle from './add.scss';
 
-function OrgsEdit(props) {
+function OrganizationsEdit(props) {
     const [orgsTitle, setOrgsTitle] = useState(props.content.title);
     const [orgsContent, setOrgsContent] = useState(props.content.content);
     const [orgsCategory, setOrgsCategory] = useState(props.content.category == "Software" ? 0 : 1);
@@ -49,7 +49,6 @@ function OrgsEdit(props) {
     );
 }
 
-
 export {
-    OrgsEdit as default,
+    OrganizationsEdit as default,
 };
