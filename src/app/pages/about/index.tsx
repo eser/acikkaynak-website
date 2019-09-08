@@ -6,6 +6,7 @@ function About() {
     return (
         <>
             <h1 className={bulmaStyles.title}>Hakkında</h1>
+
             <p>Bu organizasyon Türkiye'deki ve Türkçe konuşan geliştiricilerin oluşturduğu açık kaynak ekosisteminin lokomotifi olmak,
                 insanları açık kaynak geliştirmeye motive etmek, farkındalık yaratmak ve engelleri ortadan kaldırmak amacıyla kurulmuştur.</p>
 

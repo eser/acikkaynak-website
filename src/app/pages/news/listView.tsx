@@ -38,7 +38,7 @@ function NewsListView(props) {
 
     return (
         <>
-            <h2>Haberler</h2>
+            <h1 className={bulmaStyles.title}>Haberler</h1>
 
             <ul className={customNewsStyle.tagBox}>
                 {JSON.stringify(props.tag)}

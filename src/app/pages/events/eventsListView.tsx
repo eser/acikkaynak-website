@@ -11,7 +11,8 @@ function EventsListView(props) {
 
     return (
         <>
-            <h3 className={bulmaStyles.title}>Etkinlikler</h3>
+            <h1 className={bulmaStyles.title}>Etkinlikler</h1>
+
             <Link to={'/events/add/'}>
                 <p>Etkinlik Ekle</p>
             </Link>

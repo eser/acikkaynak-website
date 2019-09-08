@@ -6,6 +6,7 @@ function Stats() {
     return (
         <>
             <h1 className={bulmaStyles.title}>İstatistikler</h1>
+
             <p>
                 Bu sayfa yapım aşamasında.</p>
         </>

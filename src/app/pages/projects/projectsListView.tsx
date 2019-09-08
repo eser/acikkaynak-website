@@ -11,7 +11,8 @@ function ProjectsListView(props) {
 
     return (
         <>
-            <h3 className={bulmaStyles.title}>Projeler</h3>
+            <h1 className={bulmaStyles.title}>Projeler</h1>
+
             <ul>
                 {categories.map((category, number) => {
                     return (

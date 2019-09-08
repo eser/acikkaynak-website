@@ -18,7 +18,7 @@ function OrgsListView(props) {
                 {/* Left side */}
                 <div className={bulmaStyles.levelLeft}>
                     <div className={bulmaStyles.levelItem}>
-                        <h3 className={bulmaStyles.title}>Organizasyonlar</h3>
+                        <h1 className={bulmaStyles.title}>Organizasyonlar</h1>
                     </div>
                 </div>
 

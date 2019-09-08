@@ -21,6 +21,7 @@ function Learn(props: LearnProps) {
     return (
         <>
             <h1 className={bulmaStyles.title}>Eğitim</h1>
+
             <p>
                 Bu sayfa yapım aşamasında.<br />
                 <br />
