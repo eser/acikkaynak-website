@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faTelegram, faDiscord, faSlack, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -7,11 +7,10 @@ import bulmaStyles from 'bulma';
 import layoutStyles from './assets/styles.scss';
 
 function Layout(props) {
-    function navbarToggle () {
-        document.querySelector('.navbar-menu')
-            .classList
-            .toggle('is-active')
-    }
+    const navbarMenuRef = useRef();
+    const navbarToggle = () => {
+        navbarMenuRef.current.classList.toggle('is-active');
+    };
     return (
         <div className={`${bulmaStyles.hero} ${layoutStyles.isFullheight}`}>
             <header className={layoutStyles.heroHead}>
@@ -26,7 +25,7 @@ function Layout(props) {
                             <span aria-hidden="true"></span>
                         </span>
                     </div>
-                    <div id="navbarMenu" className={bulmaStyles.navbarMenu}>
+                    <div id="navbarMenu" className={bulmaStyles.navbarMenu} ref={navbarMenuRef}>
                         <div className={bulmaStyles.navbarStart}>
                             <NavLink exact={true} to="/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Haberler</NavLink>
                             <NavLink to="/learn/" className={bulmaStyles.navbarItem} activeClassName={bulmaStyles.isActive}>Eğitim</NavLink>
