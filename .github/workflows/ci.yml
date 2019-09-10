@@ -4,7 +4,7 @@ on: [ push, pull_request ]
 
 jobs:
   build:
-    name: Test on node ${{ matrix.node-version }} and ${{ matrix.os }}
+    name: Test on node ${{ matrix.node-version }} and ${{ matrix.operating-system }}
     runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
