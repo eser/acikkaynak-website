@@ -1,22 +1,22 @@
 name: CI
 
-on: [push, pull_request]
+on: [ push, pull_request ]
 
 jobs:
   build:
-    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    name: Test on node ${{ matrix.node-version }} and ${{ matrix.os }}
+    runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
-        os: [ 'ubuntu-latest', 'windows-latest', 'macOS-latest' ]
-        node_version: [ '12.x', '10.x', '8.x' ]
+        operating-system: [ 'ubuntu-latest', 'windows-latest', 'macOS-latest' ]
+        node-version: [ '12.x', '10.x', '8.x' ]
     steps:
     - name: Checkout from repository
-      uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node_version }}
-      uses: actions/setup-node@v1
+      uses: actions/checkout@master
+    - name: Setup Node.js
+      uses: actions/setup-node@master
       with:
-        node-version: ${{ matrix.node_version }}
+        node-version: ${{ matrix.node-version }}
     - name: Install dependencies
       run: yarn install --frozen-lockfile --audit --non-interactive
     - name: Run tests
