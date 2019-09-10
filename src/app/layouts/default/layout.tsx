@@ -11,6 +11,7 @@ function Layout(props) {
     const navbarToggle = () => {
         navbarMenuRef.current.classList.toggle('is-active');
     };
+
     return (
         <div className={`${bulmaStyles.hero} ${layoutStyles.isFullheight}`}>
             <header className={layoutStyles.heroHead}>

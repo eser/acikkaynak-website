@@ -6967,38 +6967,31 @@ label.panel-block {
   background-color: #fafafa;
   padding: 3rem 1.5rem 6rem; }
 
-:root {
-  --body-bg-color: #f2f3f5;
-  --header-bg-color: #55A63A;
-  --header-fg-color: rgba(255,255,255,0.8);
-  --header-fg-hover-color: rgba(255,255,255,1);
-  --content-header-color: #34495e;
-  /* #000000 */
-  --content-text-color: #34495e;
-  --content-link-color: #337ab7; }
-
 body {
-  background-color: var(--body-bg-color);
+  background-color: #f2f3f5;
   font-family: 'Arbutus Slab'; }
 
 .hero-head {
-  background-color: var(--header-bg-color);
-  color: var(--header-fg-color); }
+  background-color: #55A63A;
+  color: rgba(255, 255, 255, 0.8); }
   .hero-head .navbar {
     background: transparent; }
   .hero-head a {
-    color: var(--header-fg-color); }
+    color: rgba(255, 255, 255, 0.8); }
     .hero-head a:hover {
-      color: var(--header-fg-hover-color); }
+      color: white; }
 
 .hero-body {
-  color: var(--content-text-color); }
+  color: #34495e; }
   .hero-body a {
-    color: var(--content-link-color); }
+    color: #337ab7; }
   .hero-body h1, .hero-body h2, .hero-body h3, .hero-body h4, .hero-body h5, .hero-body h6 {
-    color: var(--content-header-color); }
+    color: #34495e; }
     .hero-body h1 a, .hero-body h2 a, .hero-body h3 a, .hero-body h4 a, .hero-body h5 a, .hero-body h6 a {
-      color: var(--content-header-color); }
+      color: #34495e; }
+
+.navbar-menu {
+  background-color: #55A63A; }
 
 .hero.is-fullheight .hero-body {
   align-items: start; }
@@ -7007,15 +7000,11 @@ body {
   padding: 1rem;
   font-size: 14px; }
 
-@media (max-width: 860px) {
+@media screen and (max-width: 1024px) {
   body {
     font-size: 14px; }
-    body .navbar-menu {
-      background-color: #55a63a; } }
-
-@media (max-width: 600px) {
-  body {
-    font-size: 12px; } }
+    body .navbar-menu .navbar-item:hover {
+      background-color: #254819; } }
 
 :root {
   --tag-border-color: crimson;
