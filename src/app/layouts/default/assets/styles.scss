@@ -1,52 +1,47 @@
-:root {
-    --body-bg-color: #f2f3f5;
-    --header-bg-color: #55A63A;
-    --header-fg-color: rgba(255,255,255,0.8);
-    --header-fg-hover-color: rgba(255,255,255,1);
-
-    --content-header-color: #34495e; /* #000000 */
-    --content-text-color: #34495e;
-    --content-link-color: #337ab7;
-}
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import '_variables.scss';
 
 body {
-    background-color: var(--body-bg-color);
+    background-color: $body-bg-color;
     font-family: 'Arbutus Slab';
 }
 
 .hero-head {
-    background-color: var(--header-bg-color);
-    color: var(--header-fg-color);
+    background-color: $header-bg-color;
+    color: $header-fg-color;
 
     & .navbar {
         background: transparent;
     }
 
     & a {
-        color: var(--header-fg-color);
+        color: $header-fg-color;
 
         &:hover {
-            color: var(--header-fg-hover-color);
+            color: $header-fg-hover-color;
         }
     }
 }
 
 .hero-body {
-    color: var(--content-text-color);
+    color: $content-text-color;
 
     & a {
-        color: var(--content-link-color);
+        color: $content-link-color;
     }
 
     & h1, & h2, & h3, & h4, & h5, & h6 {
-        color: var(--content-header-color);
+        color: $content-header-color;
 
         & a {
-            color: var(--content-header-color);
+            color: $content-header-color;
         }
     }
 }
 
+.navbar-menu {
+    background-color: $header-bg-color;
+}
 
 .hero.is-fullheight .hero-body {
     align-items: start;
@@ -57,19 +52,16 @@ body {
     font-size: 14px;
 }
 
-@media (max-width: 860px) {
+@media screen and (max-width: $desktop) {
     body {
         font-size: 14px;
-        
-        .navbar-menu {    
-            background-color: #55a63a;
-            
-        }
-    }
-}
 
-@media (max-width: 600px) {
-    body {
-        font-size: 12px;
+	.navbar-menu {
+	    .navbar-item {
+	        &:hover {
+		    background-color: darken($header-bg-color, 25%);
+		}
+	    }
+	}
     }
 }
