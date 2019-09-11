@@ -21,3 +21,19 @@ jobs:
       run: yarn install --frozen-lockfile --audit --non-interactive
     - name: Run tests
       run: yarn test
+
+  deploy:
+    name: Deployment
+    runs-on: ubuntu-latest
+    needs: [ 'build' ]
+    steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@master
+      with:
+        node-version: 12.x
+    - name: Module Bundling
+      run: yarn run bundle:prod
+    - name: Heroku Deployment
+      uses: actions/heroku@master
+      secrets:
+        HEROKU_API_KEY: ${{ secrets.HEROKU_AUTH_TOKEN }}
