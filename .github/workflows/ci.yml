@@ -35,5 +35,5 @@ jobs:
       run: yarn run bundle:prod
     - name: Heroku Deployment
       uses: actions/heroku@master
-      secrets:
+      env:
         HEROKU_API_KEY: ${{ secrets.HEROKU_AUTH_TOKEN }}
