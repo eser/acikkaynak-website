@@ -17,7 +17,7 @@ function Layout(props) {
             <header className={layoutStyles.heroHead}>
                 <nav className={`${bulmaStyles.navbar} ${bulmaStyles.isTransparent}`} role="navigation" aria-label="main navigation">
                     <div className={bulmaStyles.navbarBrand}>
-                        <a className={bulmaStyles.navbarItem} href="https://acikkaynak.info/">
+                        <a className={bulmaStyles.navbarItem} href="/">
                             {`{ açık }`}
                         </a>
                         <span className={`${bulmaStyles.navbarBurger} ${bulmaStyles.burger}`} role="button" onClick={navbarToggle} aria-label="menu" aria-expanded="false" data-target="navbarMenu">
