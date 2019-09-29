@@ -40,34 +40,34 @@
     "coverage": "jest --coverage && codecov"
   },
   "dependencies": {
-    "darty": "^0.50.2",
+    "darty": "^0.51.3",
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.22",
-    "@fortawesome/free-brands-svg-icons": "^5.10.2",
-    "@fortawesome/free-solid-svg-icons": "^5.10.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.5",
     "@types/enzyme": "^3.10.3",
     "@types/jest": "^24.0.18",
-    "@types/react": "^16.9.2",
-    "@types/react-router": "^5.0.3",
-    "@typescript-eslint/parser": "^2.2.0",
+    "@types/react": "^16.9.3",
+    "@types/react-router": "^5.1.1",
+    "@typescript-eslint/parser": "^2.3.1",
     "bulma": "^0.7.5",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint-config-eser-react": "^2.1.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^2.0.1",
-    "history": "^4.9.0",
+    "eslint-plugin-react-hooks": "^2.1.1",
+    "history": "^4.10.1",
     "path-browser": "^2.2.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
     "react-markdown": "^4.2.2",
     "react-native-web": "^0.11.7",
     "react-redux": "^7.1.1",
-    "react-router": "^5.0.1",
-    "react-router-dom": "^5.0.1"
+    "react-router": "^5.1.1",
+    "react-router-dom": "^5.1.1"
   }
 }

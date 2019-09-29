@@ -58,7 +58,7 @@ Use `npm run <task>` command in project folder to execute tasks defined in `pack
 
 ## Todo List
 
-See [GitHub Projects](https://github.com/acikkaynak/acikkaynak-website/projects) for more.
+See [GitHub Projects](https://github.com/orgs/acikkaynak/projects) for more.
 
 
 ## Requirements
