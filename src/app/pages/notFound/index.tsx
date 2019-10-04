@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as bulmaStyles from 'bulma';
+const bulmaStyles = {};
 
 function NotFound() {
     return (

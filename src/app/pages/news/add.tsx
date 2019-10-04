@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import NewsListView from './newsListView';
 import NewsDetailView from './newsDetailView';
-import * as bulmaStyles from 'bulma';
 import customAddNewsStyle from './add.scss';
 import { NavLink } from 'react-router-dom';
+
+const bulmaStyles = {};
 
 function NewsAdd(props) {
     const [newsTitle, setNewsTitle] = useState('');

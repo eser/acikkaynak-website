@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faTelegram, faDiscord, faSlack, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Container, Divider, Dropdown, Grid, Header, Image, List, Menu, Segment } from 'semantic-ui-react';
+
 import './assets/fonts/arbutus-slab.scss';
-import bulmaStyles from 'bulma';
+import 'semantic-ui-css/semantic.css';
 import layoutStyles from './assets/styles.scss';
 
 function Layout(props) {
@@ -13,8 +16,37 @@ function Layout(props) {
     };
 
     return (
-        <div className={`${bulmaStyles.hero} ${layoutStyles.isFullheight}`}>
-            <header className={layoutStyles.heroHead}>
+        <div>
+            <Menu fixed="top" inverted>
+                <Container>
+                    <Menu.Item as="a" header>
+                        <Image size="mini" src="/logo.png" style={{ marginRight: '1.5em' }} />
+                        Project Name
+                    </Menu.Item>
+
+                    <Menu.Item as="a">Home</Menu.Item>
+
+                    <Dropdown item simple text="Dropdown">
+                        <Dropdown.Menu>
+                            <Dropdown.Item>List Item</Dropdown.Item>
+                            <Dropdown.Item>List Item</Dropdown.Item>
+                            <Dropdown.Divider />
+                            <Dropdown.Header>Header Item</Dropdown.Header>
+                            <Dropdown.Item>
+                                <i className="dropdown icon" />
+                                <span className="text">Submenu</span>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>List Item</Dropdown.Item>
+                                    <Dropdown.Item>List Item</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown.Item>
+                            <Dropdown.Item>List Item</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </Container>
+            </Menu>
+
+            {/* <header className={layoutStyles.heroHead}>
                 <nav className={`${bulmaStyles.navbar} ${bulmaStyles.isTransparent}`} role="navigation" aria-label="main navigation">
                     <div className={bulmaStyles.navbarBrand}>
                         <a className={bulmaStyles.navbarItem} href="/">
@@ -43,7 +75,7 @@ function Layout(props) {
                                         <a className={bulmaStyles.navbarItem} href="https://twitter.com/acikkaynakinfo">
                                             <span className={bulmaStyles.icon}>
                                                 <FontAwesomeIcon icon={faTwitter} />
-                                            </span> 
+                                            </span>
                                         </a>
                                     </p>
                                     <p className={bulmaStyles.control}>
@@ -55,14 +87,14 @@ function Layout(props) {
                                     </p>
                                     <p className={bulmaStyles.control}>
                                         <a className={bulmaStyles.navbarItem} href="https://discordapp.com/invite/BRtenzs">
-                                            <span className={bulmaStyles.icon}>    
+                                            <span className={bulmaStyles.icon}>
                                                 <FontAwesomeIcon icon={faDiscord} />
                                             </span>
                                         </a>
                                     </p>
                                     <p className={bulmaStyles.control}>
                                         <a className={bulmaStyles.navbarItem} href="https://join.slack.com/t/acikkaynak/shared_invite/enQtNzQ1MjgyNzA5MTA5LWU5ZmVjYzY2MDhkZGZmOWFjMmI1NDc4MjliZTI1YjMwMTQxOGU2MGY1NjliODJlNGJjMDE3NjIwZjQ5NjFlMTA">
-                                            <span className={bulmaStyles.icon}>    
+                                            <span className={bulmaStyles.icon}>
                                                 <FontAwesomeIcon icon={faSlack} />
                                             </span>
                                         </a>
@@ -95,7 +127,8 @@ function Layout(props) {
                         Visit <a href="https://github.com/eserozvataf/darty-react-hooks-app">GitHub page</a> for details. Apache License, Version 2.0
                     </div>
                 </div>
-            </footer>
+            </footer> */}
+            {props.children}
         </div>
     );
 }

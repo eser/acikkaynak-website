@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import * as bulmaStyles from 'bulma';
 import customNewsStyle from './style.scss';
+
+const bulmaStyles = {};
 
 function NewsListView(props) {
     const [ newsPerPage, setNewsPerPage ] = useState(2);

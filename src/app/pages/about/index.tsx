@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import * as bulmaStyles from 'bulma';
+
+const bulmaStyles = {};
 
 
 function About() {

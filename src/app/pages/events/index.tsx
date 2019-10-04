@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import * as bulmaStyles from 'bulma';
 import EventsListView from './eventsListView'
 import EventsDetailView from './eventsDetailView'
 import EventsEdit from './edit'
+
+const bulmaStyles = {};
 
 function Events(props) {
     const [events, setEvents] = useState([

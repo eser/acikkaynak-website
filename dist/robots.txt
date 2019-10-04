@@ -1,5 +1,0 @@
-# Rule 1
-User-agent: *
-Allow: /
-
-# Sitemap: http://darty-react-app.s3-website-eu-west-1.amazonaws.com/sitemap.xml

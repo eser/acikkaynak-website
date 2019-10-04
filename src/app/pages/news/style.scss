@@ -39,10 +39,12 @@
 .tag:hover::after {
     border-left-color: var(--tag-border-color);
 }
-.tagBox{
-  white-space: nowrap;
-  margin-top: 1% !important;
-  margin-left: -0.5% !important;}
+
+.tagBox {
+    white-space: nowrap;
+    margin-top: 1% !important;
+    margin-left: -0.5% !important;
+}
 
 .bottomLinks {
     white-space: nowrap;

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import bulma from 'bulma';
 import { NavLink } from 'react-router-dom';
+
 import customAddOrgStyle from './add.scss';
+
+const bulmaStyles = {};
 
 function OrganizationsEdit(props) {
     const [orgsTitle, setOrgsTitle] = useState(props.content.title);

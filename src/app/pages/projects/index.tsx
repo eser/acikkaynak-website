@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import ProjectsListView from './projectsListView';
 import ProjectsDetailView from './projectsDetailView';
-import * as bulmaStyles from 'bulma';
+
+const bulmaStyles = {};
 
 function Projects(props) {
     const [projects, setProjects] = useState([

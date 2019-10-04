@@ -3,7 +3,8 @@ import NewsListView from './listView';
 import NewsDetailView from './detailView';
 import NotFound from '../notFound/'
 import mockData from './mockData';
-import * as bulmaStyles from 'bulma';
+
+const bulmaStyles = {};
 
 function News(props) {
     const [ news, setNews ] = useState(mockData);

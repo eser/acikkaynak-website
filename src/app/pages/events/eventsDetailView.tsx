@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import * as bulmaStyles from 'bulma';
 import customEventsStyle from './style.scss';
+
+const bulmaStyles = {};
 
 function EventsDetailView(props) {
     function goBackButton(event) {
