@@ -34,15 +34,13 @@
     "dev": "darty dev",
     "lint": "darty lint",
     "test": "darty test",
+    "test:coverage": "darty test:coverage && codecov",
     "bundle": "darty bundle",
     "bundle:prod": "darty bundle:prod",
-    "containerize": "darty containerize",
-    "coverage": "jest --coverage && codecov"
+    "containerize": "darty containerize"
   },
   "dependencies": {
-    "darty": "^0.51.5",
-    "express": "^4.17.1",
-    "style-loader": "^1.0.0"
+    "darty": "^0.51.8"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
@@ -53,7 +51,6 @@
     "@types/jest": "^24.0.18",
     "@types/react": "^16.9.5",
     "@types/react-router": "^5.1.1",
-    "@typescript-eslint/parser": "^2.3.2",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "eslint-config-eser-react": "^2.1.2",

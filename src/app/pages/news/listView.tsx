@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import customNewsStyle from './style.scss';
 
-const bulmaStyles = {};
+import { Header } from 'semantic-ui-react';
+
+import customNewsStyle from './style.scss';
 
 function NewsListView(props) {
     const [ newsPerPage, setNewsPerPage ] = useState(2);
@@ -39,7 +40,7 @@ function NewsListView(props) {
 
     return (
         <>
-            <h1 className={bulmaStyles.title}>Haberler</h1>
+            <Header as="h1">Haberler</Header>
 
             <ul className={customNewsStyle.tagBox}>
                 {JSON.stringify(props.tag)}

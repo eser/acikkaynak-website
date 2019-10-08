@@ -1,67 +1,7 @@
-@import '~bulma/sass/utilities/initial-variables.sass';
-@import '_variables.scss';
-
-body {
-    background-color: $body-bg-color;
-    font-family: 'Arbutus Slab';
+.footer {
+    padding: 5em 0 !important;
 }
 
-.hero-head {
-    background-color: $header-bg-color;
-    color: $header-fg-color;
-
-    & .navbar {
-        background: transparent;
-    }
-
-    & a {
-        color: $header-fg-color;
-
-        &:hover {
-            color: $header-fg-hover-color;
-        }
-    }
-}
-
-.hero-body {
-    color: $content-text-color;
-
-    & a {
-        color: $content-link-color;
-    }
-
-    & h1, & h2, & h3, & h4, & h5, & h6 {
-        color: $content-header-color;
-
-        & a {
-            color: $content-header-color;
-        }
-    }
-}
-
-.navbar-menu {
-    background-color: $header-bg-color;
-}
-
-.hero.is-fullheight .hero-body {
-    align-items: start;
-}
-
-.hero-foot {
-    padding: 1rem;
-    font-size: 14px;
-}
-
-@media screen and (max-width: $desktop) {
-    body {
-        font-size: 14px;
-
-	.navbar-menu {
-	    .navbar-item {
-	        &:hover {
-		    background-color: darken($header-bg-color, 25%);
-		}
-	    }
-	}
-    }
+.header {
+    padding: 1em 0 !important;
 }

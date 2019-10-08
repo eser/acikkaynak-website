@@ -13,6 +13,6 @@
 
     CSS3, HTML5, JavaScript
     TypeScript, Darty
-    React, Bulma
+    React, Semantic UI
 
 Darty: https://github.com/eserozvataf/darty

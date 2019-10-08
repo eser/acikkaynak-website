@@ -22,8 +22,8 @@ Clone the git repo and execute install dependencies from npm to get ready:
 ```sh
 git clone https://github.com/acikkaynak/acikkaynak-website.git
 cd acikkaynak-website
-npm install
-npm run dev
+yarn install
+yarn dev
 ```
 
 ## NPM Tasks
@@ -38,6 +38,7 @@ Use `npm run <task>` command in project folder to execute tasks defined in `pack
 | `dev`                    | Enables live development environment powered by hot module reloading                   |
 | `lint`                   | Executes linter to check codebase against linting errors                               |
 | `test`                   | Runs tests to check codebase against unit testing scenerios                            |
+| `test:coverage`          | Runs tests with calculating coverage stats                                             |
 | `containerize`           | Creates containerization files and gives instructions for docker                       |
 
 

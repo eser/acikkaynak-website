@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
+
 import Layout from './layouts/default/layout';
 import News from './pages/news/index';
 import NewsAdd from './pages/news/add';
