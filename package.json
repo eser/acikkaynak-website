@@ -40,7 +40,7 @@
     "containerize": "darty containerize"
   },
   "dependencies": {
-    "darty": "^0.51.8"
+    "darty": "^0.51.9"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",

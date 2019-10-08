@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import React from 'react';
 
 import * as Enzyme from 'enzyme';
@@ -16,7 +13,7 @@ describe('Layout', () => {
     });
 
     it('should render', () => {
-        Enzyme.mount(<Home />);
+        Enzyme.shallow(<Home />);
     });
 
     it('should be properly rendered', () => {
