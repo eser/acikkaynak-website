@@ -87,8 +87,8 @@ It is publicly open for any contribution. Bugfixes, new features and extra modul
 * To report a bug: If something does not work, please report it using [GitHub Issues](https://github.com/acikkaynak/acikkaynak-website/issues).
 
 
-[build-image]: https://img.shields.io/travis/acikkaynak/acikkaynak-website/master.svg?style=flat-square
-[build-url]: https://travis-ci.org/acikkaynak/acikkaynak-website
+[build-image]: https://github.com/acikkaynak/acikkaynak-website/workflows/CI/badge.svg
+[build-url]: https://github.com/acikkaynak/acikkaynak-website/actions?workflow=CI
 [dep-image]: https://img.shields.io/david/acikkaynak/acikkaynak-website.svg?style=flat-square
 [dep-url]: https://github.com/acikkaynak/acikkaynak-website
 [coverage-image]: https://img.shields.io/codecov/c/gh/acikkaynak/acikkaynak-website/master.svg?style=flat-square
