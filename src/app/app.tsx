@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 
 import Layout from './layouts/default/layout';
+import Home from './pages/home/index';
 import News from './pages/news/index';
 import NewsAdd from './pages/news/add';
 import Learn from './pages/learn/index';
@@ -20,6 +21,9 @@ import NotFound from './pages/notFound/index';
 function App() {
     return (
         <Switch>
+            {/* home */}
+            <Route path="/" exact={true} strict={true} render={() => <Layout><Home /></Layout>} />
+
             {/* news */}
             <Route path="/news/add/" exact={false} strict={true} render={() => <Layout><NewsAdd /></Layout>} />
             <Route path="/news/detail/:slug" exact={false} strict={true} render={(props) => <Layout><News {...props.match.params} /></Layout>} />
@@ -27,7 +31,6 @@ function App() {
             <Route path="/news/tags/:tag/" exact={false} strict={true} render={(props) => <Layout><News {...props.match.params} /></Layout>} />
             <Route path="/news/:offset" exact={false} strict={true} render={(props) => <Layout><News {...props.match.params} /></Layout>} />
             <Route path="/news/" exact={true} strict={true} render={() => <Layout><News /></Layout>} />
-            <Route path="/" exact={true} strict={true} render={() => <Layout><News /></Layout>} />
 
             {/* learn */}
             <Route path="/learn/*" exact={false} strict={true} render={(props) => <Layout><Learn contentPath={props.match.params[0]} /></Layout>} />

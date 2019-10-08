@@ -18,7 +18,8 @@ function DesktopContainer(props) {
                 <Segment inverted textAlign="center" vertical className={layoutStyles.header}>
                     <Menu fixed={fixed ? 'top' : null} inverted={!fixed} pointing={!fixed} secondary={!fixed} size="large">
                         <Container>
-                            <Menu.Item as={NavLink} to="/" exact>Haberler</Menu.Item>
+                            <Menu.Item as={NavLink} to="/" exact>/</Menu.Item>
+                            <Menu.Item as={NavLink} to="/news/">Haberler</Menu.Item>
                             <Menu.Item as={NavLink} to="/learn/">Eğitim</Menu.Item>
                             <Menu.Item as={NavLink} to="/projects/">Projeler</Menu.Item>
                             <Menu.Item as={NavLink} to="/organizations/">Organizasyonlar</Menu.Item>
