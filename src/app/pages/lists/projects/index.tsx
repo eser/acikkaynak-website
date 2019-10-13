@@ -31,7 +31,10 @@ function Projects() {
 
     return (
         <Container className="content" textAlign="justified">
-            <Header as="h1">Projeler</Header>
+            <Header as="h1" icon>
+                <Icon name="clipboard list" circular />
+                <Header.Content>Projeler</Header.Content>
+            </Header>
 
             {projects && (
                 <View
