@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const bulmaStyles = {};
 
@@ -8,7 +8,8 @@ function Stats() {
             <h1 className={bulmaStyles.title}>İstatistikler</h1>
 
             <p>
-                Bu sayfa yapım aşamasında.</p>
+                Bu sayfa yapım aşamasında.
+            </p>
         </>
     );
 }

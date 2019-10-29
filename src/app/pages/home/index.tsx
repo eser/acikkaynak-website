@@ -83,7 +83,9 @@ function Home(props) {
                             </Header>
                             <p style={{ fontSize: '1.33em' }}>
                                 <Image avatar src={NanImage} />
-                                <b>Nan</b> Chief Fun Officer Acme Toys
+                                <b>Nan</b>
+                                {' '}
+Chief Fun Officer Acme Toys
                             </p>
                         </Grid.Column>
                     </Grid.Row>

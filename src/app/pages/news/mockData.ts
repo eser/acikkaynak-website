@@ -4,7 +4,7 @@ const mockData = [
         slug: 'thy-o-ulkeye-karsilikli-sefer',
         title: 'THY: O ülkeye karşılıklı seferler iptal edildi!',
         content: 'Türk Hava Yolları\'ndan yapılan açıklamada şu ifadeler kullanıldı: Sudan\'da yaşanan askeri darbenin ardından hava sahasının kapatılması sonucu başkent Hartum\'a planlanan karşılıklı seferler iptal edildi',
-        tags: [ 'THY', 'Turk Hava Yolları' ]
+        tags: [ 'THY', 'Turk Hava Yolları' ],
     },
     {
         id: '2',
@@ -33,7 +33,7 @@ const mockData = [
         title: 'haber II',
         content: 'Spor Toto Süper Lig\'in 28. haftasında 14 Nisan Pazar günü Fenerbahçe\'ye konuk olacak Galatasaray\'da son 7 kulüp başkanı, Kadıköy\'de galibiyet sevinci yaşamadı.',
         tags: [ 'BJK' ],
-    }
+    },
 ];
 
 export {

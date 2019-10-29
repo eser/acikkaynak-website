@@ -3,14 +3,14 @@ import { NavLink, Link } from 'react-router-dom';
 
 import { Header } from 'semantic-ui-react';
 
-import customNewsStyle from './style.scss';
+import customNewsStyle from './style.less';
 
 function NewsListView(props) {
     const [ newsPerPage, setNewsPerPage ] = useState(2);
 
     const tags = props.news.reduce(
-        (acc, cur) => [...acc, ...cur.tags.filter(x => !acc.includes(x)) ],
-        []
+        (acc, cur) => [ ...acc, ...cur.tags.filter(x => !acc.includes(x)) ],
+        [],
     );
 
     let news;
@@ -21,7 +21,7 @@ function NewsListView(props) {
         news = props.news.filter(item => item.tags.includes(props.tag));
     }
     else {
-        baseUrl = `/news/`;
+        baseUrl = '/news/';
         news = props.news;
     }
 
@@ -44,16 +44,14 @@ function NewsListView(props) {
 
             <ul className={customNewsStyle.tagBox}>
                 {JSON.stringify(props.tag)}
-                {tags.map((tagItem, number) => {
-                    return (
-                        <Link key={number} to={`/news/tags/${encodeURIComponent(tagItem)}/`}>
-                            <li className={customNewsStyle.tag}>
-                                {tagItem}
-                            </li>
-                        </Link>
-                    );
-                })}
-                <NavLink key="0" to={`/news/`}>
+                {tags.map((tagItem, number) => (
+                    <Link key={number} to={`/news/tags/${encodeURIComponent(tagItem)}/`}>
+                        <li className={customNewsStyle.tag}>
+                            {tagItem}
+                        </li>
+                    </Link>
+                ))}
+                <NavLink key="0" to="/news/">
                     <li className={customNewsStyle.tag}>
                         X
                     </li>
@@ -61,22 +59,22 @@ function NewsListView(props) {
             </ul>
 
             <ul className={customNewsStyle.newsList}>
-                {news.map((newsItem, number) => {
-                    return (
-                        <Link key={number} to={`/news/detail/${encodeURIComponent(newsItem.slug)}`}>
-                            <li className={customNewsStyle.new}>{newsItem.title}</li>
-                        </Link>
-                    );
-                })}
+                {news.map((newsItem, number) => (
+                    <Link key={number} to={`/news/detail/${encodeURIComponent(newsItem.slug)}`}>
+                        <li className={customNewsStyle.new}>{newsItem.title}</li>
+                    </Link>
+                ))}
             </ul>
 
             <div className={customNewsStyle.bottomLinks}>
-                <Link to={'/news/add/'}>
+                <Link to="/news/add/">
                     Haber Ekle
                 </Link>
-                {(lastItemOfNews !== lastItemOfPage) && <Link to={`${baseUrl}${lastItemOfPage !== undefined ? lastItemOfPage.id : ''}`}>
+                {(lastItemOfNews !== lastItemOfPage) && (
+                <Link to={`${baseUrl}${lastItemOfPage !== undefined ? lastItemOfPage.id : ''}`}>
                     Sonraki Sayfa
-                </Link>}
+                </Link>
+                )}
                 {(lastItemOfNews === lastItemOfPage) && <a>Sonraki Sayfa</a>}
             </div>
         </>

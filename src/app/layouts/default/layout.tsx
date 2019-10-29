@@ -4,8 +4,7 @@ import { Container, Grid, Header, List, Segment } from 'semantic-ui-react';
 
 import ResponsiveContainer from './responsiveContainer';
 
-import 'semantic-ui-css/semantic.css';
-import layoutStyles from './assets/styles.scss';
+import layoutStyles from './assets/styles.less';
 
 function Layout(props) {
     // the JSX syntax is quite intuitive but check out
@@ -43,8 +42,13 @@ function Layout(props) {
                                     Darty React Hooks App
                                 </Header>
                                 <p>
-                                    Darty React Hooks App is a front-end development stack for starting with a structured, scaleable and adaptable basecode.
-                                    Visit <a href="https://github.com/eserozvataf/darty-react-hooks-app">GitHub page</a> for details. Apache License, Version 2.0
+                                    Darty React Hooks App is a front-end development stack for
+                                    starting with a structured, scaleable and adaptable
+                                    basecode. Visit
+                                    {' '}
+                                    <a href="https://github.com/eserozvataf/darty-react-hooks-app">GitHub page</a>
+                                    {' '}
+                                    for details. Apache License, Version 2.0
                                 </p>
                             </Grid.Column>
                         </Grid.Row>

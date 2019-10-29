@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import customEventsStyle from './style.scss';
 
 const bulmaStyles = {};
 
@@ -18,13 +17,16 @@ function EventsDetailView(props) {
                 <p>{props.content.content}</p>
                 <p>Kategori</p>
                 <ul>
-                    <li>{props.content.category} </li>
+                    <li>
+                        {props.content.category}
+                        {' '}
+                    </li>
                 </ul>
             </div>
-            <NavLink key="0" to={`/news/`} onClick={goBackButton}>
+            <NavLink key="0" to="/news/" onClick={goBackButton}>
                 <p>
                     Geri Dön
-                    </p>
+                </p>
             </NavLink>
         </>
     );

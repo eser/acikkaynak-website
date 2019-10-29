@@ -7,13 +7,17 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import getWidth from './getWidth';
 
-import layoutStyles from './assets/styles.scss';
+import layoutStyles from './assets/styles.less';
 
 function MobileContainer(props) {
     const [ sidebarOpened, setSidebarOpened ] = useState(false);
 
     return (
-        <Responsive as={Sidebar.Pushable} getWidth={getWidth} maxWidth={Responsive.onlyMobile.maxWidth}>
+        <Responsive
+            as={Sidebar.Pushable}
+            getWidth={getWidth}
+            maxWidth={Responsive.onlyMobile.maxWidth}
+        >
             <Sidebar as={Menu} animation="push" inverted onHide={() => setSidebarOpened(false)} vertical visible={sidebarOpened}>
                 <Menu.Item as={NavLink} to="/" exact>/</Menu.Item>
                 <Menu.Item as={NavLink} to="/news/">Haberler</Menu.Item>

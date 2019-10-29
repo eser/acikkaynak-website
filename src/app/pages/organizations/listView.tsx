@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import customOrgsStyle from './style.scss';
+import customOrgsStyle from './style.less';
 
 const bulmaStyles = {};
 
 function OrgsListView(props) {
-    let orgs = props.orgs;
+    const { orgs } = props;
 
-    //GET Categpries from list of organizations
+    // GET Categpries from list of organizations
     const categories = props.orgs
         .map(e => e.category)
         .filter((e, i, a) => a.indexOf(e) === i);
@@ -28,28 +28,33 @@ function OrgsListView(props) {
                 <div className={bulmaStyles.levelRight}>
                     <div className={`${bulmaStyles.levelItem}`}>
                         <div className={`${bulmaStyles.field} ${bulmaStyles.hasAddons} ${customOrgsStyle.search}`}>
-                                <input className={bulmaStyles.input} onChange={props.handleSearch} value={props.searchInput} type="text" placeholder="Organizasyon bul"/>
+                            <input className={bulmaStyles.input} onChange={props.handleSearch} value={props.searchInput} type="text" placeholder="Organizasyon bul" />
                         </div>
                     </div>
 
-                    <p className={bulmaStyles.levelItem}><Link to={'/organizations/add/'} className={`${bulmaStyles.button} ${bulmaStyles.isSuccess}`}>Organizasyon Ekle</Link></p>
+                    <p className={bulmaStyles.levelItem}><Link to="/organizations/add/" className={`${bulmaStyles.button} ${bulmaStyles.isSuccess}`}>Organizasyon Ekle</Link></p>
                 </div>
             </nav>
             <ul>
-                {categories.map((category, number) =>
-                        <li key={number}>{category}
-                            <ul>
-                                {orgs.filter((x) => x.category === category).map((orgItem, number) =>
-                                        <div key={number}>
-                                            <Link key={number} to={`/organizations/detail/${encodeURIComponent(orgItem.slug)}/`}>
-                                                <li key={number}>{orgItem.title}->{orgItem.content}</li>
-                                            </Link>
-                                            <Link key={number + 1} to={`/organizations/edit/${encodeURIComponent(orgItem.slug)}/editOrg`}>Etkinlik Düzenle</Link>
-                                        </div>
-                                )}
-                            </ul>
-                        </li>
-                )}
+                {categories.map((category, number) => (
+                    <li key={number}>
+                        {category}
+                        <ul>
+                            {orgs.filter(x => x.category === category).map((orgItem, number) => (
+                                <div key={number}>
+                                    <Link key={number} to={`/organizations/detail/${encodeURIComponent(orgItem.slug)}/`}>
+                                        <li key={number}>
+                                            {orgItem.title}
+->
+                                            {orgItem.content}
+                                        </li>
+                                    </Link>
+                                    <Link key={number + 1} to={`/organizations/edit/${encodeURIComponent(orgItem.slug)}/editOrg`}>Etkinlik Düzenle</Link>
+                                </div>
+                            ))}
+                        </ul>
+                    </li>
+                ))}
 
             </ul>
         </>

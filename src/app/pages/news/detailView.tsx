@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
-import customNewsStyle from './style.scss';
+
+import customNewsStyle from './style.less';
 
 const bulmaStyles = {};
 
@@ -22,7 +23,7 @@ function NewsDetailView(props) {
             </div>
 
             <ul className={customNewsStyle.tagBox}>
-                <NavLink key="0" to={`/news/`} onClick={goBackButton}>
+                <NavLink key="0" to="/news/" onClick={goBackButton}>
                     <li className={customNewsStyle.tag}>
                         Geri Dön
                     </li>

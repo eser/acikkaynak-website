@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NewsListView from './listView';
 import NewsDetailView from './detailView';
-import NotFound from '../notFound/'
+import NotFound from '../notFound';
 import mockData from './mockData';
 
 function News(props) {
@@ -25,7 +25,7 @@ function News(props) {
     return (
         <NewsListView news={news} {...props} />
     );
-};
+}
 
 export {
     News as default,

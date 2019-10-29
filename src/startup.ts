@@ -19,10 +19,11 @@ class Startup {
         };
     }
 
+    // eslint-disable-next-line class-methods-use-this
     getRoot(): JSX.Element {
         return React.createElement(
             App,
-            {}
+            {},
         );
     }
 
@@ -34,7 +35,7 @@ class Startup {
             {
                 history: this.vars.history,
             },
-            root
+            root,
         );
 
         if (isUpdate) {
@@ -56,7 +57,7 @@ class Startup {
                 location: url,
                 context: context,
             },
-            root
+            root,
         );
 
         const html = ReactDOMServer.renderToString(rootWithRouter);

@@ -7,14 +7,18 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import getWidth from './getWidth';
 
-import layoutStyles from './assets/styles.scss';
+import layoutStyles from './assets/styles.less';
 
 function DesktopContainer(props) {
     const [ fixed, setFixed ] = useState(false);
 
     return (
         <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
-            <Visibility once={false} onBottomPassed={() => setFixed(true)} onBottomPassedReverse={() => setFixed(false)}>
+            <Visibility
+                once={false}
+                onBottomPassed={() => setFixed(true)}
+                onBottomPassedReverse={() => setFixed(false)}
+            >
                 <Segment inverted textAlign="center" vertical className={layoutStyles.header}>
                     <Menu fixed={fixed ? 'top' : null} inverted={!fixed} pointing={!fixed} secondary={!fixed} size="large">
                         <Container>

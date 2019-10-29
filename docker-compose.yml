@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  app:
+    container_name: darty-app
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"

@@ -16,7 +16,7 @@ function Learn(props: LearnProps) {
         () => {
             setContent(`Talep edilen içerik yolu: /${props.contentPath}`);
         },
-        [ props.contentPath ]
+        [ props.contentPath ],
     );
 
     return (
@@ -24,7 +24,8 @@ function Learn(props: LearnProps) {
             <h1 className={bulmaStyles.title}>Eğitim</h1>
 
             <p>
-                Bu sayfa yapım aşamasında.<br />
+                Bu sayfa yapım aşamasında.
+                <br />
                 <br />
                 {content}
             </p>
