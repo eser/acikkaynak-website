@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import { Container, Grid, Header, List, Segment } from 'semantic-ui-react';
 
@@ -11,21 +12,21 @@ function Footer() {
                 <Grid divided inverted stackable>
                     <Grid.Row>
                         <Grid.Column width={3}>
-                            <Header inverted as="h4" content="About" />
+                            <Header inverted as="h4" content="Bölümler" />
                             <List link inverted>
-                                <List.Item as="a">Sitemap</List.Item>
-                                <List.Item as="a">Contact Us</List.Item>
-                                <List.Item as="a">Religious Ceremonies</List.Item>
-                                <List.Item as="a">Gazebo Plans</List.Item>
+                                <List.Item as={NavLink} to="/" exact>Ana Sayfa</List.Item>
+                                <List.Item as={NavLink} to="/news/">Haberler</List.Item>
+                                <List.Item as={NavLink} to="/learn/">Eğitim</List.Item>
+                                <List.Item as={NavLink} to="/stats/">İstatistikler</List.Item>
+                                <List.Item as={NavLink} to="/about/">Hakkımızda</List.Item>
                             </List>
                         </Grid.Column>
                         <Grid.Column width={3}>
-                            <Header inverted as="h4" content="Services" />
+                            <Header inverted as="h4" content="Listeler" />
                             <List link inverted>
-                                <List.Item as="a">Banana Pre-Order</List.Item>
-                                <List.Item as="a">DNA FAQ</List.Item>
-                                <List.Item as="a">How To Access</List.Item>
-                                <List.Item as="a">Favorite X-Men</List.Item>
+                                <List.Item as={NavLink} to="/lists/projects/">Projeler</List.Item>
+                                <List.Item as={NavLink} to="/lists/organizations/">Organizasyonlar</List.Item>
+                                <List.Item as={NavLink} to="/lists/sponsors/">Sponsorlar</List.Item>
                             </List>
                         </Grid.Column>
                         <Grid.Column width={7}>
@@ -33,13 +34,22 @@ function Footer() {
                                 { '{ açık kaynak }' }
                             </Header>
                             <p>
-                                Darty React Hooks App is a front-end development stack for
-                                starting with a structured, scaleable and adaptable
-                                basecode. Visit
+                                2016'dan bu yana açık kaynak farkındalığı oluşturuyor, projelerimizi
+                                listeliyor ve yardımlaşıyoruz.
                                 {' '}
-                                <a href="https://github.com/eserozvataf/darty-react-hooks-app">GitHub page</a>
+                                <a href="https://github.com/acikkaynak">GitHub</a>
                                 {' '}
-                                for details. Apache License, Version 2.0
+                                üzerinden de organizasyonumuza ulaşabilirsiniz.
+                            </p>
+                            <p>
+                                Site içerisinde gördüğünüz içerikler
+                                { ' ' }
+                                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
+                                { ' ' }
+                                ile lisanslanmıştır.
+                            </p>
+                            <p>
+                                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
                             </p>
                         </Grid.Column>
                     </Grid.Row>

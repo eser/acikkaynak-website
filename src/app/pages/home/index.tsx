@@ -34,7 +34,7 @@ function Home() {
                         yardımlaşıyoruz
                     </Header>
                     <Button primary size="huge">
-                        Get Started
+                        Manifesto ve Bilgilendirme
                         <Icon name="right arrow" />
                     </Button>
                 </Container>
