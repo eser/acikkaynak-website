@@ -20,7 +20,7 @@ function OrganizationsAdd() {
 
     return (
         <>
-            <div className={customAddOrgsStyle.container}>
+            <div className={customAddOrgsStyle.organizationsContainer}>
                 <NavLink key="0" to="/events/" onClick={goBackButton}>
                     Geri Dön
                 </NavLink>

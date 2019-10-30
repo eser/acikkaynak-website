@@ -20,7 +20,7 @@ function EventsAdd() {
 
     return (
         <>
-            <div className={customAddEventsStyle.container}>
+            <div className={customAddEventsStyle.eventsContainer}>
                 <NavLink key="0" to="/events/" onClick={goBackButton}>
                     Geri Dön
                 </NavLink>

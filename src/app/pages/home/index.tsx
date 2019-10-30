@@ -12,7 +12,7 @@ function Home() {
                 <Container text>
                     <Header
                         as="h1"
-                        content="Darty React App"
+                        content="{ açık kaynak }"
                         inverted
                         style={{
                             fontSize: '3em',
@@ -22,14 +22,17 @@ function Home() {
                     />
                     <Header
                         as="h2"
-                        content="Do whatever you want when you want to."
                         inverted
                         style={{
                             fontSize: '1.5em',
                             fontWeight: 'normal',
                             marginTop: '0.2em',
                         }}
-                    />
+                    >
+                        2016'dan bu yana açık kaynak farkındalığı
+                        oluşturuyor, projelerimizi listeliyor ve
+                        yardımlaşıyoruz
+                    </Header>
                     <Button primary size="huge">
                         Get Started
                         <Icon name="right arrow" />

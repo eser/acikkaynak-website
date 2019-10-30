@@ -1,3 +1,7 @@
 /*******************************
      User Global Variables
 *******************************/
+
+@fontName: 'Arbutus Slab';
+
+@primaryColor: #2C2D2E;

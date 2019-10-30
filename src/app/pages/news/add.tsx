@@ -20,7 +20,7 @@ function NewsAdd() {
 
     return (
         <>
-            <div className={customAddNewsStyle.container}>
+            <div className={customAddNewsStyle.newsContainer}>
                 <NavLink key="0" to="/news/" onClick={goBackButton}>
                         Geri Dön
                 </NavLink>
