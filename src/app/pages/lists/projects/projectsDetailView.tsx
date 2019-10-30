@@ -31,7 +31,7 @@ function ProjectsDetailView(props) {
                 </p>
                 <p>{props.content.category}</p>
             </div>
-            <NavLink key="0" to="/projects/" onClick={goBackButton}>
+            <NavLink key="0" to="/lists/projects/" onClick={goBackButton}>
                 <p>
                     Geri Dön
                 </p>

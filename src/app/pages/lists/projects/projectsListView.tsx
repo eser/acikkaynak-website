@@ -27,7 +27,7 @@ function ProjectsListView(props) {
 
                                         return (
                                             <div key={`div-${projectSlug}`}>
-                                                <Link key={`link-${projectSlug}`} to={`/projects/detail/${projectSlug}/`}>
+                                                <Link key={`link-${projectSlug}`} to={`/lists/projects/detail/${projectSlug}/`}>
                                                     <li key={`link-list-${projectSlug}`}>
                                                         {projectItem.title}
                                                         {' '}

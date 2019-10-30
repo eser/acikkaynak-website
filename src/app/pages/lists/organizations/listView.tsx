@@ -30,7 +30,7 @@ function OrgsListView(props) {
                         </div>
                     </div>
 
-                    <p className={bulmaStyles.levelItem}><Link to="/organizations/add/" className={`${bulmaStyles.button} ${bulmaStyles.isSuccess}`}>Organizasyon Ekle</Link></p>
+                    <p className={bulmaStyles.levelItem}><Link to="/lists/organizations/add/" className={`${bulmaStyles.button} ${bulmaStyles.isSuccess}`}>Organizasyon Ekle</Link></p>
                 </div>
             </nav>
             <ul>
@@ -43,14 +43,14 @@ function OrgsListView(props) {
 
                                 return (
                                     <div key={`div-${slug}`}>
-                                        <Link key={`link-${slug}`} to={`/organizations/detail/${slug}/`}>
+                                        <Link key={`link-${slug}`} to={`/lists/organizations/detail/${slug}/`}>
                                             <li key={`list-item-${slug}`}>
                                                 {orgItem.title}
 
                                                 {orgItem.content}
                                             </li>
                                         </Link>
-                                        <Link key={`list-link-${slug}`} to={`/organizations/edit/${encodeURIComponent(orgItem.slug)}/editOrg`}>Etkinlik Düzenle</Link>
+                                        <Link key={`list-link-${slug}`} to={`/lists/organizations/edit/${encodeURIComponent(orgItem.slug)}/editOrg`}>Etkinlik Düzenle</Link>
                                     </div>
                                 );
                             })}

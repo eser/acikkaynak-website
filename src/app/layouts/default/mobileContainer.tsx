@@ -22,9 +22,14 @@ function MobileContainer(props) {
                 <Menu.Item as={NavLink} to="/" exact>/</Menu.Item>
                 <Menu.Item as={NavLink} to="/news/">Haberler</Menu.Item>
                 <Menu.Item as={NavLink} to="/learn/">Eğitim</Menu.Item>
-                <Menu.Item as={NavLink} to="/projects/">Projeler</Menu.Item>
-                <Menu.Item as={NavLink} to="/organizations/">Organizasyonlar</Menu.Item>
-                <Menu.Item as={NavLink} to="/sponsors/">Sponsorlar</Menu.Item>
+                <Menu.Item>
+                    <Menu.Header>Listeler</Menu.Header>
+                    <Menu.Menu>
+                        <Menu.Item as={NavLink} to="/lists/projects/">Projeler</Menu.Item>
+                        <Menu.Item as={NavLink} to="/lists/organizations/">Organizasyonlar</Menu.Item>
+                        <Menu.Item as={NavLink} to="/lists/sponsors/">Sponsorlar</Menu.Item>
+                    </Menu.Menu>
+                </Menu.Item>
                 <Menu.Item as={NavLink} to="/stats/">İstatistikler</Menu.Item>
                 <Menu.Item as={NavLink} to="/about/">Hakkımızda</Menu.Item>
             </Sidebar>

@@ -17,7 +17,7 @@ function OrganizationsEdit(props) {
     return (
         <>
             <div className="container">
-                <NavLink key="0" to="/organizations/" onClick={goBackButton}>
+                <NavLink key="0" to="/lists/organizations/" onClick={goBackButton}>
                     Geri Dön
                 </NavLink>
                 <h5>

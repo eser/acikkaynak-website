@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { Container, Button, Responsive, Visibility, Segment, Menu } from 'semantic-ui-react';
+import { Container, Button, Responsive, Visibility, Segment, Menu, Dropdown } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -25,9 +25,16 @@ function DesktopContainer(props) {
                             <Menu.Item as={NavLink} to="/" exact>/</Menu.Item>
                             <Menu.Item as={NavLink} to="/news/">Haberler</Menu.Item>
                             <Menu.Item as={NavLink} to="/learn/">Eğitim</Menu.Item>
-                            <Menu.Item as={NavLink} to="/projects/">Projeler</Menu.Item>
-                            <Menu.Item as={NavLink} to="/organizations/">Organizasyonlar</Menu.Item>
-                            <Menu.Item as={NavLink} to="/sponsors/">Sponsorlar</Menu.Item>
+
+                            <Dropdown simple item text="Listeler">
+                                <Dropdown.Menu>
+                                    <Dropdown.Item as={NavLink} to="/lists/projects/">Projeler</Dropdown.Item>
+                                    <Dropdown.Item as={NavLink} to="/lists/organizations/">Organizasyonlar</Dropdown.Item>
+                                    <Dropdown.Divider />
+                                    <Dropdown.Item as={NavLink} to="/lists/sponsors/">Sponsorlar</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+
                             <Menu.Item as={NavLink} to="/stats/">İstatistikler</Menu.Item>
                             <Menu.Item as={NavLink} to="/about/">Hakkımızda</Menu.Item>
 

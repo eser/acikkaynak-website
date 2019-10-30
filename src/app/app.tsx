@@ -6,12 +6,13 @@ import Home from './pages/home/index';
 import News from './pages/news/index';
 import NewsAdd from './pages/news/add';
 import Learn from './pages/learn/index';
-import Projects from './pages/projects/index';
-import Organizations from './pages/organizations/index';
-import OrganizationsAdd from './pages/organizations/add';
+import Lists from './pages/lists/index';
+import ListsProjects from './pages/lists/projects/index';
+import ListsOrganizations from './pages/lists/organizations/index';
+import ListsOrganizationsAdd from './pages/lists/organizations/add';
+import ListsSponsors from './pages/lists/sponsors/index';
 import Events from './pages/events/index';
 import EventsAdd from './pages/events/add';
-import Sponsors from './pages/sponsors/index';
 import Stats from './pages/stats/index';
 import About from './pages/about/index';
 import NotFound from './pages/notFound/index';
@@ -33,24 +34,27 @@ function App() {
             {/* learn */}
             <Route path="/learn/*" exact={false} strict={true} render={props => <Layout><Learn contentPath={props.match.params[0]} /></Layout>} />
 
-            {/* projects */}
-            <Route path="/projects/detail/:slug" exact={false} strict={true} render={props => <Layout><Projects {...props.match.params} /></Layout>} />
-            <Route path="/projects/" exact={true} strict={true} render={() => <Layout><Projects /></Layout>} />
+            {/* lists/projects */}
+            <Route path="/lists/projects/detail/:slug" exact={false} strict={true} render={props => <Layout><ListsProjects {...props.match.params} /></Layout>} />
+            <Route path="/lists/projects/" exact={true} strict={true} render={() => <Layout><ListsProjects /></Layout>} />
 
-            {/* organizations */}
-            <Route path="/organizations/add/" exact={false} strict={true} render={() => <Layout><OrganizationsAdd /></Layout>} />
-            <Route path="/organizations/detail/:slug" exact={false} strict={true} render={props => <Layout><Organizations {...props.match.params} /></Layout>} />
-            <Route path="/organizations/edit/:slug/:type" exact={false} strict={true} render={props => <Layout><Organizations {...props.match.params} /></Layout>} />
-            <Route path="/organizations/" exact={true} strict={true} render={() => <Layout><Organizations /></Layout>} />
+            {/* lists/organizations */}
+            <Route path="/lists/organizations/add/" exact={false} strict={true} render={() => <Layout><ListsOrganizationsAdd /></Layout>} />
+            <Route path="/lists/organizations/detail/:slug" exact={false} strict={true} render={props => <Layout><ListsOrganizations {...props.match.params} /></Layout>} />
+            <Route path="/lists/organizations/edit/:slug/:type" exact={false} strict={true} render={props => <Layout><ListsOrganizations {...props.match.params} /></Layout>} />
+            <Route path="/lists/organizations/" exact={true} strict={true} render={() => <Layout><ListsOrganizations /></Layout>} />
+
+            {/* lists/sponsors */}
+            <Route path="/lists/sponsors/" exact={true} strict={true} render={() => <Layout><ListsSponsors /></Layout>} />
+
+            {/* lists */}
+            <Route path="/lists/" exact={true} strict={true} render={() => <Layout><Lists /></Layout>} />
 
             {/* events */}
             <Route path="/events/add/" exact={false} strict={true} render={() => <Layout><EventsAdd /></Layout>} />
             <Route path="/events/detail/:slug" exact={false} strict={true} render={props => <Layout><Events {...props.match.params} /></Layout>} />
             <Route path="/events/edit/:slug/:type" exact={false} strict={true} render={props => <Layout><Events {...props.match.params} /></Layout>} />
             <Route path="/events/" exact={true} strict={true} render={() => <Layout><Events /></Layout>} />
-
-            {/* sponsors */}
-            <Route path="/sponsors/" exact={true} strict={true} render={() => <Layout><Sponsors /></Layout>} />
 
             {/* stats */}
             <Route path="/stats/" exact={true} strict={true} render={() => <Layout><Stats /></Layout>} />
