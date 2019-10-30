@@ -7,6 +7,7 @@ const bulmaStyles = {};
 
 function NewsDetailView(props) {
     function goBackButton(event) {
+        // eslint-disable-next-line no-restricted-globals
         history.back();
         event.preventDefault();
     }
@@ -19,7 +20,7 @@ function NewsDetailView(props) {
                 <p>{props.content.content}</p>
 
                 <p className={bulmaStyles.subtitle}>Etiketler:</p>
-                <p>{props.content.tags.map((item, i) => <li key={i}>{item}</li>)}</p>
+                <p>{props.content.tags.map(item => <li key={item.toLowerCase()}>{item}</li>)}</p>
             </div>
 
             <ul className={customNewsStyle.tagBox}>

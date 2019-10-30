@@ -6,7 +6,7 @@ import { Header } from 'semantic-ui-react';
 import customNewsStyle from './style.less';
 
 function NewsListView(props) {
-    const [ newsPerPage, setNewsPerPage ] = useState(2);
+    const [ newsPerPage ] = useState(2);
 
     const tags = props.news.reduce(
         (acc, cur) => [ ...acc, ...cur.tags.filter(x => !acc.includes(x)) ],
@@ -22,6 +22,7 @@ function NewsListView(props) {
     }
     else {
         baseUrl = '/news/';
+        // eslint-disable-next-line prefer-destructuring
         news = props.news;
     }
 
@@ -44,8 +45,8 @@ function NewsListView(props) {
 
             <ul className={customNewsStyle.tagBox}>
                 {JSON.stringify(props.tag)}
-                {tags.map((tagItem, number) => (
-                    <Link key={number} to={`/news/tags/${encodeURIComponent(tagItem)}/`}>
+                {tags.map(tagItem => (
+                    <Link key={tagItem.toLowerCase()} to={`/news/tags/${encodeURIComponent(tagItem)}/`}>
                         <li className={customNewsStyle.tag}>
                             {tagItem}
                         </li>
@@ -59,8 +60,8 @@ function NewsListView(props) {
             </ul>
 
             <ul className={customNewsStyle.newsList}>
-                {news.map((newsItem, number) => (
-                    <Link key={number} to={`/news/detail/${encodeURIComponent(newsItem.slug)}`}>
+                {news.map(newsItem => (
+                    <Link key={newsItem.slug.toLowerCase()} to={`/news/detail/${encodeURIComponent(newsItem.slug)}`}>
                         <li className={customNewsStyle.new}>{newsItem.title}</li>
                     </Link>
                 ))}
@@ -75,7 +76,7 @@ function NewsListView(props) {
                     Sonraki Sayfa
                 </Link>
                 )}
-                {(lastItemOfNews === lastItemOfPage) && <a>Sonraki Sayfa</a>}
+                {(lastItemOfNews === lastItemOfPage) && 'Sonraki Sayfa'}
             </div>
         </>
     );

@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const bulmaStyles = {};
 
 function EventsListView(props) {
-    const { events } = props;
-
     const categories = props.events
         .map(e => e.category)
         .filter((e, i, a) => a.indexOf(e) === i);
@@ -19,28 +17,33 @@ function EventsListView(props) {
             </Link>
 
             <ul>
-                {categories.map((category, number) => (
-                    <li key={number}>
+                {categories.map(category => (
+                    <li key={category.toLowerCase()}>
                         {category}
+
                         <ul>
+                            {props.events.filter(x => x.category === category)
+                                .map((eventItem) => {
+                                    const slug = encodeURIComponent(eventItem.slug);
 
-                            {events.filter(x => x.category === category).map((eventItem, number) => (
-                                <div key={number}>
-                                    <Link key={number} to={`/events/detail/${encodeURIComponent(eventItem.slug)}/`}>
-                                        <li key={number}>
-                                            {eventItem.title}
-->
-                                            {eventItem.content}
-                                        </li>
-                                    </Link>
-                                    <Link key={number + 1} to={`/events/edit/${encodeURIComponent(eventItem.slug)}/editEvent`}>Etkinlik Düzenle</Link>
-                                </div>
-                            ))}
+                                    return (
+                                        <div key={`div-${slug}`}>
+                                            <Link key={`view-link-${slug}`} to={`/events/detail/${slug}/`}>
+                                                <li key={`list-item-${slug}`}>
+                                                    {eventItem.title}
 
+                                                    {eventItem.content}
+                                                </li>
+                                            </Link>
+                                            <Link key={`edit-link-${slug}`} to={`/events/edit/${slug}/editEvent`}>
+                                                Etkinlik Düzenle
+                                            </Link>
+                                        </div>
+                                    );
+                                })}
                         </ul>
                     </li>
                 ))}
-
             </ul>
         </>
     );

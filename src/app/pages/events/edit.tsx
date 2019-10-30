@@ -6,9 +6,10 @@ import customAddEventsStyle from './add.less';
 function EventsEdit(props) {
     const [ eventsTitle, setEventsTitle ] = useState(props.content.title);
     const [ eventsContent, setEventsContent ] = useState(props.content.content);
-    const [ eventsCategory, setEventsCategory ] = useState(props.content.category == 'Meetup' ? 0 : 1);
+    const [ eventsCategory, setEventsCategory ] = useState(props.content.category === 'Meetup' ? 0 : 1);
 
     function goBackButton(event) {
+        // eslint-disable-next-line no-restricted-globals
         history.back();
         event.preventDefault();
     }
@@ -17,7 +18,7 @@ function EventsEdit(props) {
         <>
             <div className="container">
                 <NavLink key="0" to="/events/" onClick={goBackButton}>
-                Geri Dön
+                    Geri Dön
                 </NavLink>
                 <h5>
                     {props.content.title}
@@ -57,7 +58,7 @@ Etkinliğini Düzenle
                     </select>
                 </div>
                 <div className={customAddEventsStyle.button}>
-                    <button> Düzenlemeyi kaydet</button>
+                    <button type="submit">Düzenlemeyi kaydet</button>
                 </div>
                 <div>
                     {`'${eventsTitle}','${eventsContent}','${eventsCategory}'`}

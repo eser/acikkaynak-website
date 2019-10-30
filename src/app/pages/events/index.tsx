@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
+
 import EventsListView from './eventsListView';
 import EventsDetailView from './eventsDetailView';
 import EventsEdit from './edit';
 
-const bulmaStyles = {};
-
 function Events(props) {
-    const [ events, setEvents ] = useState([
+    const [ events ] = useState([
         {
             id: 1,
             slug: 'dev-izmir-ilk-bulusma',

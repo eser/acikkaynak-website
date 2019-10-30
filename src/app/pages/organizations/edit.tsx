@@ -9,6 +9,7 @@ function OrganizationsEdit(props) {
     const [ orgsCategory, setOrgsCategory ] = useState(props.content.category === 'Software' ? 0 : 1);
 
     function goBackButton(event) {
+        // eslint-disable-next-line no-restricted-globals
         history.back();
         event.preventDefault();
     }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import OrgsListView from './listView';
 import OrgDetailView from './detailView';
 import OrgEdit from './edit';
@@ -48,26 +49,33 @@ function Organizations(props) {
         event.persist();
         let searchValue = event.target.value;
 
-        setSearchInput(prevValue => event.target.value);
-        setOrgs((orgs) => {
+        setSearchInput(() => event.target.value);
+        setOrgs(() => {
             if (searchValue.trim().length === 0) {
                 return initialOrgs;
             }
 
             return (initialOrgs.filter((org) => {
-                const { slug, title, content, category, city, technologies, languages, hardwares } = org;
-
                 searchValue = asciify(searchValue).toLowerCase();
 
                 return (
-                    asciify(slug).toLowerCase().includes(searchValue) ||
-                        asciify(title).toLowerCase().includes(searchValue) ||
-                        asciify(content).toLowerCase().includes(searchValue) ||
-                        asciify(category).toLowerCase().includes(searchValue) ||
-                        asciify(city).toLowerCase().includes(searchValue) ||
-                        technologies.reduce((accumulator, currentValue) => (asciify(currentValue).toLowerCase().includes(searchValue) || accumulator), false) ||
-                        languages.reduce((accumulator, currentValue) => (asciify(currentValue).toLowerCase().includes(searchValue) || accumulator), false) ||
-                        hardwares.reduce((accumulator, currentValue) => (asciify(currentValue).toLowerCase().includes(searchValue) || accumulator), false)
+                    asciify(org.slug).toLowerCase().includes(searchValue) ||
+                        asciify(org.title).toLowerCase().includes(searchValue) ||
+                        asciify(org.content).toLowerCase().includes(searchValue) ||
+                        asciify(org.category).toLowerCase().includes(searchValue) ||
+                        asciify(org.city).toLowerCase().includes(searchValue) ||
+                        org.technologies.reduce(
+                            (acc, curr) => asciify(curr).toLowerCase().includes(searchValue) || acc,
+                            false,
+                        ) ||
+                        org.languages.reduce(
+                            (acc, curr) => asciify(curr).toLowerCase().includes(searchValue) || acc,
+                            false,
+                        ) ||
+                        org.hardwares.reduce(
+                            (acc, curr) => asciify(curr).toLowerCase().includes(searchValue) || acc,
+                            false,
+                        )
                 );
             }));
         });
@@ -90,7 +98,11 @@ function Organizations(props) {
     }
 
     return (
-        <OrgsListView orgs={orgs} searchInput={searchInput} handleSearch={handleSearchInputChange} />
+        <OrgsListView
+            orgs={orgs}
+            searchInput={searchInput}
+            handleSearch={handleSearchInputChange}
+        />
     );
 }
 

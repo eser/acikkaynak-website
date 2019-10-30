@@ -6,8 +6,6 @@ import customOrgsStyle from './style.less';
 const bulmaStyles = {};
 
 function OrgsListView(props) {
-    const { orgs } = props;
-
     // GET Categpries from list of organizations
     const categories = props.orgs
         .map(e => e.category)
@@ -36,22 +34,26 @@ function OrgsListView(props) {
                 </div>
             </nav>
             <ul>
-                {categories.map((category, number) => (
-                    <li key={number}>
+                {categories.map(category => (
+                    <li key={category.toLowerCase()}>
                         {category}
                         <ul>
-                            {orgs.filter(x => x.category === category).map((orgItem, number) => (
-                                <div key={number}>
-                                    <Link key={number} to={`/organizations/detail/${encodeURIComponent(orgItem.slug)}/`}>
-                                        <li key={number}>
-                                            {orgItem.title}
-->
-                                            {orgItem.content}
-                                        </li>
-                                    </Link>
-                                    <Link key={number + 1} to={`/organizations/edit/${encodeURIComponent(orgItem.slug)}/editOrg`}>Etkinlik Düzenle</Link>
-                                </div>
-                            ))}
+                            {props.orgs.filter(x => x.category === category).map((orgItem) => {
+                                const slug = encodeURIComponent(orgItem.slug);
+
+                                return (
+                                    <div key={`div-${slug}`}>
+                                        <Link key={`link-${slug}`} to={`/organizations/detail/${slug}/`}>
+                                            <li key={`list-item-${slug}`}>
+                                                {orgItem.title}
+
+                                                {orgItem.content}
+                                            </li>
+                                        </Link>
+                                        <Link key={`list-link-${slug}`} to={`/organizations/edit/${encodeURIComponent(orgItem.slug)}/editOrg`}>Etkinlik Düzenle</Link>
+                                    </div>
+                                );
+                            })}
                         </ul>
                     </li>
                 ))}

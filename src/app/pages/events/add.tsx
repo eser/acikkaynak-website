@@ -11,7 +11,9 @@ function EventsAdd() {
     function addEvents() {
         // TODO ADD EVENTS ACTION
     }
+
     function goBackButton(event) {
+        // eslint-disable-next-line no-restricted-globals
         history.back();
         event.preventDefault();
     }
@@ -20,7 +22,7 @@ function EventsAdd() {
         <>
             <div className={customAddEventsStyle.container}>
                 <NavLink key="0" to="/events/" onClick={goBackButton}>
-                        Geri Dön
+                    Geri Dön
                 </NavLink>
                 <div className={customAddEventsStyle.form}>
                     <h3>Etkinlik Ekle</h3>

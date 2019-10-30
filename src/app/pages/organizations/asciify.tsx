@@ -325,7 +325,16 @@ const charmap = {
     '>': 'greater',
 };
 
+function setCharAt(t, i, c) {
+    if (i > t.length - 1) {
+        return t;
+    }
+
+    return t.substr(0, i) + c + t.substr(i + 1);
+}
+
 module.exports = function (text) {
+    // eslint-disable-next-line no-plusplus
     for (let i = text.length - 1; i >= 0; i--) {
         const c = text[i];
 
@@ -336,11 +345,3 @@ module.exports = function (text) {
 
     return text;
 };
-
-function setCharAt(t, i, c) {
-    if (i > t.length - 1) {
-        return t;
-    }
-
-    return t.substr(0, i) + c + t.substr(i + 1);
-}

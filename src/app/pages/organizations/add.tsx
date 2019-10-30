@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import customAddOrgsStyle from './add.less';
 
-function OrganizationsAdd(props) {
+function OrganizationsAdd() {
     const [ orgsTitle, setorgsTitle ] = useState('Organizasyon Başlığı');
     const [ orgsContent, setorgsContent ] = useState('Organizasyon İçeriği');
     const [ orgsCategory, setorgsCategory ] = useState('1');
@@ -11,7 +11,9 @@ function OrganizationsAdd(props) {
     function addOrgs() {
         // TODO ADD EVENTS ACTION
     }
+
     function goBackButton(event) {
+        // eslint-disable-next-line no-restricted-globals
         history.back();
         event.preventDefault();
     }

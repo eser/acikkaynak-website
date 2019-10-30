@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+
 import ProjectsListView from './projectsListView';
 import ProjectsDetailView from './projectsDetailView';
 
 function Projects(props) {
-    const [ projects, setProjects ] = useState([
+    const [ projects ] = useState([
         {
             id: 1,
             slug: 'acik-kaynak-icerik',

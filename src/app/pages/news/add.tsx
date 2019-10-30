@@ -11,7 +11,9 @@ function NewsAdd() {
     function addNews() {
         // TODO Add new development
     }
+
     function goBackButton(event) {
+        // eslint-disable-next-line no-restricted-globals
         history.back();
         event.preventDefault();
     }
@@ -26,11 +28,21 @@ function NewsAdd() {
                     <h3>Haber Ekle</h3>
                     <div className={customAddNewsStyle.field}>
                         <p>Haber Başlığı</p>
-                        <textarea onChange={e => setNewsTitle(e.target.value)} className={customAddNewsStyle.newsTitle} cols={40} rows={3} />
+                        <textarea
+                            onChange={e => setNewsTitle(e.target.value)}
+                            className={customAddNewsStyle.newsTitle}
+                            cols={40}
+                            rows={3}
+                        />
                     </div>
                     <div className={customAddNewsStyle.field}>
                         <p>Haber İçeriği</p>
-                        <textarea onChange={e => setNewsContent(e.target.value)} className={customAddNewsStyle.newsContent} cols={40} rows={10} />
+                        <textarea
+                            onChange={e => setNewsContent(e.target.value)}
+                            className={customAddNewsStyle.newsContent}
+                            cols={40}
+                            rows={10}
+                        />
                     </div>
                     <div className={customAddNewsStyle.field}>
                         <p>Haber Etiketleri</p>
@@ -43,7 +55,7 @@ function NewsAdd() {
                     </div>
                 </div>
                 <div className={customAddNewsStyle.button}>
-                    <button onClick={addNews}> Ekle</button>
+                    <button type="submit" onClick={addNews}>Ekle</button>
                 </div>
                 <div>
                     {`'${newsTitle}','${newsContent}','${newsTags}'`}

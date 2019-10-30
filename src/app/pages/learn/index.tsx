@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import * as path from 'path-browser';
-import ReactMarkdown from 'react-markdown';
-
 const bulmaStyles = {};
 
 interface LearnProps {
