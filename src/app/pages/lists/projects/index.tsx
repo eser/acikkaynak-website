@@ -1,44 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 
-import ProjectsListView from './projectsListView';
-import ProjectsDetailView from './projectsDetailView';
+import { Container, Header } from 'semantic-ui-react';
 
-function Projects(props) {
-    const [ projects ] = useState([
-        {
-            id: 1,
-            slug: 'acik-kaynak-icerik',
-            title: 'Açık kaynak içerik projesi',
-            content: 'Açık kaynak içeriklerinin listelendiği proje',
-            category: 'Web-Onyuz',
-            stars: 55,
-            participation: false,
-            sponsor: true,
+import View from './view';
+
+const dataSourceUrl = 'https://raw.githubusercontent.com/acikkaynak/acikkaynak/master/projects.json';
+
+async function getProjectsFetch() {
+    const response = await fetch(dataSourceUrl);
+    const responseBody = await response.json();
+
+    return responseBody;
+}
+
+interface ProjectsProps {
+}
+
+function Projects(props: ProjectsProps) {
+    const [ projects, setProjects ] = useState(null);
+
+    useEffect(
+        () => {
+            async function projectsFetch() {
+                const projectsResponse = await getProjectsFetch();
+
+                setProjects(projectsResponse);
+            }
+
+            projectsFetch();
         },
-        {
-            id: 2,
-            slug: 'bibisim',
-            title: 'İzmir bisiklet projesi',
-            content: 'İzmir bisiklet durakları ve sürelerini gösteren proje',
-            category: 'Web-arkayuz',
-            stars: 15,
-            participation: false,
-            sponsor: true,
-        },
-    ]);
-
-    if (props.slug !== undefined) {
-        const currentProjectsItem = projects.find(x => x.slug === props.slug);
-
-        if (currentProjectsItem !== undefined) {
-            return (
-                <ProjectsDetailView content={currentProjectsItem} />
-            );
-        }
-    }
+        [],
+    );
 
     return (
-        <ProjectsListView projects={projects} {...props} />
+        <Container className="content" textAlign="justified">
+            <Header as="h1">Projeler</Header>
+
+            {projects && (
+                <View
+                    datasource={projects}
+                />
+            )}
+        </Container>
     );
 }
 

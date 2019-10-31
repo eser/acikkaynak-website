@@ -19,13 +19,13 @@ function getPathDirname(pathString: string): string {
     return pathString.substr(0, lastSlashIndex);
 }
 
-interface GuideProps {
+interface ViewProps {
     metadata: any;
     datasource: any;
     history: any;
 }
 
-function View(props: GuideProps) {
+function View(props: ViewProps) {
     function transformLinkUri(uri: string): string {
         if (isAbsolutePath(uri)) {
             return uri;
