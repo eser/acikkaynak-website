@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { Container, Header } from 'semantic-ui-react';
 
@@ -14,10 +13,7 @@ async function getProjectsFetch() {
     return responseBody;
 }
 
-interface ProjectsProps {
-}
-
-function Projects(props: ProjectsProps) {
+function Projects() {
     const [ projects, setProjects ] = useState(null);
 
     useEffect(

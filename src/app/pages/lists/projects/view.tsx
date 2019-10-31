@@ -24,8 +24,8 @@ function View(props: ViewProps) {
             </div>
 
             {Object.keys(props.datasource).map((category) => {
-                const categoryKey = `category.${encodeURIComponent(category)}`,
-                    categoryData = props.datasource[category];
+                const categoryKey = `category.${encodeURIComponent(category)}`;
+                const categoryData = props.datasource[category];
 
                 const categoryHtml = categoryData.map((project) => {
                     const projectKey = `project.${encodeURIComponent(project.name)}`;
@@ -34,7 +34,8 @@ function View(props: ViewProps) {
                         const pname = project.name.toLocaleLowerCase();
                         const pcontent = project.content.toLocaleLowerCase();
 
-                        if (pname.indexOf(currentFilter) === -1 && pcontent.indexOf(currentFilter) === -1) {
+                        if (pname.indexOf(currentFilter) === -1 &&
+                            pcontent.indexOf(currentFilter) === -1) {
                             return null;
                         }
                     }
