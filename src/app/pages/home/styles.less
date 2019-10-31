@@ -6,68 +6,113 @@
     padding: 4em 0em;
 
     h1 {
-        font-size: 4em;
+        font-size: 3.8em;
         font-weight: normal;
         margin-bottom: 0;
     }
 
     h2 {
-        font-size: 1.4em;
+        font-size: 1.3em;
         font-weight: normal;
-        margin-top: 0.2em;
+        margin: 1.4em auto 1.2em;
+        max-width: 30em;
+    }
+
+    .primary.button {
+        font-size: 1.3em;
     }
 }
 
-.ui.segment.info-segment, .ui.segment.final-segment {
+.ui.segment.info-segment {
     padding: 8em 0;
-
-    h3 {
-        font-size: 1.5em;
-    }
-
-    h4.with-div {
-        margin: 10em 0em 5em;
-    }
-
-    p {
-        font-size: 1.2em;
-    }
 }
 
-.ui.segment.div-segment {
+.ui.segment.pages-segment {
+    padding: 8em 0 0;
+    border-bottom: 0;
+}
+
+.ui.segment.projects-segment {
     padding: 0;
 
     .column.grid-content {
         padding: 5em 0;
+
+        p {
+            width: 80%;
+            margin: 0 auto;
+        }
+        p + p {
+            margin-top: 2em;
+        }
     }
 }
 
-/* Large Screens */
-@media only screen and (min-width: 1281px) {
+.ui.segment.social-segment {
+    padding: 4em 0 8em;
+
+    h4.with-div {
+        margin: 4em 0;
+    }
 }
 
-/* Small Screens */
-@media only screen and (max-width: 800px) {
+
+
+/* Widescreen Monitor */
+@media only screen and (min-width: 1920px) {
+}
+
+/* Large Monitor */
+@media only screen and (min-width: 1200px) and (max-width: 1919px) {
+}
+
+/* Computer / Desktop / iPad Landscape */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
     .ui.segment.hero-segment {
         h1 {
-            font-size: 2.2em;
+            font-size: 2.8em;
         }
 
         h2 {
-            font-size: 1.1em;
+            font-size: 1.2em;
+        }
+
+        .primary.button {
+            font-size: 1.2em;
         }
     }
 }
 
-/* Tiny Screens */
-@media only screen and (max-width: 320px) {
+/* Tablet / iPad Portrait Screens */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
     .ui.segment.hero-segment {
         h1 {
-            font-size: 1.8em;
+            font-size: 2.4em;
         }
 
         h2 {
             font-size: 1em;
+        }
+
+        .primary.button {
+            font-size: 1em;
+        }
+    }
+}
+
+/* Mobile Screens */
+@media only screen and (max-width: 767px) {
+    .ui.segment.hero-segment {
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 0.8em;
+        }
+
+        .primary.button {
+            font-size: 0.8em;
         }
     }
 }

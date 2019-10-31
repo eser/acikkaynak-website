@@ -2,6 +2,10 @@
      User Global Variables
 *******************************/
 
+@emSize: 20px;
+
 @fontName: 'Arbutus Slab';
+@fontSize: '1em';
 
 @primaryColor: #2C2D2E;
+@linkColor: #1B8417;
