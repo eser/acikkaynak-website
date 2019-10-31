@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button, Container, Divider, Grid, Header, Image, Segment, Icon, Card } from 'semantic-ui-react';
+import { Button, Container, Divider, Grid, Header, Image, Segment, Icon, Card, Responsive } from 'semantic-ui-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faGithubSquare, faTwitterSquare, faTelegram, faDiscord } from '@fortawesome/free-brands-svg-icons';
@@ -63,7 +63,9 @@ function Home() {
                             </Container>
                         </Grid.Column>
                         <Grid.Column floated="right" width={6}>
-                            <Image rounded size="large" src={Logo} />
+                            <Responsive minWidth={Responsive.onlyLargeScreen.minWidth}>
+                                <Image rounded size="large" src={Logo} />
+                            </Responsive>
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
