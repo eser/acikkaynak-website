@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import customAddNewsStyle from './add.less';
 
 function NewsAdd() {
+    const historyObj = useHistory();
+
     const [ newsTitle, setNewsTitle ] = useState('');
     const [ newsContent, setNewsContent ] = useState('');
     const [ newsTags, setNewsTags ] = useState('');
@@ -13,8 +15,7 @@ function NewsAdd() {
     }
 
     function goBackButton(event) {
-        // eslint-disable-next-line no-restricted-globals
-        history.back();
+        historyObj.back();
         event.preventDefault();
     }
 

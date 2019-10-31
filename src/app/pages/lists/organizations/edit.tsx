@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import customAddOrgStyle from './add.less';
 
 function OrganizationsEdit(props) {
+    const historyObj = useHistory();
+
     const [ orgsTitle, setOrgsTitle ] = useState(props.content.title);
     const [ orgsContent, setOrgsContent ] = useState(props.content.content);
     const [ orgsCategory, setOrgsCategory ] = useState(props.content.category === 'Software' ? 0 : 1);
 
     function goBackButton(event) {
-        // eslint-disable-next-line no-restricted-globals
-        history.back();
+        historyObj.back();
         event.preventDefault();
     }
 

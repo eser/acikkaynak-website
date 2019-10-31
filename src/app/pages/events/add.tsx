@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import customAddEventsStyle from './add.less';
 
 function EventsAdd() {
+    const historyObj = useHistory();
+
     const [ eventsTitle, setEventsTitle ] = useState('Etkinlik Başlığı');
     const [ eventsContent, setEventsContent ] = useState('Etkinlik İçeriği');
     const [ eventsCategory, setEventsCategory ] = useState('1');
@@ -13,8 +15,7 @@ function EventsAdd() {
     }
 
     function goBackButton(event) {
-        // eslint-disable-next-line no-restricted-globals
-        history.back();
+        historyObj.back();
         event.preventDefault();
     }
 

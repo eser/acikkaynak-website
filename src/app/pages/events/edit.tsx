@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import customAddEventsStyle from './add.less';
 
 function EventsEdit(props) {
+    const historyObj = useHistory();
+
     const [ eventsTitle, setEventsTitle ] = useState(props.content.title);
     const [ eventsContent, setEventsContent ] = useState(props.content.content);
     const [ eventsCategory, setEventsCategory ] = useState(props.content.category === 'Meetup' ? 0 : 1);
 
     function goBackButton(event) {
-        // eslint-disable-next-line no-restricted-globals
-        history.back();
+        historyObj.back();
         event.preventDefault();
     }
 

@@ -2,6 +2,9 @@ import React from 'react';
 import * as path from 'path-browser';
 import ReactMarkdown from 'react-markdown';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+
 function isAbsolutePath(pathString: string): boolean {
     return /^(?:\/|[a-z]+:\/\/)/.test(pathString);
 }
@@ -48,14 +51,16 @@ function View(props: GuideProps) {
 
     return (
         <>
-            <div onClick={handleClick}>
+            <div onClick={handleClick} onKeyPress={() => {}} role="presentation">
                 <ReactMarkdown source={props.datasource} transformLinkUri={transformLinkUri} />
             </div>
 
             {props.metadata && props.metadata.originUrl && props.metadata.originUrl.length > 0 && (
                 <div className="has-text-right">
                     <a href={props.metadata.originUrl}>
-                        <i className="fa fa-fw fa-pencil-square-o" aria-hidden="true"></i> Bu sayfanın kaynağına ulaş
+                        <FontAwesomeIcon icon={faPencilAlt} />
+                        { ' ' }
+                        Bu sayfanın kaynağına ulaş
                     </a>
                 </div>
             )}

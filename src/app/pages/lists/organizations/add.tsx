@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import customAddOrgsStyle from './add.less';
 
 function OrganizationsAdd() {
+    const historyObj = useHistory();
+
     const [ orgsTitle, setorgsTitle ] = useState('Organizasyon Başlığı');
     const [ orgsContent, setorgsContent ] = useState('Organizasyon İçeriği');
     const [ orgsCategory, setorgsCategory ] = useState('1');
@@ -13,8 +15,7 @@ function OrganizationsAdd() {
     }
 
     function goBackButton(event) {
-        // eslint-disable-next-line no-restricted-globals
-        history.back();
+        historyObj.back();
         event.preventDefault();
     }
 

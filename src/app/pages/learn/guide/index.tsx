@@ -23,21 +23,21 @@ async function getContentFetch(contentPath: string) {
 }
 
 async function getContent(contentPath: string) {
-    let contentPath_ = contentPath || '';
+    let contentPathSafe = contentPath || '';
 
-    if (contentPath_.length === 0) {
-        contentPath_ = 'README.md';
+    if (contentPathSafe.length === 0) {
+        contentPathSafe = 'README.md';
     }
-    else if (contentPath_.substr(-3) !== '.md') {
-        if (contentPath_.substr(-1) === '/') {
-            contentPath_ += 'README.md';
+    else if (contentPathSafe.substr(-3) !== '.md') {
+        if (contentPathSafe.substr(-1) === '/') {
+            contentPathSafe += 'README.md';
         }
         else {
-            contentPath_ += '/README.md';
+            contentPathSafe += '/README.md';
         }
     }
 
-    return getContentFetch(contentPath_);
+    return getContentFetch(contentPathSafe);
 }
 
 
@@ -46,15 +46,19 @@ interface GuideProps {
 }
 
 function Guide(props: GuideProps) {
+    const historyObj = useHistory();
+
     const [ content, setContent ] = useState(null);
-    const history = useHistory();
 
-    useEffect(() => {
-            (async function () {
-                const content = await getContent(props.contentPath);
+    useEffect(
+        () => {
+            async function contentFetch() {
+                const contentResponse = await getContent(props.contentPath);
 
-                setContent(content);
-            })();
+                setContent(contentResponse);
+            }
+
+            contentFetch();
         },
         [ props.contentPath ],
     );
@@ -64,7 +68,11 @@ function Guide(props: GuideProps) {
             <Header as="h1">Rehber</Header>
 
             {content && (
-                <View datasource={content.datasource} metadata={content.metadata} history={history} />
+                <View
+                    datasource={content.datasource}
+                    metadata={content.metadata}
+                    history={historyObj}
+                />
             )}
         </Container>
     );

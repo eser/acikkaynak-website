@@ -1,14 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import customNewsStyle from './style.less';
 
 const bulmaStyles = {};
 
 function NewsDetailView(props) {
+    const historyObj = useHistory();
+
     function goBackButton(event) {
-        // eslint-disable-next-line no-restricted-globals
-        history.back();
+        historyObj.back();
         event.preventDefault();
     }
 
