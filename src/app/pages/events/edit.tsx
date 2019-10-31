@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import customAddEventsStyle from './add.less';
 
@@ -17,9 +17,9 @@ function EventsEdit(props) {
     return (
         <>
             <div className="container">
-                <NavLink key="0" to="/events/" onClick={goBackButton}>
+                <Link to="/events/" onClick={goBackButton}>
                     Geri Dön
-                </NavLink>
+                </Link>
                 <h5>
                     {props.content.title}
                     {' '}

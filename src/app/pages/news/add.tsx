@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import customAddNewsStyle from './add.less';
 
@@ -21,9 +21,9 @@ function NewsAdd() {
     return (
         <>
             <div className={customAddNewsStyle.newsContainer}>
-                <NavLink key="0" to="/news/" onClick={goBackButton}>
-                        Geri Dön
-                </NavLink>
+                <Link to="/news/" onClick={goBackButton}>
+                    Geri Dön
+                </Link>
                 <div className={customAddNewsStyle.form}>
                     <h3>Haber Ekle</h3>
                     <div className={customAddNewsStyle.field}>

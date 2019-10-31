@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import customAddOrgsStyle from './add.less';
 
@@ -21,9 +21,9 @@ function OrganizationsAdd() {
     return (
         <>
             <div className={customAddOrgsStyle.organizationsContainer}>
-                <NavLink key="0" to="/events/" onClick={goBackButton}>
+                <Link to="/events/" onClick={goBackButton}>
                     Geri Dön
-                </NavLink>
+                </Link>
                 <div className={customAddOrgsStyle.form}>
                     <h3>Etkinlik Ekle</h3>
                     <div className={customAddOrgsStyle.field}>

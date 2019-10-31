@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { Button, Container, Divider, Grid, Header, Image, Segment, Icon, Card } from 'semantic-ui-react';
 
@@ -28,7 +28,7 @@ function Home() {
                         oluşturuyor, projelerimizi listeliyor ve
                         yardımlaşıyoruz
                     </Header>
-                    <Button primary as={NavLink} to="/about/" size="large">
+                    <Button primary as={Link} to="/about/" size="large">
                         Manifesto ve Bilgilendirme
                         <Icon name="right arrow" />
                     </Button>
@@ -68,7 +68,7 @@ function Home() {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column textAlign="center">
-                            <Button as={NavLink} to="/stats/" size="large">İstatistikler</Button>
+                            <Button as={Link} to="/stats/" size="large">İstatistikler</Button>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
@@ -130,7 +130,7 @@ function Home() {
             <Segment className={localStyles.finalSegment} vertical>
                 <Container text>
                     <Header as="h3">
-                        <NavLink to="/news/">Haberler</NavLink>
+                        <Link to="/news/">Haberler</Link>
                     </Header>
                     <p>
                         Açık Kaynak projelerden ve açık kaynak destekçisi organizasyonlardan
@@ -139,43 +139,43 @@ function Home() {
                     </p>
 
                     <Header as="h3">
-                        <NavLink to="/learn/">Eğitim ve İçerikler</NavLink>
+                        <Link to="/learn/">Eğitim ve İçerikler</Link>
                     </Header>
                     <p>
                         Açık Kaynak geliştirme yapmak isteyen kişi ve kuruluşlara ilk adımlarını
                         atmaları ve ilerlemeleri için destek olmaya çalışıyoruz. Bu doğrultuda
                         eğitim bölümü altında
                         { ' ' }
-                        <NavLink to="/learn/get-started/">Başlarken</NavLink>
+                        <Link to="/learn/get-started/">Başlarken</Link>
                         ,
                         { ' ' }
-                        <NavLink to="/learn/for-corporations/">Kurumlar İçin</NavLink>
+                        <Link to="/learn/for-corporations/">Kurumlar İçin</Link>
                         { ' ' }
                         ve devamında
                         { ' ' }
-                        <NavLink to="/learn/guide/">Rehber</NavLink>
+                        <Link to="/learn/guide/">Rehber</Link>
                         { ' ' }
                         bölümlerimiz yer almakta ve her geçen gün içeriğimizi genişletmekteyiz.
                     </p>
 
                     <Header as="h3">
-                        <NavLink to="/lists/">Listeler</NavLink>
+                        <Link to="/lists/">Listeler</Link>
                     </Header>
                     <p>
-                        <NavLink to="/lists/projects/">Açık kaynak projeler</NavLink>
+                        <Link to="/lists/projects/">Açık kaynak projeler</Link>
                         ,
                         { ' ' }
-                        <NavLink to="/lists/organizations/">Açık kaynak destekçisi organizasyonlar</NavLink>
+                        <Link to="/lists/organizations/">Açık kaynak destekçisi organizasyonlar</Link>
                         { ' ' }
                         ve
                         { ' ' }
-                        <NavLink to="/lists/sponsors/">Sponsorlar</NavLink>
+                        <Link to="/lists/sponsors/">Sponsorlar</Link>
                         ı indeksleyerek bu girişimlerin hem görünürlüklerini sağlamaya hem de
                         dışarıdan erişilebilirliğini arttırmaya çalışıyoruz.
                     </p>
 
                     <Header as="h3">
-                        <NavLink to="/stats/">İstatistikler</NavLink>
+                        <Link to="/stats/">İstatistikler</Link>
                     </Header>
                     <p>
                         Komünitenin açık kaynak'a gerçekleştirdiği katkıyı görünür kılmak için,

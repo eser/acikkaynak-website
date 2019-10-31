@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const bulmaStyles = {};
 
@@ -41,11 +41,9 @@ Donanımlar :
                     {props.content.hardwares.join(', ') || '-'}
                 </p>
             </div>
-            <NavLink key="0" to="/lists/organizations/" onClick={goBackButton}>
-                <p>
-                    Geri Dön
-                </p>
-            </NavLink>
+            <Link to="/lists/organizations/" onClick={goBackButton}>
+                Geri Dön
+            </Link>
         </>
     );
 }

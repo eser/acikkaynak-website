@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import customNewsStyle from './style.less';
 
@@ -24,11 +24,11 @@ function NewsDetailView(props) {
             </div>
 
             <ul className={customNewsStyle.tagBox}>
-                <NavLink key="0" to="/news/" onClick={goBackButton}>
+                <Link to="/news/" onClick={goBackButton}>
                     <li className={customNewsStyle.tag}>
                         Geri Dön
                     </li>
-                </NavLink>
+                </Link>
             </ul>
         </>
     );

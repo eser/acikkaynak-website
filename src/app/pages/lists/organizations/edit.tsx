@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import customAddOrgStyle from './add.less';
 
@@ -17,9 +17,9 @@ function OrganizationsEdit(props) {
     return (
         <>
             <div className="container">
-                <NavLink key="0" to="/lists/organizations/" onClick={goBackButton}>
+                <Link to="/lists/organizations/" onClick={goBackButton}>
                     Geri Dön
-                </NavLink>
+                </Link>
                 <h5>
                     {props.content.title}
                     {' '}

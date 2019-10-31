@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { Header } from 'semantic-ui-react';
 
@@ -52,11 +52,11 @@ function NewsListView(props) {
                         </li>
                     </Link>
                 ))}
-                <NavLink key="0" to="/news/">
+                <Link to="/news/">
                     <li className={customNewsStyle.tag}>
                         X
                     </li>
-                </NavLink>
+                </Link>
             </ul>
 
             <ul className={customNewsStyle.newsList}>

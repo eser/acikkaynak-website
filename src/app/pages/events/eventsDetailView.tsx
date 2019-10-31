@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const bulmaStyles = {};
 
@@ -24,11 +24,9 @@ function EventsDetailView(props) {
                     </li>
                 </ul>
             </div>
-            <NavLink key="0" to="/news/" onClick={goBackButton}>
-                <p>
-                    Geri Dön
-                </p>
-            </NavLink>
+            <Link to="/news/" onClick={goBackButton}>
+                Geri Dön
+            </Link>
         </>
     );
 }
