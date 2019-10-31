@@ -1,16 +1,16 @@
 import React from 'react';
 
-const bulmaStyles = {};
+import { Container, Header } from 'semantic-ui-react';
 
 function ForCorporations() {
     return (
-        <>
-            <h1 className={bulmaStyles.title}>Kurumlar İçin</h1>
+        <Container className="content" textAlign="justified">
+            <Header as="h1">Kurumlar İçin</Header>
 
             <p>
                 Bu sayfa yapım aşamasında.
             </p>
-        </>
+        </Container>
     );
 }
 

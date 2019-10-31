@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { Container } from 'semantic-ui-react';
+
 import OrgsListView from './listView';
 import OrgDetailView from './detailView';
 import OrgEdit from './edit';
@@ -87,22 +89,28 @@ function Organizations(props) {
         if (currentOrgs !== undefined) {
             if (props.type === 'editOrg') {
                 return (
-                    <OrgEdit content={currentOrgs} />
+                    <Container className="content" textAlign="justified">
+                        <OrgEdit content={currentOrgs} />
+                    </Container>
                 );
             }
 
             return (
-                <OrgDetailView content={currentOrgs} />
+                <Container className="content" textAlign="justified">
+                    <OrgDetailView content={currentOrgs} />
+                </Container>
             );
         }
     }
 
     return (
-        <OrgsListView
-            orgs={orgs}
-            searchInput={searchInput}
-            handleSearch={handleSearchInputChange}
-        />
+        <Container className="content" textAlign="justified">
+            <OrgsListView
+                orgs={orgs}
+                searchInput={searchInput}
+                handleSearch={handleSearchInputChange}
+            />
+        </Container>
     );
 }
 

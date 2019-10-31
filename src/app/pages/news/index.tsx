@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { Container } from 'semantic-ui-react';
+
 import NewsListView from './listView';
 import NewsDetailView from './detailView';
 import NotFound from '../notFound';
@@ -14,17 +16,23 @@ function News(props) {
         // as long as content exists...
         if (currentNewsItem !== undefined) {
             return (
-                <NewsDetailView content={currentNewsItem} />
+                <Container className="content" textAlign="justified">
+                    <NewsDetailView content={currentNewsItem} />
+                </Container>
             );
         }
 
         return (
-            <NotFound />
+            <Container className="content" textAlign="justified">
+                <NotFound />
+            </Container>
         );
     }
 
     return (
-        <NewsListView news={news} {...props} />
+        <Container className="content" textAlign="justified">
+            <NewsListView news={news} {...props} />
+        </Container>
     );
 }
 

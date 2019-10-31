@@ -1,16 +1,16 @@
 import React from 'react';
 
-const bulmaStyles = {};
+import { Container, Header } from 'semantic-ui-react';
 
 function Stats() {
     return (
-        <>
-            <h1 className={bulmaStyles.title}>İstatistikler</h1>
+        <Container className="content" textAlign="justified">
+            <Header as="h1">İstatistikler</Header>
 
             <p>
                 Bu sayfa yapım aşamasında.
             </p>
-        </>
+        </Container>
     );
 }
 
