@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button, Divider, Grid, Header, Image, Segment, Icon, Card, Responsive } from 'semantic-ui-react';
+import { Button, Divider, Grid, Header, Image, Segment, Icon, Card } from 'semantic-ui-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faNewspaper, faGraduationCap, faListOl, faStar } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faGithubSquare, faTwitterSquare, faTelegram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 import localStyles from './styles.less';
-import globalStyles from '../../layouts/shared/assets/global.less';
+// import globalStyles from '../../layouts/shared/assets/global.less';
 
 import Logo from './logo.png';
 
@@ -129,8 +129,9 @@ function Home() {
                                 </Link>
                             </Header>
                             <p>
-                                Açık Kaynak projelerden ve açık kaynak destekçisi organizasyonlardan
-                                haberler paylaşarak komünite içerisinde geniş bir ağ oluşmasına katkıda
+                                Açık Kaynak projelerden ve açık kaynak destekçisi
+                                organizasyonlardan haberler paylaşarak komünite
+                                içerisinde geniş bir ağ oluşmasına katkıda
                                 bulunmak istiyoruz.
                             </p>
                         </Grid.Column>
@@ -151,8 +152,9 @@ function Home() {
                                 ve
                                 { ' ' }
                                 <Link to="/lists/sponsors/">Sponsorlar</Link>
-                                ı indeksleyerek bu girişimlerin hem görünürlüklerini sağlamaya hem de
-                                dışarıdan erişilebilirliğini arttırmaya çalışıyoruz.
+                                ı indeksleyerek bu girişimlerin hem görünürlüklerini
+                                sağlamaya hem de dışarıdan erişilebilirliğini
+                                arttırmaya çalışıyoruz.
                             </p>
                         </Grid.Column>
                     </Grid.Row>
@@ -166,9 +168,9 @@ function Home() {
                                 </Link>
                             </Header>
                             <p>
-                                Açık Kaynak geliştirme yapmak isteyen kişi ve kuruluşlara ilk adımlarını
-                                atmaları ve ilerlemeleri için destek olmaya çalışıyoruz. Bu doğrultuda
-                                eğitim bölümü altında
+                                Açık Kaynak geliştirme yapmak isteyen kişi ve kuruluşlara
+                                ilk adımlarını atmaları ve ilerlemeleri için destek olmaya
+                                çalışıyoruz. Bu doğrultuda eğitim bölümü altında
                                 { ' ' }
                                 <Link to="/learn/get-started/">Başlarken</Link>
                                 ,
@@ -179,7 +181,8 @@ function Home() {
                                 { ' ' }
                                 <Link to="/learn/guide/">Rehber</Link>
                                 { ' ' }
-                                bölümlerimiz yer almakta ve her geçen gün içeriğimizi genişletmekteyiz.
+                                bölümlerimiz yer almakta ve her geçen gün içeriğimizi
+                                genişletmekteyiz.
                             </p>
                         </Grid.Column>
                         <Grid.Column floated="right" width={8}>
@@ -191,9 +194,10 @@ function Home() {
                                 </Link>
                             </Header>
                             <p>
-                                Komünitenin açık kaynak'a gerçekleştirdiği katkıyı görünür kılmak için,
-                                sistemimize GitHub hesabı ile giriş yapmış kullanıcıların bilgilerini
-                                kısa aralıklarla derliyor ve paylaşıyoruz.
+                                Komünitenin açık kaynak'a gerçekleştirdiği katkıyı görünür
+                                kılmak için, sistemimize GitHub hesabı ile giriş yapmış
+                                kullanıcıların bilgilerini kısa aralıklarla derliyor ve
+                                paylaşıyoruz.
                             </p>
                         </Grid.Column>
                     </Grid.Row>
