@@ -24,7 +24,15 @@ function DesktopContainer(props) {
                         <Container>
                             <Menu.Item as={NavLink} to="/" exact>/</Menu.Item>
                             <Menu.Item as={NavLink} to="/news/">Haberler</Menu.Item>
-                            <Menu.Item as={NavLink} to="/learn/">Eğitim</Menu.Item>
+
+                            <Dropdown simple item text="Eğitim">
+                                <Dropdown.Menu>
+                                    <Dropdown.Item as={NavLink} to="/learn/get-started/">Başlarken</Dropdown.Item>
+                                    <Dropdown.Item as={NavLink} to="/learn/for-corporations/">Kurumlar İçin</Dropdown.Item>
+                                    <Dropdown.Divider />
+                                    <Dropdown.Item as={NavLink} to="/learn/guide/">Rehber</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
 
                             <Dropdown simple item text="Listeler">
                                 <Dropdown.Menu>

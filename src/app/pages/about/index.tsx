@@ -1,11 +1,11 @@
 import React from 'react';
 
-const bulmaStyles = {};
+import { Container, Header } from 'semantic-ui-react';
 
 function About() {
     return (
-        <>
-            <h1 className={bulmaStyles.title}>Hakkında</h1>
+        <Container className="content" textAlign="justified" text>
+            <Header as="h1">Açık Kaynak İnisiyatifi Hakkında</Header>
 
             <p>
                 Bu organizasyon Türkiye'deki ve Türkçe konuşan geliştiricilerin oluşturduğu
@@ -23,9 +23,10 @@ function About() {
             </p>
 
             <p>
-                Biz de bir adım daha attık ve ekosistemimizdeki açık kaynak geliştiricilerini,
-                açık kaynak geliştiricilerinin projelerine hizmet edecek, onları tanıtacak ve
-                ihtiyaçlarını gözükür hale getirecek şekilde misyon kapsamımızı genişlettik.
+                2019 itibariyle bir adım daha attık ve ekosistemimizdeki açık kaynak
+                geliştiricilerini, açık kaynak geliştiricilerinin projelerine hizmet edecek,
+                onları tanıtacak ve ihtiyaçlarını gözükür hale getirecek şekilde misyon kapsamımızı
+                genişlettik.
             </p>
 
             <p>
@@ -47,7 +48,21 @@ function About() {
                 Çevrenize de bizden bahsedin, açık kaynak toplulukta hep birlikte iletişimde ve
                 girişimde olalım.
             </p>
-        </>
+
+            <Header as="h1">Manifesto</Header>
+
+            <p>
+                ...
+            </p>
+
+
+            <Header as="h1">İletişim</Header>
+
+            <p>
+                ...
+            </p>
+
+        </Container>
     );
 }
 

@@ -19,9 +19,16 @@ function MobileContainer(props) {
             maxWidth={Responsive.onlyMobile.maxWidth}
         >
             <Sidebar as={Menu} animation="push" inverted onHide={() => setSidebarOpened(false)} vertical visible={sidebarOpened}>
-                <Menu.Item as={NavLink} to="/" exact>/</Menu.Item>
+                <Menu.Item as={NavLink} to="/" exact>Ana Sayfa</Menu.Item>
                 <Menu.Item as={NavLink} to="/news/">Haberler</Menu.Item>
-                <Menu.Item as={NavLink} to="/learn/">Eğitim</Menu.Item>
+                <Menu.Item>
+                    <Menu.Header>Eğitim</Menu.Header>
+                    <Menu.Menu>
+                        <Menu.Item as={NavLink} to="/learn/get-started/">Başlarken</Menu.Item>
+                        <Menu.Item as={NavLink} to="/learn/for-corporations/">Kurumlar İçin</Menu.Item>
+                        <Menu.Item as={NavLink} to="/learn/guide/">Rehber</Menu.Item>
+                    </Menu.Menu>
+                </Menu.Item>
                 <Menu.Item>
                     <Menu.Header>Listeler</Menu.Header>
                     <Menu.Menu>

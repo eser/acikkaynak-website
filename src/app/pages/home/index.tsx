@@ -1,138 +1,229 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-import { Button, Container, Divider, Grid, Header, Image, Segment, Icon } from 'semantic-ui-react';
+import { Button, Container, Divider, Grid, Header, Image, Segment, Icon, Card } from 'semantic-ui-react';
 
-import WhiteImage from './white-image.png';
-import NanImage from './nan.jpg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faGithubSquare, faTwitterSquare, faTelegram, faDiscord } from '@fortawesome/free-brands-svg-icons';
+
+import localStyles from './styles.less';
+
+import Logo from './logo.png';
 
 function Home() {
     return (
         <>
-            <Segment inverted textAlign="center" style={{ padding: '4em 0em' }} vertical>
+            <Segment inverted textAlign="center" className={localStyles.heroSegment} vertical>
                 <Container text>
                     <Header
                         as="h1"
                         content="{ açık kaynak }"
                         inverted
-                        style={{
-                            fontSize: '3em',
-                            fontWeight: 'normal',
-                            marginBottom: 0,
-                        }}
                     />
                     <Header
                         as="h2"
                         inverted
-                        style={{
-                            fontSize: '1.5em',
-                            fontWeight: 'normal',
-                            marginTop: '0.2em',
-                        }}
                     >
-                        2016'dan bu yana açık kaynak farkındalığı
+                        2015'den bu yana açık kaynak farkındalığı
                         oluşturuyor, projelerimizi listeliyor ve
                         yardımlaşıyoruz
                     </Header>
-                    <Button primary size="huge">
+                    <Button primary as={NavLink} to="/about/" size="large">
                         Manifesto ve Bilgilendirme
                         <Icon name="right arrow" />
                     </Button>
                 </Container>
             </Segment>
 
-            <Segment style={{ padding: '8em 0em' }} vertical>
+            <Segment className={localStyles.infoSegment} vertical>
                 <Grid container stackable verticalAlign="middle">
                     <Grid.Row>
                         <Grid.Column width={8}>
-                            <Header as="h3" style={{ fontSize: '2em' }}>
-                                We Help Companies and Companions
-                            </Header>
-                            <p style={{ fontSize: '1.33em' }}>
-                                We can give your company superpowers to do things that
-                                they never thought possible. Let us delight your
-                                customers and empower your needs... through pure data
-                                analytics.
-                            </p>
-                            <Header as="h3" style={{ fontSize: '2em' }}>
-                                We Make Bananas That Can Dance
-                            </Header>
-                            <p style={{ fontSize: '1.33em' }}>
-                                Yes that's right, you thought it was the stuff of dreams,
-                                but even bananas can be bioengineered.
-                            </p>
+                            <Container text>
+                                <Header as="h3">
+                                    Yerel Hareket Eden Bir Ekosistem
+                                </Header>
+                                <p>
+                                    Türkiye'deki ve Türkçe konuşan geliştiricilerin
+                                    oluşturduğu açık kaynak ekosisteminin
+                                    lokomotifi olmak, insanları açık kaynak geliştirmeye
+                                    motive etmek, farkındalık yaratmak ve engelleri ortadan
+                                    kaldırmayı amaçlıyoruz.
+                                </p>
+
+                                <Header as="h3">
+                                    Potansiyel Oluşturmak ve Görünür Kılmak
+                                </Header>
+                                <p>
+                                    Amacımız hem mevcut açık kaynak projeler ile bir katalog
+                                    oluşturarak projelere ulaşılabilirlik sağlamak,
+                                    hem de açık kaynak felsefesini çeşitli desteklerle
+                                    yaygınlaştırmak için rehberlik etmek.
+                                </p>
+                            </Container>
                         </Grid.Column>
                         <Grid.Column floated="right" width={6}>
-                            <Image bordered rounded size="large" src={WhiteImage} />
+                            <Image rounded size="large" src={Logo} />
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column textAlign="center">
-                            <Button size="huge">Check Them Out</Button>
+                            <Button as={NavLink} to="/stats/" size="large">İstatistikler</Button>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
             </Segment>
 
-            <Segment style={{ padding: '0em' }} vertical>
+            <Segment className={localStyles.divSegment} vertical>
                 <Grid celled="internally" columns="equal" stackable>
                     <Grid.Row textAlign="center">
-                        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                            <Header as="h3" style={{ fontSize: '2em' }}>
-                                "What a Company"
+                        <Grid.Column className={localStyles.gridContent}>
+                            <Header as="h3">
+                                Restoran Uygulaması
                             </Header>
-                            <p style={{ fontSize: '1.33em' }}>
-                                That is what they all say about us
+                            <p>
+                                Restoranlarda kağıt menü devrini kapatan onun yerine
+                                müşterilere, masalarda
+                                <br />
+                                bulunan QR Kod ile sipariş verebilme olanağı sağlayan
+                                ve siparişin takibini
+                                <br />
+                                kolaylaştıran android uygulama.
+                            </p>
+                            <p>
+                                <a href="https://github.com/yusufcakal/RestaurantApp">
+                                    <FontAwesomeIcon icon={faGithub} />
+                                    { ' ' }
+                                    github/yusufcakal/RestaurantApp
+                                </a>
                             </p>
                         </Grid.Column>
-                        <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
-                            <Header as="h3" style={{ fontSize: '2em' }}>
-                                "I shouldn't have gone with their competitor."
+                        <Grid.Column className={localStyles.gridContent}>
+                            <Header as="h3">
+                                WholeCMS
                             </Header>
-                            <p style={{ fontSize: '1.33em' }}>
-                                <Image avatar src={NanImage} />
-                                <b>Nan</b>
-                                {' '}
-                                Chief Fun Officer Acme Toys
+                            <p>
+                                PHP/Laravel kullanılarak hazırlanmış, içerik yönetim
+                                sistemi. Sınırsızca
+                                <br />
+                                genişletebileceğiniz bağımlılıkları olmadan oluşturacağınız
+                                modüllerinizi
+                                <br />
+                                dahil edip içerik yönetim sisteminden daha fazlasını elde
+                                edebilirsiniz.
+                                <br />
+                                İstediğiniz temaya entegre ederek kolayca kullanabileceğiniz
+                                bir sistem.
+                            </p>
+                            <p>
+                                <a href="https://github.com/wholecms/core">
+                                    <FontAwesomeIcon icon={faGithub} />
+                                    { ' ' }
+                                    github/wholecms
+                                </a>
                             </p>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
             </Segment>
 
-            <Segment style={{ padding: '8em 0em' }} vertical>
+            <Segment className={localStyles.finalSegment} vertical>
                 <Container text>
-                    <Header as="h3" style={{ fontSize: '2em' }}>
-                        Breaking The Grid, Grabs Your Attention
+                    <Header as="h3">
+                        <NavLink to="/news/">Haberler</NavLink>
                     </Header>
-                    <p style={{ fontSize: '1.33em' }}>
-                        Instead of focusing on content creation and hard work, we have
-                        learned how to master the art of doing nothing by providing
-                        massive amounts of whitespace and generic content that
-                        can seem massive, monolithic and worth your attention.
+                    <p>
+                        Açık Kaynak projelerden ve açık kaynak destekçisi organizasyonlardan
+                        haberler paylaşarak komünite içerisinde geniş bir ağ oluşmasına katkıda
+                        bulunmak istiyoruz.
                     </p>
-                    <Button as="a" size="large">
-                        Read More
-                    </Button>
+
+                    <Header as="h3">
+                        <NavLink to="/learn/">Eğitim ve İçerikler</NavLink>
+                    </Header>
+                    <p>
+                        Açık Kaynak geliştirme yapmak isteyen kişi ve kuruluşlara ilk adımlarını
+                        atmaları ve ilerlemeleri için destek olmaya çalışıyoruz. Bu doğrultuda
+                        eğitim bölümü altında
+                        { ' ' }
+                        <NavLink to="/learn/get-started/">Başlarken</NavLink>
+                        ,
+                        { ' ' }
+                        <NavLink to="/learn/for-corporations/">Kurumlar İçin</NavLink>
+                        { ' ' }
+                        ve devamında
+                        { ' ' }
+                        <NavLink to="/learn/guide/">Rehber</NavLink>
+                        { ' ' }
+                        bölümlerimiz yer almakta ve her geçen gün içeriğimizi genişletmekteyiz.
+                    </p>
+
+                    <Header as="h3">
+                        <NavLink to="/lists/">Listeler</NavLink>
+                    </Header>
+                    <p>
+                        <NavLink to="/lists/projects/">Açık kaynak projeler</NavLink>
+                        ,
+                        { ' ' }
+                        <NavLink to="/lists/organizations/">Açık kaynak destekçisi organizasyonlar</NavLink>
+                        { ' ' }
+                        ve
+                        { ' ' }
+                        <NavLink to="/lists/sponsors/">Sponsorlar</NavLink>
+                        ı indeksleyerek bu girişimlerin hem görünürlüklerini sağlamaya hem de
+                        dışarıdan erişilebilirliğini arttırmaya çalışıyoruz.
+                    </p>
+
+                    <Header as="h3">
+                        <NavLink to="/stats/">İstatistikler</NavLink>
+                    </Header>
+                    <p>
+                        Komünitenin açık kaynak'a gerçekleştirdiği katkıyı görünür kılmak için,
+                        sistemimize GitHub hesabı ile giriş yapmış kullanıcıların bilgilerini
+                        kısa aralıklarla derliyor ve paylaşıyoruz.
+                    </p>
+
                     <Divider
                         as="h4"
-                        className="header"
                         horizontal
-                        style={{ margin: '3em 0em', textTransform: 'uppercase' }}
+                        className={localStyles.withDiv}
                     >
-                        Case Studies
+                        İLETİŞİM KANALLARIMIZ
                     </Divider>
-                    <Header as="h3" style={{ fontSize: '2em' }}>
-                        Did We Tell You About Our Bananas?
-                    </Header>
-                    <p style={{ fontSize: '1.33em' }}>
-                        Yes I know you probably disregarded the earlier boasts as
-                        non-sequitur filler content, but it's really true. It took
-                        years of gene splicing and combinatory DNA research, but our
-                        bananas can really dance.
-                    </p>
-                    <Button as="a" size="large">
-                        I'm Still Quite Interested
-                    </Button>
+
+                    <Card.Group centered>
+                        <Card as="a" aria-label="GitHub" href="https://github.com/acikkaynak">
+                            <Card.Content>
+                                <span className={localStyles.cardIcon}><FontAwesomeIcon size="2x" icon={faGithubSquare} /></span>
+                                <Card.Header>GitHub</Card.Header>
+                                <Card.Meta>github/acikkaynak</Card.Meta>
+                            </Card.Content>
+                        </Card>
+
+                        <Card as="a" aria-label="Twitter" href="https://twitter.com/acikkaynakinfo">
+                            <Card.Content>
+                                <span className={localStyles.cardIcon}><FontAwesomeIcon size="2x" icon={faTwitterSquare} /></span>
+                                <Card.Header>Twitter</Card.Header>
+                                <Card.Meta>@acikkaynakinfo</Card.Meta>
+                            </Card.Content>
+                        </Card>
+
+                        <Card as="a" aria-label="Telegram" href="https://t.me/acikkaynak">
+                            <Card.Content>
+                                <span className={localStyles.cardIcon}><FontAwesomeIcon size="2x" icon={faTelegram} /></span>
+                                <Card.Header>Telegram</Card.Header>
+                                <Card.Meta>t.me/acikkaynak</Card.Meta>
+                            </Card.Content>
+                        </Card>
+
+                        <Card as="a" aria-label="Discord" href="https://discordapp.com/invite/BRtenzs">
+                            <Card.Content>
+                                <span className={localStyles.cardIcon}><FontAwesomeIcon size="2x" icon={faDiscord} /></span>
+                                <Card.Header>Discord</Card.Header>
+                                <Card.Meta>discord/BRtenzs</Card.Meta>
+                            </Card.Content>
+                        </Card>
+                    </Card.Group>
                 </Container>
             </Segment>
         </>

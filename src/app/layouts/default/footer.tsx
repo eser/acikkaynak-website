@@ -16,9 +16,16 @@ function Footer() {
                             <List link inverted>
                                 <List.Item as={NavLink} to="/" exact>Ana Sayfa</List.Item>
                                 <List.Item as={NavLink} to="/news/">Haberler</List.Item>
-                                <List.Item as={NavLink} to="/learn/">Eğitim</List.Item>
                                 <List.Item as={NavLink} to="/stats/">İstatistikler</List.Item>
                                 <List.Item as={NavLink} to="/about/">Hakkımızda</List.Item>
+                            </List>
+                        </Grid.Column>
+                        <Grid.Column width={3}>
+                            <Header inverted as="h4" content="Eğitim" />
+                            <List link inverted>
+                                <List.Item as={NavLink} to="/learn/get-started/">Başlarken</List.Item>
+                                <List.Item as={NavLink} to="/learn/for-corporations/">Kurumlar İçin</List.Item>
+                                <List.Item as={NavLink} to="/learn/guide/">Rehber</List.Item>
                             </List>
                         </Grid.Column>
                         <Grid.Column width={3}>
@@ -34,12 +41,8 @@ function Footer() {
                                 { '{ açık kaynak }' }
                             </Header>
                             <p>
-                                2016'dan bu yana açık kaynak farkındalığı oluşturuyor, projelerimizi
-                                listeliyor ve yardımlaşıyoruz.
-                                {' '}
-                                <a href="https://github.com/acikkaynak">GitHub</a>
-                                {' '}
-                                üzerinden de organizasyonumuza ulaşabilirsiniz.
+                                &laquo;2015'den bu yana açık kaynak farkındalığı oluşturuyor,
+                                projelerimizi listeliyor ve yardımlaşıyoruz&raquo;
                             </p>
                             <p>
                                 Site içerisinde gördüğünüz içerikler

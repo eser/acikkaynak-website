@@ -61275,14 +61275,60 @@ body.pushable > .pusher {
 .ui.secondary.inverted.pointing.menu {
   border-color: #3da639;
 }
-.footer {
-  padding: 5em 0 !important;
+.ui.secondary.menu .dropdown.item > .menu,
+.ui.text.menu .dropdown.item > .menu {
+  margin-top: 0;
 }
-.footer a {
+.ui.container.content {
+  margin: 6em;
+}
+.ui.header {
+  padding: 1em 0;
+}
+.ui.vertical.segment.footer {
+  padding: 5em 0;
+}
+.ui.vertical.segment.footer a {
   color: rgba(255, 255, 255, 0.5);
 }
-.header {
-  padding: 1em 0 !important;
+
+.card-icon {
+  float: right;
+}
+.ui.segment.hero-segment {
+  padding: 4em 0em;
+}
+.ui.segment.hero-segment h1 {
+  font-size: 4em;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.ui.segment.hero-segment h2 {
+  font-size: 1.4em;
+  font-weight: normal;
+  margin-top: 0.2em;
+}
+.ui.segment.info-segment,
+.ui.segment.final-segment {
+  padding: 8em 0;
+}
+.ui.segment.info-segment h3,
+.ui.segment.final-segment h3 {
+  font-size: 1.5em;
+}
+.ui.segment.info-segment h4.with-div,
+.ui.segment.final-segment h4.with-div {
+  margin: 10em 0em 5em;
+}
+.ui.segment.info-segment p,
+.ui.segment.final-segment p {
+  font-size: 1.2em;
+}
+.ui.segment.div-segment {
+  padding: 0;
+}
+.ui.segment.div-segment .column.grid-content {
+  padding: 5em 0;
 }
 
 :root {

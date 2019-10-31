@@ -6,6 +6,9 @@ import Home from './pages/home/index';
 import News from './pages/news/index';
 import NewsAdd from './pages/news/add';
 import Learn from './pages/learn/index';
+import LearnGetStarted from './pages/learn/get-started/index';
+import LearnForCorporations from './pages/learn/for-corporations/index';
+import LearnGuide from './pages/learn/guide/index';
 import Lists from './pages/lists/index';
 import ListsProjects from './pages/lists/projects/index';
 import ListsOrganizations from './pages/lists/organizations/index';
@@ -32,7 +35,10 @@ function App() {
             <Route path="/news/" exact={true} strict={true} render={() => <Layout><News /></Layout>} />
 
             {/* learn */}
-            <Route path="/learn/*" exact={false} strict={true} render={props => <Layout><Learn contentPath={props.match.params[0]} /></Layout>} />
+            <Route path="/learn/get-started/" exact={true} strict={true} render={() => <Layout><LearnGetStarted /></Layout>} />
+            <Route path="/learn/for-corporations/" exact={true} strict={true} render={() => <Layout><LearnForCorporations /></Layout>} />
+            <Route path="/learn/guide/*" exact={false} strict={true} render={props => <Layout><LearnGuide contentPath={props.match.params[0]} /></Layout>} />
+            <Route path="/learn/" exact={true} strict={true} render={() => <Layout><Learn /></Layout>} />
 
             {/* lists/projects */}
             <Route path="/lists/projects/detail/:slug" exact={false} strict={true} render={props => <Layout><ListsProjects {...props.match.params} /></Layout>} />

@@ -2,10 +2,10 @@ import React from 'react';
 
 const bulmaStyles = {};
 
-function Learn() {
+function GetStarted() {
     return (
         <>
-            <h1 className={bulmaStyles.title}>Eğitim</h1>
+            <h1 className={bulmaStyles.title}>Başlarken</h1>
 
             <p>
                 Bu sayfa yapım aşamasında.
@@ -15,5 +15,5 @@ function Learn() {
 }
 
 export {
-    Learn as default,
+    GetStarted as default,
 };
