@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { Item, Button, Icon, Label } from 'semantic-ui-react';
+import { Item, Button, Label } from 'semantic-ui-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolderOpen, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
