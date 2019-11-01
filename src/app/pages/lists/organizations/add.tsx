@@ -11,7 +11,7 @@ function OrganizationsAdd() {
     const [ orgsCategory, setorgsCategory ] = useState('1');
 
     function addOrgs() {
-        // TODO ADD EVENTS ACTION
+        // TODO ADD ORGS ACTION
     }
 
     function goBackButton(event) {
@@ -22,13 +22,13 @@ function OrganizationsAdd() {
     return (
         <>
             <div className={customAddOrgsStyle.organizationsContainer}>
-                <Link to="/events/" onClick={goBackButton}>
+                <Link to="/organizations/" onClick={goBackButton}>
                     Geri Dön
                 </Link>
                 <div className={customAddOrgsStyle.form}>
-                    <h3>Etkinlik Ekle</h3>
+                    <h3>Organizasyon Ekle</h3>
                     <div className={customAddOrgsStyle.field}>
-                        <p>Etkinlik Başlığı</p>
+                        <p>Organizasyon Başlığı</p>
                         <textarea
                             onChange={e => setorgsTitle(e.target.value)}
                             className={customAddOrgsStyle.orgsTitle}
@@ -37,7 +37,7 @@ function OrganizationsAdd() {
                         />
                     </div>
                     <div className={customAddOrgsStyle.field}>
-                        <p>Etkinlik İçeriği</p>
+                        <p>Organizasyon İçeriği</p>
                         <textarea
                             onChange={e => setorgsContent(e.target.value)}
                             className={customAddOrgsStyle.orgsContent}
@@ -46,7 +46,7 @@ function OrganizationsAdd() {
                         />
                     </div>
                     <div className={customAddOrgsStyle.field}>
-                        <p>Etkinlik Kategorisi Etiketleri</p>
+                        <p>Organizasyon Kategorisi Etiketleri</p>
                         <select
                             type="combobox"
                             onChange={e => setorgsCategory(e.target.value)}

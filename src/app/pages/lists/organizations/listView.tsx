@@ -50,7 +50,7 @@ function OrgsListView(props) {
                                                 {orgItem.content}
                                             </li>
                                         </Link>
-                                        <Link key={`list-link-${slug}`} to={`/lists/organizations/edit/${encodeURIComponent(orgItem.slug)}/editOrg`}>Etkinlik Düzenle</Link>
+                                        <Link key={`list-link-${slug}`} to={`/lists/organizations/edit/${encodeURIComponent(orgItem.slug)}/editOrg`}>Organizasyon Düzenle</Link>
                                     </div>
                                 );
                             })}

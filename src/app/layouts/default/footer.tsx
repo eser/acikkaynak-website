@@ -15,7 +15,7 @@ function Footer() {
                             <Header inverted as="h4" content="Bölümler" />
                             <List link inverted>
                                 <List.Item as={NavLink} to="/" exact>Ana Sayfa</List.Item>
-                                <List.Item as={NavLink} to="/news/">Haberler</List.Item>
+                                {/* <List.Item as={NavLink} to="/news/">Haberler</List.Item> */}
                                 <List.Item as={NavLink} to="/stats/">İstatistikler</List.Item>
                                 <List.Item as={NavLink} to="/about/">Hakkımızda</List.Item>
                             </List>

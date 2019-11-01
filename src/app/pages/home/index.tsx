@@ -122,7 +122,8 @@ function Home() {
                     <Grid.Row>
                         <Grid.Column width={8}>
                             <Header as="h3">
-                                <Link to="/news/">
+                                {/* <Link to="/news/"> */}
+                                <Link to="/">
                                     <FontAwesomeIcon icon={faNewspaper} />
                                     { ' ' }
                                     Haberler

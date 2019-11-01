@@ -14,8 +14,6 @@ import ListsProjects from './pages/lists/projects/index';
 import ListsOrganizations from './pages/lists/organizations/index';
 import ListsOrganizationsAdd from './pages/lists/organizations/add';
 import ListsSponsors from './pages/lists/sponsors/index';
-import Events from './pages/events/index';
-import EventsAdd from './pages/events/add';
 import Stats from './pages/stats/index';
 import About from './pages/about/index';
 import NotFound from './pages/notFound/index';
@@ -55,12 +53,6 @@ function App() {
 
             {/* lists */}
             <Route path="/lists/" exact={true} strict={true} render={() => <Layout><Lists /></Layout>} />
-
-            {/* events */}
-            <Route path="/events/add/" exact={false} strict={true} render={() => <Layout><EventsAdd /></Layout>} />
-            <Route path="/events/detail/:slug" exact={false} strict={true} render={props => <Layout><Events {...props.match.params} /></Layout>} />
-            <Route path="/events/edit/:slug/:type" exact={false} strict={true} render={props => <Layout><Events {...props.match.params} /></Layout>} />
-            <Route path="/events/" exact={true} strict={true} render={() => <Layout><Events /></Layout>} />
 
             {/* stats */}
             <Route path="/stats/" exact={true} strict={true} render={() => <Layout><Stats /></Layout>} />

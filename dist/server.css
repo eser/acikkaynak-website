@@ -61517,38 +61517,3 @@ body.pushable > .pusher {
   margin-top: 2%;
 }
 
-.events-container {
-  display: flex;
-  flex-direction: column;
-}
-.events-container .field {
-  display: flex;
-  height: 100%;
-  width: 70%;
-  align-items: center;
-}
-.events-container .field .events-title {
-  width: 100%;
-  padding: 1%;
-  resize: none;
-}
-.events-container .field .events-content {
-  width: 100%;
-  padding: 1%;
-  resize: none;
-}
-.events-container .field .category {
-  width: 100%;
-  padding: 1%;
-  resize: none;
-}
-.events-container .field p {
-  width: 40%;
-}
-.events-container button {
-  height: 50px;
-  text-align: center;
-  width: 150px;
-  margin-top: 2%;
-}
-

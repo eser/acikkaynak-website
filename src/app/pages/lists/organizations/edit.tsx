@@ -27,7 +27,7 @@ function OrganizationsEdit(props) {
                     Organizasyonu Düzenle
                 </h5>
                 <div className={customAddOrgStyle.field}>
-                    <p>Etkinlik Başlığı</p>
+                    <p>Organizasyon Başlığı</p>
                     <textarea
                         value={orgsTitle}
                         onChange={e => setOrgsTitle(e.target.value)}
@@ -37,7 +37,7 @@ function OrganizationsEdit(props) {
                     />
                 </div>
                 <div className={customAddOrgStyle.field}>
-                    <p>Etkinlik İçeriği</p>
+                    <p>Organizasyon İçeriği</p>
                     <textarea
                         value={orgsContent}
                         onChange={e => setOrgsContent(e.target.value)}
@@ -47,7 +47,7 @@ function OrganizationsEdit(props) {
                     />
                 </div>
                 <div className={customAddOrgStyle.field}>
-                    <p>Etkinlik Kategorisi Etiketleri</p>
+                    <p>Organizasyon Kategorisi Etiketleri</p>
                     <select
                         value={orgsCategory}
                         type="combobox"
