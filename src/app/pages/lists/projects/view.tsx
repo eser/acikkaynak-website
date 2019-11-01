@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
+import { Item, Button, Icon, Label } from 'semantic-ui-react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolderOpen, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 
@@ -41,41 +43,34 @@ function View(props: ViewProps) {
                     }
 
                     return (
-                        <div className="project" key={`${categoryKey}.${projectKey}`}>
-                            <div className="card">
-                                <a key={`${categoryKey}.${projectKey}.link`} href={project.url}>
-                                    <header className="card-header">
-                                        <div className="card-header-title">
-                                            <div className="column is-three-fifths">
-                                                {project.name}
-                                            </div>
-                                            <div className="column has-text-right">
-                                                <img src={`https://img.shields.io/github/stars/${project.githubUrl}.svg?style=social&amp;label=Star`} alt={`${project.name} stars`} />
-                                            </div>
-                                        </div>
-                                    </header>
-                                </a>
-                                <div className="card-content">
-                                    <div className="content">
-                                        <ReactMarkdown source={project.content} />
-                                    </div>
-                                </div>
-                                <footer className="card-footer">
-                                    <div className="column">
-                                        <a href={`https://github.com/${project.githubUrl}`}>{project.githubUrl}</a>
-                                    </div>
-                                    <div className="column has-text-right">
-                                        {project.needsContribution && (
-                                            <span className="tag is-success">
-                                                <FontAwesomeIcon icon={faCodeBranch} />
-                                                { ' ' }
-                                                Katılım Bekliyor
-                                            </span>
-                                        )}
-                                    </div>
-                                </footer>
-                            </div>
-                        </div>
+                        <Item className="project" key={`${categoryKey}.${projectKey}`}>
+                            {/* <Item.Image src='/images/wireframe/image.png' /> */}
+
+                            <Item.Content>
+                                <Item.Header as="a" key={`${categoryKey}.${projectKey}.link`} href={project.url}>
+                                    {project.name}
+                                </Item.Header>
+                                <Item.Meta>
+                                    <img src={`https://img.shields.io/github/stars/${project.githubUrl}.svg?style=social&amp;label=Star`} alt={`${project.name} stars`} />
+                                </Item.Meta>
+                                <Item.Description>
+                                    <ReactMarkdown source={project.content} />
+                                </Item.Description>
+                                <Item.Extra>
+                                    <Button as="a" primary floated="right" href={`https://github.com/${project.githubUrl}`}>
+                                        github/
+                                        {project.githubUrl}
+                                    </Button>
+                                    {project.needsContribution && (
+                                        <Label>
+                                            <FontAwesomeIcon icon={faCodeBranch} />
+                                            { ' ' }
+                                            Katılım Bekliyor
+                                        </Label>
+                                    )}
+                                </Item.Extra>
+                            </Item.Content>
+                        </Item>
                     );
                 })
                     .filter(x => x !== null);
@@ -92,9 +87,9 @@ function View(props: ViewProps) {
                             {category}
                         </h2>
 
-                        <div key={`${categoryKey}.list`}>
+                        <Item.Group divided key={`${categoryKey}.list`}>
                             {categoryHtml}
-                        </div>
+                        </Item.Group>
 
                         <br />
                         <br />
