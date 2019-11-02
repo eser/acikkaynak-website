@@ -1,15 +1,24 @@
 import React from 'react';
 
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, Message, Icon } from 'semantic-ui-react';
 
 function GetStarted() {
     return (
         <Container className="content" textAlign="justified">
-            <Header as="h1">Başlarken</Header>
+            <Header as="h1">
+                <Icon name="caret square right" circular />
+                <Header.Content>
+                    Başlarken
+                    <Header.Subheader>Açık Kaynak Geliştirmeye Başlama Rehberi</Header.Subheader>
+                </Header.Content>
+            </Header>
 
-            <p>
-                Bu sayfa yapım aşamasında.
-            </p>
+            <Message icon>
+                <Icon name="circle notched" loading />
+                <Message.Content>
+                    <Message.Header>Bu sayfa yapım aşamasında.</Message.Header>
+                </Message.Content>
+            </Message>
         </Container>
     );
 }

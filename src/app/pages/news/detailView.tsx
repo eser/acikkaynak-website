@@ -3,8 +3,6 @@ import { useHistory, Link } from 'react-router-dom';
 
 import customNewsStyle from './style.less';
 
-const bulmaStyles = {};
-
 function NewsDetailView(props) {
     const historyObj = useHistory();
 
@@ -20,7 +18,7 @@ function NewsDetailView(props) {
             <div>
                 <p>{props.content.content}</p>
 
-                <p className={bulmaStyles.subtitle}>Etiketler:</p>
+                <p>Etiketler:</p>
                 <p>{props.content.tags.map(item => <li key={item.toLowerCase()}>{item}</li>)}</p>
             </div>
 

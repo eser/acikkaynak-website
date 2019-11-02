@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Header } from 'semantic-ui-react';
+import { Header, Icon } from 'semantic-ui-react';
 
 import customNewsStyle from './style.less';
 
@@ -41,7 +41,13 @@ function NewsListView(props) {
 
     return (
         <>
-            <Header as="h1">Haberler</Header>
+            <Header as="h1">
+                <Icon name="caret square right" circular />
+                <Header.Content>
+                    Haberler
+                    <Header.Subheader>Açık Kaynak ile İlgili Haberler</Header.Subheader>
+                </Header.Content>
+            </Header>
 
             <ul className={customNewsStyle.tagBox}>
                 {JSON.stringify(props.tag)}

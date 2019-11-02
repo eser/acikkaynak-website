@@ -5,9 +5,15 @@ import { Container, Header, Message, Icon } from 'semantic-ui-react';
 function Learn() {
     return (
         <Container className="content" textAlign="justified">
-            <Header as="h1" icon>
+            <Header as="h1">
                 <Icon name="caret square right" circular />
-                <Header.Content>Egitim</Header.Content>
+                <Header.Content>
+                    Eğitim
+                    <Header.Subheader>
+                        Açık Kaynak ile İlgili Konular Hakkında
+                        İçerik ve Kaynaklar
+                    </Header.Subheader>
+                </Header.Content>
             </Header>
 
             <Message icon>
