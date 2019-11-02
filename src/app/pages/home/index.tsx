@@ -7,33 +7,48 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faNewspaper, faGraduationCap, faListOl, faStar } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faGithubSquare, faTwitterSquare, faTelegram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
+import Logo from './logo.svg';
+import OpenSource from './open-source.svg';
+import Statistics from './statistics.svg';
 import localStyles from './styles.less';
 // import globalStyles from '../../layouts/shared/assets/global.less';
-
-import Logo from './logo.png';
 
 function Home() {
     return (
         <>
-            <Segment inverted textAlign="center" className={localStyles.heroSegment} vertical>
-                <Header
-                    as="h1"
-                    content="{ açık kaynak }"
-                    inverted
-                />
-                <Header
-                    as="h2"
-                    inverted
-                >
-                    2015'den bu yana açık kaynak farkındalığı
-                    oluşturuyor, projelerimizi listeliyor ve
-                    yardımlaşıyoruz
-                </Header>
-                <Button primary as={Link} to="/about/" size="large">
-                    Manifesto ve Bilgilendirme
-                    <Icon name="right arrow" />
-                </Button>
+            <Segment inverted className={localStyles.heroSegment} vertical>
+                <Grid container stackable verticalAlign="middle">
+                    <Grid.Row>
+                        <Grid.Column computer={16} largeScreen={10} widescreen={10}>
+                            {/* <Header
+                                as="h1"
+                                content="{ açık kaynak }"
+                                inverted
+                            /> */}
+                            <Image size="medium" src={Logo} />
+                            <Header
+                                as="h2"
+                                inverted
+                            >
+                                2015'den bu yana açık kaynak farkındalığı
+                                oluşturuyor, projelerimizi listeliyor ve
+                                yardımlaşıyoruz
+                            </Header>
+                            <Button primary as={Link} to="/about/" size="large">
+                                Manifesto ve Bilgilendirme
+                                <Icon name="right arrow" />
+                            </Button>
+                        </Grid.Column>
+                        <Grid.Column width={6} only="large screen" floated="right">
+                            <Image size="large" src={OpenSource} />
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
             </Segment>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" className={localStyles.asymClip}>
+                <polygon fill="white" points="0,100 100,0 100,100" />
+            </svg>
 
             <Segment className={localStyles.infoSegment} vertical>
                 <Grid container stackable verticalAlign="middle">
@@ -60,12 +75,9 @@ function Home() {
                                 yaygınlaştırmak için rehberlik etmek.
                             </p>
                         </Grid.Column>
-                        <Grid.Column width={6} only="large screen" floated="right">
-                            <Image rounded size="huge" src={Logo} />
-                        </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Grid.Column textAlign="center">
+                        <Grid.Column width={6} only="large screen" floated="right" textAlign="center">
+                            <Image size="huge" src={Statistics} />
+
                             <Button as={Link} to="/stats/" size="large">İstatistikler</Button>
                         </Grid.Column>
                     </Grid.Row>

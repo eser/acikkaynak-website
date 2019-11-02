@@ -61297,7 +61297,7 @@ body.pushable > .pusher {
   float: right;
 }
 .ui.segment.hero-segment {
-  padding: 4em 0em;
+  padding: 4em 0 1em;
 }
 .ui.segment.hero-segment h1 {
   font-size: 3.8em;
@@ -61313,8 +61313,13 @@ body.pushable > .pusher {
 .ui.segment.hero-segment .primary.button {
   font-size: 1.3em;
 }
+.asym-clip {
+  background-color: #3DA639;
+  width: 100%;
+  height: 10vw;
+}
 .ui.segment.info-segment {
-  padding: 8em 0;
+  padding: 4em 0;
 }
 .ui.segment.pages-segment {
   padding: 8em 0 0;
@@ -61476,11 +61481,6 @@ body.pushable > .pusher {
   text-align: center;
   width: 150px;
   margin-top: 2%;
-}
-
-.search {
-  display: flex;
-  min-width: 20vw;
 }
 
 .organizations-container {
