@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { Container, Button, Responsive, Segment, Menu, Sidebar, Icon } from 'semantic-ui-react';
+import { Container, Button, Responsive, Segment, Menu, Sidebar } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import getWidth from './getWidth';
@@ -46,7 +47,7 @@ function MobileContainer(props) {
                     <Container>
                         <Menu inverted pointing secondary size="large">
                             <Menu.Item onClick={() => setSidebarOpened(true)}>
-                                <Icon name="sidebar" />
+                                <FontAwesomeIcon icon={faBars} />
                             </Menu.Item>
                             <Menu.Item position="right">
                                 <Button as="a" href="https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acikkaynak.info%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state=" inverted>

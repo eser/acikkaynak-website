@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button, Divider, Grid, Header, Image, Segment, Icon, Card } from 'semantic-ui-react';
+import { Button, Divider, Grid, Header, Image, Segment, Card } from 'semantic-ui-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faNewspaper, faGraduationCap, faListOl, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faNewspaper, faGraduationCap, faListOl, faStar, faLocationArrow } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faGithubSquare, faTwitterSquare, faTelegram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 import Logo from './logo.svg';
@@ -35,8 +35,9 @@ function Home() {
                                 yardımlaşıyoruz
                             </Header>
                             <Button primary as={Link} to="/about/" size="large">
+                                <FontAwesomeIcon icon={faLocationArrow} />
+                                { ' ' }
                                 Manifesto ve Bilgilendirme
-                                <Icon name="right arrow" />
                             </Button>
                         </Grid.Column>
                         <Grid.Column width={6} only="large screen" floated="right">

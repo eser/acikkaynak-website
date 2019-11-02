@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Header, Icon } from 'semantic-ui-react';
+import { Header } from 'semantic-ui-react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
 
 import customNewsStyle from './style.less';
 
@@ -42,7 +45,10 @@ function NewsListView(props) {
     return (
         <>
             <Header as="h1">
-                <Icon name="caret square right" circular />
+                <i aria-hidden="true" className="circular icon">
+                    <FontAwesomeIcon icon={faCaretSquareRight} />
+                </i>
+
                 <Header.Content>
                     Haberler
                     <Header.Subheader>Açık Kaynak ile İlgili Haberler</Header.Subheader>
