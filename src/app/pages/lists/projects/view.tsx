@@ -6,6 +6,8 @@ import { Item, Button, Label } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolderOpen, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 
+import { HashLink as Link } from 'react-router-hash-link';
+
 interface ViewProps {
     datasource: any;
 }
@@ -22,7 +24,11 @@ function View(props: ViewProps) {
     return (
         <>
             <div>
-                <input type="text" className="input" placeholder="Filtreleme" value={filter} onChange={onFilterChanged} />
+                <div className="ui input">
+                    <input type="text" placeholder="Proje bul" value={filter} onChange={onFilterChanged} />
+                </div>
+                <div className="ui divider" />
+                {Object.keys(props.datasource).map(category => <Link to={`#${category}`} className="ui positive button" key={category}>{category}</Link>)}
             </div>
 
             {Object.keys(props.datasource).map((category) => {
@@ -64,7 +70,7 @@ function View(props: ViewProps) {
                                     {project.needsContribution && (
                                         <Label>
                                             <FontAwesomeIcon icon={faCodeBranch} />
-                                            { ' ' }
+                                            {' '}
                                             Katılım Bekliyor
                                         </Label>
                                     )}
@@ -87,20 +93,16 @@ function View(props: ViewProps) {
                 }
 
                 return (
-                    <div className="margin-top-15px" key={categoryKey}>
+                    <div id={category} className="ui segment" key={categoryKey}>
                         <h2 className="title is-spaced" key={`${categoryKey}.caption`}>
                             <FontAwesomeIcon icon={faFolderOpen} />
-                            { ' ' }
+                            {' '}
                             {category}
                         </h2>
 
                         <Item.Group divided key={`${categoryKey}.list`}>
                             {categoryHtml}
                         </Item.Group>
-
-                        <br />
-                        <br />
-                        <br />
                     </div>
                 );
             })}
