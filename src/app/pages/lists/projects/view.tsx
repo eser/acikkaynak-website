@@ -6,7 +6,7 @@ import { Item, Button, Label } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolderOpen, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 
-import { HashLink as Link } from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 
 interface ViewProps {
     datasource: any;
@@ -28,7 +28,7 @@ function View(props: ViewProps) {
                     <input type="text" placeholder="Proje bul" value={filter} onChange={onFilterChanged} />
                 </div>
                 <div className="ui divider" />
-                {Object.keys(props.datasource).map(category => <Link to={`#${category}`} className="ui positive button" key={category}>{category}</Link>)}
+                {Object.keys(props.datasource).map(category => <HashLink to={`#${category}`} className="ui positive button" key={category}>{category}</HashLink>)}
             </div>
 
             {Object.keys(props.datasource).map((category) => {
