@@ -13,7 +13,7 @@ interface ViewProps {
 }
 
 function View(props: ViewProps) {
-    const [filter, setFilter] = useState('');
+    const [ filter, setFilter ] = useState('');
 
     function onFilterChanged(ev) {
         setFilter(ev.target.value);
@@ -27,14 +27,8 @@ function View(props: ViewProps) {
                 <div className="ui input">
                     <input type="text" placeholder="Proje bul" value={filter} onChange={onFilterChanged} />
                 </div>
-                <div className="ui divider"></div>
-                {Object.keys(props.datasource).map((category) => {
-                    return (
-                        <Link to={`#${category}`} className="ui positive button" key={category}>
-                            {category}
-                        </Link>
-                    )
-                })}
+                <div className="ui divider" />
+                {Object.keys(props.datasource).map(category => <Link to={`#${category}`} className="ui positive button" key={category}>{category}</Link>)}
             </div>
 
             {Object.keys(props.datasource).map((category) => {
