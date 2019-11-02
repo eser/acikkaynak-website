@@ -1,23 +1,25 @@
 # [acikkaynak-website](https://github.com/acikkaynak/acikkaynak-website)
 
-[![build status][build-image]][build-url]
-[![dependencies][dep-image]][dep-url]
-[![coverage status][coverage-image]][coverage-url]
-[![license][license-image]][license-url]
+[![derleme durumu][build-image]][build-url]
+[![bağımlılıklar][dep-image]][dep-url]
+[![kapsam durumu][coverage-image]][coverage-url]
+[![lisans][license-image]][license-url]
 
-## README
+## BENİ OKU
 
-This is the preview version of acikkaynak.info which is currently under construction.
+Bu kod tabanında, şu anda yapım aşamasında bulunan [acikkaynak.info](https://preview.acikkaynak.info/)'nun önizleme sürümü yer almaktadır.
 
-When changes merged on master branch, the changes will be appeared on [https://acikkaynak.herokuapp.com/](https://acikkaynak.herokuapp.com/)
-instead of acikkaynak.info.
+`master` branch'ine aktarılan değişiklikler, bir dizi derleme işleminden sonra [https://preview.acikkaynak.info/](https://preview.acikkaynak.info/)
+adresinde belirecektir. Henüz buradaki değişiklikler `acikkaynak.info` adresindeki yayını etkilememektedir.
 
 
-## Contributing
+## Katkı Sağlamak
 
-Ensure that `node.js` is installed on your system first.
+### Çalışma Ortamını Hazırlamak
 
-Clone the git repo and execute install dependencies from npm to get ready:
+`node.js`'in ve `yarn`'ın sisteminizde kurulu olduğundan emin olun.
+
+Repository'i klonlayıp, npm üzerinden bağımlılıkları çekerek çalışma ortamınızı hazır hale getirin.
 
 ```sh
 git clone https://github.com/acikkaynak/acikkaynak-website.git
@@ -26,65 +28,70 @@ yarn install
 yarn dev
 ```
 
-## NPM Tasks
+### Çalışmaya Başlamak
 
-Use `npm run <task>` command in project folder to execute tasks defined in `package.json`.
-
-| Task                     | Description                                                                            |
-|--------------------------|----------------------------------------------------------------------------------------|
-| `bundle`                 | Builds the project, generates required files                                           |
-| `bundle:prod`            | Builds the project, generates required files (production)                              |
-| `start`                  | Starts SSR-enabled express server                                                      |
-| `dev`                    | Enables live development environment powered by hot module reloading                   |
-| `lint`                   | Executes linter to check codebase against linting errors                               |
-| `test`                   | Runs tests to check codebase against unit testing scenerios                            |
-| `test:coverage`          | Runs tests with calculating coverage stats                                             |
-| `containerize`           | Creates containerization files and gives instructions for docker                       |
+`yarn dev` komutu ile geliştirme modunda kod tabanına müdahale etmeye başlayabilirsiniz. Komutu çalıştırdıktan bir süre
+sonra browser'ınız açılacak, siz değişiklik yaptığınız sürece "hot reloading" sayesinde browser'daki kod otomatik olarak
+güncellenecektir.
 
 
-## Directory Structure
+### Çalışmayı Kontrol Etmek
 
-| Path.                                           | Description                                                     |
+`yarn lint` komutu ile yazılan kodun belirlenen eslint standartlarına uyup uymadığını kontrol edebilirsiniz. Eğer bu
+kontrolü yapmazsanız Pull Request oluşturduğunuzda GitHub tarafından bu kontroller otomatik işletilecek ve açmış olduğunuz
+Pull Request'i sizden güncellemenizi isteyecektir.
+
+Bazı kod standartları otomatik olarak düzeltilebilmektedir, bunu sağlamak için `yarn lint:fix` komutunu kullanabilirsiniz.
+
+Aynı zamanda yazmış olduğunuz birim testlerini `yarn test` komutu ile başlatabilirsiniz. Testler de aynı lint işlemi gibi
+hem pull request hem de push esnasında GitHub Actions tarafından CI/CD otomasyonuna bağlı olarak çalıştırılmaktadır.
+
+
+## Dizin Yapısı
+
+| Klasör                                          | Açıklama                                                        |
 |-------------------------------------------------|-----------------------------------------------------------------|
-| `/src/`                                         | The folder for your source files                                |
-| `/src/app/`                                     | Main Application                                                |
-| `/src/app/assets/`                              | - Assets (images, fonts, stylesheets, etc.)                     |
-| `/src/app/layouts/`                             | - Layouts / Templates                                           |
-| `/src/app/pages/`                               | - Pages                                                         |
-| `/src/app/appContainer.tsx`                     | - Main application router                                       |
-| `/src/startup.ts`                               | The list and configuration of your mapped applications          |
-| `/src/index.html`                               | The index file                                                  |
-| `/public/`                                      | The folder for your static files will be on your webroot        |
+| `/src/`                                         | Kaynak dosyalarını içeren klasör                                |
+| `/src/app/`                                     | Ana uygulama kaynak kodları                                     |
+| `/src/app/layouts/default/`                     | - Varsayılan tema                                               |
+| `/src/app/layouts/default/assets/`              | - Varsayılan temanın assetleri (resim, font, stiller, v.b.)     |
+| `/src/app/layouts/shared/assets/`               | - Tüm temaların ortak assetleri (resim, font, stiller, v.b.)    |
+| `/src/app/pages/`                               | - Sayfalar ve sayfalara ait React bileşenleri                   |
+| `/src/app/app.tsx`                              | - Uygulamanın router noktası                                    |
+| `/src/startup.ts`                               | Tüm uygulama için bağımlılık bağlantıları ve konfigurasyon      |
+| `/src/index.html`                               | HTML Şablonu                                                    |
+| `/semantic-ui/`                                 | Semantic UI'a ait tema ve site özelleştirme yapısı              |
+| `/public/`                                      | Web dizininde yer alacak tüm statik dosyalar                    |
 
 
-## Todo List
+## Yapılacaklar
 
-See [GitHub Projects](https://github.com/orgs/acikkaynak/projects) for more.
+[GitHub Projesi](https://github.com/orgs/acikkaynak/projects/1) üzerinde detaylar yer almaktadır.
 
 
-## Requirements
+## Gereksinimler
 
 * node.js (https://nodejs.org/)
 
 
-## Notes and Credits
+## Notlar ve Teşekkürler
 
-Uses [google-webfonts-helper](https://google-webfonts-helper.herokuapp.com/) for embedding webfonts.
-
-
-## License
-
-Apache 2.0, for further details, please see [LICENSE](LICENSE) file
+Webfontları içeri gömmek için [google-webfonts-helper](https://google-webfonts-helper.herokuapp.com/) kullanılmaktadır.
 
 
-## Contributing
+## Lisans
 
-See [contributors.md](contributors.md)
+Apache 2.0, daha fazla detay için lütfen [LICENSE](LICENSE) dosyasını inceleyin.
 
-It is publicly open for any contribution. Bugfixes, new features and extra modules are welcome.
 
-* To contribute to code: Fork the repo, push your changes to your fork, and submit a pull request.
-* To report a bug: If something does not work, please report it using [GitHub Issues](https://github.com/acikkaynak/acikkaynak-website/issues).
+## Katkı Sağlayanlar
+
+[contributors.md](contributors.md) dosyasını inceleyebilirsiniz.
+
+Herhangi bir katkıya açıktır. Hata düzenlemeleri, yeni özellik ve modüller ekleyebilirsiniz.
+
+* Koda katkı sağlamak için: Yukarıda anlatıldığı gibi repository'i klonlayın, değişikliklerinizi gerçekleştirin, ve bir pull request oluşturun.
+* Bir hata bildirmek için: Bir şeyler ters gidiyorsa, [GitHub Issues](https://github.com/acikkaynak/acikkaynak-website/issues) üzerinden yeni bir issue oluşturup bize bildirin.
 
 
 [build-image]: https://github.com/acikkaynak/acikkaynak-website/workflows/CI/badge.svg
