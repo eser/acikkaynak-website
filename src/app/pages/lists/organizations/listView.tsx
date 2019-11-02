@@ -1,10 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import customOrgsStyle from './style.less';
-
-const bulmaStyles = {};
-
 function OrgsListView(props) {
     // GET Categpries from list of organizations
     const categories = props.orgs
@@ -14,23 +10,16 @@ function OrgsListView(props) {
     return (
         <>
             {/* Top bar */}
-            <nav className={bulmaStyles.level}>
-                {/* Left side */}
-                <div className={bulmaStyles.levelLeft}>
-                    <div className={bulmaStyles.levelItem}>
-                        <h1 className={bulmaStyles.title}>Organizasyonlar</h1>
-                    </div>
-                </div>
+            <nav>
+                <h1>Organizasyonlar</h1>
 
                 {/* Right side */}
-                <div className={bulmaStyles.levelRight}>
-                    <div className={`${bulmaStyles.levelItem}`}>
-                        <div className={`${bulmaStyles.field} ${bulmaStyles.hasAddons} ${customOrgsStyle.search}`}>
-                            <input className={bulmaStyles.input} onChange={props.handleSearch} value={props.searchInput} type="text" placeholder="Organizasyon bul" />
-                        </div>
+                <div>
+                    <div>
+                        <input onChange={props.handleSearch} value={props.searchInput} type="text" placeholder="Organizasyon bul" />
                     </div>
 
-                    <p className={bulmaStyles.levelItem}><Link to="/lists/organizations/add/" className={`${bulmaStyles.button} ${bulmaStyles.isSuccess}`}>Organizasyon Ekle</Link></p>
+                    <p><Link to="/lists/organizations/add/">Organizasyon Ekle</Link></p>
                 </div>
             </nav>
             <ul>

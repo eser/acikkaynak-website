@@ -1,8 +1,6 @@
 import React from 'react';
 import { useHistory, Link } from 'react-router-dom';
 
-const bulmaStyles = {};
-
 function OrgDetailView(props) {
     const historyObj = useHistory();
 
@@ -13,7 +11,7 @@ function OrgDetailView(props) {
 
     return (
         <>
-            <h5 className={bulmaStyles.subtitle}>{props.content.title}</h5>
+            <h5>{props.content.title}</h5>
             <div>
                 <p>{props.content.content}</p>
                 <p>

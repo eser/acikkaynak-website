@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Icon, Header } from 'semantic-ui-react';
 
 import View from './view';
 
@@ -31,7 +31,16 @@ function Projects() {
 
     return (
         <Container className="content" textAlign="justified">
-            <Header as="h1">Projeler</Header>
+            <Header as="h1">
+                <Icon name="clipboard list" circular />
+                <Header.Content>
+                    Projeler
+                    <Header.Subheader>
+                        Açık Kaynak Olarak Geliştiren
+                        Projelerin Listesi
+                    </Header.Subheader>
+                </Header.Content>
+            </Header>
 
             {projects && (
                 <View

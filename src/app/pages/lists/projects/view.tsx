@@ -68,6 +68,13 @@ function View(props: ViewProps) {
                                             Katılım Bekliyor
                                         </Label>
                                     )}
+                                    {/* project.needsSponsor && (
+                                        <Label>
+                                            <FontAwesomeIcon icon={faCodeBranch} />
+                                            { ' ' }
+                                            Sponsor Bekliyor
+                                        </Label>
+                                    ) */}
                                 </Item.Extra>
                             </Item.Content>
                         </Item>
