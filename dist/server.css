@@ -61270,10 +61270,10 @@ body.pushable > .pusher {
 }
 .ui.inverted.segment,
 .ui.primary.inverted.segment {
-  background: #3DA639;
+  background: #007CC4;
 }
 .ui.secondary.inverted.pointing.menu {
-  border-color: #3DA639;
+  border-color: #007CC4;
 }
 .ui.secondary.menu .dropdown.item > .menu,
 .ui.text.menu .dropdown.item > .menu {
@@ -61314,9 +61314,12 @@ body.pushable > .pusher {
   font-size: 1.3em;
 }
 .asym-clip {
-  background-color: #3DA639;
+  background-color: #007CC4;
   width: 100%;
   height: 10vw;
+}
+.ui.button.button-below-image {
+  margin: 1em 0 0;
 }
 .ui.segment.info-segment {
   padding: 4em 0;
