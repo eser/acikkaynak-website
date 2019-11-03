@@ -93,7 +93,11 @@ function View(props: ViewProps) {
                 }
 
                 return (
-                    <Segment id={category} className={localStyles.categorySegment} key={categoryKey}>
+                    <Segment
+                        id={category}
+                        className={localStyles.categorySegment}
+                        key={categoryKey}
+                    >
                         <h2 className="title is-spaced" key={`${categoryKey}.caption`}>
                             <FontAwesomeIcon icon={faFolderOpen} />
                             {' '}
