@@ -7,9 +7,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faNewspaper, faGraduationCap, faListOl, faStar, faLocationArrow, faChartLine } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faGithubSquare, faTwitterSquare, faTelegram, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
+import 'pure-react-carousel/dist/react-carousel.es.css';
+
+import Carousel from './carousel';
+
 import Logo from './logo.svg';
 import OpenSource from './open-source.svg';
 import Statistics from './statistics.svg';
+
 import localStyles from './styles.less';
 import globalStyles from '../../layouts/shared/assets/global.less';
 
@@ -91,49 +96,62 @@ function Home() {
                 </Grid>
             </Segment>
 
-            <Segment className={localStyles.projectsSegment} vertical>
-                <Grid celled="internally" columns="equal" stackable>
-                    <Grid.Row textAlign="center">
-                        <Grid.Column className={localStyles.gridContent}>
-                            <Header as="h3">
-                                Restoran Uygulaması
-                            </Header>
-                            <p>
-                                Restoranlarda kağıt menü devrini kapatan onun yerine
-                                müşterilere, masalarda bulunan QR Kod ile sipariş
-                                verebilme olanağı sağlayan ve siparişin takibini
-                                kolaylaştıran android uygulama.
-                            </p>
-                            <p>
-                                <a href="https://github.com/yusufcakal/RestaurantApp">
-                                    <FontAwesomeIcon icon={faGithub} />
-                                    { ' ' }
-                                    github/yusufcakal/RestaurantApp
-                                </a>
-                            </p>
-                        </Grid.Column>
-                        <Grid.Column className={localStyles.gridContent}>
-                            <Header as="h3">
-                                WholeCMS
-                            </Header>
-                            <p>
-                                PHP/Laravel kullanılarak hazırlanmış, içerik yönetim
-                                sistemi. Sınırsızca genişletebileceğiniz bağımlılıkları
-                                olmadan oluşturacağınız modüllerinizi dahil edip içerik
-                                yönetim sisteminden daha fazlasını elde edebilirsiniz.
-                                İstediğiniz temaya entegre ederek kolayca
-                                kullanabileceğiniz bir sistem.
-                            </p>
-                            <p>
-                                <a href="https://github.com/wholecms/core">
-                                    <FontAwesomeIcon icon={faGithub} />
-                                    { ' ' }
-                                    github/wholecms
-                                </a>
-                            </p>
-                        </Grid.Column>
-                    </Grid.Row>
-                </Grid>
+            <Segment className={localStyles.projectsSegment}>
+                <Divider
+                    as="h4"
+                    horizontal
+                    className={localStyles.withDiv}
+                >
+                    ÖRNEK AÇIK KAYNAK PROJELER
+                </Divider>
+                <Carousel>
+                    <Carousel.Item>
+                        <Card fluid>
+                            <Card.Content>
+                                <Card.Header>
+                                    Restoran Uygulaması
+                                </Card.Header>
+                                <Card.Description>
+                                    Restoranlarda kağıt menü devrini kapatan onun yerine
+                                    müşterilere, masalarda bulunan QR Kod ile sipariş
+                                    verebilme olanağı sağlayan ve siparişin takibini
+                                    kolaylaştıran android uygulama.
+                                </Card.Description>
+                                <Card.Meta>
+                                    <a href="https://github.com/yusufcakal/RestaurantApp">
+                                        <FontAwesomeIcon icon={faGithub} />
+                                        { ' ' }
+                                        github/yusufcakal/RestaurantApp
+                                    </a>
+                                </Card.Meta>
+                            </Card.Content>
+                        </Card>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <Card fluid>
+                            <Card.Content>
+                                <Card.Header>
+                                    WholeCMS
+                                </Card.Header>
+                                <Card.Description>
+                                    PHP/Laravel kullanılarak hazırlanmış, içerik yönetim
+                                    sistemi. Sınırsızca genişletebileceğiniz bağımlılıkları
+                                    olmadan oluşturacağınız modüllerinizi dahil edip içerik
+                                    yönetim sisteminden daha fazlasını elde edebilirsiniz.
+                                    İstediğiniz temaya entegre ederek kolayca
+                                    kullanabileceğiniz bir sistem.
+                                </Card.Description>
+                                <Card.Meta>
+                                    <a href="https://github.com/wholecms/core">
+                                        <FontAwesomeIcon icon={faGithub} />
+                                        { ' ' }
+                                        github/wholecms
+                                    </a>
+                                </Card.Meta>
+                            </Card.Content>
+                        </Card>
+                    </Carousel.Item>
+                </Carousel>
             </Segment>
 
             <Segment className={localStyles.pagesSegment} vertical>

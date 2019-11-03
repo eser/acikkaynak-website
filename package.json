@@ -61,6 +61,7 @@
     "eslint-plugin-react-hooks": "^2.2.0",
     "history": "^4.10.1",
     "path-browser": "^2.2.1",
+    "pure-react-carousel": "^1.23.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-markdown": "^4.2.2",
