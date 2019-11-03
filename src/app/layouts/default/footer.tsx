@@ -38,7 +38,7 @@ function Footer() {
                         </Grid.Column>
                         <Grid.Column width={7}>
                             <Header as="h4" inverted>
-                                { '{ açık kaynak }' }
+                                { 'açık kaynak' }
                             </Header>
                             <p>
                                 &laquo;2015'den bu yana açık kaynak farkındalığı oluşturuyor,

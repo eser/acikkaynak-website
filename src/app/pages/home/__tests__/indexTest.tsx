@@ -20,6 +20,6 @@ describe('Layout', () => {
     it('should be properly rendered', () => {
         const wrapper = Enzyme.mount(<BrowserRouter><Home /></BrowserRouter>);
 
-        expect(wrapper.find('h1').contains('{ açık kaynak }')).toEqual(true);
+        expect(wrapper.find('h1').contains('açık kaynak')).toEqual(true);
     });
 });

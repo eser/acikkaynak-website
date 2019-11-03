@@ -11,7 +11,7 @@ import Logo from './logo.svg';
 import OpenSource from './open-source.svg';
 import Statistics from './statistics.svg';
 import localStyles from './styles.less';
-// import globalStyles from '../../layouts/shared/assets/global.less';
+import globalStyles from '../../layouts/shared/assets/global.less';
 
 function Home() {
     return (
@@ -20,11 +20,12 @@ function Home() {
                 <Grid container stackable verticalAlign="middle">
                     <Grid.Row>
                         <Grid.Column computer={16} largeScreen={10} widescreen={10}>
-                            {/* <Header
+                            <Header
                                 as="h1"
-                                content="{ açık kaynak }"
+                                content="açık kaynak"
                                 inverted
-                            /> */}
+                                hidden
+                            />
                             <Image size="medium" src={Logo} />
                             <Header
                                 as="h2"
@@ -34,18 +35,15 @@ function Home() {
                                 oluşturuyor, projelerimizi listeliyor ve
                                 yardımlaşıyoruz
                             </Header>
-                        </Grid.Column>
-                        <Grid.Column width={6} only="large screen" floated="right">
-                            <Image size="large" src={OpenSource} />
-                        </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Grid.Column computer={16} largeScreen={10} widescreen={10} textAlign="center">
-                            <Button primary as={Link} to="/about/" size="large">
+
+                            <Button primary as={Link} to="/about/" size="large" className={globalStyles.padded}>
                                 <FontAwesomeIcon icon={faLocationArrow} />
                                 { ' ' }
                                 Manifesto ve Bilgilendirme
                             </Button>
+                        </Grid.Column>
+                        <Grid.Column width={6} only="large screen" floated="right">
+                            <Image size="large" src={OpenSource} />
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
@@ -83,7 +81,7 @@ function Home() {
                         <Grid.Column width={6} only="large screen" floated="right" textAlign="center">
                             <Image size="huge" src={Statistics} />
 
-                            <Button as={Link} to="/stats/" size="large" className={localStyles.buttonBelowImage}>
+                            <Button as={Link} to="/stats/" size="large" primary className={localStyles.buttonBelowImage}>
                                 <FontAwesomeIcon icon={faChartLine} />
                                 { ' ' }
                                 İstatistikler

@@ -2156,11 +2156,11 @@ p:last-child {
         Links
 --------------------*/
 a {
-  color: #1B8417;
+  color: #4EA13B;
   text-decoration: none;
 }
 a:hover {
-  color: #0b7d06;
+  color: #379c1f;
   text-decoration: none;
 }
 /*******************************
@@ -5819,7 +5819,7 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 /*--- Standard ---*/
 .ui.primary.buttons .button,
 .ui.primary.button {
-  background-color: #2C2D2E;
+  background-color: #4EA13B;
   color: #FFFFFF;
   text-shadow: none;
   background-image: none;
@@ -5829,19 +5829,19 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 }
 .ui.primary.buttons .button:hover,
 .ui.primary.button:hover {
-  background-color: #1f2021;
+  background-color: #429330;
   color: #FFFFFF;
   text-shadow: none;
 }
 .ui.primary.buttons .button:focus,
 .ui.primary.button:focus {
-  background-color: #181919;
+  background-color: #3a8b28;
   color: #FFFFFF;
   text-shadow: none;
 }
 .ui.primary.buttons .button:active,
 .ui.primary.button:active {
-  background-color: #131314;
+  background-color: #3c7c2d;
   color: #FFFFFF;
   text-shadow: none;
 }
@@ -5849,38 +5849,38 @@ body .ui.inverted::-webkit-scrollbar-thumb:hover {
 .ui.primary.buttons .active.button:active,
 .ui.primary.active.button,
 .ui.primary.button .active.button:active {
-  background-color: #1f2021;
+  background-color: #41952d;
   color: #FFFFFF;
   text-shadow: none;
 }
 /* Basic */
 .ui.basic.primary.buttons .button,
 .ui.basic.primary.button {
-  box-shadow: 0px 0px 0px 1px #2C2D2E inset !important;
-  color: #2C2D2E !important;
+  box-shadow: 0px 0px 0px 1px #4EA13B inset !important;
+  color: #4EA13B !important;
 }
 .ui.basic.primary.buttons .button:hover,
 .ui.basic.primary.button:hover {
   background: transparent !important;
-  box-shadow: 0px 0px 0px 1px #1f2021 inset !important;
-  color: #1f2021 !important;
+  box-shadow: 0px 0px 0px 1px #429330 inset !important;
+  color: #429330 !important;
 }
 .ui.basic.primary.buttons .button:focus,
 .ui.basic.primary.button:focus {
   background: transparent !important;
-  box-shadow: 0px 0px 0px 1px #181919 inset !important;
-  color: #1f2021 !important;
+  box-shadow: 0px 0px 0px 1px #3a8b28 inset !important;
+  color: #429330 !important;
 }
 .ui.basic.primary.buttons .active.button,
 .ui.basic.primary.active.button {
   background: transparent !important;
-  box-shadow: 0px 0px 0px 1px #1f2021 inset !important;
-  color: #131314 !important;
+  box-shadow: 0px 0px 0px 1px #41952d inset !important;
+  color: #3c7c2d !important;
 }
 .ui.basic.primary.buttons .button:active,
 .ui.basic.primary.button:active {
-  box-shadow: 0px 0px 0px 1px #131314 inset !important;
-  color: #131314 !important;
+  box-shadow: 0px 0px 0px 1px #3c7c2d inset !important;
+  color: #3c7c2d !important;
 }
 .ui.buttons:not(.vertical) > .basic.primary.button:not(:first-child) {
   margin-left: -1px;
@@ -19946,7 +19946,7 @@ a.ui.basic.black.label:hover {
 a.ui.basic.label:hover {
   text-decoration: none;
   background: none #FFFFFF;
-  color: #0b7d06;
+  color: #379c1f;
   box-shadow: 1px solid rgba(34, 36, 38, 0.15);
   box-shadow: none;
 }
@@ -21039,11 +21039,11 @@ ol.ui.list ol li,
 .ui.list .list > a.item,
 .ui.list > a.item {
   cursor: pointer;
-  color: #1B8417;
+  color: #4EA13B;
 }
 .ui.list .list > a.item:hover,
 .ui.list > a.item:hover {
-  color: #0b7d06;
+  color: #379c1f;
 }
 /* Linked Item Icons */
 .ui.list .list > a.item i.icon,
@@ -21054,11 +21054,11 @@ ol.ui.list ol li,
 .ui.list .list > .item a.header,
 .ui.list > .item a.header {
   cursor: pointer;
-  color: #1B8417 !important;
+  color: #4EA13B !important;
 }
 .ui.list .list > .item a.header:hover,
 .ui.list > .item a.header:hover {
-  color: #0b7d06 !important;
+  color: #379c1f !important;
 }
 /* Floated Content */
 .ui[class*="left floated"].list {
@@ -21198,14 +21198,14 @@ ol.ui.list ol li,
 }
 .ui.inverted.list .list > a.item:hover,
 .ui.inverted.list > a.item:hover {
-  color: #0b7d06;
+  color: #379c1f;
 }
 /* Linking Content */
 .ui.inverted.list .item a:not(.ui) {
   color: rgba(255, 255, 255, 0.9) !important;
 }
 .ui.inverted.list .item a:not(.ui):hover {
-  color: #0b7d06 !important;
+  color: #379c1f !important;
 }
 /*-------------------
        Aligned
@@ -27526,7 +27526,7 @@ ol.ui.horizontal.list li:before,
   background: #F3F4F5;
 }
 .ui.steps .step.active .title {
-  color: #1B8417;
+  color: #4EA13B;
 }
 .ui.ordered.steps .step.active:before,
 .ui.steps .active.step .icon {
@@ -28430,10 +28430,10 @@ ol.ui.horizontal.list li:before,
 }
 /* Link */
 .ui.breadcrumb a {
-  color: #1B8417;
+  color: #4EA13B;
 }
 .ui.breadcrumb a:hover {
-  color: #0b7d06;
+  color: #379c1f;
 }
 /* Icon Divider */
 .ui.breadcrumb .icon.divider {
@@ -39663,7 +39663,7 @@ Floated Menu / Item
 }
 .ui.cards > .card > .content > a.header:hover,
 .ui.card > .content > a.header:hover {
-  color: #0b7d06;
+  color: #379c1f;
 }
 /* Meta */
 .ui.cards > .card .meta > a:not(.ui),
@@ -39755,7 +39755,7 @@ Floated Menu / Item
 }
 .ui.cards > .card > .extra a:not(.ui):hover,
 .ui.card > .extra a:not(.ui):hover {
-  color: #0b7d06;
+  color: #379c1f;
 }
 /*******************************
            Variations
@@ -41023,7 +41023,7 @@ a.ui.card:hover,
   cursor: pointer;
 }
 .ui.comments .comment a.author:hover {
-  color: #0b7d06;
+  color: #379c1f;
 }
 /*--------------
      Metadata
@@ -42961,7 +42961,7 @@ a.ui.card:hover,
   color: rgba(0, 0, 0, 0.85);
 }
 .ui.items > .item > .content > a.header:hover {
-  color: #0b7d06;
+  color: #379c1f;
 }
 /* Meta */
 .ui.items > .item .meta > a:not(.ui) {
@@ -43133,7 +43133,7 @@ a.ui.card:hover,
 }
 .ui.items a.item:hover .content .header,
 .ui.link.items > .item:hover .content .header {
-  color: #0b7d06;
+  color: #379c1f;
 }
 /*--------------
       Size
@@ -46327,7 +46327,7 @@ a.ui.card:hover,
 }
 .ui.toggle.checkbox input:checked ~ .box:before,
 .ui.toggle.checkbox input:checked ~ label:before {
-  background-color: #2C2D2E !important;
+  background-color: #4EA13B !important;
 }
 .ui.toggle.checkbox input:checked ~ .box:after,
 .ui.toggle.checkbox input:checked ~ label:after {
@@ -46341,7 +46341,7 @@ a.ui.card:hover,
 }
 .ui.toggle.checkbox input:focus:checked ~ .box:before,
 .ui.toggle.checkbox input:focus:checked ~ label:before {
-  background-color: #181919 !important;
+  background-color: #3a8b28 !important;
 }
 /*******************************
             Variations
@@ -61307,7 +61307,7 @@ body.pushable > .pusher {
 .ui.segment.hero-segment h2 {
   font-size: 1.3em;
   font-weight: normal;
-  margin: 1.4em auto 1.2em;
+  margin: 1.4em 0 1.2em;
   max-width: 30em;
 }
 .ui.segment.hero-segment .primary.button {
@@ -61319,7 +61319,7 @@ body.pushable > .pusher {
   height: 10vw;
 }
 .ui.button.button-below-image {
-  margin: 1em 0 0;
+  margin: 1.5em 0 0;
 }
 .ui.segment.info-segment {
   padding: 4em 0;
@@ -61384,6 +61384,35 @@ body.pushable > .pusher {
   .ui.segment.hero-segment .primary.button {
     font-size: 0.8em;
   }
+}
+
+.text.mini {
+  font-size: 0.78571429rem;
+}
+.text.tiny {
+  font-size: 0.85714286rem;
+}
+.text.small {
+  font-size: 0.92857143rem;
+}
+.text.medium {
+  font-size: 1rem;
+}
+.text.large {
+  font-size: 1.14285714rem;
+}
+.text.big {
+  font-size: 1.28571429rem;
+}
+.text.huge {
+  font-size: 1.42857143rem;
+}
+.text.huge {
+  font-size: 1.71428571rem;
+}
+.ui.padded.buttons .button,
+.ui.padded.button {
+  padding: 0.8em 2.5em;
 }
 
 :root {

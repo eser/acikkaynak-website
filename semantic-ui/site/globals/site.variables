@@ -7,5 +7,5 @@
 @fontName: 'Arbutus Slab';
 @fontSize: '1em';
 
-@primaryColor: #2C2D2E;
-@linkColor: #1B8417;
+@primaryColor: #4EA13B;
+@linkColor: #4EA13B;
