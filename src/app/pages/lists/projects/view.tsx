@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { Item, Button, Label } from 'semantic-ui-react';
+import { Item, Button, Label, Segment, Input, Divider } from 'semantic-ui-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFolderOpen, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 
 import { HashLink } from 'react-router-hash-link';
+
+import localStyles from './styles.less';
 
 interface ViewProps {
     datasource: any;
@@ -23,12 +25,10 @@ function View(props: ViewProps) {
 
     return (
         <>
+            <Input placeholder="Proje bul" value={filter} onChange={onFilterChanged} />
+            <Divider />
             <div>
-                <div className="ui input">
-                    <input type="text" placeholder="Proje bul" value={filter} onChange={onFilterChanged} />
-                </div>
-                <div className="ui divider" />
-                {Object.keys(props.datasource).map(category => <HashLink to={`#${category}`} className="ui positive button" key={category}>{category}</HashLink>)}
+                {Object.keys(props.datasource).map(category => <HashLink to={`#${category}`} className={`ui positive button ${localStyles.categoryLink}`} key={category}>{category}</HashLink>)}
             </div>
 
             {Object.keys(props.datasource).map((category) => {
@@ -93,7 +93,11 @@ function View(props: ViewProps) {
                 }
 
                 return (
-                    <div id={category} className="ui segment" key={categoryKey}>
+                    <Segment
+                        id={category}
+                        className={localStyles.categorySegment}
+                        key={categoryKey}
+                    >
                         <h2 className="title is-spaced" key={`${categoryKey}.caption`}>
                             <FontAwesomeIcon icon={faFolderOpen} />
                             {' '}
@@ -103,7 +107,7 @@ function View(props: ViewProps) {
                         <Item.Group divided key={`${categoryKey}.list`}>
                             {categoryHtml}
                         </Item.Group>
-                    </div>
+                    </Segment>
                 );
             })}
         </>
