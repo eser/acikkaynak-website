@@ -96,7 +96,99 @@ function Home() {
                 </Grid>
             </Segment>
 
-            <Segment className={localStyles.projectsSegment}>
+            <Segment className={localStyles.pagesSegment} vertical>
+                <Grid container stackable>
+                    <Grid.Row>
+                        <Grid.Column width={8}>
+                            <Header as="h3">
+                                {/* <Link to="/news/"> */}
+                                <Link to="/">
+                                    <i aria-hidden="true" className="circular icon">
+                                        <FontAwesomeIcon icon={faNewspaper} />
+                                    </i>
+                                    Haberler
+                                </Link>
+                            </Header>
+                            <p>
+                                Açık Kaynak projelerden ve açık kaynak destekçisi
+                                organizasyonlardan haberler paylaşarak komünite
+                                içerisinde geniş bir ağ oluşmasına katkıda
+                                bulunmak istiyoruz.
+                            </p>
+                        </Grid.Column>
+                        <Grid.Column floated="right" width={8}>
+                            <Header as="h3">
+                                <Link to="/lists/">
+                                    <i aria-hidden="true" className="circular icon">
+                                        <FontAwesomeIcon icon={faListOl} />
+                                    </i>
+                                    Listeler
+                                </Link>
+                            </Header>
+                            <p>
+                                <Link to="/lists/projects/">Açık kaynak projeler</Link>
+                                ,
+                                { ' ' }
+                                <Link to="/lists/organizations/">Açık kaynak destekçisi organizasyonlar</Link>
+                                { ' ' }
+                                ve
+                                { ' ' }
+                                <Link to="/lists/sponsors/">Sponsorlar</Link>
+                                ı indeksleyerek bu girişimlerin hem görünürlüklerini
+                                sağlamaya hem de dışarıdan erişilebilirliğini
+                                arttırmaya çalışıyoruz.
+                            </p>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column width={8}>
+                            <Header as="h3">
+                                <Link to="/learn/">
+                                    <i aria-hidden="true" className="circular icon">
+                                        <FontAwesomeIcon icon={faGraduationCap} />
+                                    </i>
+                                    Eğitim ve İçerikler
+                                </Link>
+                            </Header>
+                            <p>
+                                Açık Kaynak geliştirme yapmak isteyen kişi ve kuruluşlara
+                                ilk adımlarını atmaları ve ilerlemeleri için destek olmaya
+                                çalışıyoruz. Bu doğrultuda eğitim bölümü altında
+                                { ' ' }
+                                <Link to="/learn/get-started/">Başlarken</Link>
+                                ,
+                                { ' ' }
+                                <Link to="/learn/for-corporations/">Kurumlar İçin</Link>
+                                { ' ' }
+                                ve devamında
+                                { ' ' }
+                                <Link to="/learn/guide/">Rehber</Link>
+                                { ' ' }
+                                bölümlerimiz yer almakta ve her geçen gün içeriğimizi
+                                genişletmekteyiz.
+                            </p>
+                        </Grid.Column>
+                        <Grid.Column floated="right" width={8}>
+                            <Header as="h3">
+                                <Link to="/stats/">
+                                    <i aria-hidden="true" className="circular icon">
+                                        <FontAwesomeIcon icon={faStar} />
+                                    </i>
+                                    İstatistikler
+                                </Link>
+                            </Header>
+                            <p>
+                                Komünitenin açık kaynak'a gerçekleştirdiği katkıyı görünür
+                                kılmak için, sistemimize GitHub hesabı ile giriş yapmış
+                                kullanıcıların bilgilerini kısa aralıklarla derliyor ve
+                                paylaşıyoruz.
+                            </p>
+                        </Grid.Column>
+                    </Grid.Row>
+                </Grid>
+            </Segment>
+
+            <Segment className={localStyles.projectsSegment} vertical>
                 <Divider
                     as="h4"
                     horizontal
@@ -152,94 +244,6 @@ function Home() {
                         </Card>
                     </Carousel.Item>
                 </Carousel>
-            </Segment>
-
-            <Segment className={localStyles.pagesSegment} vertical>
-                <Grid container stackable>
-                    <Grid.Row>
-                        <Grid.Column width={8}>
-                            <Header as="h3">
-                                {/* <Link to="/news/"> */}
-                                <Link to="/">
-                                    <FontAwesomeIcon icon={faNewspaper} />
-                                    { ' ' }
-                                    Haberler
-                                </Link>
-                            </Header>
-                            <p>
-                                Açık Kaynak projelerden ve açık kaynak destekçisi
-                                organizasyonlardan haberler paylaşarak komünite
-                                içerisinde geniş bir ağ oluşmasına katkıda
-                                bulunmak istiyoruz.
-                            </p>
-                        </Grid.Column>
-                        <Grid.Column floated="right" width={8}>
-                            <Header as="h3">
-                                <Link to="/lists/">
-                                    <FontAwesomeIcon icon={faListOl} />
-                                    { ' ' }
-                                    Listeler
-                                </Link>
-                            </Header>
-                            <p>
-                                <Link to="/lists/projects/">Açık kaynak projeler</Link>
-                                ,
-                                { ' ' }
-                                <Link to="/lists/organizations/">Açık kaynak destekçisi organizasyonlar</Link>
-                                { ' ' }
-                                ve
-                                { ' ' }
-                                <Link to="/lists/sponsors/">Sponsorlar</Link>
-                                ı indeksleyerek bu girişimlerin hem görünürlüklerini
-                                sağlamaya hem de dışarıdan erişilebilirliğini
-                                arttırmaya çalışıyoruz.
-                            </p>
-                        </Grid.Column>
-                    </Grid.Row>
-                    <Grid.Row>
-                        <Grid.Column width={8}>
-                            <Header as="h3">
-                                <Link to="/learn/">
-                                    <FontAwesomeIcon icon={faGraduationCap} />
-                                    { ' ' }
-                                    Eğitim ve İçerikler
-                                </Link>
-                            </Header>
-                            <p>
-                                Açık Kaynak geliştirme yapmak isteyen kişi ve kuruluşlara
-                                ilk adımlarını atmaları ve ilerlemeleri için destek olmaya
-                                çalışıyoruz. Bu doğrultuda eğitim bölümü altında
-                                { ' ' }
-                                <Link to="/learn/get-started/">Başlarken</Link>
-                                ,
-                                { ' ' }
-                                <Link to="/learn/for-corporations/">Kurumlar İçin</Link>
-                                { ' ' }
-                                ve devamında
-                                { ' ' }
-                                <Link to="/learn/guide/">Rehber</Link>
-                                { ' ' }
-                                bölümlerimiz yer almakta ve her geçen gün içeriğimizi
-                                genişletmekteyiz.
-                            </p>
-                        </Grid.Column>
-                        <Grid.Column floated="right" width={8}>
-                            <Header as="h3">
-                                <Link to="/stats/">
-                                    <FontAwesomeIcon icon={faStar} />
-                                    { ' ' }
-                                    İstatistikler
-                                </Link>
-                            </Header>
-                            <p>
-                                Komünitenin açık kaynak'a gerçekleştirdiği katkıyı görünür
-                                kılmak için, sistemimize GitHub hesabı ile giriş yapmış
-                                kullanıcıların bilgilerini kısa aralıklarla derliyor ve
-                                paylaşıyoruz.
-                            </p>
-                        </Grid.Column>
-                    </Grid.Row>
-                </Grid>
             </Segment>
 
             <Segment className={localStyles.socialSegment} vertical>
