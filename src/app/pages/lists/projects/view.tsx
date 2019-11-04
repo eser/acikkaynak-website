@@ -23,9 +23,10 @@ function View(props: ViewProps) {
 
     const currentFilter = filter.trim().toLocaleLowerCase();
 
+
     return (
         <>
-            <Input placeholder="Proje bul" value={filter} onChange={onFilterChanged} />
+            <Input icon="search" placeholder="Proje bul" value={filter} onChange={onFilterChanged} />
             <Divider />
             <div>
                 {Object.keys(props.datasource).map(category => <HashLink to={`#${category}`} className={`ui positive button ${localStyles.categoryLink}`} key={category}>{category}</HashLink>)}
@@ -68,11 +69,11 @@ function View(props: ViewProps) {
                                         {project.githubUrl}
                                     </Button>
                                     {project.needsContribution && (
-                                        <Label>
-                                            <FontAwesomeIcon icon={faCodeBranch} />
-                                            {' '}
+                                    <Label>
+                                        <FontAwesomeIcon icon={faCodeBranch} />
+                                        {' '}
                                             Katılım Bekliyor
-                                        </Label>
+                                    </Label>
                                     )}
                                     {/* project.needsSponsor && (
                                         <Label>
