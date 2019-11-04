@@ -4,22 +4,8 @@ import { Link } from 'react-router-dom';
 import { Button, Divider, Grid, Header, Image, Segment, Card } from 'semantic-ui-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faNewspaper,
-    faGraduationCap,
-    faListOl,
-    faStar,
-    faLocationArrow,
-    faChartLine,
-} from '@fortawesome/free-solid-svg-icons';
-import {
-    faGithub,
-    faGithubSquare,
-    faTwitterSquare,
-    faTelegram,
-    faDiscord,
-    faTwitter, faTelegramPlane,
-} from '@fortawesome/free-brands-svg-icons';
+import { faNewspaper, faGraduationCap, faListOl, faStar, faLocationArrow, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { faGithub, faDiscord, faTwitter, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
 
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
