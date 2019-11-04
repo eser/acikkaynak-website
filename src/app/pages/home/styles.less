@@ -10,7 +10,85 @@
     border: none;
 
     h4.with-div {
-        margin: 1.5em 0;
+        margin: 2em 0;
+    }
+}
+
+.ui.segment.social-segment {
+    h4.with-div {
+        width: 100vw;
+        text-align: center;
+        font-size: 32px;
+        line-height: 37px;
+        font-weight: bold;
+        letter-spacing: 0.2em;
+
+        color: #484848;
+        &:before, &:after {
+            content: none;
+        }
+    }
+
+    .card {
+        position: relative;
+        overflow: hidden;
+        padding-left: 10px;
+        border: 1px solid #D1D1D1;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.161);
+
+        &:first-child {
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+
+        &:last-child {
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+        }
+
+        .card-left {
+            min-width: 50%;
+        }
+
+        .card-right {
+            min-width: 50%;
+            transform: translateX(50%);
+        }
+
+        .flip {
+            transform: scaleX(-1);
+        }
+
+        .header {
+            font-size: 1.25em;
+            line-height: 1.35em;
+            color: #484848;
+        }
+
+        .meta {
+            font-weight: 300;
+            font-size: 1em;
+            line-height: 1.2em;
+            color: #484848;
+            margin-top: 0.20em;
+        }
+
+        .card-icon {
+            top: 0;
+            right: 0;
+        }
+
+        .card-icon > svg {
+            width: 125%;
+            height: 125%;
+            fill: transparent;
+            color: #CBCBCB;
+        }
     }
 }
 
