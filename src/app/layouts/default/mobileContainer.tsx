@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { NavLink, withRouter } from 'react-router-dom';
 
 import { Container, Button, Responsive, Segment, Menu, Sidebar } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,6 +12,10 @@ import layoutStyles from './assets/styles.less';
 
 function MobileContainer(props) {
     const [ sidebarOpened, setSidebarOpened ] = useState(false);
+
+    useEffect(() => props.history.listen(() => {
+        setSidebarOpened(false);
+    }));
 
     return (
         <Responsive
@@ -65,7 +69,8 @@ function MobileContainer(props) {
         </Responsive>
     );
 }
+const MobileContainerWithRouter = withRouter(MobileContainer);
 
 export {
-    MobileContainer as default,
+    MobileContainerWithRouter as default,
 };
