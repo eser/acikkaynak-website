@@ -73,5 +73,5 @@ function MobileContainer(props) {
 }
 
 export {
-  MobileContainer as default,
+    MobileContainer as default,
 };

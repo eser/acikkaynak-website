@@ -22,7 +22,9 @@ function View(props: ViewProps) {
     }
 
     const currentFilter = filter.trim().toLocaleLowerCase();
-     return (
+
+
+    return (
         <>
             <Input icon="search" placeholder="Proje bul" value={filter} onChange={onFilterChanged} />
             <Divider />
@@ -67,11 +69,11 @@ function View(props: ViewProps) {
                                         {project.githubUrl}
                                     </Button>
                                     {project.needsContribution && (
-                                        <Label>
-                                            <FontAwesomeIcon icon={faCodeBranch} />
-                                            {' '}
+                                    <Label>
+                                        <FontAwesomeIcon icon={faCodeBranch} />
+                                        {' '}
                                             Katılım Bekliyor
-                                        </Label>
+                                    </Label>
                                     )}
                                     {/* project.needsSponsor && (
                                         <Label>

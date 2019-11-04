@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Input, Button, Header, Item, Segment, Divider, Icon, Label  } from 'semantic-ui-react';
+import { Input, Header, Item, Segment, Label } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 
@@ -31,47 +31,57 @@ function OrgsListView(props) {
                 <div>
                     <Segment>
                         <Input
-                          fluid
-                          onChange={props.handleSearch} 
-                          value={props.searchInput}
-                          type="text"
-                          placeholder="Organizasyon bul"
-                          icon='search'
+                            fluid
+                            onChange={props.handleSearch}
+                            value={props.searchInput}
+                            type="text"
+                            placeholder="Organizasyon bul"
+                            icon="search"
                         />
                     </Segment>
                 </div>
             </nav>
             {categories.map(category => (
-              <>
-                <Header dividing key={category.toLowerCase()} as='h3'>{category}</Header>
-                <Item.Group divided className="org-list">
-                    {props.orgs.filter(x => x.category === category).map((orgItem) => {
-                        const slug = encodeURIComponent(orgItem.slug);
-                        return (
-                            <Item key={`div-${slug}`}>
-                              <Item.Image size='tiny' src='https://jsgirls.ro/images/partners/jsleague.png' />
-                              <Item.Content>
-                                <Item.Header as={Link} key={`link-${slug}`} to={`/lists/organizations/detail/${slug}/`}>
-                                  {orgItem.title}
-                                </Item.Header>
-                                <Item.Description as="p">{orgItem.content}</Item.Description>
-                                {
-                                  orgItem.technologies.length > 0 
-                                    &&                                     
-                                  <Item.Meta><b className="tag-title">Technologies:</b> {orgItem.technologies.map(tech => <Label color='green' >{tech}</Label>)}</Item.Meta>
-                                }
-                                {
-                                  orgItem.languages.length > 0 
-                                    &&                                     
-                                  <Item.Meta><b className="tag-title">Languages:</b> {orgItem.languages.map(lang => <Label color='green'>{lang}</Label>)}</Item.Meta>
-                                }
-                              </Item.Content>
-                            </Item>
+                <>
+                    <Header dividing key={category.toLowerCase()} as="h3">{category}</Header>
+                    <Item.Group divided className="org-list">
+                        {props.orgs.filter(x => x.category === category).map((orgItem) => {
+                            const slug = encodeURIComponent(orgItem.slug);
 
-                        );
-                    })}
-                </Item.Group>
-              </>
+
+                            return (
+                                <Item key={`div-${slug}`}>
+                                    <Item.Image size="tiny" src="https://jsgirls.ro/images/partners/jsleague.png" />
+                                    <Item.Content>
+                                        <Item.Header as={Link} key={`link-${slug}`} to={`/lists/organizations/detail/${slug}/`}>
+                                            {orgItem.title}
+                                        </Item.Header>
+                                        <Item.Description as="p">{orgItem.content}</Item.Description>
+                                        {
+                                  orgItem.technologies.length > 0 && (
+                                  <Item.Meta>
+                                      <b className="tag-title">Technologies:</b>
+                                      {' '}
+                                      {orgItem.technologies.map(tech => <Label color="green">{tech}</Label>)}
+                                  </Item.Meta>
+                                  )
+}
+                                        {
+                                  orgItem.languages.length > 0 && (
+                                  <Item.Meta>
+                                      <b className="tag-title">Languages:</b>
+                                      {' '}
+                                      {orgItem.languages.map(lang => <Label color="green">{lang}</Label>)}
+                                  </Item.Meta>
+                                  )
+}
+                                    </Item.Content>
+                                </Item>
+
+                            );
+                        })}
+                    </Item.Group>
+                </>
             ))}
         </>
     );

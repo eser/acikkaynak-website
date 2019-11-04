@@ -47,7 +47,7 @@ function Projects() {
                 </Header.Content>
             </Header>
 
-            {!projects ? <Loader inline='centered' content="Loading.." active /> : (
+            {!projects ? <Loader inline="centered" content="Loading.." active /> : (
                 <View
                     datasource={projects}
                 />
