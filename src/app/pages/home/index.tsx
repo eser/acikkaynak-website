@@ -5,7 +5,7 @@ import { Button, Divider, Grid, Header, Image, Segment, Card } from 'semantic-ui
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faNewspaper, faGraduationCap, faListOl, faStar, faLocationArrow, faChartLine } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faGithubSquare, faTwitterSquare, faTelegram, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faDiscord, faTwitter, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
 
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
@@ -43,7 +43,7 @@ function Home() {
 
                             <Button primary as={Link} to="/about/" size="large" className={globalStyles.padded}>
                                 <FontAwesomeIcon icon={faLocationArrow} />
-                                { ' ' }
+                                {' '}
                                 Manifesto ve Bilgilendirme
                             </Button>
                         </Grid.Column>
@@ -54,7 +54,12 @@ function Home() {
                 </Grid>
             </Segment>
 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none" className={localStyles.asymClip}>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+                className={localStyles.asymClip}
+            >
                 <polygon fill="white" points="0,100 100,0 100,100" />
             </svg>
 
@@ -86,9 +91,15 @@ function Home() {
                         <Grid.Column width={6} only="large screen" floated="right" textAlign="center">
                             <Image size="huge" src={Statistics} />
 
-                            <Button as={Link} to="/stats/" size="large" primary className={localStyles.buttonBelowImage}>
+                            <Button
+                                as={Link}
+                                to="/stats/"
+                                size="large"
+                                primary
+                                className={localStyles.buttonBelowImage}
+                            >
                                 <FontAwesomeIcon icon={faChartLine} />
-                                { ' ' }
+                                {' '}
                                 İstatistikler
                             </Button>
                         </Grid.Column>
@@ -128,11 +139,11 @@ function Home() {
                             <p>
                                 <Link to="/lists/projects/">Açık kaynak projeler</Link>
                                 ,
-                                { ' ' }
+                                {' '}
                                 <Link to="/lists/organizations/">Açık kaynak destekçisi organizasyonlar</Link>
-                                { ' ' }
+                                {' '}
                                 ve
-                                { ' ' }
+                                {' '}
                                 <Link to="/lists/sponsors/">Sponsorlar</Link>
                                 ı indeksleyerek bu girişimlerin hem görünürlüklerini
                                 sağlamaya hem de dışarıdan erişilebilirliğini
@@ -154,16 +165,16 @@ function Home() {
                                 Açık Kaynak geliştirme yapmak isteyen kişi ve kuruluşlara
                                 ilk adımlarını atmaları ve ilerlemeleri için destek olmaya
                                 çalışıyoruz. Bu doğrultuda eğitim bölümü altında
-                                { ' ' }
+                                {' '}
                                 <Link to="/learn/get-started/">Başlarken</Link>
                                 ,
-                                { ' ' }
+                                {' '}
                                 <Link to="/learn/for-corporations/">Kurumlar İçin</Link>
-                                { ' ' }
+                                {' '}
                                 ve devamında
-                                { ' ' }
+                                {' '}
                                 <Link to="/learn/guide/">Rehber</Link>
-                                { ' ' }
+                                {' '}
                                 bölümlerimiz yer almakta ve her geçen gün içeriğimizi
                                 genişletmekteyiz.
                             </p>
@@ -212,7 +223,7 @@ function Home() {
                                 <Card.Meta>
                                     <a href="https://github.com/yusufcakal/RestaurantApp">
                                         <FontAwesomeIcon icon={faGithub} />
-                                        { ' ' }
+                                        {' '}
                                         github/yusufcakal/RestaurantApp
                                     </a>
                                 </Card.Meta>
@@ -236,7 +247,7 @@ function Home() {
                                 <Card.Meta>
                                     <a href="https://github.com/wholecms/core">
                                         <FontAwesomeIcon icon={faGithub} />
-                                        { ' ' }
+                                        {' '}
                                         github/wholecms
                                     </a>
                                 </Card.Meta>
@@ -258,33 +269,72 @@ function Home() {
                 <Card.Group centered>
                     <Card as="a" aria-label="GitHub" href="https://github.com/acikkaynak">
                         <Card.Content>
-                            <span className={localStyles.cardIcon}><FontAwesomeIcon size="2x" icon={faGithubSquare} /></span>
-                            <Card.Header>GitHub</Card.Header>
-                            <Card.Meta>github/acikkaynak</Card.Meta>
+                            <div className={localStyles.cardLeft}>
+                                <Card.Header>GitHub</Card.Header>
+                                <Card.Meta>/acikkaynak</Card.Meta>
+                            </div>
+                            <div className={localStyles.cardRight}>
+                                <span className={localStyles.cardIcon}>
+                                    <FontAwesomeIcon
+                                        size="2x"
+                                        icon={faGithub}
+                                    />
+                                </span>
+                            </div>
                         </Card.Content>
                     </Card>
 
                     <Card as="a" aria-label="Twitter" href="https://twitter.com/acikkaynakinfo">
                         <Card.Content>
-                            <span className={localStyles.cardIcon}><FontAwesomeIcon size="2x" icon={faTwitterSquare} /></span>
-                            <Card.Header>Twitter</Card.Header>
-                            <Card.Meta>@acikkaynakinfo</Card.Meta>
+                            <div className={localStyles.cardLeft}>
+                                <Card.Header>Twitter</Card.Header>
+                                <Card.Meta>@acikkaynakinfo</Card.Meta>
+                            </div>
+                            <div className={localStyles.cardRight}>
+                                <span className={localStyles.cardIcon}>
+                                    <FontAwesomeIcon
+                                        size="2x"
+                                        className={localStyles.flip}
+                                        icon={faTwitter}
+                                    />
+                                </span>
+                            </div>
                         </Card.Content>
                     </Card>
 
                     <Card as="a" aria-label="Telegram" href="https://t.me/acikkaynak">
                         <Card.Content>
-                            <span className={localStyles.cardIcon}><FontAwesomeIcon size="2x" icon={faTelegram} /></span>
-                            <Card.Header>Telegram</Card.Header>
-                            <Card.Meta>t.me/acikkaynak</Card.Meta>
+                            <div className={localStyles.cardLeft}>
+                                <Card.Header>Telegram</Card.Header>
+                                <Card.Meta>t.me/acikkaynak</Card.Meta>
+                            </div>
+                            <div className={localStyles.cardRight}>
+                                <span className={localStyles.cardIcon}>
+                                    <FontAwesomeIcon
+                                        size="2x"
+                                        className={localStyles.flip}
+                                        icon={faTelegramPlane}
+                                    />
+                                </span>
+                            </div>
                         </Card.Content>
                     </Card>
 
                     <Card as="a" aria-label="Discord" href="https://discordapp.com/invite/BRtenzs">
+
                         <Card.Content>
-                            <span className={localStyles.cardIcon}><FontAwesomeIcon size="2x" icon={faDiscord} /></span>
-                            <Card.Header>Discord</Card.Header>
-                            <Card.Meta>discord/BRtenzs</Card.Meta>
+                            <div className={localStyles.cardLeft}>
+                                <Card.Header>Discord</Card.Header>
+                                <Card.Meta>discord/BRtenzs</Card.Meta>
+                            </div>
+                            <div className={localStyles.cardRight}>
+                                <span className={localStyles.cardIcon}>
+                                    <FontAwesomeIcon
+                                        size="2x"
+                                        icon={faDiscord}
+                                    />
+                                </span>
+                            </div>
                         </Card.Content>
                     </Card>
                 </Card.Group>
