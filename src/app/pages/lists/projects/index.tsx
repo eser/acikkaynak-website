@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, Loader } from 'semantic-ui-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
@@ -34,11 +34,10 @@ function Projects() {
 
     return (
         <Container className="content" textAlign="justified">
-            <Header as="h1">
+            <Header as="h1" className="projects">
                 <i aria-hidden="true" className="circular icon">
                     <FontAwesomeIcon icon={faClipboardList} />
                 </i>
-
                 <Header.Content>
                     Projeler
                     <Header.Subheader>
@@ -48,7 +47,7 @@ function Projects() {
                 </Header.Content>
             </Header>
 
-            {projects && (
+            {!projects ? <Loader inline='centered' content="Loading.." active /> : (
                 <View
                     datasource={projects}
                 />
