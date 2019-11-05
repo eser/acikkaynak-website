@@ -23,7 +23,7 @@ function Carousel(props) {
             totalSlides={props.children.length}
             visibleSlides={1}
         >
-            <Slider style={{ minHeight: '320px' }}>
+            <Slider style={{ minHeight: '300px' }}>
                 {props.children}
             </Slider>
 
