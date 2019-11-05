@@ -1,7 +1,9 @@
 import React from 'react';
 
 import { Button, Container } from 'semantic-ui-react';
-import { CarouselProvider, Slider, Slide, Dot } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, Dot, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 function CustomDotGroup(props) {
     return (
@@ -23,10 +25,17 @@ function Carousel(props) {
             totalSlides={props.children.length}
             visibleSlides={1}
         >
-            <Slider style={{ minHeight: '320px' }}>
-                {props.children}
-            </Slider>
-
+            <div className="wrapper">
+                <ButtonBack>
+                    <FontAwesomeIcon icon={faChevronLeft} />
+                </ButtonBack>
+                <Slider style={{ minHeight: '300px' }}>
+                    {props.children}
+                </Slider>
+                <ButtonNext>
+                    <FontAwesomeIcon icon={faChevronRight} />
+                </ButtonNext>
+            </div>
             <CustomDotGroup slides={props.children.length} size="mini" />
         </CarouselProvider>
     );
