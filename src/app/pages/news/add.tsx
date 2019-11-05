@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Container, Header, Form, Button } from 'semantic-ui-react';
 
@@ -41,6 +42,7 @@ function NewsAdd() {
                     <label>Haber Etiketleri</label>
                     <input value={newsTags} onChange={e => setNewsTags(e.target.value)} />
                 </Form.Field>
+                <Button as={Link} to="/news/" content="Geri" secondary />
                 <Button content="Ekle" type="submit" primary />
             </Form>
         </Container>
