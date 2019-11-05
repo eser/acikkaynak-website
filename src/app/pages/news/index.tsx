@@ -25,7 +25,7 @@ function News(props) {
     }
 
     return (
-        <Container className="content" textAlign="justified">
+        <Container className="content">
             {showDetail ?
                 renderDetail() :
                 renderList()}

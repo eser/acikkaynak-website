@@ -17,7 +17,7 @@ function NewsAdd() {
     }
 
     return (
-        <Container className="content" textAlign="justified">
+        <Container className="content">
             <Header as="h1">
                 <i aria-hidden="true" className="circular icon">
                     <FontAwesomeIcon icon={faCaretSquareRight} />

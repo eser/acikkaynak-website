@@ -4,7 +4,7 @@ import { Container, Header } from 'semantic-ui-react';
 
 function About() {
     return (
-        <Container className="content" textAlign="justified">
+        <Container className="content">
             <Header as="h1">Açık Kaynak İnisiyatifi Hakkında</Header>
 
             <p>

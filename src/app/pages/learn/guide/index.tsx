@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, Loader } from 'semantic-ui-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
@@ -66,8 +66,16 @@ function Guide(props: GuideProps) {
         [ props.contentPath ],
     );
 
+    if (content === null) {
+        return (
+            <Container className="content">
+                <Loader inline="centered" content="Yükleniyor..." active />
+            </Container>
+        );
+    }
+
     return (
-        <Container className="content" textAlign="justified">
+        <Container className="content">
             <Header as="h1">
                 <i aria-hidden="true" className="circular icon">
                     <FontAwesomeIcon icon={faCaretSquareRight} />

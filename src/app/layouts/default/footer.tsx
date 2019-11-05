@@ -9,6 +9,15 @@ import Logo from '../../pages/home/logo.svg';
 function Footer() {
     return (
         <Segment inverted vertical className={layoutStyles.footer}>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                preserveAspectRatio="none"
+                className={layoutStyles.asymClipReverse}
+            >
+                <polygon fill="white" points="0,0 100,0 100,100" />
+            </svg>
+
             <Container>
                 <Grid divided inverted stackable>
                     <Grid.Row className="footer-row">

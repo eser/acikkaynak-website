@@ -7,7 +7,7 @@ import { faCaretSquareRight, faCircleNotch } from '@fortawesome/free-solid-svg-i
 
 function Lists() {
     return (
-        <Container className="content" textAlign="justified">
+        <Container className="content">
             <Header as="h1">
                 <i aria-hidden="true" className="circular icon">
                     <FontAwesomeIcon icon={faCaretSquareRight} />

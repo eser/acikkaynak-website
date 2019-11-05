@@ -70,7 +70,7 @@ function Home() {
                             <Header as="h3">
                                 Yerel Hareket Eden Bir Ekosistem
                             </Header>
-                            <p className="justified">
+                            <p>
                                 Türkiye'deki ve Türkçe konuşan geliştiricilerin
                                 oluşturduğu açık kaynak ekosisteminin
                                 lokomotifi olmak, insanları açık kaynak geliştirmeye

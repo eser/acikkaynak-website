@@ -27,25 +27,25 @@ interface ViewProps {
 
 function View(props: ViewProps) {
     function transformLinkUri(uri: string): string {
-        if (isAbsolutePath(uri)) {
-            return uri;
-        }
-
-        if (props.metadata && props.metadata.path) {
+        if (!isAbsolutePath(uri) && props.metadata && props.metadata.path) {
             const basePath = getPathDirname(props.metadata.path);
 
-            return path.join(basePath, uri);
+            return ReactMarkdown.uriTransformer(
+                path.join(basePath, uri)
+            );
         }
 
-        return uri;
+        return ReactMarkdown.uriTransformer(uri);
     }
 
     function handleClick(ev): void {
         if (ev && ev.target && ev.target.tagName === 'A' && ev.target.href) {
             const uri = ev.target.getAttribute('href');
 
-            ev.preventDefault();
-            props.history.push(uri);
+            if (!isAbsolutePath(uri)) {
+                ev.preventDefault();
+                props.history.push(uri);
+            }
         }
     }
 
