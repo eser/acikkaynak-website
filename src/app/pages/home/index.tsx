@@ -210,11 +210,11 @@ function Home() {
                 <Carousel>
                     <Carousel.Item>
                         <Card fluid>
-                            <div className={"image"}>
-                                <img src={"https://picsum.photos/280?random=1"} />
+                            <div className="image">
+                                <img src="https://picsum.photos/280?random=1" alt="Restoran Uygulaması Resim" />
                             </div>
                             <div className="user-picture">
-                                <img src={"https://avatars3.githubusercontent.com/u/16848490?s=460&v=4"} />
+                                <img src="https://avatars3.githubusercontent.com/u/16848490?s=460&v=4" alt="Restoran Uygulaması Geliştirici Resmi" />
                             </div>
                             <Card.Content>
                                 <Card.Header>
@@ -226,22 +226,22 @@ function Home() {
                                     verebilme olanağı sağlayan ve siparişin takibini
                                     kolaylaştıran android uygulama.
                                 </Card.Description>
-                                <Card.Meta as={"a"} className={"user-name"} href={"https://github.com/yusufcakal"} rel={"nofollow noreferrer noopener"}>
+                                <Card.Meta as="a" className="user-name" href="https://github.com/yusufcakal" rel="nofollow noreferrer noopener">
                                     Yusuf Çakal
                                 </Card.Meta>
                             </Card.Content>
-                            <a className={"repo"} href="https://github.com/yusufcakal/RestaurantApp" rel={"nofollow noreferrer noopener"}>
+                            <a className="repo" href="https://github.com/yusufcakal/RestaurantApp" rel="nofollow noreferrer noopener">
                                 <FontAwesomeIcon icon={faGithub} />
                             </a>
                         </Card>
                     </Carousel.Item>
                     <Carousel.Item>
                         <Card fluid>
-                            <div className={"image"}>
-                                <img src={"https://picsum.photos/280?random=2"} />
+                            <div className="image">
+                                <img src="https://picsum.photos/280?random=2" alt="WholeCMS Resim" />
                             </div>
                             <div className="user-picture">
-                                <img src={"https://avatars2.githubusercontent.com/u/13615431?s=460&v=4"} />
+                                <img src="https://avatars2.githubusercontent.com/u/13615431?s=460&v=4" alt="WholeCMS Geliştirici Resmi" />
                             </div>
                             <Card.Content>
                                 <Card.Header>
@@ -255,11 +255,11 @@ function Home() {
                                     İstediğiniz temaya entegre ederek kolayca
                                     kullanabileceğiniz bir sistem.
                                 </Card.Description>
-                                <Card.Meta as={"a"} className={"user-name"} href={"https://github.com/wholecms"} rel={"nofollow noreferrer noopener"}>
+                                <Card.Meta as="a" className="user-name" href="https://github.com/wholecms" rel="nofollow noreferrer noopener">
                                     Whole CMS
                                 </Card.Meta>
                             </Card.Content>
-                            <a className={"repo"} href="https://github.com/wholecms/core" rel={"nofollow noreferrer noopener"}>
+                            <a className="repo" href="https://github.com/wholecms/core" rel="nofollow noreferrer noopener">
                                 <FontAwesomeIcon icon={faGithub} />
                             </a>
                         </Card>
@@ -267,26 +267,27 @@ function Home() {
 
                     <Carousel.Item>
                         <Card fluid>
-                            <div className={"image"}>
-                                <img src={"https://picsum.photos/280/?random=3"} />
+                            <div className="image">
+                                <img src="https://picsum.photos/280/?random=3" alt="prototurk.com Resim" />
                             </div>
                             <div className="user-picture">
-                                <img src={"https://avatars1.githubusercontent.com/u/2500557?s=460&v=4"} />
+                                <img src="https://avatars1.githubusercontent.com/u/2500557?s=460&v=4" alt="prototurk.com Geliştirici Resmi" />
                             </div>
                             <Card.Content>
                                 <Card.Header>
                                     prototurk.com
                                 </Card.Header>
                                 <Card.Description>
-                                    Prototürk'te yer alan, web dilleriyle ilgili referans JSON dosyalarının
-                                    yer aldığı repodur. Siz de bu reponun gelişmesine katkı sağlayarak
-                                    Türkçe kaynağın yayılmasında etkili bir rol oynayabilirsiniz.
+                                    Prototürk'te yer alan, web dilleriyle ilgili referans JSON
+                                    dosyalarının yer aldığı repodur. Siz de bu reponun gelişmesine
+                                    katkı sağlayarak Türkçe kaynağın yayılmasında etkili
+                                    bir rol oynayabilirsiniz.
                                 </Card.Description>
-                                <Card.Meta as={"a"} className={"user-name"} href={"https://github.com/tayfunerbilen"} rel={"nofollow noreferrer noopener"}>
+                                <Card.Meta as="a" className="user-name" href="https://github.com/tayfunerbilen" rel="nofollow noreferrer noopener">
                                     Tayfun Erbilen
                                 </Card.Meta>
                             </Card.Content>
-                            <a className={"repo"} href="https://github.com/tayfunerbilen/prototurk.com" rel={"nofollow noreferrer noopener"}>
+                            <a className="repo" href="https://github.com/tayfunerbilen/prototurk.com" rel="nofollow noreferrer noopener">
                                 <FontAwesomeIcon icon={faGithub} />
                             </a>
                         </Card>
