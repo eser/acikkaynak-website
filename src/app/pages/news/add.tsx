@@ -31,16 +31,30 @@ function NewsAdd() {
 
             <Form onSubmit={onSubmitHandler}>
                 <Form.Field>
-                    <label>Haber Başlığı</label>
-                    <input value={newsTitle} onChange={e => setNewsTitle(e.target.value)} />
+                    <Form.Input
+                        id="newsTitle"
+                        label="Haber Başlığı"
+                        type="text"
+                        value={newsTitle}
+                        onChange={e => setNewsTitle(e.target.value)}
+                    />
                 </Form.Field>
                 <Form.Field>
-                    <label>Haber İçeriği</label>
-                    <textarea value={newsContent} onChange={e => setNewsContent(e.target.value)} />
+                    <Form.TextArea
+                        id="newsContent"
+                        label="Haber İçeriği"
+                        value={newsContent}
+                        onChange={e => setNewsContent(e.target.value)}
+                    />
                 </Form.Field>
                 <Form.Field>
-                    <label>Haber Etiketleri</label>
-                    <input value={newsTags} onChange={e => setNewsTags(e.target.value)} />
+                    <Form.Input
+                        id="newsTags"
+                        label="Haber Etiketleri"
+                        type="text"
+                        value={newsTags}
+                        onChange={e => setNewsTags(e.target.value)}
+                    />
                 </Form.Field>
                 <Button as={Link} to="/news/" content="Geri" secondary />
                 <Button content="Ekle" type="submit" primary />

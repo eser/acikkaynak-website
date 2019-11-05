@@ -16,22 +16,13 @@ function NewsListView(props) {
         [],
     );
 
-    let { news } = props;
+    // eslint-disable-next-line prefer-destructuring
+    let news = props.news;
 
     if (props.tag) {
         const newsByTag = news.filter(item => item.tags.includes(props.tag));
 
         news = newsByTag;
-    }
-
-    function tagClickHandler(tag) {
-        const tagRoute = `/news/tags/${encodeURIComponent(tag)}/`;
-
-        history.push(tagRoute);
-    }
-
-    function tagClearHandler() {
-        history.push('/news/');
     }
 
     function renderTags() {
@@ -42,10 +33,10 @@ function NewsListView(props) {
 
             return (
                 <Label className={customNewsStyle.tagItem} color={tagColor} key={tag.toLowerCase()}>
-                    <Link onClick={() => tagClickHandler(tag)}>
+                    <Link to={`/news/tags/${encodeURIComponent(tag)}/`}>
                         {tag.toUpperCase()}
                     </Link>
-                    <Link onClick={() => tagClearHandler()}>
+                    <Link to="/news/">
                         {isActive && (
                             <FontAwesomeIcon
                                 className={customNewsStyle.tagClear}
