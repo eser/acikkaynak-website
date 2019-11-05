@@ -6,7 +6,10 @@ import { Header, Label, Button } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 
-function NewsDetailView({ news }) {
+function NewsDetailView(props) {
+    // eslint-disable-next-line prefer-destructuring
+    const news = props.news;
+
     function renderTags() {
         const tagItems = news.tags.map(tag => (
             <Label key={tag.toLowerCase()}>
