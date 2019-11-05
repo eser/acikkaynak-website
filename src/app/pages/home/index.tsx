@@ -255,7 +255,7 @@ function Home() {
                                     İstediğiniz temaya entegre ederek kolayca
                                     kullanabileceğiniz bir sistem.
                                 </Card.Description>
-                                <Card.Meta as={"a"} className={"user-name"} href={"https://github.com/yusufcakal"} rel={"nofollow noreferrer noopener"}>
+                                <Card.Meta as={"a"} className={"user-name"} href={"https://github.com/wholecms"} rel={"nofollow noreferrer noopener"}>
                                     Whole CMS
                                 </Card.Meta>
                             </Card.Content>
@@ -282,11 +282,11 @@ function Home() {
                                     yer aldığı repodur. Siz de bu reponun gelişmesine katkı sağlayarak
                                     Türkçe kaynağın yayılmasında etkili bir rol oynayabilirsiniz.
                                 </Card.Description>
-                                <Card.Meta as={"a"} className={"user-name"} href={"https://github.com/yusufcakal"} rel={"nofollow noreferrer noopener"}>
+                                <Card.Meta as={"a"} className={"user-name"} href={"https://github.com/tayfunerbilen"} rel={"nofollow noreferrer noopener"}>
                                     Tayfun Erbilen
                                 </Card.Meta>
                             </Card.Content>
-                            <a className={"repo"} href="https://github.com/wholecms/core" rel={"nofollow noreferrer noopener"}>
+                            <a className={"repo"} href="https://github.com/tayfunerbilen/prototurk.com" rel={"nofollow noreferrer noopener"}>
                                 <FontAwesomeIcon icon={faGithub} />
                             </a>
                         </Card>
