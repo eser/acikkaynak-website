@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { Container } from 'semantic-ui-react';
 
 import NewsListView from './listView';
@@ -8,30 +7,29 @@ import NotFound from '../notFound';
 import mockData from './mockData';
 
 function News(props) {
-    const [ news ] = useState(mockData);
+    const [news] = useState(mockData);
+    const showDetail = !!props.slug;
 
-    if (props.slug !== undefined) {
-        const currentNewsItem = news.find(x => x.slug === props.slug);
+    function renderDetail() {
+        const currentNewsItem = news.find(i => i.slug === props.slug);
 
-        // as long as content exists...
-        if (currentNewsItem !== undefined) {
-            return (
-                <Container className="content" textAlign="justified">
-                    <NewsDetailView content={currentNewsItem} />
-                </Container>
-            );
+        if (!currentNewsItem) {
+            return <NotFound />;
         }
 
-        return (
-            <Container className="content" textAlign="justified">
-                <NotFound />
-            </Container>
-        );
+        return <NewsDetailView content={currentNewsItem} />;
+    }
+
+    function renderList() {
+        return <NewsListView news={news} {...props} />;
     }
 
     return (
         <Container className="content" textAlign="justified">
-            <NewsListView news={news} {...props} />
+            {showDetail ?
+                renderDetail() :
+                renderList()
+            }
         </Container>
     );
 }
