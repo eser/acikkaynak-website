@@ -7,9 +7,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
 
 function NewsAdd() {
-    const [newsTitle, setNewsTitle] = useState('');
-    const [newsContent, setNewsContent] = useState('');
-    const [newsTags, setNewsTags] = useState('');
+    const [ newsTitle, setNewsTitle ] = useState('');
+    const [ newsContent, setNewsContent ] = useState('');
+    const [ newsTags, setNewsTags ] = useState('');
 
     function onSubmitHandler(e) {
         e.preventDefault();
@@ -28,7 +28,7 @@ function NewsAdd() {
                     <Header.Subheader>Açık Kaynak ile İlgili Haberler</Header.Subheader>
                 </Header.Content>
             </Header>
-            
+
             <Form onSubmit={onSubmitHandler}>
                 <Form.Field>
                     <label>Haber Başlığı</label>

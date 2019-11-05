@@ -16,14 +16,17 @@ function NewsListView(props) {
         [],
     );
 
-    let news = props.news;
+    let { news } = props;
+
     if (props.tag) {
         const newsByTag = news.filter(item => item.tags.includes(props.tag));
+
         news = newsByTag;
     }
 
     function tagClickHandler(tag) {
         const tagRoute = `/news/tags/${encodeURIComponent(tag)}/`;
+
         history.push(tagRoute);
     }
 
@@ -33,24 +36,25 @@ function NewsListView(props) {
 
     function renderTags() {
         const currentTag = props.tag;
-        const tagItems = tags.map(tag => {
+        const tagItems = tags.map((tag) => {
             const isActive = currentTag === tag;
             const tagColor = isActive ? 'teal' : 'blue';
 
             return (
-                <Label className={customNewsStyle.tagItem} color={tagColor} key={tag.toLowerCase()} >
+                <Label className={customNewsStyle.tagItem} color={tagColor} key={tag.toLowerCase()}>
                     <Link onClick={() => tagClickHandler(tag)}>
                         {tag.toUpperCase()}
                     </Link>
                     <Link onClick={() => tagClearHandler()}>
-                        {isActive &&
+                        {isActive && (
                             <FontAwesomeIcon
                                 className={customNewsStyle.tagClear}
-                                icon={faTimesCircle} />
-                        }
+                                icon={faTimesCircle}
+                            />
+                        )}
                     </Link>
                 </Label>
-                    
+
             );
         });
 
@@ -59,6 +63,7 @@ function NewsListView(props) {
 
     function newsClickHandler(newsItem) {
         const newsRoute = `/news/detail/${encodeURIComponent(newsItem.slug)}`;
+
         history.push(newsRoute);
     }
 
@@ -80,7 +85,7 @@ function NewsListView(props) {
     }
 
     return (
-        <React.Fragment>
+        <>
             <Header as="h1">
                 <i aria-hidden="true" className="circular icon">
                     <FontAwesomeIcon icon={faCaretSquareRight} />
@@ -96,9 +101,9 @@ function NewsListView(props) {
             {renderNewsList()}
 
             <div className={customNewsStyle.bottomLinks}>
-                <Button as={Link} content="Haber Ekle" primary to="/news/add/"/>
+                <Button as={Link} content="Haber Ekle" primary to="/news/add/" />
             </div>
-        </React.Fragment>
+        </>
     );
 }
 

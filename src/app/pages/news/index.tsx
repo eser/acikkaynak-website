@@ -7,7 +7,7 @@ import NotFound from '../notFound';
 import mockData from './mockData';
 
 function News(props) {
-    const [news] = useState(mockData);
+    const [ news ] = useState(mockData);
     const showDetail = !!props.slug;
 
     function renderDetail() {
@@ -28,8 +28,7 @@ function News(props) {
         <Container className="content" textAlign="justified">
             {showDetail ?
                 renderDetail() :
-                renderList()
-            }
+                renderList()}
         </Container>
     );
 }

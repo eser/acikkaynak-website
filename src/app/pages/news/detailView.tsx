@@ -8,19 +8,17 @@ import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 
 function NewsDetailView({ news }) {
     function renderTags() {
-        const tagItems = news.tags.map(tag => {
-            return (
-                <Label key={tag.toLowerCase()} >
-                    {tag.toUpperCase()}
-                </Label>
-            );
-        });
+        const tagItems = news.tags.map(tag => (
+            <Label key={tag.toLowerCase()}>
+                {tag.toUpperCase()}
+            </Label>
+        ));
 
         return tagItems;
     }
 
     return (
-        <React.Fragment>
+        <>
             <Header as="h1">
                 <i aria-hidden="true" className="circular icon">
                     <FontAwesomeIcon icon={faNewspaper} />
@@ -35,7 +33,7 @@ function NewsDetailView({ news }) {
             <p>{renderTags()}</p>
 
             <Button as={Link} content="Geri" to="/news/" secondary />
-        </React.Fragment>
+        </>
     );
 }
 
