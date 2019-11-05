@@ -17,7 +17,7 @@ function News(props) {
             return <NotFound />;
         }
 
-        return <NewsDetailView content={currentNewsItem} />;
+        return <NewsDetailView news={currentNewsItem} />;
     }
 
     function renderList() {

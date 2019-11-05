@@ -1,35 +1,41 @@
 import React from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import customNewsStyle from './style.less';
+import { Header, Label, Button } from 'semantic-ui-react';
 
-function NewsDetailView(props) {
-    const historyObj = useHistory();
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 
-    function goBackButton(event) {
-        historyObj.back();
-        event.preventDefault();
+function NewsDetailView({ news }) {
+    function renderTags() {
+        const tagItems = news.tags.map(tag => {
+            return (
+                <Label key={tag.toLowerCase()} >
+                    {tag.toUpperCase()}
+                </Label>
+            );
+        });
+
+        return tagItems;
     }
 
     return (
-        <>
-            <h5>{props.content.title}</h5>
+        <React.Fragment>
+            <Header as="h1">
+                <i aria-hidden="true" className="circular icon">
+                    <FontAwesomeIcon icon={faNewspaper} />
+                </i>
 
-            <div>
-                <p>{props.content.content}</p>
+                <Header.Content>
+                    {news.title}
+                </Header.Content>
+            </Header>
 
-                <p>Etiketler:</p>
-                <p>{props.content.tags.map(item => <li key={item.toLowerCase()}>{item}</li>)}</p>
-            </div>
+            <p>{news.content}</p>
+            <p>{renderTags()}</p>
 
-            <ul className={customNewsStyle.tagBox}>
-                <Link to="/news/" onClick={goBackButton}>
-                    <li className={customNewsStyle.tag}>
-                        Geri Dön
-                    </li>
-                </Link>
-            </ul>
-        </>
+            <Button as={Link} content="Geri" to="/news/" secondary />
+        </React.Fragment>
     );
 }
 
