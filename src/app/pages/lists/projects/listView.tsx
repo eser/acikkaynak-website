@@ -1,7 +1,10 @@
 import React, { useState, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { Item, Button, Label, Segment, Input, Icon, Header } from 'semantic-ui-react';
+import { Item, Button, Label, Segment, Input, Header } from 'semantic-ui-react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClipboardList, faFolderOpen, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 
 import { HashLink } from 'react-router-hash-link';
 
@@ -54,7 +57,7 @@ function ListView(props: ViewProps) {
             <nav>
                 <Header as="h1">
                     <i aria-hidden="true" className="circular icon">
-                        <Icon fitted name="clipboard list" />
+                        <FontAwesomeIcon icon={faClipboardList} />
                     </i>
                     <Header.Content>
                         Projeler
@@ -92,7 +95,7 @@ function ListView(props: ViewProps) {
                             key={category}
                         >
                             <h2 className="title is-spaced">
-                                <Icon name="folder open" />
+                                <FontAwesomeIcon icon={faFolderOpen} />
                                 {category}
                             </h2>
 
@@ -115,7 +118,7 @@ function ListView(props: ViewProps) {
                                                 </Button>
                                                 {project.needsContribution && (
                                                     <Label>
-                                                        <Icon name="code branch" />
+                                                        <FontAwesomeIcon icon={faCodeBranch} />
                                                         Katılım Bekliyor
                                                     </Label>
                                                 )}
