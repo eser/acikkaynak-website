@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Loader } from 'semantic-ui-react';
 
 import ListView from './listView';
-import DetailView from './detailView';
+// import DetailView from './detailView';
 
 const dataSourceUrl = 'https://api.acikkaynak.info/lists/organizations';
 
@@ -14,7 +14,7 @@ async function getOrganizationsFetch() {
     return responseBody;
 }
 
-function Organizations(props) {
+function Organizations() {
     const [ organizations, setOrganizations ] = useState(null);
 
     useEffect(

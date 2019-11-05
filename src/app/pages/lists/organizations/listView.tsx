@@ -7,7 +7,6 @@ import { Input, Header, Item, Segment, Label } from 'semantic-ui-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 
-import asciify from './asciify';
 import localStyles from './style.less';
 
 interface ViewProps {
@@ -74,6 +73,7 @@ function ListView(props: ViewProps) {
                         logoUrl = 'https://jsgirls.ro/images/partners/jsleague.png';
                     }
                     else {
+                        // eslint-disable-next-line prefer-destructuring
                         logoUrl = organization.logoUrl;
                     }
 
