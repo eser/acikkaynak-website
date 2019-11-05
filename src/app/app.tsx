@@ -12,7 +12,6 @@ import LearnGuide from './pages/learn/guide/index';
 import Lists from './pages/lists/index';
 import ListsProjects from './pages/lists/projects/index';
 import ListsOrganizations from './pages/lists/organizations/index';
-import ListsOrganizationsAdd from './pages/lists/organizations/add';
 import ListsSponsors from './pages/lists/sponsors/index';
 import Stats from './pages/stats/index';
 import About from './pages/about/index';
@@ -43,9 +42,7 @@ function App() {
             <Route path="/lists/projects/" exact={true} strict={true} render={() => <Layout><ListsProjects /></Layout>} />
 
             {/* lists/organizations */}
-            <Route path="/lists/organizations/add/" exact={false} strict={true} render={() => <Layout><ListsOrganizationsAdd /></Layout>} />
             <Route path="/lists/organizations/detail/:slug" exact={false} strict={true} render={props => <Layout><ListsOrganizations {...props.match.params} /></Layout>} />
-            <Route path="/lists/organizations/edit/:slug/:type" exact={false} strict={true} render={props => <Layout><ListsOrganizations {...props.match.params} /></Layout>} />
             <Route path="/lists/organizations/" exact={true} strict={true} render={() => <Layout><ListsOrganizations /></Layout>} />
 
             {/* lists/sponsors */}

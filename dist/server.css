@@ -61605,7 +61605,7 @@ body.pushable > .pusher {
 }
 
 .ui.positive.button.category-link {
-  margin: 0 5px 5px 0;
+  margin: 0.3em 0.3em 0 0;
 }
 .ui.segment.category-segment {
   word-break: break-word;
@@ -61614,9 +61614,7 @@ body.pushable > .pusher {
   .projects .content {
     font-size: 28px;
   }
-}
-@media only screen and (max-width: 600px) {
-  .projects .content .sub.header {
+  .projects .sub.header {
     font-size: 20px !important;
   }
 }
@@ -61633,40 +61631,5 @@ body.pushable > .pusher {
 }
 .org-list .tag-title {
   font-size: 13px;
-}
-
-.organizations-container {
-  display: flex;
-  flex-direction: column;
-}
-.organizations-container .field {
-  display: flex;
-  height: 100%;
-  width: 70%;
-  align-items: center;
-}
-.organizations-container .field .orgsTitle {
-  width: 100%;
-  padding: 1%;
-  resize: none;
-}
-.organizations-container .field .orgsContent {
-  width: 100%;
-  padding: 1%;
-  resize: none;
-}
-.organizations-container .field .category {
-  width: 100%;
-  padding: 1%;
-  resize: none;
-}
-.organizations-container .field p {
-  width: 40%;
-}
-.organizations-container button {
-  height: 50px;
-  text-align: center;
-  width: 150px;
-  margin-top: 2%;
 }
 

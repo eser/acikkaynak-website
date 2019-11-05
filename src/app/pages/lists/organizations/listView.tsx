@@ -1,22 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
+
 import { Input, Header, Item, Segment, Label } from 'semantic-ui-react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 
-import './style.less';
+import asciify from './asciify';
+import localStyles from './style.less';
 
-function OrgsListView(props) {
-    // GET Categpries from list of organizations
-    const categories = props.orgs
-        .map(e => e.category)
-        .filter((e, i, a) => a.indexOf(e) === i);
+interface ViewProps {
+    datasource: any;
+}
+
+function ListView(props: ViewProps) {
+    const [ filter, setFilter ] = useState('');
+
+    function onFilterChanged(ev) {
+        setFilter(ev.target.value);
+    }
+
+    const currentFilter = filter.trim().toLocaleLowerCase();
 
     return (
         <>
             {/* Top bar */}
             <nav>
-                <Header as="h1" className="org-header">
+                <Header as="h1" className={localStyles.orgHeader}>
                     <i aria-hidden="true" className="circular icon">
                         <FontAwesomeIcon icon={faUsers} />
                     </i>
@@ -27,66 +38,90 @@ function OrgsListView(props) {
                         </Header.Subheader>
                     </Header.Content>
                 </Header>
-                {/* Right side */}
-                <div>
-                    <Segment>
-                        <Input
-                            fluid
-                            onChange={props.handleSearch}
-                            value={props.searchInput}
-                            type="text"
-                            placeholder="Organizasyon bul"
-                            icon="search"
-                        />
-                    </Segment>
-                </div>
+
+                <Segment>
+                    <Input
+                        fluid
+                        onChange={onFilterChanged}
+                        value={filter}
+                        type="text"
+                        placeholder="Ara"
+                        icon="search"
+                    />
+                </Segment>
             </nav>
-            {categories.map(category => (
-                <>
-                    <Header dividing key={category.toLowerCase()} as="h3">{category}</Header>
-                    <Item.Group divided className="org-list">
-                        {props.orgs.filter(x => x.category === category).map((orgItem) => {
-                            const slug = encodeURIComponent(orgItem.slug);
 
+            {Object.keys(props.datasource).map((category) => {
+                const categorySlug = encodeURIComponent(category);
+                const categoryData = props.datasource[category];
 
-                            return (
-                                <Item key={`div-${slug}`}>
-                                    <Item.Image size="tiny" src="https://jsgirls.ro/images/partners/jsleague.png" />
-                                    <Item.Content>
-                                        <Item.Header as={Link} key={`link-${slug}`} to={`/lists/organizations/detail/${slug}/`}>
-                                            {orgItem.title}
-                                        </Item.Header>
-                                        <Item.Description as="p">{orgItem.content}</Item.Description>
-                                        {
-                                  orgItem.technologies.length > 0 && (
-                                  <Item.Meta>
-                                      <b className="tag-title">Technologies:</b>
-                                      {' '}
-                                      {orgItem.technologies.map(tech => <Label color="green">{tech}</Label>)}
-                                  </Item.Meta>
-                                  )
-}
-                                        {
-                                  orgItem.languages.length > 0 && (
-                                  <Item.Meta>
-                                      <b className="tag-title">Languages:</b>
-                                      {' '}
-                                      {orgItem.languages.map(lang => <Label color="green">{lang}</Label>)}
-                                  </Item.Meta>
-                                  )
-}
-                                    </Item.Content>
-                                </Item>
+                const categoryHtml = categoryData.map((organization) => {
+                    const organizationSlug = encodeURIComponent(organization.name);
 
-                            );
-                        })}
-                    </Item.Group>
-                </>
-            ))}
+                    if (currentFilter.length >= 3) {
+                        const pname = organization.name.toLocaleLowerCase();
+                        const pcontent = organization.content.toLocaleLowerCase();
+
+                        if (pname.indexOf(currentFilter) === -1 &&
+                            pcontent.indexOf(currentFilter) === -1) {
+                            return null;
+                        }
+                    }
+
+                    let logoUrl;
+
+                    if (organization.logoUrl === null || organization.logoUrl === '') {
+                        logoUrl = 'https://jsgirls.ro/images/partners/jsleague.png';
+                    }
+                    else {
+                        logoUrl = organization.logoUrl;
+                    }
+
+                    return (
+                        <Item className="organization" key={`category.${categorySlug}.organization.${organizationSlug}`}>
+                            <Item.Image size="tiny" src={logoUrl} />
+
+                            <Item.Content>
+                                <Item.Header as={Link} to={`/lists/organizations/detail/${organizationSlug}/`}>
+                                    {organization.name}
+                                </Item.Header>
+                                <Item.Description>
+                                    <ReactMarkdown source={organization.content} />
+                                </Item.Description>
+                                <Item.Extra>
+                                    <Item.Meta>
+                                        <b className="tag-title">Organizatörler:</b>
+                                        {' '}
+                                        {organization.contributors && organization.contributors.map(person => <Label color="green">{person}</Label>)}
+                                    </Item.Meta>
+                                </Item.Extra>
+                            </Item.Content>
+                        </Item>
+                    );
+                })
+                    .filter(x => x !== null);
+
+                if (categoryHtml.length === 0) {
+                    return null;
+                }
+
+                return (
+                    <Segment
+                        id={category}
+                        className={localStyles.categorySegment}
+                        key={`category.${categorySlug}`}
+                    >
+                        <Header dividing as="h3">{category}</Header>
+                        <Item.Group divided className={localStyles.orgList}>
+                            {categoryHtml}
+                        </Item.Group>
+                    </Segment>
+                );
+            })}
         </>
     );
 }
 
 export {
-    OrgsListView as default,
+    ListView as default,
 };

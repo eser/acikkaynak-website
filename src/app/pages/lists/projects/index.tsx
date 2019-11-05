@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container, Header, Loader } from 'semantic-ui-react';
+import { Container, Loader } from 'semantic-ui-react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
+import ListView from './listView';
 
-import View from './view';
-
-const dataSourceUrl = 'https://raw.githubusercontent.com/acikkaynak/acikkaynak/master/projects.json';
+const dataSourceUrl = 'https://api.acikkaynak.info/lists/projects';
 
 async function getProjectsFetch() {
     const response = await fetch(dataSourceUrl);
@@ -32,26 +29,17 @@ function Projects() {
         [],
     );
 
-    return (
-        <Container className="content" textAlign="justified">
-            <Header as="h1" className="projects">
-                <i aria-hidden="true" className="circular icon">
-                    <FontAwesomeIcon icon={faClipboardList} />
-                </i>
-                <Header.Content>
-                    Projeler
-                    <Header.Subheader>
-                        Açık Kaynak Olarak Geliştiren
-                        Projelerin Listesi
-                    </Header.Subheader>
-                </Header.Content>
-            </Header>
+    if (projects === null) {
+        return (
+            <Container className="content">
+                <Loader inline="centered" content="Yükleniyor..." active />
+            </Container>
+        );
+    }
 
-            {!projects ? <Loader inline="centered" content="Loading.." active /> : (
-                <View
-                    datasource={projects}
-                />
-            )}
+    return (
+        <Container className="content">
+            <ListView datasource={projects} />
         </Container>
     );
 }

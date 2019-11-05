@@ -1,115 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { Container } from 'semantic-ui-react';
+import { Container, Loader } from 'semantic-ui-react';
 
-import OrgsListView from './listView';
-import OrgDetailView from './detailView';
-import OrgEdit from './edit';
-import asciify from './asciify';
+import ListView from './listView';
+import DetailView from './detailView';
+
+const dataSourceUrl = 'https://api.acikkaynak.info/lists/organizations';
+
+async function getOrganizationsFetch() {
+    const response = await fetch(dataSourceUrl);
+    const responseBody = await response.json();
+
+    return responseBody;
+}
 
 function Organizations(props) {
-    const initialOrgs = [
-        {
-            id: 1,
-            slug: 'dev-izmir',
-            title: 'DevIzmir ',
-            content: 'Dev izmir bir Izmir geliştirici topluluğudur.',
-            category: 'Software',
-            city: 'İzmir',
-            technologies: [ 'Node.js' ],
-            languages: [ 'JavaScript' ],
-            hardwares: [],
-        },
-        {
-            id: 1,
-            slug: 'ai-izmir',
-            title: 'AI Izmir',
-            content: "AI Izmir, Izmir' de bulunan bir yapay zeka topluluğudur. ",
-            category: 'Software',
-            city: 'İzmir',
-            technologies: [ 'Tensorflow', 'Tensorflow.js' ],
-            languages: [ 'Python', 'JavaScript' ],
-            hardwares: [],
-        },
-        {
-            id: 1,
-            slug: 'ras-izmir',
-            title: 'Rasper Izmir',
-            content: "Rasper Izmir, Izmir' de bulunan bir Raspery PI toplulugudur.",
-            category: 'Hardware',
-            city: 'İzmir',
-            technologies: [],
-            languages: [ 'Python' ],
-            hardwares: [ 'Raspberry PI' ],
-        },
-    ];
+    const [ organizations, setOrganizations ] = useState(null);
 
-    const [ orgs, setOrgs ] = useState(initialOrgs);
-    const [ searchInput, setSearchInput ] = useState();
+    useEffect(
+        () => {
+            async function organizationsFetch() {
+                const organizationsResponse = await getOrganizationsFetch();
 
-    const handleSearchInputChange = (event) => {
-        event.persist();
-        let searchValue = event.target.value;
-
-        setSearchInput(() => event.target.value);
-        setOrgs(() => {
-            if (searchValue.trim().length === 0) {
-                return initialOrgs;
+                setOrganizations(organizationsResponse);
             }
 
-            return (initialOrgs.filter((org) => {
-                searchValue = asciify(searchValue).toLowerCase();
+            organizationsFetch();
+        },
+        [],
+    );
 
-                return (
-                    asciify(org.slug).toLowerCase().includes(searchValue) ||
-                        asciify(org.title).toLowerCase().includes(searchValue) ||
-                        asciify(org.content).toLowerCase().includes(searchValue) ||
-                        asciify(org.category).toLowerCase().includes(searchValue) ||
-                        asciify(org.city).toLowerCase().includes(searchValue) ||
-                        org.technologies.reduce(
-                            (acc, curr) => asciify(curr).toLowerCase().includes(searchValue) || acc,
-                            false,
-                        ) ||
-                        org.languages.reduce(
-                            (acc, curr) => asciify(curr).toLowerCase().includes(searchValue) || acc,
-                            false,
-                        ) ||
-                        org.hardwares.reduce(
-                            (acc, curr) => asciify(curr).toLowerCase().includes(searchValue) || acc,
-                            false,
-                        )
-                );
-            }));
-        });
-    };
-
-    if (props.slug !== undefined) {
-        const currentOrgs = orgs.find(x => x.slug === props.slug);
-
-        if (currentOrgs !== undefined) {
-            if (props.type === 'editOrg') {
-                return (
-                    <Container className="content" textAlign="justified">
-                        <OrgEdit content={currentOrgs} />
-                    </Container>
-                );
-            }
-
-            return (
-                <Container className="content" textAlign="justified">
-                    <OrgDetailView content={currentOrgs} />
-                </Container>
-            );
-        }
+    if (organizations === null) {
+        return (
+            <Container className="content">
+                <Loader inline="centered" content="Yükleniyor..." active />
+            </Container>
+        );
     }
 
+    // if (props.slug !== undefined) {
+    //     const currentItem = organizations.find(x => x.name === props.slug);
+
+    //     if (currentItem !== undefined) {
+    //         return (
+    //             <Container className="content">
+    //                 <DetailView content={currentItem} />
+    //             </Container>
+    //         );
+    //     }
+    // }
+
     return (
-        <Container className="content" textAlign="justified">
-            <OrgsListView
-                orgs={orgs}
-                searchInput={searchInput}
-                handleSearch={handleSearchInputChange}
-            />
+        <Container className="content">
+            <ListView datasource={organizations} />
         </Container>
     );
 }

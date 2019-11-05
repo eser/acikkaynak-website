@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory, Link } from 'react-router-dom';
 
-function OrgDetailView(props) {
+function DetailView(props) {
     const historyObj = useHistory();
 
     function goBackButton(event) {
@@ -48,5 +48,5 @@ Donanımlar :
 }
 
 export {
-    OrgDetailView as default,
+    DetailView as default,
 };

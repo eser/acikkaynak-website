@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { Item, Button, Label, Segment, Input, Divider } from 'semantic-ui-react';
+import { Item, Button, Label, Segment, Input, Header } from 'semantic-ui-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFolderOpen, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
+import { faClipboardList, faFolderOpen, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 
 import { HashLink } from 'react-router-hash-link';
 
@@ -14,7 +14,7 @@ interface ViewProps {
     datasource: any;
 }
 
-function View(props: ViewProps) {
+function ListView(props: ViewProps) {
     const [ filter, setFilter ] = useState('');
 
     function onFilterChanged(ev) {
@@ -23,21 +23,45 @@ function View(props: ViewProps) {
 
     const currentFilter = filter.trim().toLocaleLowerCase();
 
-
     return (
         <>
-            <Input icon="search" placeholder="Proje bul" value={filter} onChange={onFilterChanged} />
-            <Divider />
-            <div>
-                {Object.keys(props.datasource).map(category => <HashLink to={`#${category}`} className={`ui positive button ${localStyles.categoryLink}`} key={category}>{category}</HashLink>)}
-            </div>
+            {/* Top bar */}
+            <nav>
+                <Header as="h1" className={localStyles.orgHeader}>
+                    <i aria-hidden="true" className="circular icon">
+                        <FontAwesomeIcon icon={faClipboardList} />
+                    </i>
+                    <Header.Content>
+                        Projeler
+                        <Header.Subheader>
+                            Açık Kaynak Olarak Geliştiren
+                            Projelerin Listesi
+                        </Header.Subheader>
+                    </Header.Content>
+                </Header>
+
+                <Segment>
+                    <Input
+                        fluid
+                        onChange={onFilterChanged}
+                        value={filter}
+                        type="text"
+                        placeholder="Ara"
+                        icon="search"
+                    />
+
+                    {Object.keys(props.datasource).map(category => (
+                        <HashLink to={`#${category}`} className={`ui positive button ${localStyles.categoryLink}`} key={category}>{category}</HashLink>
+                    ))}
+                </Segment>
+            </nav>
 
             {Object.keys(props.datasource).map((category) => {
-                const categoryKey = `category.${encodeURIComponent(category)}`;
+                const categorySlug = encodeURIComponent(category);
                 const categoryData = props.datasource[category];
 
                 const categoryHtml = categoryData.map((project) => {
-                    const projectKey = `project.${encodeURIComponent(project.name)}`;
+                    const projectSlug = encodeURIComponent(`${project.name}-${project.githubUrl}`);
 
                     if (currentFilter.length >= 3) {
                         const pname = project.name.toLocaleLowerCase();
@@ -50,11 +74,11 @@ function View(props: ViewProps) {
                     }
 
                     return (
-                        <Item className="project" key={`${categoryKey}.${projectKey}`}>
+                        <Item className="project" key={`category.${categorySlug}.project.${projectSlug}`}>
                             {/* <Item.Image src='/images/wireframe/image.png' /> */}
 
                             <Item.Content>
-                                <Item.Header as="a" key={`${categoryKey}.${projectKey}.link`} href={project.url}>
+                                <Item.Header as="a" href={project.url}>
                                     {project.name}
                                 </Item.Header>
                                 <Item.Meta>
@@ -69,11 +93,11 @@ function View(props: ViewProps) {
                                         {project.githubUrl}
                                     </Button>
                                     {project.needsContribution && (
-                                    <Label>
-                                        <FontAwesomeIcon icon={faCodeBranch} />
-                                        {' '}
+                                        <Label>
+                                            <FontAwesomeIcon icon={faCodeBranch} />
+                                            {' '}
                                             Katılım Bekliyor
-                                    </Label>
+                                        </Label>
                                     )}
                                     {/* project.needsSponsor && (
                                         <Label>
@@ -97,15 +121,15 @@ function View(props: ViewProps) {
                     <Segment
                         id={category}
                         className={localStyles.categorySegment}
-                        key={categoryKey}
+                        key={`category.${categorySlug}`}
                     >
-                        <h2 className="title is-spaced" key={`${categoryKey}.caption`}>
+                        <h2 className="title is-spaced">
                             <FontAwesomeIcon icon={faFolderOpen} />
                             {' '}
                             {category}
                         </h2>
 
-                        <Item.Group divided key={`${categoryKey}.list`}>
+                        <Item.Group divided>
                             {categoryHtml}
                         </Item.Group>
                     </Segment>
@@ -116,5 +140,5 @@ function View(props: ViewProps) {
 }
 
 export {
-    View as default,
+    ListView as default,
 };
