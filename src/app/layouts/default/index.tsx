@@ -9,7 +9,7 @@ function Layout(props) {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [pathname]);
+    }, [ pathname ]);
 
     return (
         <ResponsiveContainer>
