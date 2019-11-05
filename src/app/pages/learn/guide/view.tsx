@@ -31,7 +31,7 @@ function View(props: ViewProps) {
             const basePath = getPathDirname(props.metadata.path);
 
             return ReactMarkdown.uriTransformer(
-                path.join(basePath, uri)
+                path.join(basePath, uri),
             );
         }
 
