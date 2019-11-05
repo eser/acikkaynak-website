@@ -1,46 +1,79 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
-import { Header } from 'semantic-ui-react';
+import { Header, Label, List, Button } from 'semantic-ui-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
+import { faCaretSquareRight, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 import customNewsStyle from './style.less';
 
 function NewsListView(props) {
-    const [ newsPerPage ] = useState(2);
+    const history = useHistory();
 
     const tags = props.news.reduce(
         (acc, cur) => [ ...acc, ...cur.tags.filter(x => !acc.includes(x)) ],
         [],
     );
 
-    let news;
-    let baseUrl;
+    // eslint-disable-next-line prefer-destructuring
+    let news = props.news;
 
-    if (props.tag !== undefined) {
-        baseUrl = `/news/tags/${encodeURIComponent(props.tag)}/`;
-        news = props.news.filter(item => item.tags.includes(props.tag));
-    }
-    else {
-        baseUrl = '/news/';
-        // eslint-disable-next-line prefer-destructuring
-        news = props.news;
+    if (props.tag) {
+        const newsByTag = news.filter(item => item.tags.includes(props.tag));
+
+        news = newsByTag;
     }
 
-    const lastItemOfNews = news.slice(-1)[0];
+    function renderTags() {
+        const currentTag = props.tag;
+        const tagItems = tags.map((tag) => {
+            const isActive = currentTag === tag;
+            const tagColor = isActive ? 'teal' : 'blue';
 
-    if (props.offset !== undefined) {
-        const offset = news.findIndex(x => x.id === props.offset) + 1;
+            return (
+                <Label className={customNewsStyle.tagItem} color={tagColor} key={tag.toLowerCase()}>
+                    <Link to={`/news/tags/${encodeURIComponent(tag)}/`}>
+                        {tag.toUpperCase()}
+                    </Link>
+                    <Link to="/news/">
+                        {isActive && (
+                            <FontAwesomeIcon
+                                className={customNewsStyle.tagClear}
+                                icon={faTimesCircle}
+                            />
+                        )}
+                    </Link>
+                </Label>
 
-        news = news.slice(offset, newsPerPage + offset);
+            );
+        });
+
+        return tagItems;
     }
-    else {
-        news = news.slice(0, newsPerPage);
+
+    function newsClickHandler(newsItem) {
+        const newsRoute = `/news/detail/${encodeURIComponent(newsItem.slug)}`;
+
+        history.push(newsRoute);
     }
 
-    const lastItemOfPage = news.slice(-1)[0];
+    function renderNewsList() {
+        const newsItems = news.map(newsItem => (
+            <List.Item key={newsItem.slug.toLowerCase()} onClick={() => newsClickHandler(newsItem)}>
+                <List.Icon name="newspaper" verticalAlign="middle" />
+                <List.Content>
+                    <List.Header>{newsItem.title}</List.Header>
+                </List.Content>
+            </List.Item>
+        ));
+
+        return (
+            <List className={customNewsStyle.newsList} divided relaxed>
+                {newsItems}
+            </List>
+        );
+    }
 
     return (
         <>
@@ -55,40 +88,11 @@ function NewsListView(props) {
                 </Header.Content>
             </Header>
 
-            <ul className={customNewsStyle.tagBox}>
-                {JSON.stringify(props.tag)}
-                {tags.map(tagItem => (
-                    <Link key={tagItem.toLowerCase()} to={`/news/tags/${encodeURIComponent(tagItem)}/`}>
-                        <li className={customNewsStyle.tag}>
-                            {tagItem}
-                        </li>
-                    </Link>
-                ))}
-                <Link to="/news/">
-                    <li className={customNewsStyle.tag}>
-                        X
-                    </li>
-                </Link>
-            </ul>
-
-            <ul className={customNewsStyle.newsList}>
-                {news.map(newsItem => (
-                    <Link key={newsItem.slug.toLowerCase()} to={`/news/detail/${encodeURIComponent(newsItem.slug)}`}>
-                        <li className={customNewsStyle.new}>{newsItem.title}</li>
-                    </Link>
-                ))}
-            </ul>
+            {renderTags()}
+            {renderNewsList()}
 
             <div className={customNewsStyle.bottomLinks}>
-                <Link to="/news/add/">
-                    Haber Ekle
-                </Link>
-                {(lastItemOfNews !== lastItemOfPage) && (
-                <Link to={`${baseUrl}${lastItemOfPage !== undefined ? lastItemOfPage.id : ''}`}>
-                    Sonraki Sayfa
-                </Link>
-                )}
-                {(lastItemOfNews === lastItemOfPage) && 'Sonraki Sayfa'}
+                <Button as={Link} content="Haber Ekle" primary to="/news/add/" />
             </div>
         </>
     );
