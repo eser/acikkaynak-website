@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router';
 
 import ResponsiveContainer from './responsiveContainer';
 import Footer from './footer';
 
 function Layout(props) {
-    // the JSX syntax is quite intuitive but check out
-    // https://facebook.github.io/react/docs/jsx-in-depth.html
-    // if you need additional help
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     return (
         <ResponsiveContainer>
