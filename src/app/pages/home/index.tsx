@@ -122,7 +122,7 @@ function Home() {
                             </Header>
                             <p>
                                 Açık Kaynak projelerden ve açık kaynak destekçisi
-                                organizasyonlardan haberler paylaşarak komünite
+                                organizasyonlardan haberler paylaşarak topluluk
                                 içerisinde geniş bir ağ oluşmasına katkıda
                                 bulunmak istiyoruz.
                             </p>
@@ -189,7 +189,7 @@ function Home() {
                                 </Link>
                             </Header>
                             <p>
-                                Komünitenin açık kaynak'a gerçekleştirdiği katkıyı görünür
+                                Topluluğun açık kaynak'a gerçekleştirdiği katkıyı görünür
                                 kılmak için, sistemimize GitHub hesabı ile giriş yapmış
                                 kullanıcıların bilgilerini kısa aralıklarla derliyor ve
                                 paylaşıyoruz.
