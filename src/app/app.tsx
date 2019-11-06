@@ -7,6 +7,7 @@ import News from './pages/news/index';
 import NewsAdd from './pages/news/add';
 import Learn from './pages/learn/index';
 import LearnGetStarted from './pages/learn/get-started/index';
+import LearnLicenses from './pages/learn/licenses/index';
 import LearnForCorporations from './pages/learn/for-corporations/index';
 import LearnGuide from './pages/learn/guide/index';
 import Lists from './pages/lists/index';
@@ -34,6 +35,7 @@ function App() {
             {/* learn */}
             <Route path="/learn/get-started/" exact={true} strict={true} render={() => <Layout><LearnGetStarted /></Layout>} />
             <Route path="/learn/for-corporations/" exact={true} strict={true} render={() => <Layout><LearnForCorporations /></Layout>} />
+            <Route path="/learn/licenses/" exact={true} strict={true} render={() => <Layout><LearnLicenses /></Layout>} />
             <Route path="/learn/guide/*" exact={false} strict={true} render={props => <Layout><LearnGuide contentPath={props.match.params[0]} /></Layout>} />
             <Route path="/learn/" exact={true} strict={true} render={() => <Layout><Learn /></Layout>} />
 

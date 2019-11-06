@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { Container, Grid, Header, Image, List, Segment } from 'semantic-ui-react';
 
 import layoutStyles from './assets/styles.less';
-import Logo from '../../pages/home/logo.svg';
+import Logo from '../shared/assets/logo.svg';
 
 function Footer() {
     return (
@@ -64,6 +64,7 @@ function Footer() {
                                 <Header inverted as="h4" content="Eğitim" />
                                 <List link inverted>
                                     <List.Item as={NavLink} to="/learn/get-started/">Başlarken</List.Item>
+                                    <List.Item as={NavLink} to="/learn/licenses/">Lisanslar</List.Item>
                                     <List.Item as={NavLink} to="/learn/for-corporations/">Kurumlar İçin</List.Item>
                                     <List.Item as={NavLink} to="/learn/guide/">Rehber</List.Item>
                                 </List>

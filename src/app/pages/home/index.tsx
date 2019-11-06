@@ -11,7 +11,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 
 import Carousel from './carousel';
 
-import Logo from './logo.svg';
+import Logo from '../../layouts/shared/assets/logo.svg';
 import OpenSource from './open-source.svg';
 import Statistics from './statistics.svg';
 
@@ -167,6 +167,9 @@ function Home() {
                                 çalışıyoruz. Bu doğrultuda eğitim bölümü altında
                                 {' '}
                                 <Link to="/learn/get-started/">Başlarken</Link>
+                                ,
+                                {' '}
+                                <Link to="/learn/licenses/">Lisanslar</Link>
                                 ,
                                 {' '}
                                 <Link to="/learn/for-corporations/">Kurumlar İçin</Link>

@@ -59,7 +59,7 @@ function View(props: ViewProps) {
                 <div className="has-text-right">
                     <a href={props.metadata.originUrl}>
                         <FontAwesomeIcon icon={faPencilAlt} />
-                        { ' ' }
+                        {' '}
                         Bu sayfanın kaynağına ulaş
                     </a>
                 </div>

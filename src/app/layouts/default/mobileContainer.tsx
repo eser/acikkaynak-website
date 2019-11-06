@@ -32,6 +32,7 @@ function MobileContainer(props) {
                     <Menu.Header>Eğitim</Menu.Header>
                     <Menu.Menu>
                         <Menu.Item as={NavLink} to="/learn/get-started/">Başlarken</Menu.Item>
+                        <Menu.Item as={NavLink} to="/learn/licenses/">Lisanslar</Menu.Item>
                         <Menu.Item as={NavLink} to="/learn/for-corporations/">Kurumlar İçin</Menu.Item>
                         <Menu.Item as={NavLink} to="/learn/guide/">Rehber</Menu.Item>
                     </Menu.Menu>
