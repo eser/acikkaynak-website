@@ -20,10 +20,10 @@ function Footer() {
 
             <Container>
                 <Grid divided inverted stackable>
-                    <Grid.Row className="footer-row">
+                    <Grid.Row className={layoutStyles.footerRow}>
                         <Grid.Column width={7}>
-                            <div className="footer-about">
-                                <Image size="small" className="footer-logo" src={Logo} />
+                            <div className={layoutStyles.footerAbout}>
+                                <Image size="small" className={layoutStyles.footerLogo} src={Logo} />
                                 <p>
                                     &laquo;2015'den bu yana açık kaynak farkındalığı oluşturuyor,
                                     projelerimizi listeliyor ve yardımlaşıyoruz&raquo;
@@ -48,18 +48,18 @@ function Footer() {
                                 </p>
                             </div>
                         </Grid.Column>
-                        <Grid.Column width={3} className="footer-menu">
+                        <Grid.Column width={3} className={layoutStyles.footerMenu}>
                             <div>
                                 <Header inverted as="h4" content="Bölümler" />
                                 <List link inverted>
                                     <List.Item as={NavLink} to="/" exact>Ana Sayfa</List.Item>
-                                    {/* <List.Item as={NavLink} to="/news/">Haberler</List.Item> */}
+                                    <List.Item as={NavLink} to="/news/">Haberler</List.Item>
                                     <List.Item as={NavLink} to="/stats/">İstatistikler</List.Item>
                                     <List.Item as={NavLink} to="/about/">Hakkımızda</List.Item>
                                 </List>
                             </div>
                         </Grid.Column>
-                        <Grid.Column width={3} className="footer-menu">
+                        <Grid.Column width={3} className={layoutStyles.footerMenu}>
                             <div>
                                 <Header inverted as="h4" content="Eğitim" />
                                 <List link inverted>
@@ -69,7 +69,7 @@ function Footer() {
                                 </List>
                             </div>
                         </Grid.Column>
-                        <Grid.Column width={3} className="footer-menu">
+                        <Grid.Column width={3} className={layoutStyles.footerMenu}>
                             <div>
                                 <Header inverted as="h4" content="Listeler" />
                                 <List link inverted>

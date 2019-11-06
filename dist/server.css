@@ -61325,10 +61325,10 @@ body.pushable > .pusher {
   width: 70%;
 }
 .ui.vertical.segment.footer .footer-menu {
+  padding: 1.5em 0 0;
   border: none;
   border-right: 1px solid white;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   box-shadow: none !important;
@@ -61625,6 +61625,30 @@ body.pushable > .pusher {
   }
   .ui.segment.hero-segment .primary.button {
     font-size: 0.8em;
+  }
+}
+@media only screen and (max-width: 1200px) and (min-width: 910px) {
+  .ui.segment.social-segment .card:nth-child(3n) {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  .ui.segment.social-segment .card:last-child {
+    border-radius: 25px;
+  }
+}
+@media only screen and (max-width: 910px) and (min-width: 600px) {
+  .ui.segment.social-segment .card:nth-child(odd) {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+  .ui.segment.social-segment .card:nth-child(even) {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .ui.segment.social-segment .card {
+    border-radius: 25px;
   }
 }
 

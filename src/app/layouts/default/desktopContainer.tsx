@@ -23,7 +23,7 @@ function DesktopContainer(props) {
                     <Menu fixed={fixed ? 'top' : null} inverted={!fixed} pointing={!fixed} secondary={!fixed} size="large">
                         <Container>
                             <Menu.Item as={NavLink} to="/" exact>/</Menu.Item>
-                            {/* <Menu.Item as={NavLink} to="/news/">Haberler</Menu.Item> */}
+                            <Menu.Item as={NavLink} to="/news/">Haberler</Menu.Item>
 
                             <Dropdown simple item text="Eğitim">
                                 <Dropdown.Menu>

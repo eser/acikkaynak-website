@@ -27,7 +27,7 @@ function MobileContainer(props) {
         >
             <Sidebar as={Menu} animation="push" inverted onHide={() => setSidebarOpened(false)} vertical visible={sidebarOpened}>
                 <Menu.Item as={NavLink} to="/" exact>Ana Sayfa</Menu.Item>
-                {/* <Menu.Item as={NavLink} to="/news/">Haberler</Menu.Item> */}
+                <Menu.Item as={NavLink} to="/news/">Haberler</Menu.Item>
                 <Menu.Item>
                     <Menu.Header>Eğitim</Menu.Header>
                     <Menu.Menu>
