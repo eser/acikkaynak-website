@@ -11,6 +11,7 @@
 
     h4.with-div {
         margin: 2em 0;
+        white-space: normal;
     }
 }
 
@@ -234,6 +235,7 @@
     .carousel__back-button, .carousel__next-button {
         margin: 60px;
         background: transparent;
+        outline: none;
         width: 30px;
         height: 30px;
         font-size: 30px;
@@ -361,6 +363,98 @@
     .ui.segment.social-segment {
         .card {
             border-radius: 25px;
+        }
+    }
+}
+
+// Projects segment
+@media only screen and (max-width: 1440px) {
+    .ui.segment.projects-segment {
+        .carousel__inner-slide .ui.container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .card {
+            width: 90%;
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .ui.segment.projects-segment {
+        .carousel__back-button, .carousel__next-button {
+            margin: 0 6% 3rem 6%;
+        }
+
+        .card {
+            flex-direction: column;
+            width: 55%;
+
+            .image, .image > img {
+                width: 100%;
+                height: 12rem;
+                border-radius: 30px 30px 0 0;
+            }
+
+            .user-picture {
+                position: relative;
+                top: -3rem;
+                margin: 0;
+            }
+
+            .content {
+                padding: 0 1rem;
+            }
+
+            .repo {
+                margin: 2rem 0 1rem;
+            }
+        }
+
+        .ui.mini.buttons {
+            margin-top: 0;
+        }
+
+        .ui.center.aligned.container {
+            position: relative;
+            top: -1rem;
+        }
+
+        .carousel__slide {
+            height: auto;
+        }
+
+        .carousel__inner-slide {
+            position: static;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) { 
+    .ui.segment.projects-segment {
+        .card {
+            width: 75%;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) { 
+    .ui.segment.projects-segment {
+        .carousel__back-button, .carousel__next-button {
+            margin: 0 4% 3rem 4%;
+        }
+
+        .card {
+            width: 90%;
+        }
+    }
+}
+
+@media only screen and (max-width: 526px) { 
+    .ui.segment.projects-segment {
+        .carousel__back-button, .carousel__next-button {
+            display: none;
         }
     }
 }
