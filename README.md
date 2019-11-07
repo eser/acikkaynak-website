@@ -98,7 +98,7 @@ Herhangi bir katkıya açıktır. Hata düzenlemeleri, yeni özellik ve modülle
 [build-url]: https://github.com/acikkaynak/acikkaynak-website/actions?workflow=CI
 [dep-image]: https://img.shields.io/david/acikkaynak/acikkaynak-website.svg?style=flat-square
 [dep-url]: https://github.com/acikkaynak/acikkaynak-website
-[coverage-image]: https://img.shields.io/codecov/c/gh/acikkaynak/acikkaynak-website/master.svg?style=flat-square
+[coverage-image]: https://img.shields.io/codecov/c/github/acikkaynak/acikkaynak-website.svg?style=flat-square
 [coverage-url]: https://codecov.io/gh/acikkaynak/acikkaynak-website
 [license-image]: https://img.shields.io/github/license/acikkaynak/acikkaynak-website.svg?style=flat-square
 [license-url]: https://github.com/acikkaynak/acikkaynak-website/blob/master/LICENSE
