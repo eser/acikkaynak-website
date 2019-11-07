@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Container } from 'semantic-ui-react';
 
 import NewsListView from './listView';
 import NewsDetailView from './detailView';
@@ -25,11 +24,11 @@ function News(props) {
     }
 
     return (
-        <Container className="content">
+        <>
             {showDetail ?
                 renderDetail() :
                 renderList()}
-        </Container>
+        </>
     );
 }
 

@@ -1,99 +1,91 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
 
-import { Header, Label, List, Button } from 'semantic-ui-react';
+import { Grid, Image, Header, Button } from 'semantic-ui-react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretSquareRight, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import newsStyle from './style.less';
+import News from './news.svg';
+import Balloons from './balloons.svg';
 
-import customNewsStyle from './style.less';
-
-function NewsListView(props) {
-    const history = useHistory();
-
-    const tags = props.news.reduce(
-        (acc, cur) => [ ...acc, ...cur.tags.filter(x => !acc.includes(x)) ],
-        [],
-    );
-
-    // eslint-disable-next-line prefer-destructuring
-    let news = props.news;
-
-    if (props.tag) {
-        const newsByTag = news.filter(item => item.tags.includes(props.tag));
-
-        news = newsByTag;
-    }
-
-    function renderTags() {
-        const currentTag = props.tag;
-        const tagItems = tags.map((tag) => {
-            const isActive = currentTag === tag;
-            const tagColor = isActive ? 'teal' : 'blue';
-
-            return (
-                <Label className={customNewsStyle.tagItem} color={tagColor} key={tag.toLowerCase()}>
-                    <Link to={`/news/tags/${encodeURIComponent(tag)}/`}>
-                        {tag.toUpperCase()}
-                    </Link>
-                    <Link to="/news/">
-                        {isActive && (
-                            <FontAwesomeIcon
-                                className={customNewsStyle.tagClear}
-                                icon={faTimesCircle}
-                            />
-                        )}
-                    </Link>
-                </Label>
-
-            );
-        });
-
-        return tagItems;
-    }
-
-    function newsClickHandler(newsItem) {
-        const newsRoute = `/news/detail/${encodeURIComponent(newsItem.slug)}`;
-
-        history.push(newsRoute);
-    }
-
-    function renderNewsList() {
-        const newsItems = news.map(newsItem => (
-            <List.Item key={newsItem.slug.toLowerCase()} onClick={() => newsClickHandler(newsItem)}>
-                <List.Icon name="newspaper" verticalAlign="middle" />
-                <List.Content>
-                    <List.Header>{newsItem.title}</List.Header>
-                </List.Content>
-            </List.Item>
-        ));
+function NewsListView() {
+    function renderNews(primary = false) {
+        const columnCount = primary ? 2 : 1;
+        const headerAs = primary ? 'h2' : 'h3';
 
         return (
-            <List className={customNewsStyle.newsList} divided relaxed>
-                {newsItems}
-            </List>
+            <Grid stackable columns={columnCount} verticalAlign="middle" className={newsStyle.newsGrid}>
+                <Grid.Column>
+                    <Image src="https://via.placeholder.com/500x400.png" centered />
+                </Grid.Column>
+                <Grid.Column>
+                    <Header as={headerAs} className={newsStyle.newsTitle}>
+                        3 Günlük Frontend’çiler Başımıza Dev-Ops Kesildi!
+                    </Header>
+                    <p className={newsStyle.newsDescription}>
+                        Bunlarla baş etmesi gün geçtikçe zorlaşıyor. Olaylar bildiğiniz gibi değil.
+                    </p>
+                </Grid.Column>
+            </Grid>
         );
     }
 
     return (
         <>
-            <Header as="h1">
-                <i aria-hidden="true" className="circular icon">
-                    <FontAwesomeIcon icon={faCaretSquareRight} />
-                </i>
+            <Grid container stackable columns={2} verticalAlign="middle" className="content">
+                <Grid.Column>
+                    <Header as="h1" className={newsStyle.headerTitle}>Haberler</Header>
+                    <p className={newsStyle.headerParagraph}>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <Button className={newsStyle.headerButton} size="tiny" content="Sen de Yazar Ol" primary />
+                </Grid.Column>
+                <Grid.Column>
+                    <Image src={News} centered />
+                </Grid.Column>
+            </Grid>
 
-                <Header.Content>
-                    Haberler
-                    <Header.Subheader>Açık Kaynak ile İlgili Haberler</Header.Subheader>
-                </Header.Content>
-            </Header>
+            <Grid container stackable columns="equal" className="content">
+                <Grid.Row>
+                    <Grid.Column>
+                        {renderNews(true)}
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column>
+                        {renderNews()}
+                    </Grid.Column>
+                    <Grid.Column>
+                        {renderNews()}
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Grid.Column>
+                        {renderNews()}
+                    </Grid.Column>
+                    <Grid.Column>
+                        {renderNews()}
+                    </Grid.Column>
+                    <Grid.Column>
+                        {renderNews()}
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row centered>
+                    <Button className={newsStyle.allNewsButton} content="Tüm Haberler" />
+                </Grid.Row>
+            </Grid>
 
-            {renderTags()}
-            {renderNewsList()}
-
-            <div className={customNewsStyle.bottomLinks}>
-                <Button as={Link} content="Haber Ekle" primary to="/news/add/" />
-            </div>
+            <Grid container stackable columns="2" verticalAlign="middle" className="content">
+                <Grid.Column width="6">
+                    <Image src={Balloons} centered />
+                </Grid.Column>
+                <Grid.Column width="10">
+                    <Header as="h3" className={newsStyle.subscribeTitle}>Güncel Haberleri Takip Edin</Header>
+                    <p className={newsStyle.subscribeDescription}>
+                        Sed ut perspiciatis unde omnis iste natus error sit
+                        voluptatem accusantium doloremque laudantium, totam rem aperiam.
+                    </p>
+                </Grid.Column>
+            </Grid>
         </>
     );
 }
