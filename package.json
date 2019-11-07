@@ -37,6 +37,7 @@
     "lint:fix": "darty lint:fix",
     "test": "darty test",
     "test:coverage": "darty test:coverage",
+    "validate": "npm-run-all --parallel lint test",
     "bundle": "darty bundle",
     "bundle:prod": "darty bundle:prod",
     "containerize": "darty containerize"
@@ -50,7 +51,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
     "@types/enzyme": "^3.10.3",
-    "@types/jest": "^24.0.21",
+    "@types/jest": "^24.0.22",
     "@types/react": "^16.9.11",
     "@types/react-router": "^5.1.2",
     "enzyme": "^3.10.0",
@@ -60,6 +61,8 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.2.0",
     "history": "^4.10.1",
+    "husky": "^3.0.9",
+    "npm-run-all": "^4.1.5",
     "path-browser": "^2.2.1",
     "pure-react-carousel": "^1.23.2",
     "react": "^16.11.0",
@@ -71,5 +74,11 @@
     "react-router-hash-link": "^1.2.2",
     "semantic-ui-less": "^2.4.1",
     "semantic-ui-react": "^0.88.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run validate",
+      "pre-push": "npm run validate"
+    }
   }
 }
