@@ -10,6 +10,9 @@ Thumbs.db
 # npm
 node_modules/
 
+# test coverage data
+coverage/
+
 # API keys and secrets
 .env
 

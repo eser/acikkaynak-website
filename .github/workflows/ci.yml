@@ -44,6 +44,14 @@ jobs:
     - name: Module bundling
       run: yarn run bundle:prod
 
+    - name: Generate coverage report
+      run: yarn test:coverage
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@master
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+
     # - name: Upload artifacts
     #   uses: actions/upload-artifact@master
     #   with:
