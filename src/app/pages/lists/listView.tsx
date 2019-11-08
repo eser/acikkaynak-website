@@ -64,8 +64,6 @@ function ListView(props: ViewProps) {
         Object.keys(props.datasource).map((category) => {
             const filteredData = filterData(props.datasource[category]);
 
-            console.log(filteredData.length);
-
             if (!filteredData.length) { return null; }
 
             return (
