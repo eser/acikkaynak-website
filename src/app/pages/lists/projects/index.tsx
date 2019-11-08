@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container, Loader } from 'semantic-ui-react';
+import { Container, Loader, Header } from 'semantic-ui-react';
 
-import ListView from './listView';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClipboardList, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
+
+import ListView from '../listView';
+import ListItemView from './listItemView';
 
 const dataSourceUrl = 'https://api.acikkaynak.info/lists/projects';
 
@@ -16,18 +20,15 @@ async function getProjectsFetch() {
 function Projects() {
     const [ projects, setProjects ] = useState(null);
 
-    useEffect(
-        () => {
-            async function projectsFetch() {
-                const projectsResponse = await getProjectsFetch();
+    useEffect(() => {
+        async function projectsFetch() {
+            const projectsResponse = await getProjectsFetch();
 
-                setProjects(projectsResponse);
-            }
+            setProjects(projectsResponse);
+        }
 
-            projectsFetch();
-        },
-        [],
-    );
+        projectsFetch();
+    }, []);
 
     if (projects === null) {
         return (
@@ -39,7 +40,24 @@ function Projects() {
 
     return (
         <Container className="content">
-            <ListView datasource={projects} />
+            <Header as="h1">
+                <i aria-hidden="true" className="circular icon">
+                    <FontAwesomeIcon icon={faClipboardList} />
+                </i>
+                <Header.Content>
+                    Projeler
+                    <Header.Subheader>
+                        Açık Kaynak Olarak Geliştiren
+                        Projelerin Listesi
+                    </Header.Subheader>
+                </Header.Content>
+            </Header>
+
+            <ListView
+                datasource={projects}
+                listItemView={ListItemView}
+                categoryIcon={faFolderOpen}
+            />
         </Container>
     );
 }
