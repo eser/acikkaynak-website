@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 
 
-function ListItem(props) {
+function ListItemView(props) {
     return (
         <Item className="project">
             <Item.Content>
@@ -36,4 +36,4 @@ function ListItem(props) {
     );
 }
 
-export default ListItem;
+export default ListItemView;
