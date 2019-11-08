@@ -5,6 +5,7 @@ import { StaticRouter, Router } from 'react-router';
 
 import { createBrowserHistory } from 'history';
 
+import * as Sentry from '@sentry/browser';
 import App from './app/app';
 
 class Startup {
@@ -28,6 +29,10 @@ class Startup {
     }
 
     clientRender(targetElement: Element, isUpdate: boolean): void {
+        Sentry.init({
+            dsn: 'https://f08584742c7a464eb8cc1056d6ce1a63@sentry.io/1813830',
+        });
+
         const root = this.getRoot();
 
         const rootWithRouter = React.createElement(
