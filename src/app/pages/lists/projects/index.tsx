@@ -8,7 +8,7 @@ import { faClipboardList, faFolderOpen } from '@fortawesome/free-solid-svg-icons
 import ListView from '../listView';
 import ListItemView from './listItemView';
 
-const dataSourceUrl = 'https://api.acikkaynak.info/lists/projects';
+const dataSourceUrl = 'https://api.acik-kaynak.org/lists/projects';
 
 async function getProjectsFetch() {
     const response = await fetch(dataSourceUrl);

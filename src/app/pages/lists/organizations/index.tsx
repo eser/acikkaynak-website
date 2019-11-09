@@ -11,7 +11,7 @@ import listItemView from './listItemView';
 
 import localStyles from './style.less';
 
-const dataSourceUrl = 'https://api.acikkaynak.info/lists/organizations';
+const dataSourceUrl = 'https://api.acik-kaynak.org/lists/organizations';
 
 async function getOrganizationsFetch() {
     const response = await fetch(dataSourceUrl);

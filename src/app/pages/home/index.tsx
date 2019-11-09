@@ -325,11 +325,11 @@ function Home() {
                         </Card.Content>
                     </Card>
 
-                    <Card as="a" aria-label="Twitter" href="https://twitter.com/acikkaynakinfo">
+                    <Card as="a" aria-label="Twitter" href="https://twitter.com/_acikkaynak">
                         <Card.Content>
                             <div className={localStyles.cardLeft}>
                                 <Card.Header>Twitter</Card.Header>
-                                <Card.Meta>@acikkaynakinfo</Card.Meta>
+                                <Card.Meta>@_acikkaynak</Card.Meta>
                             </div>
                             <div className={localStyles.cardRight}>
                                 <span className={localStyles.cardIcon}>

@@ -7,10 +7,10 @@
 
 ## BENİ OKU
 
-Bu kod tabanında, şu anda yapım aşamasında bulunan [acikkaynak.info](https://preview.acikkaynak.info/)'nun önizleme sürümü yer almaktadır.
+Bu kod tabanında, şu anda yapım aşamasında bulunan [acik-kaynak.org](https://acik-kaynak.org/)'nun önizleme sürümü yer almaktadır.
 
-`master` branch'ine aktarılan değişiklikler, bir dizi derleme işleminden sonra [https://preview.acikkaynak.info/](https://preview.acikkaynak.info/)
-adresinde belirecektir. Henüz buradaki değişiklikler `acikkaynak.info` adresindeki yayını etkilememektedir.
+`master` branch'ine aktarılan değişiklikler, bir dizi derleme işleminden sonra [https://acik-kaynak.org/](https://acik-kaynak.org/)
+adresinde belirecektir.
 
 
 ## Katkı Sağlamak
