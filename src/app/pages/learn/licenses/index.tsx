@@ -28,7 +28,7 @@ function Licenses() {
                     </Card.Header>
                 </Card.Content>
                 <Card.Content>
-                    <Grid>
+                    <Grid stackable>
                         <Grid.Row>
                             <Grid.Column width={7} className={`${globalStyles.text} ${globalStyles.mini}`}>
                                 A short and simple permissive license with
