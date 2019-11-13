@@ -32,7 +32,7 @@ jobs:
         # scope: '@acikkaynak'
 
     - name: Cache node modules
-      uses: actions/cache@master
+      uses: actions/cache@v1
       with:
         path: node_modules
         key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
