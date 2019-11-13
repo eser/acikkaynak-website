@@ -42,15 +42,15 @@ jobs:
           ${{ runner.OS }}-
 
     - name: Install dependencies
-      run: yarn install --frozen-lockfile --audit --non-interactive
+      run: yarn install --audit --non-interactive # --frozen-lockfile
+
+    - name: Lint
+      run: yarn lint
 
     - name: Run tests
       run: yarn test
       env:
         CI: true
-
-    - name: Lint
-      run: yarn lint
 
   deploy:
     needs: [ build ]
@@ -78,7 +78,7 @@ jobs:
           ${{ runner.OS }}-
 
     - name: Install dependencies
-      run: yarn install --frozen-lockfile --non-interactive
+      run: yarn install --non-interactive # --frozen-lockfile
 
     - name: Run tests and Generate coverage report
       run: yarn test:coverage
