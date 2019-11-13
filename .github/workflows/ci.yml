@@ -57,6 +57,7 @@ jobs:
         CI: true
 
     - name: Upload coverage to Codecov
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
       uses: codecov/codecov-action@master
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
