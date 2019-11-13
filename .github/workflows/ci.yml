@@ -1,26 +1,66 @@
 name: CI
 
-on: [ push, pull_request ]
+on:
+  pull_request:
+    branches:
+      - master
+      - development
+  push:
+    branches:
+      - master
+      - development
 
 jobs:
   build:
-    name: Test on node ${{ matrix.node-version }} and ${{ matrix.operating-system }}
-    runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
         operating-system: [ ubuntu-latest, windows-latest, macOS-latest ]
         node-version: [ 12.x, 10.x ]
+    name: Test on node ${{ matrix.node-version }} and ${{ matrix.operating-system }}
+    runs-on: ${{ matrix.operating-system }}
+
     steps:
     - name: Checkout from repository
       uses: actions/checkout@master
+
     - name: Setup Node.js
       uses: actions/setup-node@master
       with:
         node-version: ${{ matrix.node-version }}
+        # registry-url: https://registry.npmjs.org/
+        # registry-url: https://npm.pkg.github.com/
+        # scope: '@acikkaynak'
+
+    - name: Cache node modules
+      uses: actions/cache@master
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-${{ env.cache-name }}-
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
+
     - name: Install dependencies
       run: yarn install --frozen-lockfile --audit --non-interactive
+
     - name: Run tests
+      if: github.ref != 'refs/heads/master' || github.event_name != 'push'
       run: yarn test
+      env:
+        CI: true
+
+    - name: Run tests and Generate coverage report
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      run: yarn test:coverage
+      env:
+        CI: true
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@master
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+
     - name: Lint
       run: yarn lint
 
@@ -28,7 +68,8 @@ jobs:
     needs: [ build ]
     name: Deployment
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+
     steps:
     - name: Checkout from repository
       uses: actions/checkout@master
@@ -38,19 +79,21 @@ jobs:
       with:
         node-version: 12.x
 
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-${{ env.cache-name }}-
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
+
     - name: Install dependencies
       run: yarn install --frozen-lockfile --non-interactive
 
     - name: Module bundling
       run: yarn run bundle:prod
-
-    - name: Generate coverage report
-      run: yarn test:coverage
-
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@master
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
 
     # - name: Upload artifacts
     #   uses: actions/upload-artifact@master
