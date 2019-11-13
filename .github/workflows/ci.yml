@@ -45,22 +45,9 @@ jobs:
       run: yarn install --frozen-lockfile --audit --non-interactive
 
     - name: Run tests
-      if: github.ref != 'refs/heads/master' || github.event_name != 'push'
       run: yarn test
       env:
         CI: true
-
-    - name: Run tests and Generate coverage report
-      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-      run: yarn test:coverage
-      env:
-        CI: true
-
-    - name: Upload coverage to Codecov
-      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
-      uses: codecov/codecov-action@master
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
 
     - name: Lint
       run: yarn lint
@@ -93,6 +80,16 @@ jobs:
     - name: Install dependencies
       run: yarn install --frozen-lockfile --non-interactive
 
+    - name: Run tests and Generate coverage report
+      run: yarn test:coverage
+      env:
+        CI: true
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@master
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+
     - name: Module bundling
       run: yarn run bundle:prod
 
@@ -102,11 +99,11 @@ jobs:
     #     name: latest
     #     path: dist/
 
-    - name: Login to Docker Hub
-      run: docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD docker.io
+    - name: Login to GitHub Packages
+      run: docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD docker.pkg.github.com
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Login to Heroku Container Registry
       run: docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD registry.heroku.com
@@ -115,10 +112,10 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.HEROKU_API_KEY }}
 
     - name: Build container
-      run: docker build -t eserozvataf/acikkaynak-website:latest -t registry.heroku.com/acikkaynak/web:latest .
+      run: docker build -t docker.pkg.github.com/acikkaynak/acikkaynak-website/acikkaynak-website:latest -t registry.heroku.com/acikkaynak/web:latest .
 
-    - name: Push to Docker Hub
-      run: docker push eserozvataf/acikkaynak-website:latest
+    - name: Push to GitHub Packages
+      run: docker push docker.pkg.github.com/acikkaynak/acikkaynak-website/acikkaynak-website:latest
 
     - name: Push to Heroku
       run: docker push registry.heroku.com/acikkaynak/web:latest
