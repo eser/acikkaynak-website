@@ -61352,6 +61352,10 @@ body.pushable > .pusher {
   .ui.vertical.segment.footer div.footer-menu {
     border-right: none !important;
     border-top: 1px solid #fff;
+    text-align: center;
+  }
+  .ui.vertical.segment.footer div.footer-about {
+    width: auto;
   }
   .ui.vertical.segment.footer:before {
     background: linear-gradient(97.43deg, rgba(0, 121, 229, 0.839) -14.99%, #71C75E 177.38%);
@@ -61752,6 +61756,15 @@ body.pushable > .pusher {
   padding: 0.8em 2.5em;
 }
 
+@media only screen and (max-width: 600px) {
+  .heading-header .content {
+    font-size: 28px;
+  }
+  .heading-header .sub.header {
+    font-size: 20px !important;
+  }
+}
+
 :root {
   --news-top-margin: 18px;
   --tag-left-margin: 5px;
@@ -61799,19 +61812,5 @@ body.pushable > .pusher {
   .projects .sub.header {
     font-size: 20px !important;
   }
-}
-
-@media only screen and (max-width: 600px) {
-  .org-header .content {
-    font-size: 28px;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .org-header .content .sub.header {
-    font-size: 20px !important;
-  }
-}
-.org-list .tag-title {
-  font-size: 13px;
 }
 

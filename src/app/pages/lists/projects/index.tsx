@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 
-import { Container, Loader, Header } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClipboardList, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 
+import Heading from '../../shared/elements/heading';
+import Loading from '../../shared/elements/loading';
 import ListView from '../listView';
 import ListItemView from './listItemView';
 
@@ -30,34 +31,17 @@ function Projects() {
         projectsFetch();
     }, []);
 
-    if (projects === null) {
-        return (
-            <Container className="content">
-                <Loader inline="centered" content="Yükleniyor..." active />
-            </Container>
-        );
-    }
-
     return (
         <Container className="content">
-            <Header as="h1">
-                <i aria-hidden="true" className="circular icon">
-                    <FontAwesomeIcon icon={faClipboardList} />
-                </i>
-                <Header.Content>
-                    Projeler
-                    <Header.Subheader>
-                        Açık Kaynak Olarak Geliştiren
-                        Projelerin Listesi
-                    </Header.Subheader>
-                </Header.Content>
-            </Header>
+            <Heading icon={faClipboardList} title="Projeler" subtitle="Açık Kaynak Olarak Geliştiren Projelerin Listesi" />
 
-            <ListView
-                datasource={projects}
-                listItemView={ListItemView}
-                categoryIcon={faFolderOpen}
-            />
+            <Suspense fallback={Loading}>
+                <ListView
+                    datasource={projects}
+                    listItemView={ListItemView}
+                    categoryIcon={faFolderOpen}
+                />
+            </Suspense>
         </Container>
     );
 }

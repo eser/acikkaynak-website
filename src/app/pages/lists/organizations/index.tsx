@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 
-import { Container, Loader, Header } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import Heading from '../../shared/elements/heading';
+import Loading from '../../shared/elements/loading';
 import ListView from '../listView';
 import listItemView from './listItemView';
 // import DetailView from './detailView';
-
-import localStyles from './style.less';
 
 const dataSourceUrl = 'https://api.acik-kaynak.org/lists/organizations';
 
@@ -36,14 +35,6 @@ function Organizations() {
         [],
     );
 
-    if (organizations === null) {
-        return (
-            <Container className="content">
-                <Loader inline="centered" content="Yükleniyor..." active />
-            </Container>
-        );
-    }
-
     // if (props.slug !== undefined) {
     //     const currentItem = organizations.find(x => x.name === props.slug);
 
@@ -58,19 +49,11 @@ function Organizations() {
 
     return (
         <Container className="content">
-            <Header as="h1" className={localStyles.orgHeader}>
-                <i aria-hidden="true" className="circular icon">
-                    <FontAwesomeIcon icon={faUsers} />
-                </i>
-                <Header.Content>
-                    Organizasyonlar
-                    <Header.Subheader>
-                        Organizasyonlar Listesi
-                    </Header.Subheader>
-                </Header.Content>
-            </Header>
+            <Heading icon={faUsers} title="Organizasyonlar" subtitle="Organizasyonlar Listesi" />
 
-            <ListView datasource={organizations} listItemView={listItemView} />
+            <Suspense fallback={Loading}>
+                <ListView datasource={organizations} listItemView={listItemView} />
+            </Suspense>
         </Container>
     );
 }

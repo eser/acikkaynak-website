@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Header, Label, Button } from 'semantic-ui-react';
+import { Label, Button } from 'semantic-ui-react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
+
+import Heading from '../shared/elements/heading';
 
 function NewsDetailView(props) {
     // eslint-disable-next-line prefer-destructuring
@@ -22,15 +23,7 @@ function NewsDetailView(props) {
 
     return (
         <>
-            <Header as="h1">
-                <i aria-hidden="true" className="circular icon">
-                    <FontAwesomeIcon icon={faNewspaper} />
-                </i>
-
-                <Header.Content>
-                    {news.title}
-                </Header.Content>
-            </Header>
+            <Heading icon={faNewspaper} title="Haberler" subtitle={news.title} />
 
             <p>{news.content}</p>
             <p>{renderTags()}</p>

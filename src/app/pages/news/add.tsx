@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { Container, Header, Form, Button } from 'semantic-ui-react';
+import { Container, Form, Button } from 'semantic-ui-react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
+
+import Heading from '../shared/elements/heading';
 
 function NewsAdd() {
     const [ newsTitle, setNewsTitle ] = useState('');
@@ -18,16 +19,7 @@ function NewsAdd() {
 
     return (
         <Container className="content">
-            <Header as="h1">
-                <i aria-hidden="true" className="circular icon">
-                    <FontAwesomeIcon icon={faCaretSquareRight} />
-                </i>
-
-                <Header.Content>
-                    Haber Ekle
-                    <Header.Subheader>Açık Kaynak ile İlgili Haberler</Header.Subheader>
-                </Header.Content>
-            </Header>
+            <Heading icon={faCaretSquareRight} title="Haber Ekle" subtitle="Açık Kaynak ile İlgili Haberler" />
 
             <Form onSubmit={onSubmitHandler}>
                 <Form.Field>

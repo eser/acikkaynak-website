@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Container } from 'semantic-ui-react';
 
+import ContentNotFound from '../shared/elements/contentNotFound';
+
 import NewsListView from './listView';
 import NewsDetailView from './detailView';
-import NotFound from '../notFound';
 import mockData from './mockData';
 
 function News(props) {
@@ -14,7 +15,7 @@ function News(props) {
         const currentNewsItem = news.find(i => i.slug === props.slug);
 
         if (!currentNewsItem) {
-            return <NotFound />;
+            return <ContentNotFound />;
         }
 
         return <NewsDetailView news={currentNewsItem} />;
