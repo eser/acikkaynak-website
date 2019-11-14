@@ -1,11 +1,14 @@
-import React, { Suspense, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Container } from 'semantic-ui-react';
 
 import { faClipboardList, faFolderOpen } from '@fortawesome/free-solid-svg-icons';
 
 import Heading from '../../shared/elements/heading';
+import ContentFetchError from '../../shared/elements/contentFetchError';
 import Loading from '../../shared/elements/loading';
+import ErrorBoundary from '../../shared/errorBoundary';
+import SuspenseCheck from '../../shared/suspenseCheck';
 import ListView from '../listView';
 import ListItemView from './listItemView';
 
@@ -35,13 +38,15 @@ function Projects() {
         <Container className="content">
             <Heading icon={faClipboardList} title="Projeler" subtitle="Açık Kaynak Olarak Geliştiren Projelerin Listesi" />
 
-            <Suspense fallback={Loading}>
-                <ListView
-                    datasource={projects}
-                    listItemView={ListItemView}
-                    categoryIcon={faFolderOpen}
-                />
-            </Suspense>
+            <ErrorBoundary fallback={() => <ContentFetchError />}>
+                <SuspenseCheck if={projects} fallback={() => <Loading />}>
+                    <ListView
+                        datasource={projects}
+                        listItemView={ListItemView}
+                        categoryIcon={faFolderOpen}
+                    />
+                </SuspenseCheck>
+            </ErrorBoundary>
         </Container>
     );
 }

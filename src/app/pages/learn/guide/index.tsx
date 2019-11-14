@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Container } from 'semantic-ui-react';
@@ -7,6 +7,9 @@ import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
 
 import Heading from '../../shared/elements/heading';
 import Loading from '../../shared/elements/loading';
+import ContentFetchError from '../../shared/elements/contentFetchError';
+import ErrorBoundary from '../../shared/errorBoundary';
+import SuspenseCheck from '../../shared/suspenseCheck';
 import View from './view';
 
 const dataOriginUrl = 'https://github.com/acikkaynak/acikkaynak/tree/master/Icerik/';
@@ -71,15 +74,17 @@ function Guide(props: GuideProps) {
         <Container className="content">
             <Heading icon={faCaretSquareRight} title="Rehber" subtitle="Açık Kaynak ile İlgili Kaynaklar" />
 
-            <Suspense fallback={Loading}>
-                {content && (
-                    <View
-                        datasource={content.datasource}
-                        metadata={content.metadata}
-                        history={historyObj}
-                    />
-                )}
-            </Suspense>
+            <ErrorBoundary fallback={() => <ContentFetchError />}>
+                <SuspenseCheck if={content} fallback={() => <Loading />}>
+                    {content && (
+                        <View
+                            datasource={content.datasource}
+                            metadata={content.metadata}
+                            history={historyObj}
+                        />
+                    )}
+                </SuspenseCheck>
+            </ErrorBoundary>
         </Container>
     );
 }

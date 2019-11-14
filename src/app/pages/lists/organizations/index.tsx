@@ -1,11 +1,14 @@
-import React, { Suspense, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Container } from 'semantic-ui-react';
 
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 
 import Heading from '../../shared/elements/heading';
+import ContentFetchError from '../../shared/elements/contentFetchError';
 import Loading from '../../shared/elements/loading';
+import ErrorBoundary from '../../shared/errorBoundary';
+import SuspenseCheck from '../../shared/suspenseCheck';
 import ListView from '../listView';
 import listItemView from './listItemView';
 // import DetailView from './detailView';
@@ -51,9 +54,11 @@ function Organizations() {
         <Container className="content">
             <Heading icon={faUsers} title="Organizasyonlar" subtitle="Organizasyonlar Listesi" />
 
-            <Suspense fallback={Loading}>
-                <ListView datasource={organizations} listItemView={listItemView} />
-            </Suspense>
+            <ErrorBoundary fallback={() => <ContentFetchError />}>
+                <SuspenseCheck if={organizations} fallback={() => <Loading />}>
+                    <ListView datasource={organizations} listItemView={listItemView} />
+                </SuspenseCheck>
+            </ErrorBoundary>
         </Container>
     );
 }
