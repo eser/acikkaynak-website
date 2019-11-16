@@ -5,7 +5,7 @@ import { Container, Header } from 'semantic-ui-react';
 function About() {
     return (
         <Container className="content">
-            <Header as="h1" style={{"fontVariant": "no-common-ligatures"}}>Açık Kaynak İnisiyatifi Hakkında</Header>
+            <Header as="h1" style={{ 'fontVariant': 'no-common-ligatures' }}>Açık Kaynak İnisiyatifi Hakkında</Header>
 
             <p>
                 Bu organizasyon Türkiye'deki ve Türkçe konuşan geliştiricilerin oluşturduğu
