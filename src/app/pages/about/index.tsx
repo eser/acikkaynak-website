@@ -8,7 +8,7 @@ function About() {
             <Header as="h1">Açık Kaynak İnisiyatifi Hakkında</Header>
 
             <p>
-                Bu organizasyon Türkçe konuşan ve Türkiye'deki geliştiricilerin oluşturduğu
+                Bu organizasyon Türkçe konuşan ve Türkiye'de yaşayan geliştiricilerin oluşturduğu
                 açık kaynak ekosisteminin lokomotifi olmak, insanları açık kaynak geliştirmeye
                 motive etmek, farkındalık yaratmak ve engelleri ortadan kaldırmak amacıyla
                 kurulmuştur.
