@@ -44,35 +44,44 @@ function NewsListView() {
                 </Grid.Column>
             </Grid>
 
-            <Grid container stackable columns="equal" className="content">
-                <Grid.Row>
-                    <Grid.Column>
-                        {renderNews(true)}
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column>
-                        {renderNews()}
-                    </Grid.Column>
-                    <Grid.Column>
-                        {renderNews()}
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row>
-                    <Grid.Column>
-                        {renderNews()}
-                    </Grid.Column>
-                    <Grid.Column>
-                        {renderNews()}
-                    </Grid.Column>
-                    <Grid.Column>
-                        {renderNews()}
-                    </Grid.Column>
-                </Grid.Row>
-                <Grid.Row centered>
-                    <Button className={newsStyle.allNewsButton} content="Tüm Haberler" />
-                </Grid.Row>
-            </Grid>
+            <svg className={newsStyle.svgContentBg} viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path d="M0 100 Q0 55, 10 50 L10 100 C"/>
+              <path d="M10 100 L10 50 L100 0 L100 100 C" />
+            </svg>
+            <section className={newsStyle.newsContent}>
+                <Grid container stackable columns="equal">
+                    <Grid.Row>
+                        <Grid.Column>
+                            {renderNews(true)}
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>
+                            {renderNews()}
+                        </Grid.Column>
+                        <Grid.Column>
+                            {renderNews()}
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row>
+                        <Grid.Column>
+                            {renderNews()}
+                        </Grid.Column>
+                        <Grid.Column>
+                            {renderNews()}
+                        </Grid.Column>
+                        <Grid.Column>
+                            {renderNews()}
+                        </Grid.Column>
+                    </Grid.Row>
+                    <Grid.Row centered>
+                        <Button className={newsStyle.allNewsButton} content="Tüm Haberler" />
+                    </Grid.Row>
+                </Grid>
+            </section>
+            <svg className={newsStyle.svgContentBg} viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path d="M0 0 L100 0 L100 100 C" />
+            </svg>
 
             <Grid container stackable columns="2" verticalAlign="middle" className="content">
                 <Grid.Column width="6">
