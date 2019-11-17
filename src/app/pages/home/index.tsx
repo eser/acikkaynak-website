@@ -121,7 +121,7 @@ function Home() {
                                 </Link>
                             </Header>
                             <p>
-                                Açık Kaynak projelerden ve açık kaynak destekçisi
+                                Açık kaynak projelerden ve açık kaynak destekçisi
                                 organizasyonlardan haberler paylaşarak topluluk
                                 içerisinde geniş bir ağ oluşmasına katkıda
                                 bulunmak istiyoruz.
@@ -162,7 +162,7 @@ function Home() {
                                 </Link>
                             </Header>
                             <p>
-                                Açık Kaynak geliştirme yapmak isteyen kişi ve kuruluşlara
+                                Açık kaynak geliştirme yapmak isteyen kişi ve kuruluşlara
                                 ilk adımlarını atmaları ve ilerlemeleri için destek olmaya
                                 çalışıyoruz. Bu doğrultuda eğitim bölümü altında
                                 {' '}
