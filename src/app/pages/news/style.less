@@ -90,3 +90,30 @@ h3.ui.header.news-title {
     }
 }
 
+.detail-image {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.ui.header.detail-header {
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 56px;
+}
+
+.news-detail {
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 28px;
+
+    .ui.bulleted.list {
+        margin-left: 4rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+
+	.item {
+	    &::before { font-size: 50px; }
+	}
+    }
+}
