@@ -61352,6 +61352,10 @@ body.pushable > .pusher {
   .ui.vertical.segment.footer div.footer-menu {
     border-right: none !important;
     border-top: 1px solid #fff;
+    text-align: center;
+  }
+  .ui.vertical.segment.footer div.footer-about {
+    width: auto;
   }
   .ui.vertical.segment.footer:before {
     background: linear-gradient(97.43deg, rgba(0, 121, 229, 0.839) -14.99%, #71C75E 177.38%);
@@ -61375,6 +61379,7 @@ body.pushable > .pusher {
 .ui.segment.projects-segment h4.with-div,
 .ui.segment.social-segment h4.with-div {
   margin: 2em 0;
+  white-space: normal;
 }
 .ui.segment.social-segment h4.with-div {
   width: 100vw;
@@ -61564,6 +61569,7 @@ body.pushable > .pusher {
 .ui.segment.projects-segment .carousel__next-button {
   margin: 60px;
   background: transparent;
+  outline: none;
   width: 30px;
   height: 30px;
   font-size: 30px;
@@ -61651,6 +61657,75 @@ body.pushable > .pusher {
     border-radius: 25px;
   }
 }
+@media only screen and (max-width: 1440px) {
+  .ui.segment.projects-segment .carousel__inner-slide .ui.container {
+    display: flex;
+    justify-content: center;
+  }
+  .ui.segment.projects-segment .card {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .ui.segment.projects-segment .carousel__back-button,
+  .ui.segment.projects-segment .carousel__next-button {
+    margin: 0 6% 3rem 6%;
+  }
+  .ui.segment.projects-segment .card {
+    flex-direction: column;
+    width: 55%;
+  }
+  .ui.segment.projects-segment .card .image,
+  .ui.segment.projects-segment .card .image > img {
+    width: 100%;
+    height: 12rem;
+    border-radius: 30px 30px 0 0;
+  }
+  .ui.segment.projects-segment .card .user-picture {
+    position: relative;
+    top: -3rem;
+    margin: 0;
+  }
+  .ui.segment.projects-segment .card .content {
+    padding: 0 1rem;
+  }
+  .ui.segment.projects-segment .card .repo {
+    margin: 2rem 0 1rem;
+  }
+  .ui.segment.projects-segment .ui.mini.buttons {
+    margin-top: 0;
+  }
+  .ui.segment.projects-segment .ui.center.aligned.container {
+    position: relative;
+    top: -1rem;
+  }
+  .ui.segment.projects-segment .carousel__slide {
+    height: auto;
+  }
+  .ui.segment.projects-segment .carousel__inner-slide {
+    position: static;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .ui.segment.projects-segment .card {
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .ui.segment.projects-segment .carousel__back-button,
+  .ui.segment.projects-segment .carousel__next-button {
+    margin: 0 4% 3rem 4%;
+  }
+  .ui.segment.projects-segment .card {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 526px) {
+  .ui.segment.projects-segment .carousel__back-button,
+  .ui.segment.projects-segment .carousel__next-button {
+    display: none;
+  }
+}
 
 .text.mini {
   font-size: 0.78571429rem;
@@ -61679,6 +61754,15 @@ body.pushable > .pusher {
 .ui.padded.buttons .button,
 .ui.padded.button {
   padding: 0.8em 2.5em;
+}
+
+@media only screen and (max-width: 600px) {
+  .heading-header .content {
+    font-size: 28px;
+  }
+  .heading-header .sub.header {
+    font-size: 20px !important;
+  }
 }
 
 :root {
@@ -61728,19 +61812,5 @@ body.pushable > .pusher {
   .projects .sub.header {
     font-size: 20px !important;
   }
-}
-
-@media only screen and (max-width: 600px) {
-  .org-header .content {
-    font-size: 28px;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .org-header .content .sub.header {
-    font-size: 20px !important;
-  }
-}
-.org-list .tag-title {
-  font-size: 13px;
 }
 

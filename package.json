@@ -4,21 +4,22 @@
   "keywords": [
     "acik",
     "kaynak",
-    "info"
+    "web",
+    "site"
   ],
   "version": "0.10.1",
-  "homepage": "http://acikkaynak.info",
-  "author": "Acik Kaynak Inisiyatifi <info@acikkaynak.info> (https://twitter.com/acikkaynakinfo)",
+  "homepage": "https://acik-kaynak.org",
+  "author": "Acik Kaynak Inisiyatifi <bilgi@acik-kaynak.org> (https://twitter.com/_acikkaynak)",
   "contributors": [
     {
       "name": "Eser Ozvataf",
       "email": "eser@ozvataf.com",
-      "url": "http://eser.ozvataf.com/"
+      "url": "https://eser.ozvataf.com/"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/acikkaynak/acikkaynak-website.git"
+    "url": "git+https://github.com/acikkaynak/acikkaynak-website.git"
   },
   "bugs": {
     "url": "https://github.com/acikkaynak/acikkaynak-website/issues"
@@ -37,22 +38,25 @@
     "lint:fix": "darty lint:fix",
     "test": "darty test",
     "test:coverage": "darty test:coverage",
+    "validate": "npm-run-all --parallel lint test",
     "bundle": "darty bundle",
     "bundle:prod": "darty bundle:prod",
     "containerize": "darty containerize"
   },
   "dependencies": {
-    "darty": "^0.51.14"
+    "darty": "^0.51.16"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
     "@fortawesome/react-fontawesome": "^0.1.7",
+    "@sentry/browser": "^5.9.0",
     "@types/enzyme": "^3.10.3",
-    "@types/jest": "^24.0.21",
+    "@types/jest": "^24.0.23",
     "@types/react": "^16.9.11",
-    "@types/react-router": "^5.1.2",
+    "@types/react-router": "^5.1.3",
+    "codecov": "^3.6.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "eslint-config-eser-react": "^2.1.8",
@@ -60,8 +64,10 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.2.0",
     "history": "^4.10.1",
+    "husky": "^3.0.9",
+    "npm-run-all": "^4.1.5",
     "path-browser": "^2.2.1",
-    "pure-react-carousel": "^1.23.2",
+    "pure-react-carousel": "^1.23.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-markdown": "^4.2.2",
@@ -71,5 +77,11 @@
     "react-router-hash-link": "^1.2.2",
     "semantic-ui-less": "^2.4.1",
     "semantic-ui-react": "^0.88.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run validate",
+      "pre-push": "npm run validate"
+    }
   }
 }

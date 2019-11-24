@@ -12,4 +12,4 @@
 
 ## Destekleyenler
 
-* Agah Gürer - acikkaynak.info Tasarım
+* Agah Gürer - Tasarım

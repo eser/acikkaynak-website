@@ -48,7 +48,7 @@ function DesktopContainer(props) {
                             <Menu.Item as={NavLink} to="/about/">Hakkımızda</Menu.Item>
 
                             <Menu.Item position="right">
-                                <Button as="a" href="https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acikkaynak.info%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state=" inverted={!fixed} primary={fixed}>
+                                <Button as="a" href="https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acik-kaynak.org%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state=" inverted={!fixed} primary={fixed}>
                                     <FontAwesomeIcon icon={faGithub} />
                                     {' '}
                                     GitHub ile Giriş

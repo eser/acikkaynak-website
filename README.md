@@ -7,10 +7,10 @@
 
 ## BENİ OKU
 
-Bu kod tabanında, şu anda yapım aşamasında bulunan [acikkaynak.info](https://preview.acikkaynak.info/)'nun önizleme sürümü yer almaktadır.
+Bu kod tabanında, şu anda yapım aşamasında bulunan [acik-kaynak.org](https://acik-kaynak.org/)'nun önizleme sürümü yer almaktadır.
 
-`master` branch'ine aktarılan değişiklikler, bir dizi derleme işleminden sonra [https://preview.acikkaynak.info/](https://preview.acikkaynak.info/)
-adresinde belirecektir. Henüz buradaki değişiklikler `acikkaynak.info` adresindeki yayını etkilememektedir.
+`master` branch'ine aktarılan değişiklikler, bir dizi derleme işleminden sonra [https://acik-kaynak.org/](https://acik-kaynak.org/)
+adresinde belirecektir.
 
 
 ## Katkı Sağlamak
@@ -98,7 +98,7 @@ Herhangi bir katkıya açıktır. Hata düzenlemeleri, yeni özellik ve modülle
 [build-url]: https://github.com/acikkaynak/acikkaynak-website/actions?workflow=CI
 [dep-image]: https://img.shields.io/david/acikkaynak/acikkaynak-website.svg?style=flat-square
 [dep-url]: https://github.com/acikkaynak/acikkaynak-website
-[coverage-image]: https://img.shields.io/codecov/c/gh/acikkaynak/acikkaynak-website/master.svg?style=flat-square
+[coverage-image]: https://img.shields.io/codecov/c/github/acikkaynak/acikkaynak-website.svg?style=flat-square
 [coverage-url]: https://codecov.io/gh/acikkaynak/acikkaynak-website
 [license-image]: https://img.shields.io/github/license/acikkaynak/acikkaynak-website.svg?style=flat-square
 [license-url]: https://github.com/acikkaynak/acikkaynak-website/blob/master/LICENSE

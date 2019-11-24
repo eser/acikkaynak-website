@@ -1,25 +1,17 @@
 import React from 'react';
 
-import { Container, Header, Grid, Label, Card } from 'semantic-ui-react';
+import { Container, Grid, Label, Card } from 'semantic-ui-react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons';
+
+import Heading from '../../shared/elements/heading';
 
 import globalStyles from '../../../layouts/shared/assets/global.less';
 
 function Licenses() {
     return (
         <Container className="content">
-            <Header as="h1">
-                <i aria-hidden="true" className="circular icon">
-                    <FontAwesomeIcon icon={faClosedCaptioning} />
-                </i>
-
-                <Header.Content>
-                    Lisanslar
-                    <Header.Subheader>Açık Kaynak Lisansları</Header.Subheader>
-                </Header.Content>
-            </Header>
+            <Heading icon={faClosedCaptioning} title="Lisanslar" subtitle="Açık Kaynak Lisansları" />
 
             <Card fluid>
                 <Card.Content>
@@ -28,7 +20,7 @@ function Licenses() {
                     </Card.Header>
                 </Card.Content>
                 <Card.Content>
-                    <Grid>
+                    <Grid stackable>
                         <Grid.Row>
                             <Grid.Column width={7} className={`${globalStyles.text} ${globalStyles.mini}`}>
                                 A short and simple permissive license with

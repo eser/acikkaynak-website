@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Container, Header, Loader } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
 
+import Heading from '../../shared/elements/heading';
+import Loading from '../../shared/elements/loading';
+import ContentFetchError from '../../shared/elements/contentFetchError';
+import ErrorBoundary from '../../shared/errorBoundary';
+import SuspenseCheck from '../../shared/suspenseCheck';
 import View from './view';
 
 const dataOriginUrl = 'https://github.com/acikkaynak/acikkaynak/tree/master/Icerik/';
@@ -66,34 +70,21 @@ function Guide(props: GuideProps) {
         [ props.contentPath ],
     );
 
-    if (content === null) {
-        return (
-            <Container className="content">
-                <Loader inline="centered" content="Yükleniyor..." active />
-            </Container>
-        );
-    }
-
     return (
         <Container className="content">
-            <Header as="h1">
-                <i aria-hidden="true" className="circular icon">
-                    <FontAwesomeIcon icon={faCaretSquareRight} />
-                </i>
+            <Heading icon={faCaretSquareRight} title="Rehber" subtitle="Açık Kaynak ile İlgili Kaynaklar" />
 
-                <Header.Content>
-                    Rehber
-                    <Header.Subheader>Açık Kaynak ile İlgili Kaynaklar</Header.Subheader>
-                </Header.Content>
-            </Header>
-
-            {content && (
-                <View
-                    datasource={content.datasource}
-                    metadata={content.metadata}
-                    history={historyObj}
-                />
-            )}
+            <ErrorBoundary fallback={() => <ContentFetchError />}>
+                <SuspenseCheck if={content} fallback={() => <Loading />}>
+                    {content && (
+                        <View
+                            datasource={content.datasource}
+                            metadata={content.metadata}
+                            history={historyObj}
+                        />
+                    )}
+                </SuspenseCheck>
+            </ErrorBoundary>
         </Container>
     );
 }

@@ -1,33 +1,18 @@
 import React from 'react';
 
-import { Container, Header, Message } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretSquareRight, faCircleNotch } from '@fortawesome/free-solid-svg-icons';
+import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
+
+import Heading from '../../shared/elements/heading';
+import UnderConstruction from '../../shared/elements/underConstruction';
 
 function Sponsors() {
     return (
         <Container className="content">
-            <Header as="h1">
-                <i aria-hidden="true" className="circular icon">
-                    <FontAwesomeIcon icon={faCaretSquareRight} />
-                </i>
+            <Heading icon={faCaretSquareRight} title="Sponsorlar" subtitle="Açık Kaynak Geliştirme Sponsor Listesi" />
 
-                <Header.Content>
-                    Sponsorlar
-                    <Header.Subheader>Açık Kaynak Geliştirme Sponsor Listesi</Header.Subheader>
-                </Header.Content>
-            </Header>
-
-            <Message icon>
-                <i aria-hidden="true" className="loading icon">
-                    <FontAwesomeIcon icon={faCircleNotch} />
-                </i>
-
-                <Message.Content>
-                    <Message.Header>Bu sayfa yapım aşamasında.</Message.Header>
-                </Message.Content>
-            </Message>
+            <UnderConstruction />
         </Container>
     );
 }

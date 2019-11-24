@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
-import { Container, Loader } from 'semantic-ui-react';
+import { Container } from 'semantic-ui-react';
 
-import ListView from './listView';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
+
+import Heading from '../../shared/elements/heading';
+import ContentFetchError from '../../shared/elements/contentFetchError';
+import Loading from '../../shared/elements/loading';
+import ErrorBoundary from '../../shared/errorBoundary';
+import SuspenseCheck from '../../shared/suspenseCheck';
+import ListView from '../listView';
+import listItemView from './listItemView';
 // import DetailView from './detailView';
 
-const dataSourceUrl = 'https://api.acikkaynak.info/lists/organizations';
+const dataSourceUrl = 'https://api.acik-kaynak.org/lists/organizations';
 
 async function getOrganizationsFetch() {
     const response = await fetch(dataSourceUrl);
@@ -30,14 +38,6 @@ function Organizations() {
         [],
     );
 
-    if (organizations === null) {
-        return (
-            <Container className="content">
-                <Loader inline="centered" content="Yükleniyor..." active />
-            </Container>
-        );
-    }
-
     // if (props.slug !== undefined) {
     //     const currentItem = organizations.find(x => x.name === props.slug);
 
@@ -52,7 +52,13 @@ function Organizations() {
 
     return (
         <Container className="content">
-            <ListView datasource={organizations} />
+            <Heading icon={faUsers} title="Organizasyonlar" subtitle="Organizasyonlar Listesi" />
+
+            <ErrorBoundary fallback={() => <ContentFetchError />}>
+                <SuspenseCheck if={organizations} fallback={() => <Loading />}>
+                    <ListView datasource={organizations} listItemView={listItemView} />
+                </SuspenseCheck>
+            </ErrorBoundary>
         </Container>
     );
 }
