@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Container } from 'semantic-ui-react';
 
 import ContentNotFound from '../shared/elements/contentNotFound';
 
@@ -26,11 +25,11 @@ function News(props) {
     }
 
     return (
-        <Container className="content">
+        <>
             {showDetail ?
                 renderDetail() :
                 renderList()}
-        </Container>
+        </>
     );
 }
 
