@@ -112,8 +112,7 @@ function Home() {
                     <Grid.Row>
                         <Grid.Column width={8}>
                             <Header as="h3">
-                                {/* <Link to="/news/"> */}
-                                <Link to="/">
+                                <Link to="/news/">
                                     <i aria-hidden="true" className="circular icon">
                                         <FontAwesomeIcon icon={faNewspaper} />
                                     </i>

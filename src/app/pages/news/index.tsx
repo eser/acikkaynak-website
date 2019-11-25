@@ -14,14 +14,20 @@ function News(props) {
         const currentNewsItem = news.find(i => i.slug === props.slug);
 
         if (!currentNewsItem) {
-            return <ContentNotFound />;
+            return (
+                <ContentNotFound />
+            );
         }
 
-        return <NewsDetailView news={currentNewsItem} />;
+        return (
+            <NewsDetailView news={currentNewsItem} />
+        );
     }
 
     function renderList() {
-        return <NewsListView news={news} {...props} />;
+        return (
+            <NewsListView news={news} {...props} />
+        );
     }
 
     return (
