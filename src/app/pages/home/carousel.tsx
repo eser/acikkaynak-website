@@ -24,6 +24,7 @@ function Carousel(props) {
             naturalSlideHeight={0.15}
             totalSlides={props.children.length}
             visibleSlides={1}
+            infinite
         >
             <div className="wrapper">
                 <ButtonBack>
