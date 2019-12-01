@@ -15,6 +15,7 @@ module.exports = {
         ],
         rules: {
             'jsx-a11y/href-no-hash': 0,
+            'import/no-extraneous-dependencies': 0,
         },
     },
     dependencyAliases: {
