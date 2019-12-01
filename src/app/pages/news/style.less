@@ -3,7 +3,6 @@
     --bottom-svg: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M0 0 L100 0 L100 60 C'/></svg>");
 }
 
-
 .ui.tiny.primary.header-button {
     font-weight: normal;
     font-size: 16px;
@@ -11,22 +10,24 @@
 }
 
 .news-grid {
-    img { width: 100%; }
+    img {
+        width: 100%;
+    }
 }
 
 h2.ui.header.news-title {
-    font-size: 48px;
+    font-size: 2.5em;
     font-weight: 500;
 }
 
 h3.ui.header.news-title {
-    font-size: 32px;
+    font-size: 2em;
     font-weight: 500;
     margin: 0;
 }
 
 .news-description {
-    font-size: 24px;
+    font-size: 1.3em;
     font-weight: 300;
 }
 
@@ -35,18 +36,18 @@ h3.ui.header.news-title {
     background-color: #676767;
     color: white;
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 1.3em;
     font-weight: normal;
 }
 
 .ui.header.subscribe-title {
-    font-size: 48px;
+    font-size: 2.4em;
     font-weight: 500;
     margin: 0;
 }
 
 .subscribe-description {
-    font-size: 16px;
+    font-size: 2em;
     font-weight: 300;
 }
 
@@ -60,23 +61,24 @@ h3.ui.header.news-title {
         margin-bottom: 0;
     }
 
-    &::before, &::after {
-	position: absolute;
-	display: block;
-	height: 200px;
-	width: 100%;
-	content: '';
-	background-color: #f8f8f8;
+    &::before,
+    &::after {
+        position: absolute;
+        display: block;
+        height: 200px;
+        width: 100%;
+        content: "";
+        background-color: #f8f8f8;
     }
     &::before {
-	top: -200px;
+        top: -200px;
         mask: var(--top-svg);
-	-webkit-mask: var(--top-svg);
+        -webkit-mask: var(--top-svg);
     }
     &::after {
-	bottom: -200px;
+        bottom: -200px;
         mask: var(--bottom-svg);
-	-webkit-mask: var(--bottom-svg);
+        -webkit-mask: var(--bottom-svg);
     }
 }
 
@@ -93,17 +95,19 @@ h3.ui.header.news-title {
 }
 
 .news-detail {
-    font-size: 24px;
+    font-size: 1.3em;
     font-weight: 300;
     line-height: 28px;
 
     .ui.bulleted.list {
         margin-left: 4rem;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
 
-	.item {
-	    &::before { font-size: 50px; }
-	}
+        .item {
+            &::before {
+                font-size: 50px;
+            }
+        }
     }
 }

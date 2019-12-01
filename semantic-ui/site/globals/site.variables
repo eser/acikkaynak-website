@@ -2,10 +2,10 @@
      User Global Variables
 *******************************/
 
-@emSize: 20px;
+@emSize: 14px;
 
 @fontName: 'Roboto';
-@fontSize: '1em';
+@fontSize: 1em;
 
 @primaryColor: #4EA13B;
 @linkColor: #4EA13B;
