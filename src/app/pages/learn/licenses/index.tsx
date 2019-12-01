@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, Grid, Label, Card } from 'semantic-ui-react';
+import { Container, Grid, Label, Card, LabelGroup } from 'semantic-ui-react';
 
 import { faClosedCaptioning } from '@fortawesome/free-solid-svg-icons';
 
@@ -35,23 +35,29 @@ function Licenses() {
                                 <div>
                                     <strong>İzinler</strong>
                                 </div>
-                                <Label color="green">Ticari Kullanım</Label>
-                                <Label color="green">Dağıtım</Label>
-                                <Label color="green">Değiştirme</Label>
-                                <Label color="green">Özel Kullanım</Label>
+                                <LabelGroup color="green">
+                                    <Label>Ticari Kullanım</Label>
+                                    <Label>Dağıtım</Label>
+                                    <Label>Değiştirme</Label>
+                                    <Label>Özel Kullanım</Label>
+                                </LabelGroup>
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <div>
                                     <strong>Şartlar</strong>
                                 </div>
-                                <Label color="blue">Copyright ve lisans uyarıları</Label>
+                                <LabelGroup color="blue">
+                                    <Label>Copyright ve lisans uyarıları</Label>
+                                </LabelGroup>
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <div>
                                     <strong>Sınırlamalar</strong>
                                 </div>
-                                <Label color="red">Yükümlülük</Label>
-                                <Label color="red">Garanti</Label>
+                                <LabelGroup color="red">
+                                    <Label>Yükümlülük</Label>
+                                    <Label>Garanti</Label>
+                                </LabelGroup>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
@@ -77,26 +83,32 @@ function Licenses() {
                                 <div>
                                     <strong>İzinler</strong>
                                 </div>
-                                <Label color="green">Ticari Kullanım</Label>
-                                <Label color="green">Dağıtım</Label>
-                                <Label color="green">Değiştirme</Label>
-                                <Label color="green">Patent Kullanımı</Label>
-                                <Label color="green">Özel Kullanım</Label>
+                                <LabelGroup color="green">
+                                    <Label>Ticari Kullanım</Label>
+                                    <Label>Dağıtım</Label>
+                                    <Label>Değiştirme</Label>
+                                    <Label>Patent Kullanımı</Label>
+                                    <Label>Özel Kullanım</Label>
+                                </LabelGroup>
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <div>
                                     <strong>Şartlar</strong>
                                 </div>
-                                <Label color="blue">Copyright ve lisans uyarıları</Label>
-                                <Label color="blue">Yapılan değişiklikleri listeleme</Label>
+                                <LabelGroup color="blue">
+                                    <Label>Copyright ve lisans uyarıları</Label>
+                                    <Label>Yapılan değişiklikleri listeleme</Label>
+                                </LabelGroup>
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <div>
                                     <strong>Sınırlamalar</strong>
                                 </div>
-                                <Label color="red">Yükümlülük</Label>
-                                <Label color="red">Trademark Kullanımı</Label>
-                                <Label color="red">Garanti</Label>
+                                <LabelGroup color="red">
+                                    <Label>Yükümlülük</Label>
+                                    <Label>Trademark Kullanımı</Label>
+                                    <Label>Garanti</Label>
+                                </LabelGroup>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
@@ -125,27 +137,33 @@ function Licenses() {
                                 <div>
                                     <strong>İzinler</strong>
                                 </div>
-                                <Label color="green">Ticari Kullanım</Label>
-                                <Label color="green">Dağıtım</Label>
-                                <Label color="green">Değiştirme</Label>
-                                <Label color="green">Patent Kullanımı</Label>
-                                <Label color="green">Özel Kullanım</Label>
+                                <LabelGroup color="green">
+                                    <Label>Ticari Kullanım</Label>
+                                    <Label>Dağıtım</Label>
+                                    <Label>Değiştirme</Label>
+                                    <Label>Patent Kullanımı</Label>
+                                    <Label>Özel Kullanım</Label>
+                                </LabelGroup>
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <div>
                                     <strong>Şartlar</strong>
                                 </div>
-                                <Label color="blue">Kaynağın tamamen açılması</Label>
-                                <Label color="blue">Copyright ve lisans uyarıları</Label>
-                                <Label color="blue">Aynı lisanslama modeli</Label>
-                                <Label color="blue">Yapılan değişiklikleri listeleme</Label>
+                                <LabelGroup color="blue">
+                                    <Label>Kaynağın tamamen açılması</Label>
+                                    <Label>Copyright ve lisans uyarıları</Label>
+                                    <Label>Aynı lisanslama modeli</Label>
+                                    <Label>Yapılan değişiklikleri listeleme</Label>
+                                </LabelGroup>
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <div>
                                     <strong>Sınırlamalar</strong>
                                 </div>
-                                <Label color="red">Yükümlülük</Label>
-                                <Label color="red">Garanti</Label>
+                                <LabelGroup color="red">
+                                    <Label>Yükümlülük</Label>
+                                    <Label>Garanti</Label>
+                                </LabelGroup>
                             </Grid.Column>
                         </Grid.Row>
                     </Grid>
