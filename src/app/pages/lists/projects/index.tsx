@@ -36,7 +36,7 @@ function Projects() {
 
     return (
         <Container className="content">
-            <Heading icon={faClipboardList} title="Projeler" subtitle="Açık Kaynak Olarak Geliştiren Projelerin Listesi" />
+            <Heading icon={faClipboardList} title="Projeler" subtitle="Açık kaynak olarak geliştiren projelerin listesi" />
 
             <ErrorBoundary fallback={() => <ContentFetchError />}>
                 <SuspenseCheck if={projects} fallback={() => <Loading />}>

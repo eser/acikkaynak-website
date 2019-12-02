@@ -52,7 +52,7 @@ function Organizations() {
 
     return (
         <Container className="content">
-            <Heading icon={faUsers} title="Organizasyonlar" subtitle="Organizasyonlar Listesi" />
+            <Heading icon={faUsers} title="Organizasyonlar" subtitle="Açık kaynak destekçisi organizasyonların listesi" />
 
             <ErrorBoundary fallback={() => <ContentFetchError />}>
                 <SuspenseCheck if={organizations} fallback={() => <Loading />}>

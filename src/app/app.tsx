@@ -7,6 +7,8 @@ import News from './pages/news/index';
 import NewsAdd from './pages/news/add';
 import Learn from './pages/learn/index';
 import LearnGetStarted from './pages/learn/get-started/index';
+import LearnContributing from './pages/learn/contributing/index';
+import LearnStartingNew from './pages/learn/starting-new/index';
 import LearnLicenses from './pages/learn/licenses/index';
 import LearnForCorporations from './pages/learn/for-corporations/index';
 import LearnGuide from './pages/learn/guide/index';
@@ -34,6 +36,8 @@ function App() {
 
             {/* learn */}
             <Route path="/learn/get-started/" exact={true} strict={true} render={() => <Layout><LearnGetStarted /></Layout>} />
+            <Route path="/learn/contributing/" exact={true} strict={true} render={() => <Layout><LearnContributing /></Layout>} />
+            <Route path="/learn/starting-new/" exact={true} strict={true} render={() => <Layout><LearnStartingNew /></Layout>} />
             <Route path="/learn/for-corporations/" exact={true} strict={true} render={() => <Layout><LearnForCorporations /></Layout>} />
             <Route path="/learn/licenses/" exact={true} strict={true} render={() => <Layout><LearnLicenses /></Layout>} />
             <Route path="/learn/guide/*" exact={false} strict={true} render={props => <Layout><LearnGuide contentPath={props.match.params[0]} /></Layout>} />

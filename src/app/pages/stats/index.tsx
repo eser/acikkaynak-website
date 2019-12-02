@@ -10,7 +10,7 @@ import UnderConstruction from '../shared/elements/underConstruction';
 function Stats() {
     return (
         <Container className="content">
-            <Heading icon={faCaretSquareRight} title="İstatistikler" subtitle="Açık Kaynak Geliştirme İstatistikleri" />
+            <Heading icon={faCaretSquareRight} title="İstatistikler" subtitle="Açık kaynak geliştirme istatistikleri" />
 
             <UnderConstruction />
         </Container>

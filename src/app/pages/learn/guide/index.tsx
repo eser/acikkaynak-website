@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 import { Container } from 'semantic-ui-react';
 
-import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 
 import Heading from '../../shared/elements/heading';
 import Loading from '../../shared/elements/loading';
@@ -72,7 +72,7 @@ function Guide(props: GuideProps) {
 
     return (
         <Container className="content">
-            <Heading icon={faCaretSquareRight} title="Rehber" subtitle="Açık Kaynak ile İlgili Kaynaklar" />
+            <Heading icon={faBook} title="Rehber" subtitle="Açık Kaynak ile İlgili Kaynaklar" />
 
             <ErrorBoundary fallback={() => <ContentFetchError />}>
                 <SuspenseCheck if={content} fallback={() => <Loading />}>

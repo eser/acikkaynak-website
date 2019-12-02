@@ -10,7 +10,7 @@ import UnderConstruction from '../../shared/elements/underConstruction';
 function ForCorporations() {
     return (
         <Container className="content">
-            <Heading icon={faCaretSquareRight} title="Kurumlar İçin" subtitle="Kurumlar İçin Açık Kaynak Rehberi" />
+            <Heading icon={faCaretSquareRight} title="Kurumlar İçin" subtitle="Kurum içinde nasıl açık kaynak geliştirilir?" />
 
             <UnderConstruction />
         </Container>

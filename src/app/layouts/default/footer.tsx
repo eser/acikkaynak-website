@@ -64,9 +64,11 @@ function Footer() {
                                 <Header inverted as="h4" content="Eğitim" />
                                 <List link inverted>
                                     <List.Item as={NavLink} to="/learn/get-started/">Başlarken</List.Item>
-                                    <List.Item as={NavLink} to="/learn/licenses/">Lisanslar</List.Item>
+                                    <List.Item as={NavLink} to="/learn/contributing/">Katkı Sağlamak</List.Item>
+                                    <List.Item as={NavLink} to="/learn/starting-new/">Yeni Proje Başlatmak</List.Item>
                                     <List.Item as={NavLink} to="/learn/for-corporations/">Kurumlar İçin</List.Item>
                                     <List.Item as={NavLink} to="/learn/guide/">Rehber</List.Item>
+                                    <List.Item as={NavLink} to="/learn/licenses/">Lisanslar</List.Item>
                                 </List>
                             </div>
                         </Grid.Column>

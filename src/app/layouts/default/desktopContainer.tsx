@@ -28,10 +28,12 @@ function DesktopContainer(props) {
                             <Dropdown simple item text="Eğitim">
                                 <Dropdown.Menu>
                                     <Dropdown.Item as={NavLink} to="/learn/get-started/">Başlarken</Dropdown.Item>
-                                    <Dropdown.Item as={NavLink} to="/learn/licenses/">Lisanslar</Dropdown.Item>
+                                    <Dropdown.Item as={NavLink} to="/learn/contributing/">Katkı Sağlamak</Dropdown.Item>
+                                    <Dropdown.Item as={NavLink} to="/learn/starting-new/">Yeni Proje Başlatmak</Dropdown.Item>
                                     <Dropdown.Item as={NavLink} to="/learn/for-corporations/">Kurumlar İçin</Dropdown.Item>
                                     <Dropdown.Divider />
                                     <Dropdown.Item as={NavLink} to="/learn/guide/">Rehber</Dropdown.Item>
+                                    <Dropdown.Item as={NavLink} to="/learn/licenses/">Lisanslar</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
 

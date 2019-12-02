@@ -10,7 +10,7 @@ import UnderConstruction from '../shared/elements/underConstruction';
 function Learn() {
     return (
         <Container className="content">
-            <Heading icon={faCaretSquareRight} title="Eğitim" subtitle="Açık Kaynak ile İlgili Konular Hakkında İçerik ve Kaynaklar" />
+            <Heading icon={faCaretSquareRight} title="Eğitim" subtitle="Açık kaynak ile ilgili konularda içerik ve kaynaklar" />
 
             <UnderConstruction />
         </Container>

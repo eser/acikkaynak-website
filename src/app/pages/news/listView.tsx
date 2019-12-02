@@ -69,7 +69,7 @@ function NewsListView() {
                             bulunmak istiyoruz.
                         </p>
 
-                        <Button size="tiny" primary>
+                        <Button size="tiny" primary disabled>
                             Haber Ekle
                         </Button>
                     </Grid.Column>

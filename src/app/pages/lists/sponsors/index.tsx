@@ -10,7 +10,7 @@ import UnderConstruction from '../../shared/elements/underConstruction';
 function Sponsors() {
     return (
         <Container className="content">
-            <Heading icon={faCaretSquareRight} title="Sponsorlar" subtitle="Açık Kaynak Geliştirme Sponsor Listesi" />
+            <Heading icon={faCaretSquareRight} title="Sponsorlar" subtitle="Açık kaynak geliştirme sponsor listesi" />
 
             <UnderConstruction />
         </Container>

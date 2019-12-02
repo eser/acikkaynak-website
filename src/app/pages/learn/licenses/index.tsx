@@ -11,7 +11,7 @@ import globalStyles from '../../../layouts/shared/assets/global.less';
 function Licenses() {
     return (
         <Container className="content">
-            <Heading icon={faClosedCaptioning} title="Lisanslar" subtitle="Açık Kaynak Lisansları" />
+            <Heading icon={faClosedCaptioning} title="Lisanslar" subtitle="Açık kaynak lisansları" />
 
             <Card fluid>
                 <Card.Content>

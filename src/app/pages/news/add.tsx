@@ -19,7 +19,7 @@ function NewsAdd() {
 
     return (
         <Container className="content">
-            <Heading icon={faCaretSquareRight} title="Haber Ekle" subtitle="Açık Kaynak ile İlgili Haberler" />
+            <Heading icon={faCaretSquareRight} title="Haber Ekle" subtitle="Açık kaynak ile ilgili haberler" />
 
             <Form onSubmit={onSubmitHandler}>
                 <Form.Field>

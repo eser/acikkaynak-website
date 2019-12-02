@@ -32,9 +32,11 @@ function MobileContainer(props) {
                     <Menu.Header>Eğitim</Menu.Header>
                     <Menu.Menu>
                         <Menu.Item as={NavLink} to="/learn/get-started/">Başlarken</Menu.Item>
-                        <Menu.Item as={NavLink} to="/learn/licenses/">Lisanslar</Menu.Item>
+                        <Menu.Item as={NavLink} to="/learn/contributing/">Katkı Sağlamak</Menu.Item>
+                        <Menu.Item as={NavLink} to="/learn/starting-new/">Yeni Proje Başlatmak</Menu.Item>
                         <Menu.Item as={NavLink} to="/learn/for-corporations/">Kurumlar İçin</Menu.Item>
                         <Menu.Item as={NavLink} to="/learn/guide/">Rehber</Menu.Item>
+                        <Menu.Item as={NavLink} to="/learn/licenses/">Lisanslar</Menu.Item>
                     </Menu.Menu>
                 </Menu.Item>
                 <Menu.Item>
