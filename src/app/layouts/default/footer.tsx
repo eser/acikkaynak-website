@@ -5,6 +5,7 @@ import { Container, Grid, Header, Image, List, Segment } from 'semantic-ui-react
 
 import layoutStyles from './assets/styles.less';
 import Logo from '../shared/assets/logo.svg';
+import CcByNcSa from './assets/cc-by-nc-sa.svg';
 
 function Footer() {
     return (
@@ -40,10 +41,7 @@ function Footer() {
                                 </p>
                                 <p>
                                     <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-                                        <img
-                                            alt="Creative Commons License"
-                                            src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"
-                                        />
+                                        <Image src={CcByNcSa} />
                                     </a>
                                 </p>
                             </div>
