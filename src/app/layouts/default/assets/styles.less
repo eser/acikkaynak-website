@@ -1,9 +1,111 @@
 @import '~semantic-ui-less/semantic.less';
+@import './fonts/roboto.less';
 
-.footer {
-    padding: 5em 0 !important;
+.ui.inverted.segment,
+.ui.primary.inverted.segment {
+    background: #007cc4;
 }
 
-.header {
-    padding: 1em 0 !important;
+.ui.secondary.inverted.pointing.menu {
+    border-color: #007cc4;
+}
+
+.ui.secondary.menu .dropdown.item > .menu,
+.ui.text.menu .dropdown.item > .menu {
+    margin-top: 0;
+}
+
+.ui.container.content {
+    margin: 6em;
+}
+
+.ui.header {
+    padding: 0.4em 0;
+}
+
+.asym-clip-reverse {
+    background-color: #007cc4;
+    width: 100%;
+    height: 8em;
+}
+
+.ui.vertical.segment {
+    border-bottom: 0;
+
+    &.footer {
+        padding: 0;
+        background: #007cc4;
+
+        & > .ui.container {
+            padding: 3em 0;
+        }
+
+        a {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        p {
+            font-weight: 300;
+            font-size: 0.8em;
+            color: #ffffff;
+        }
+
+        .footer-logo {
+            margin-bottom: 1em;
+        }
+
+        .footer-about {
+            padding-right: 2em;
+        }
+
+        .footer-menu {
+            font-size: 0.8em;
+            padding: 1em 0.2em 0 1.2em;
+            border: none;
+            border-right: 1px solid white;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            box-shadow: none !important;
+
+            .header {
+                margin-bottom: 0;
+            }
+        }
+
+        .footer-menu:last-child {
+            border-right: none !important;
+        }
+    }
+}
+
+.pushable:not(body) {
+    transform: none;
+    overflow-x: visible;
+}
+
+.pushable:not(body) > .ui.sidebar,
+.pushable:not(body) > .fixed,
+.pushable:not(body) > .pusher:after {
+    position: fixed;
+}
+
+@media screen and (max-width: 768px) {
+    .ui.vertical.segment.footer {
+        div.footer-menu {
+            border-right: none !important;
+            border-top: 1px solid #fff;
+            text-align: center;
+        }
+        div.footer-about {
+            width: auto;
+        }
+    }
+    .ui.vertical.segment.footer:before {
+        background: linear-gradient(
+            97.43deg,
+            rgba(0, 121, 229, 0.839) -14.99%,
+            #71c75e 177.38%
+        );
+    }
 }

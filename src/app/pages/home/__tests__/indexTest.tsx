@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import * as Enzyme from 'enzyme';
 import ReactSixteenAdapter from 'enzyme-adapter-react-16';
@@ -17,8 +18,8 @@ describe('Layout', () => {
     });
 
     it('should be properly rendered', () => {
-        const wrapper = Enzyme.mount(<Home />);
+        const wrapper = Enzyme.mount(<BrowserRouter><Home /></BrowserRouter>);
 
-        expect(wrapper.find('h1').contains('Darty React App')).toEqual(true);
+        expect(wrapper.find('h1').contains('açık kaynak')).toEqual(true);
     });
 });

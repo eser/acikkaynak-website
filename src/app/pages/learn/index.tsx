@@ -1,35 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import * as path from 'path-browser';
-import ReactMarkdown from 'react-markdown';
+import { Container } from 'semantic-ui-react';
 
-const bulmaStyles = {};
+import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
 
-interface LearnProps {
-    contentPath: string;
-}
+import Heading from '../shared/elements/heading';
+import UnderConstruction from '../shared/elements/underConstruction';
 
-function Learn(props: LearnProps) {
-    const [ content, setContent ] = useState(null);
-
-    useEffect(
-        () => {
-            setContent(`Talep edilen içerik yolu: /${props.contentPath}`);
-        },
-        [ props.contentPath ],
-    );
-
+function Learn() {
     return (
-        <>
-            <h1 className={bulmaStyles.title}>Eğitim</h1>
+        <Container className="content">
+            <Heading icon={faCaretSquareRight} title="Eğitim" subtitle="Açık kaynak ile ilgili konularda içerik ve kaynaklar" />
 
-            <p>
-                Bu sayfa yapım aşamasında.
-                <br />
-                <br />
-                {content}
-            </p>
-        </>
+            <UnderConstruction />
+        </Container>
     );
 }
 

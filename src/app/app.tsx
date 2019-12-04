@@ -1,17 +1,21 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
 
-import Layout from './layouts/default/layout';
+import Layout from './layouts/default/index';
 import Home from './pages/home/index';
 import News from './pages/news/index';
 import NewsAdd from './pages/news/add';
 import Learn from './pages/learn/index';
-import Projects from './pages/projects/index';
-import Organizations from './pages/organizations/index';
-import OrganizationsAdd from './pages/organizations/add';
-import Events from './pages/events/index';
-import EventsAdd from './pages/events/add';
-import Sponsors from './pages/sponsors/index';
+import LearnGetStarted from './pages/learn/get-started/index';
+import LearnContributing from './pages/learn/contributing/index';
+import LearnStartingNew from './pages/learn/starting-new/index';
+import LearnLicenses from './pages/learn/licenses/index';
+import LearnForCorporations from './pages/learn/for-corporations/index';
+import LearnGuide from './pages/learn/guide/index';
+import Lists from './pages/lists/index';
+import ListsProjects from './pages/lists/projects/index';
+import ListsOrganizations from './pages/lists/organizations/index';
+import ListsSponsors from './pages/lists/sponsors/index';
 import Stats from './pages/stats/index';
 import About from './pages/about/index';
 import NotFound from './pages/notFound/index';
@@ -31,26 +35,27 @@ function App() {
             <Route path="/news/" exact={true} strict={true} render={() => <Layout><News /></Layout>} />
 
             {/* learn */}
-            <Route path="/learn/*" exact={false} strict={true} render={props => <Layout><Learn contentPath={props.match.params[0]} /></Layout>} />
+            <Route path="/learn/get-started/" exact={true} strict={true} render={() => <Layout><LearnGetStarted /></Layout>} />
+            <Route path="/learn/contributing/" exact={true} strict={true} render={() => <Layout><LearnContributing /></Layout>} />
+            <Route path="/learn/starting-new/" exact={true} strict={true} render={() => <Layout><LearnStartingNew /></Layout>} />
+            <Route path="/learn/for-corporations/" exact={true} strict={true} render={() => <Layout><LearnForCorporations /></Layout>} />
+            <Route path="/learn/licenses/" exact={true} strict={true} render={() => <Layout><LearnLicenses /></Layout>} />
+            <Route path="/learn/guide/*" exact={false} strict={true} render={props => <Layout><LearnGuide contentPath={props.match.params[0]} /></Layout>} />
+            <Route path="/learn/" exact={true} strict={true} render={() => <Layout><Learn /></Layout>} />
 
-            {/* projects */}
-            <Route path="/projects/detail/:slug" exact={false} strict={true} render={props => <Layout><Projects {...props.match.params} /></Layout>} />
-            <Route path="/projects/" exact={true} strict={true} render={() => <Layout><Projects /></Layout>} />
+            {/* lists/projects */}
+            <Route path="/lists/projects/detail/:slug" exact={false} strict={true} render={props => <Layout><ListsProjects {...props.match.params} /></Layout>} />
+            <Route path="/lists/projects/" exact={true} strict={true} render={() => <Layout><ListsProjects /></Layout>} />
 
-            {/* organizations */}
-            <Route path="/organizations/add/" exact={false} strict={true} render={() => <Layout><OrganizationsAdd /></Layout>} />
-            <Route path="/organizations/detail/:slug" exact={false} strict={true} render={props => <Layout><Organizations {...props.match.params} /></Layout>} />
-            <Route path="/organizations/edit/:slug/:type" exact={false} strict={true} render={props => <Layout><Organizations {...props.match.params} /></Layout>} />
-            <Route path="/organizations/" exact={true} strict={true} render={() => <Layout><Organizations /></Layout>} />
+            {/* lists/organizations */}
+            <Route path="/lists/organizations/detail/:slug" exact={false} strict={true} render={props => <Layout><ListsOrganizations {...props.match.params} /></Layout>} />
+            <Route path="/lists/organizations/" exact={true} strict={true} render={() => <Layout><ListsOrganizations /></Layout>} />
 
-            {/* events */}
-            <Route path="/events/add/" exact={false} strict={true} render={() => <Layout><EventsAdd /></Layout>} />
-            <Route path="/events/detail/:slug" exact={false} strict={true} render={props => <Layout><Events {...props.match.params} /></Layout>} />
-            <Route path="/events/edit/:slug/:type" exact={false} strict={true} render={props => <Layout><Events {...props.match.params} /></Layout>} />
-            <Route path="/events/" exact={true} strict={true} render={() => <Layout><Events /></Layout>} />
+            {/* lists/sponsors */}
+            <Route path="/lists/sponsors/" exact={true} strict={true} render={() => <Layout><ListsSponsors /></Layout>} />
 
-            {/* sponsors */}
-            <Route path="/sponsors/" exact={true} strict={true} render={() => <Layout><Sponsors /></Layout>} />
+            {/* lists */}
+            <Route path="/lists/" exact={true} strict={true} render={() => <Layout><Lists /></Layout>} />
 
             {/* stats */}
             <Route path="/stats/" exact={true} strict={true} render={() => <Layout><Stats /></Layout>} />

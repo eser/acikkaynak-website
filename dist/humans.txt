@@ -1,0 +1,18 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Eser Ozvataf -- Lead -- twitter.com/eserozvataf
+
+# THANKS
+
+    HTML5 Boilerplate Team
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, JavaScript
+    TypeScript, Darty
+    React, Semantic UI
+
+Darty: https://github.com/eserozvataf/darty

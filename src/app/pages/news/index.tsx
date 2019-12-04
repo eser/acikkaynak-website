@@ -1,29 +1,41 @@
 import React, { useState } from 'react';
+
+import ContentNotFound from '../shared/elements/contentNotFound';
+
 import NewsListView from './listView';
 import NewsDetailView from './detailView';
-import NotFound from '../notFound';
 import mockData from './mockData';
 
 function News(props) {
-    const [ news, setNews ] = useState(mockData);
+    const [ news ] = useState(mockData);
+    const showDetail = !!props.slug;
 
-    if (props.slug !== undefined) {
-        const currentNewsItem = news.find(x => x.slug === props.slug);
+    function renderDetail() {
+        const currentNewsItem = news.find(i => i.slug === props.slug);
 
-        // as long as content exists...
-        if (currentNewsItem !== undefined) {
+        if (!currentNewsItem) {
             return (
-                <NewsDetailView content={currentNewsItem} />
+                <ContentNotFound />
             );
         }
 
         return (
-            <NotFound />
+            <NewsDetailView news={currentNewsItem} />
+        );
+    }
+
+    function renderList() {
+        return (
+            <NewsListView news={news} {...props} />
         );
     }
 
     return (
-        <NewsListView news={news} {...props} />
+        <>
+            {showDetail ?
+                renderDetail() :
+                renderList()}
+        </>
     );
 }
 

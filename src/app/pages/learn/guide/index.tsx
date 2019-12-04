@@ -1,0 +1,94 @@
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+
+import { Container } from 'semantic-ui-react';
+
+import { faBook } from '@fortawesome/free-solid-svg-icons';
+
+import Heading from '../../shared/elements/heading';
+import Loading from '../../shared/elements/loading';
+import ContentFetchError from '../../shared/elements/contentFetchError';
+import ErrorBoundary from '../../shared/errorBoundary';
+import SuspenseCheck from '../../shared/suspenseCheck';
+import View from './view';
+
+const dataOriginUrl = 'https://github.com/acikkaynak/acikkaynak/tree/master/Icerik/';
+const dataSourceUrl = 'https://raw.githubusercontent.com/acikkaynak/acikkaynak/master/Icerik/';
+
+async function getContentFetch(contentPath: string) {
+    const response = await fetch(`${dataSourceUrl}${contentPath}`);
+    const responseBody = await response.text();
+
+    return {
+        datasource: responseBody,
+        metadata: {
+            originUrl: `${dataOriginUrl}${contentPath}`,
+            sourceUrl: `${dataSourceUrl}${contentPath}`,
+            path: contentPath,
+        },
+    };
+}
+
+async function getContent(contentPath: string) {
+    let contentPathSafe = contentPath || '';
+
+    if (contentPathSafe.length === 0) {
+        contentPathSafe = 'README.md';
+    }
+    else if (contentPathSafe.substr(-3) !== '.md') {
+        if (contentPathSafe.substr(-1) === '/') {
+            contentPathSafe += 'README.md';
+        }
+        else {
+            contentPathSafe += '/README.md';
+        }
+    }
+
+    return getContentFetch(contentPathSafe);
+}
+
+
+interface GuideProps {
+    contentPath: string;
+}
+
+function Guide(props: GuideProps) {
+    const historyObj = useHistory();
+
+    const [ content, setContent ] = useState(null);
+
+    useEffect(
+        () => {
+            async function contentFetch() {
+                const contentResponse = await getContent(props.contentPath);
+
+                setContent(contentResponse);
+            }
+
+            contentFetch();
+        },
+        [ props.contentPath ],
+    );
+
+    return (
+        <Container className="content">
+            <Heading icon={faBook} title="Rehber" subtitle="Açık Kaynak ile İlgili Kaynaklar" />
+
+            <ErrorBoundary fallback={() => <ContentFetchError />}>
+                <SuspenseCheck if={content} fallback={() => <Loading />}>
+                    {content && (
+                        <View
+                            datasource={content.datasource}
+                            metadata={content.metadata}
+                            history={historyObj}
+                        />
+                    )}
+                </SuspenseCheck>
+            </ErrorBoundary>
+        </Container>
+    );
+}
+
+export {
+    Guide as default,
+};

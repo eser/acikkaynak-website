@@ -1,16 +1,19 @@
 import React from 'react';
 
-const bulmaStyles = {};
+import { Container } from 'semantic-ui-react';
+
+import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
+
+import Heading from '../shared/elements/heading';
+import UnderConstruction from '../shared/elements/underConstruction';
 
 function Stats() {
     return (
-        <>
-            <h1 className={bulmaStyles.title}>İstatistikler</h1>
+        <Container className="content">
+            <Heading icon={faCaretSquareRight} title="İstatistikler" subtitle="Açık kaynak geliştirme istatistikleri" />
 
-            <p>
-                Bu sayfa yapım aşamasında.
-            </p>
-        </>
+            <UnderConstruction />
+        </Container>
     );
 }
 

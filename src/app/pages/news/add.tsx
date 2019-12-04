@@ -1,55 +1,57 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import customAddNewsStyle from './add.less';
+import { Container, Form, Button } from 'semantic-ui-react';
+
+import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
+
+import Heading from '../shared/elements/heading';
 
 function NewsAdd() {
     const [ newsTitle, setNewsTitle ] = useState('');
     const [ newsContent, setNewsContent ] = useState('');
     const [ newsTags, setNewsTags ] = useState('');
 
-    function addNews() {
+    function onSubmitHandler(e) {
+        e.preventDefault();
         // TODO Add new development
-    }
-    function goBackButton(event) {
-        history.back();
-        event.preventDefault();
     }
 
     return (
-        <>
-            <div className={customAddNewsStyle.container}>
-                <NavLink key="0" to="/news/" onClick={goBackButton}>
-                        Geri Dön
-                </NavLink>
-                <div className={customAddNewsStyle.form}>
-                    <h3>Haber Ekle</h3>
-                    <div className={customAddNewsStyle.field}>
-                        <p>Haber Başlığı</p>
-                        <textarea onChange={e => setNewsTitle(e.target.value)} className={customAddNewsStyle.newsTitle} cols={40} rows={3} />
-                    </div>
-                    <div className={customAddNewsStyle.field}>
-                        <p>Haber İçeriği</p>
-                        <textarea onChange={e => setNewsContent(e.target.value)} className={customAddNewsStyle.newsContent} cols={40} rows={10} />
-                    </div>
-                    <div className={customAddNewsStyle.field}>
-                        <p>Haber Etiketleri</p>
-                        <textarea
-                            className={customAddNewsStyle.tags}
-                            cols={40}
-                            rows={5}
-                            onChange={e => setNewsTags(e.target.value)}
-                        />
-                    </div>
-                </div>
-                <div className={customAddNewsStyle.button}>
-                    <button onClick={addNews}> Ekle</button>
-                </div>
-                <div>
-                    {`'${newsTitle}','${newsContent}','${newsTags}'`}
-                </div>
-            </div>
-        </>
+        <Container className="content">
+            <Heading icon={faCaretSquareRight} title="Haber Ekle" subtitle="Açık kaynak ile ilgili haberler" />
+
+            <Form onSubmit={onSubmitHandler}>
+                <Form.Field>
+                    <Form.Input
+                        id="newsTitle"
+                        label="Haber Başlığı"
+                        type="text"
+                        value={newsTitle}
+                        onChange={e => setNewsTitle(e.target.value)}
+                    />
+                </Form.Field>
+                <Form.Field>
+                    <Form.TextArea
+                        id="newsContent"
+                        label="Haber İçeriği"
+                        value={newsContent}
+                        onChange={e => setNewsContent(e.target.value)}
+                    />
+                </Form.Field>
+                <Form.Field>
+                    <Form.Input
+                        id="newsTags"
+                        label="Haber Etiketleri"
+                        type="text"
+                        value={newsTags}
+                        onChange={e => setNewsTags(e.target.value)}
+                    />
+                </Form.Field>
+                <Button as={Link} to="/news/" content="Geri" secondary />
+                <Button content="Ekle" type="submit" primary />
+            </Form>
+        </Container>
     );
 }
 

@@ -1,34 +1,63 @@
 name: CI
 
-on: [ push, pull_request ]
+on:
+  pull_request:
+    branches:
+      - master
+      - development
+  push:
+    branches:
+      - master
+      - development
 
 jobs:
   build:
-    name: Test on node ${{ matrix.node-version }} and ${{ matrix.operating-system }}
-    runs-on: ${{ matrix.operating-system }}
     strategy:
       matrix:
         operating-system: [ ubuntu-latest, windows-latest, macOS-latest ]
         node-version: [ 12.x, 10.x ]
+    name: Test on node ${{ matrix.node-version }} and ${{ matrix.operating-system }}
+    runs-on: ${{ matrix.operating-system }}
+
     steps:
     - name: Checkout from repository
       uses: actions/checkout@master
+
     - name: Setup Node.js
       uses: actions/setup-node@master
       with:
         node-version: ${{ matrix.node-version }}
+        # registry-url: https://registry.npmjs.org/
+        # registry-url: https://npm.pkg.github.com/
+        # scope: '@acikkaynak'
+
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-${{ env.cache-name }}-
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
+
     - name: Install dependencies
-      run: yarn install --frozen-lockfile --audit --non-interactive
-    - name: Run tests
-      run: yarn test
+      run: yarn install --audit --non-interactive # --frozen-lockfile
+
     - name: Lint
       run: yarn lint
+
+    - name: Run tests
+      run: yarn test
+      env:
+        CI: true
 
   deploy:
     needs: [ build ]
     name: Deployment
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+
     steps:
     - name: Checkout from repository
       uses: actions/checkout@master
@@ -38,8 +67,28 @@ jobs:
       with:
         node-version: 12.x
 
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-${{ env.cache-name }}-
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
+
     - name: Install dependencies
-      run: yarn install --frozen-lockfile --non-interactive
+      run: yarn install --non-interactive # --frozen-lockfile
+
+    - name: Run tests and Generate coverage report
+      run: yarn test:coverage
+      env:
+        CI: true
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@master
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
 
     - name: Module bundling
       run: yarn run bundle:prod
@@ -50,11 +99,11 @@ jobs:
     #     name: latest
     #     path: dist/
 
-    - name: Login to Docker Hub
-      run: docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD docker.io
+    - name: Login to GitHub Packages
+      run: docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD docker.pkg.github.com
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Login to Heroku Container Registry
       run: docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD registry.heroku.com
@@ -63,10 +112,10 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.HEROKU_API_KEY }}
 
     - name: Build container
-      run: docker build -t eserozvataf/acikkaynak-website:latest -t registry.heroku.com/acikkaynak/web:latest .
+      run: docker build -t docker.pkg.github.com/acikkaynak/acikkaynak-website/acikkaynak-website:latest -t registry.heroku.com/acikkaynak/web:latest .
 
-    - name: Push to Docker Hub
-      run: docker push eserozvataf/acikkaynak-website:latest
+    - name: Push to GitHub Packages
+      run: docker push docker.pkg.github.com/acikkaynak/acikkaynak-website/acikkaynak-website:latest
 
     - name: Push to Heroku
       run: docker push registry.heroku.com/acikkaynak/web:latest
