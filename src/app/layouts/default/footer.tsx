@@ -26,7 +26,7 @@ function Footer() {
                             <div className={layoutStyles.footerAbout}>
                                 <Image size="small" className={layoutStyles.footerLogo} src={Logo} />
                                 <p>
-                                    &laquo;2015'den bu yana açık kaynak farkındalığı oluşturuyor,
+                                    &laquo;2015'ten bu yana açık kaynak farkındalığı oluşturuyor,
                                     projelerimizi listeliyor ve yardımlaşıyoruz&raquo;
                                 </p>
                                 <p>
