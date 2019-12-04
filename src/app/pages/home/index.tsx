@@ -36,7 +36,7 @@ function Home() {
                                 as="h2"
                                 inverted
                             >
-                                2015'den bu yana açık kaynak farkındalığı
+                                2015'ten bu yana açık kaynak farkındalığı
                                 oluşturuyor, projelerimizi listeliyor ve
                                 yardımlaşıyoruz
                             </Header>
