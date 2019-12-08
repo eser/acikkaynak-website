@@ -139,11 +139,14 @@ function Home() {
                                 <Link to="/lists/projects/">Açık kaynak projeler</Link>
                                 ,
                                 {' '}
-                                <Link to="/lists/organizations/">Açık kaynak destekçisi organizasyonlar</Link>
+                                <Link to="/lists/project-ideas/">proje fikirleri</Link>
+                                ,
+                                {' '}
+                                <Link to="/lists/organizations/">organizasyonlar</Link>
                                 {' '}
                                 ve
                                 {' '}
-                                <Link to="/lists/sponsors/">Sponsorlar</Link>
+                                <Link to="/lists/sponsors/">sponsorlar</Link>
                                 ı indeksleyerek bu girişimlerin hem görünürlüklerini
                                 sağlamaya hem de dışarıdan erişilebilirliğini
                                 arttırmaya çalışıyoruz.

@@ -14,10 +14,12 @@ import LearnForCorporations from './pages/learn/for-corporations/index';
 import LearnGuide from './pages/learn/guide/index';
 import Lists from './pages/lists/index';
 import ListsProjects from './pages/lists/projects/index';
+import ListsProjectIdeas from './pages/lists/project-ideas/index';
 import ListsOrganizations from './pages/lists/organizations/index';
 import ListsSponsors from './pages/lists/sponsors/index';
 import Stats from './pages/stats/index';
 import About from './pages/about/index';
+import SupportUs from './pages/support-us/index';
 import NotFound from './pages/notFound/index';
 
 function App() {
@@ -47,6 +49,9 @@ function App() {
             <Route path="/lists/projects/detail/:slug" exact={false} strict={true} render={props => <Layout><ListsProjects {...props.match.params} /></Layout>} />
             <Route path="/lists/projects/" exact={true} strict={true} render={() => <Layout><ListsProjects /></Layout>} />
 
+            {/* lists/project-ideas */}
+            <Route path="/lists/project-ideas/" exact={true} strict={true} render={() => <Layout><ListsProjectIdeas /></Layout>} />
+
             {/* lists/organizations */}
             <Route path="/lists/organizations/detail/:slug" exact={false} strict={true} render={props => <Layout><ListsOrganizations {...props.match.params} /></Layout>} />
             <Route path="/lists/organizations/" exact={true} strict={true} render={() => <Layout><ListsOrganizations /></Layout>} />
@@ -62,6 +67,9 @@ function App() {
 
             {/* about */}
             <Route path="/about/" exact={true} strict={true} render={() => <Layout><About /></Layout>} />
+
+            {/* support-us */}
+            <Route path="/support-us/" exact={true} strict={true} render={() => <Layout><SupportUs /></Layout>} />
 
             {/* not found */}
             <Route render={() => <NotFound />} />

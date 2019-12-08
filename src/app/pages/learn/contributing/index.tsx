@@ -5,13 +5,14 @@ import { Container, Header } from 'semantic-ui-react';
 import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
 
 import Heading from '../../shared/elements/heading';
+import UnderConstruction from '../../shared/elements/underConstruction';
 
 function Contributing() {
     return (
         <Container className="content">
-            <Heading icon={faCaretSquareRight} title="Katkı Sağlamak" subtitle="Mevcut projelere nasıl katkı sağlarız?" />
+            <Heading icon={faCaretSquareRight} title="Katkı Sağlamak" subtitle="Açık kaynak projelere nasıl katkı sağlarız?" />
 
-            <Header as="h2">Mevcut açık kaynak projelerine katkı sağlamak</Header>
+            <Header as="h2">Mevcut açık kaynak projelere katkı sağlamak</Header>
             <p>
                 Açık Kaynak bir projeye ve katkı sağlamak istiyorsanız, katkı
                 sağlamanın çeşitli yolları vardır. Katkı tanımı kod geliştirme
@@ -34,6 +35,7 @@ function Contributing() {
                 </ul>
             </p>
 
+            <UnderConstruction />
         </Container>
     );
 }

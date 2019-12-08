@@ -40,6 +40,7 @@ function DesktopContainer(props) {
                             <Dropdown simple item text="Listeler">
                                 <Dropdown.Menu>
                                     <Dropdown.Item as={NavLink} to="/lists/projects/">Projeler</Dropdown.Item>
+                                    <Dropdown.Item as={NavLink} to="/lists/project-ideas/">Proje Fikirleri</Dropdown.Item>
                                     <Dropdown.Item as={NavLink} to="/lists/organizations/">Organizasyonlar</Dropdown.Item>
                                     <Dropdown.Divider />
                                     <Dropdown.Item as={NavLink} to="/lists/sponsors/">Sponsorlar</Dropdown.Item>
@@ -48,6 +49,7 @@ function DesktopContainer(props) {
 
                             <Menu.Item as={NavLink} to="/stats/">İstatistikler</Menu.Item>
                             <Menu.Item as={NavLink} to="/about/">Hakkımızda</Menu.Item>
+                            <Menu.Item as={NavLink} to="/support-us/">Bizi Destekle!</Menu.Item>
 
                             <Menu.Item position="right">
                                 <Button as="a" href="https://github.com/login/oauth/authorize?client_id=0667f3575c3a5df778a4&redirect_uri=https%3A%2F%2Fapi.acik-kaynak.org%2Fauth%2FgithubCallback&scope=public_repo%20read%3Aorg%20user&response_type=code&state=" inverted={!fixed} primary={fixed}>

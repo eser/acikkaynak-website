@@ -43,12 +43,14 @@ function MobileContainer(props) {
                     <Menu.Header>Listeler</Menu.Header>
                     <Menu.Menu>
                         <Menu.Item as={NavLink} to="/lists/projects/">Projeler</Menu.Item>
+                        <Menu.Item as={NavLink} to="/lists/project-ideas/">Proje Fikirleri</Menu.Item>
                         <Menu.Item as={NavLink} to="/lists/organizations/">Organizasyonlar</Menu.Item>
                         <Menu.Item as={NavLink} to="/lists/sponsors/">Sponsorlar</Menu.Item>
                     </Menu.Menu>
                 </Menu.Item>
                 <Menu.Item as={NavLink} to="/stats/">İstatistikler</Menu.Item>
                 <Menu.Item as={NavLink} to="/about/">Hakkımızda</Menu.Item>
+                <Menu.Item as={NavLink} to="/support-us/">Bizi Destekle!</Menu.Item>
             </Sidebar>
 
             <Sidebar.Pusher dimmed={sidebarOpened}>

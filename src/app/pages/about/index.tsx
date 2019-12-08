@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Container, Header } from 'semantic-ui-react';
 
+import UnderConstruction from '../shared/elements/underConstruction';
+
 function About() {
     return (
         <Container className="content">
@@ -49,6 +51,7 @@ function About() {
                 girişimde olalım.
             </p>
 
+            {/*
             <Header as="h1">Manifesto</Header>
 
             <p>
@@ -61,7 +64,9 @@ function About() {
             <p>
                 ...
             </p>
+            */}
 
+            <UnderConstruction />
         </Container>
     );
 }
