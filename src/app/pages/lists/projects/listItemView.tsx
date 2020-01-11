@@ -19,6 +19,7 @@ function ListItemView(props) {
                 </Item.Meta>
                 <Item.Description>
                     <ReactMarkdown source={props.data.content} />
+                    {props.data.technologies.map(item => <div className="ui basic label">{item}</div>)}
                 </Item.Description>
                 <Item.Extra>
                     <Button as="a" primary floated="right" href={`https://github.com/${props.data.githubUrl}`}>
