@@ -61876,3 +61876,7 @@ h3.ui.header.news-title {
   }
 }
 
+.ui.items > .item.project > .content > .header.project-header {
+  display: block;
+}
+
