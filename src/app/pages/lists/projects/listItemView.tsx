@@ -19,18 +19,22 @@ function ListItemView(props) {
                 </Item.Meta>
                 <Item.Description>
                     <ReactMarkdown source={props.data.content} />
-                    {props.data.technologies.map(item => <div className="ui basic label">{item}</div>)}
                 </Item.Description>
+                <Item.Extra>
+                    {props.data.technologies.map(item => <Label basic>{item}</Label>)}
+                </Item.Extra>
                 <Item.Extra>
                     <Button as="a" primary floated="right" href={`https://github.com/${props.data.githubUrl}`}>
                         {`github/${props.data.githubUrl}`}
                     </Button>
-                    {props.data.needsContribution && (
-                        <Label>
-                            <FontAwesomeIcon icon={faCodeBranch} />
-                            Katılım Bekliyor
-                        </Label>
-                    )}
+                    <Label.Group>
+                        {props.data.needsContribution && (
+                            <Label>
+                                <FontAwesomeIcon icon={faCodeBranch} />
+                                Katılım Bekliyor
+                            </Label>
+                        )}
+                    </Label.Group>
                 </Item.Extra>
             </Item.Content>
         </Item>
