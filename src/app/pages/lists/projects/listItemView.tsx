@@ -22,8 +22,6 @@ function ListItemView(props) {
                 </Item.Description>
                 <Item.Extra>
                     {props.data.technologies.map(item => <Label basic>{item}</Label>)}
-                </Item.Extra>
-                <Item.Extra>
                     <Button as="a" primary floated="right" href={`https://github.com/${props.data.githubUrl}`}>
                         {`github/${props.data.githubUrl}`}
                     </Button>
