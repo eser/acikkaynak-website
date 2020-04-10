@@ -1,15 +1,24 @@
 import React from 'react';
 
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, Image } from 'semantic-ui-react';
 
-import UnderConstruction from '../shared/elements/underConstruction';
+import globalStyles from '../../layouts/shared/assets/global.less';
+import LogoImage from '../../layouts/shared/assets/logo-black.svg';
+import localStyles from './style.less';
 
 function SupportUs() {
     return (
         <Container className="content">
-            <Header as="h1" style={{ 'fontVariant': 'no-common-ligatures' }}>Açık-Kaynak.org'u Destekle</Header>
+            <Image size="medium" src={LogoImage} className={localStyles.logo} centered />
 
-            <UnderConstruction />
+            <Header as="h1" className={`${globalStyles.text} ${globalStyles.noCommonLigatures}`}>Açık-Kaynak.org'u Destekle</Header>
+
+            <p>
+                Dijital mecralarda (GitHub, Twitter, YouTube, v.s.) bizi takip ediyor olmanız
+                ve iletişim kanallarımıza (Telegram, v.s.) dahil olmanız yeterli.
+                Düzenleyeyeceğimiz online/fiziksel tüm etkinliklere katılımınız ve çevrenize
+                bizden bahsediyor olmanız bizlere en büyük desteği sağlayacaktır.
+            </p>
         </Container>
     );
 }

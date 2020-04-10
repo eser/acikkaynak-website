@@ -61757,6 +61757,9 @@ body.pushable > .pusher {
 .ui.padded.button {
   padding: 0.8em 2.5em;
 }
+.text.no-common-ligatures {
+  font-variant: no-common-ligatures;
+}
 
 :root {
   --top-svg: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0 100 Q0 55, 10 50 L10 100 C"/><path d="M10 100 L10 50 L100 0 L100 100 C"/></svg>');
@@ -61880,3 +61883,17 @@ h3.ui.header.news-title {
   display: block;
 }
 
+.ui.items > .item.project > .content > .header.organization-header {
+  display: block;
+}
+
+.logo {
+  margin-bottom: 2.5em;
+}
+
+.logo {
+  margin-bottom: 2.5em;
+}
+
+
+/*# sourceMappingURL=server.css.map*/

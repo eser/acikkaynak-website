@@ -37,6 +37,7 @@ function ListItemView(props) {
                     {props.data.needsContribution && (
                         <Label>
                             <FontAwesomeIcon icon={faCodeBranch} />
+                            { ' ' }
                             Katılım Bekliyor
                         </Label>
                     )}

@@ -41,9 +41,8 @@ function DesktopContainer(props) {
                                 <Dropdown.Menu>
                                     <Dropdown.Item as={NavLink} to="/lists/projects/">Projeler</Dropdown.Item>
                                     <Dropdown.Item as={NavLink} to="/lists/project-ideas/">Proje Fikirleri</Dropdown.Item>
-                                    <Dropdown.Item as={NavLink} to="/lists/organizations/">Organizasyonlar</Dropdown.Item>
                                     <Dropdown.Divider />
-                                    <Dropdown.Item as={NavLink} to="/lists/sponsors/">Sponsorlar</Dropdown.Item>
+                                    <Dropdown.Item as={NavLink} to="/lists/organizations/">Organizasyonlar</Dropdown.Item>
                                 </Dropdown.Menu>
                             </Dropdown>
 

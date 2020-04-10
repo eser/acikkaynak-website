@@ -56,7 +56,9 @@ function ListView(props: ViewProps) {
         if (categories.length < 2) { return null; }
 
         return categories.map(category => (
-            <HashLink smooth to={`#${category}`} className={`ui positive button ${localStyles.categoryLink}`} key={category}>{category}</HashLink>
+            <HashLink smooth to={`#${category}`} className={`ui positive button ${localStyles.categoryLink}`} key={category}>
+                {category}
+            </HashLink>
         ));
     }
 
@@ -69,7 +71,12 @@ function ListView(props: ViewProps) {
             return (
                 <Segment id={category} className={localStyles.categorySegment} key={category}>
                     <h2 className="title is-spaced">
-                        {props.categoryIcon && <FontAwesomeIcon icon={props.categoryIcon} />}
+                        {props.categoryIcon && (
+                            <>
+                                <FontAwesomeIcon icon={props.categoryIcon} />
+                                { ' ' }
+                            </>
+                        )}
                         {category}
                     </h2>
                     <Divider />

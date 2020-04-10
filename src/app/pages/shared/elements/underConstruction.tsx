@@ -14,6 +14,12 @@ function UnderConstruction() {
 
             <Message.Content>
                 <Message.Header>Bu sayfa yapım aşamasında.</Message.Header>
+                <br />
+                Eğer geliştirme ile ilgili katkıda bulunabileceğinizi düşünüyorsanız
+                { ' ' }
+                <a href="https://github.com/acikkaynak/acikkaynak-website">sitemizin kaynak kodlarına</a>
+                { ' ' }
+                ulaşım sağlayarak bize yardımcı olabilirsiniz.
             </Message.Content>
         </Message>
     );

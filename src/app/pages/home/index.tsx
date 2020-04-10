@@ -36,8 +36,8 @@ function Home() {
                                 as="h2"
                                 inverted
                             >
-                                2015'ten bu yana açık kaynak farkındalığı
-                                oluşturuyor, projelerimizi listeliyor ve
+                                2015'ten bu yana açık kaynak farkındalığı oluşturuyor,
+                                topluluk faaliyetleri yürütüyor, proje geliştiriyor ve
                                 yardımlaşıyoruz
                             </Header>
 
@@ -142,11 +142,9 @@ function Home() {
                                 <Link to="/lists/project-ideas/">proje fikirleri</Link>
                                 ,
                                 {' '}
-                                <Link to="/lists/organizations/">organizasyonlar</Link>
-                                {' '}
                                 ve
                                 {' '}
-                                <Link to="/lists/sponsors/">sponsorlar</Link>
+                                <Link to="/lists/organizations/">organizasyonlar</Link>
                                 ı indeksleyerek bu girişimlerin hem görünürlüklerini
                                 sağlamaya hem de dışarıdan erişilebilirliğini
                                 arttırmaya çalışıyoruz.

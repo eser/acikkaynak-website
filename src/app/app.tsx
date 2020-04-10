@@ -16,7 +16,6 @@ import Lists from './pages/lists/index';
 import ListsProjects from './pages/lists/projects/index';
 import ListsProjectIdeas from './pages/lists/project-ideas/index';
 import ListsOrganizations from './pages/lists/organizations/index';
-import ListsSponsors from './pages/lists/sponsors/index';
 import Stats from './pages/stats/index';
 import About from './pages/about/index';
 import SupportUs from './pages/support-us/index';
@@ -56,9 +55,6 @@ function App() {
             <Route path="/lists/organizations/detail/:slug" exact={false} strict={true} render={props => <Layout><ListsOrganizations {...props.match.params} /></Layout>} />
             <Route path="/lists/organizations/" exact={true} strict={true} render={() => <Layout><ListsOrganizations /></Layout>} />
 
-            {/* lists/sponsors */}
-            <Route path="/lists/sponsors/" exact={true} strict={true} render={() => <Layout><ListsSponsors /></Layout>} />
-
             {/* lists */}
             <Route path="/lists/" exact={true} strict={true} render={() => <Layout><Lists /></Layout>} />
 
@@ -72,7 +68,7 @@ function App() {
             <Route path="/support-us/" exact={true} strict={true} render={() => <Layout><SupportUs /></Layout>} />
 
             {/* not found */}
-            <Route render={() => <NotFound />} />
+            <Route render={() => <Layout><NotFound /></Layout>} />
         </Switch>
     );
 }

@@ -1,72 +1,77 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, Image } from 'semantic-ui-react';
 
-import UnderConstruction from '../shared/elements/underConstruction';
+import globalStyles from '../../layouts/shared/assets/global.less';
+import LogoImage from '../../layouts/shared/assets/logo-black.svg';
+import localStyles from './style.less';
 
 function About() {
     return (
         <Container className="content">
-            <Header as="h1" style={{ 'fontVariant': 'no-common-ligatures' }}>Açık-Kaynak.org Hakkında</Header>
+            <Image size="medium" src={LogoImage} className={localStyles.logo} centered />
+
+            <Header as="h1" className={`${globalStyles.text} ${globalStyles.noCommonLigatures}`}>Hakkımızda</Header>
 
             <p>
-                Bu organizasyon Türkiye'deki ve Türkçe konuşan geliştiricilerin oluşturduğu
-                açık kaynak ekosisteminin lokomotifi olmak, insanları açık kaynak geliştirmeye
-                motive etmek, farkındalık yaratmak ve engelleri ortadan kaldırmak amacıyla
-                kurulmuştur.
+                Acik-kaynak.org organizasyonu Türkiye'deki ve Türkçe konuşan geliştiricilerin
+                oluşturduğu açık kaynak ekosisteminin lokomotifi olmak, insanları açık kaynak
+                geliştirmeye motive etmek, farkındalık yaratmak ve engelleri ortadan kaldırmak
+                amacıyla kurulmuştur.
             </p>
 
             <p>
-                2015'de kurulan açık kaynak, o kadar dar bir ekosistemin içindeydi ki nasıl,
-                nereden, ne kadar küçük adımlarla başlarsak başlayalım bir noktadaki eksikliği
-                gidermiş olacaktık. Ve en ufaktan başladık. Önce GitHub'ın kendi kaynakları ile
-                geliştiricilerin açık kaynak proje indeksi görevi gördük. Ama halen bunun sosyal
-                tarafıyla ilgili yapacak çok işimiz vardı.
+                Bugün yürüttüğümüz faaliyetleri açık kaynak geliştirmeye yönelik içerik üretmek,
+                bir şemsiye altında projeleri - paydaşları - toplulukları bir araya getirmek,
+                yeni kişi ve kuruluşları ekosistemin içerisine çekmek, topluluk oluşturmak,
+                etkinlikleri desteklemek ve yardımlaşmak olarak özetleyebiliriz.
+            </p>
+
+            <Header as="h2" className={`${globalStyles.text} ${globalStyles.noCommonLigatures}`}>Geçmiş</Header>
+
+            <p>
+                2015'de harekete geçtiğimizde gelişmeye oldukça açık bir ekosistem içerisinde
+                ne kadar küçük adımlarla başlarsak başlayalım bir noktadaki eksikliği gidermiş
+                olacağımızı fark ettik. Ve en ufaktan başladık. Önce GitHub'ın kendi kaynakları
+                ile geliştiricilerin açık kaynak proje indeksi görevi gördük. Ama halen bunun
+                sosyal tarafıyla ilgili yapacak çok işimiz vardı.
             </p>
 
             <p>
-                2019 itibariyle bir adım daha attık ve ekosistemimizdeki açık kaynak
+                Belirli bir topluluk gücüne ulaştıktan sonra ekosistemimizdeki açık kaynak
                 geliştiricilerini, açık kaynak geliştiricilerinin projelerine hizmet edecek,
-                onları tanıtacak ve ihtiyaçlarını gözükür hale getirecek şekilde misyon kapsamımızı
-                genişlettik.
+                onları tanıtacak ve ihtiyaçlarını gözükür hale getirecek şekilde misyon
+                kapsamımızı genişlettik.
             </p>
 
             <p>
-                Buradaki hareketi aynı zamanda bir "networking" olarak düşünürsek; amacımız hem
-                ekosistemdeki projelere katılımcı ve sponsor başta olmak üzere destek bulmak
-                hem de iletişim kanallarımız aracılığıyla halihazırda açık kaynak geliştirme
-                literatürünü arttıracak şekilde insanları iletişime ve yardımlaşmaya teşvik etmek.
+                2020'de artık açık kaynak için daha net içerikler üretmek, canlı yayınlar yapmak,
+                topluluğu bir araya getirecek etkinlikler ve proje çalışmaları düzenlemek için
+                yeni bir yol haritası oluşturduk. Bugün de bu çalışmalarımızı sürdürmekteyiz.
             </p>
+
+            <Header as="h2" className={`${globalStyles.text} ${globalStyles.noCommonLigatures}`}>Ne sağlıyoruz?</Header>
 
             <p>
-                Bunu desteklemek için; açık kaynak felsefesini çeşitli kaynak/içerik destekleriyle
-                yaygınlaştırmak için rehberlik etmek de amaçlarımız arasında.
+                Bir şemsiye organizasyon görevi görerek topluluğa bir "networking" platformu
+                oluşturuyoruz. Açık kaynak ekosistemine dahil olmak isteyenler için imkanlar
+                oluşturup, halihazırda ekosistemin içerisindeki aktörleri de birbirleri ile
+                iletişim kurabilecekleri şekilde yakınlaştırıyoruz.
             </p>
+
+            <Header as="h2" className={`${globalStyles.text} ${globalStyles.noCommonLigatures}`}>Nasıl dahil olunur?</Header>
 
             <p>
-                Eğer proje ve birlikte çalışma deneyimini arttırmak isteyen, başka platformlarda
-                geliştirme yapmak konusunda bir başlangıç arayan bir yazılımcı veya yazılımcı
-                grubuysanız, burada kolaylıkla sizden yardım bekleyen bir proje bulabilirsiniz.
-                Çevrenize de bizden bahsedin, açık kaynak toplulukta hep birlikte iletişimde ve
-                girişimde olalım.
+                Bugün için
+                { ' ' }
+                <Link to="/support-us/">
+                    Bizi Destekle!
+                </Link>
+                'de belirttiğimiz gibi iletişim kanallarımızdan bizi takip etmeniz bize katılmanız
+                için tek kriterimizdir.
             </p>
 
-            {/*
-            <Header as="h1">Manifesto</Header>
-
-            <p>
-                ...
-            </p>
-
-
-            <Header as="h1">İletişim</Header>
-
-            <p>
-                ...
-            </p>
-            */}
-
-            <UnderConstruction />
         </Container>
     );
 }

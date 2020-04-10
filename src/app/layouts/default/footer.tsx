@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { Container, Grid, Header, Image, List, Segment } from 'semantic-ui-react';
 
 import layoutStyles from './assets/styles.less';
-import Logo from '../shared/assets/logo.svg';
-import CcByNcSa from './assets/cc-by-nc-sa.svg';
+import LogoImage from '../shared/assets/logo.svg';
+import CcByNcSaImage from './assets/cc-by-nc-sa.svg';
 
 function Footer() {
     return (
@@ -24,10 +24,11 @@ function Footer() {
                     <Grid.Row className={layoutStyles.footerRow}>
                         <Grid.Column width={7}>
                             <div className={layoutStyles.footerAbout}>
-                                <Image size="small" className={layoutStyles.footerLogo} src={Logo} />
+                                <Image size="small" className={layoutStyles.footerLogo} src={LogoImage} />
                                 <p>
                                     &laquo;2015'ten bu yana açık kaynak farkındalığı oluşturuyor,
-                                    projelerimizi listeliyor ve yardımlaşıyoruz&raquo;
+                                    topluluk faaliyetleri yürütüyor, proje geliştiriyor ve
+                                    yardımlaşıyoruz&raquo;
                                 </p>
                                 <p>
                                     Site içerisinde gördüğünüz içerikler
@@ -41,7 +42,7 @@ function Footer() {
                                 </p>
                                 <p>
                                     <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-                                        <Image src={CcByNcSa} />
+                                        <Image src={CcByNcSaImage} />
                                     </a>
                                 </p>
                             </div>
@@ -78,7 +79,6 @@ function Footer() {
                                     <List.Item as={NavLink} to="/lists/projects/">Projeler</List.Item>
                                     <List.Item as={NavLink} to="/lists/project-ideas/">Proje Fikirleri</List.Item>
                                     <List.Item as={NavLink} to="/lists/organizations/">Organizasyonlar</List.Item>
-                                    <List.Item as={NavLink} to="/lists/sponsors/">Sponsorlar</List.Item>
                                 </List>
                             </div>
                         </Grid.Column>
