@@ -11,7 +11,7 @@ function SupportUs() {
         <Container className="content">
             <Image size="medium" src={LogoImage} className={localStyles.logo} centered />
 
-            <Header as="h1" className={`${globalStyles.text} ${globalStyles.noCommonLigatures}`}>Açık-Kaynak.org'u Destekle</Header>
+            <Header as="h1" className={`${globalStyles.text} ${globalStyles.noCommonLigatures}`}>açık-kaynak.org'u Destekle</Header>
 
             <p>
                 Dijital mecralarda (GitHub, Twitter, YouTube, v.s.) bizi takip ediyor olmanız

@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'açık kaynak',
+    title: 'açık-kaynak.org',
     features: {
         jsx: true,
     },

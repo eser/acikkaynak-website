@@ -15,7 +15,7 @@ function About() {
             <Header as="h1" className={`${globalStyles.text} ${globalStyles.noCommonLigatures}`}>Hakkımızda</Header>
 
             <p>
-                Acik-kaynak.org organizasyonu Türkiye'deki ve Türkçe konuşan geliştiricilerin
+                açık-kaynak.org organizasyonu Türkiye'deki ve Türkçe konuşan geliştiricilerin
                 oluşturduğu açık kaynak ekosisteminin lokomotifi olmak, insanları açık kaynak
                 geliştirmeye motive etmek, farkındalık yaratmak ve engelleri ortadan kaldırmak
                 amacıyla kurulmuştur.

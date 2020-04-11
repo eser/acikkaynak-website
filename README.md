@@ -7,7 +7,7 @@
 
 ## BENİ OKU
 
-Bu kod tabanında, şu anda yapım aşamasında bulunan [acik-kaynak.org](https://acik-kaynak.org/)'nun önizleme sürümü yer almaktadır.
+Bu kod tabanında, şu anda yapım aşamasında bulunan [açık-kaynak.org](https://acik-kaynak.org/)'nun önizleme sürümü yer almaktadır.
 
 `master` branch'ine aktarılan değişiklikler, bir dizi derleme işleminden sonra [https://acik-kaynak.org/](https://acik-kaynak.org/)
 adresinde belirecektir.

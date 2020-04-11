@@ -27,7 +27,7 @@ function GetStarted() {
                 <br />
                 <br />
                 Kek tarifi vermekten, uçak yapımına kadar her şey açık kaynak
-                olabileceği gibi biz Açık-Kaynak.org kapsamında hedefimizi biraz
+                olabileceği gibi biz açık-kaynak.org kapsamında hedefimizi biraz
                 daraltarak açık kaynaklı yazılım projeleri ve bu projelerin
                 çevresindeki kaynaklardan bahsetmekteyiz.
             </p>
@@ -89,7 +89,7 @@ function GetStarted() {
                 koşulunu getirmektedir.
                 <br />
                 <br />
-                Biz Açık-Kaynak.org olarak da
+                Biz açık-kaynak.org olarak da
                 {' '}
                 <Link to="/lists/projects/">Projeler bölümü</Link>
                 {' '}

@@ -1,6 +1,6 @@
 {
   "name": "acikkaynak-website",
-  "description": "acik kaynak web site",
+  "description": "açık-kaynak.org web site",
   "keywords": [
     "acik",
     "kaynak",
@@ -9,7 +9,7 @@
   ],
   "version": "0.10.1",
   "homepage": "https://acik-kaynak.org",
-  "author": "Acik Kaynak Inisiyatifi <bilgi@acik-kaynak.org> (https://twitter.com/_acikkaynak)",
+  "author": "açık-kaynak.org <bilgi@acik-kaynak.org> (https://twitter.com/_acikkaynak)",
   "contributors": [
     {
       "name": "Eser Ozvataf",
