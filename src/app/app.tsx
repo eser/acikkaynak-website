@@ -16,6 +16,7 @@ import Lists from './pages/lists/index';
 import ListsProjects from './pages/lists/projects/index';
 import ListsProjectIdeas from './pages/lists/project-ideas/index';
 import ListsOrganizations from './pages/lists/organizations/index';
+import Events from './pages/events/index';
 import Stats from './pages/stats/index';
 import About from './pages/about/index';
 import SupportUs from './pages/support-us/index';
@@ -57,6 +58,9 @@ function App() {
 
             {/* lists */}
             <Route path="/lists/" exact={true} strict={true} render={() => <Layout><Lists /></Layout>} />
+
+            {/* events */}
+            <Route path="/events/" exact={true} strict={true} render={() => <Layout><Events /></Layout>} />
 
             {/* stats */}
             <Route path="/stats/" exact={true} strict={true} render={() => <Layout><Stats /></Layout>} />

@@ -17,6 +17,7 @@ module.exports = {
             'jsx-a11y/href-no-hash': 0,
             'import/extensions': 0,
             'import/no-extraneous-dependencies': 0,
+            'react/self-closing-comp': 1,
         },
     },
     dependencyAliases: {

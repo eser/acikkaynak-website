@@ -61887,6 +61887,10 @@ h3.ui.header.news-title {
   display: block;
 }
 
+.ui.items > .item.project > .content > .header.event-header {
+  display: block;
+}
+
 .logo {
   margin-bottom: 2.5em;
 }

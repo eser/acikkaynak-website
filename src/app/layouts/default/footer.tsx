@@ -53,6 +53,7 @@ function Footer() {
                                 <List link inverted>
                                     <List.Item as={NavLink} to="/" exact>Ana Sayfa</List.Item>
                                     <List.Item as={NavLink} to="/news/">Haberler</List.Item>
+                                    <List.Item as={NavLink} to="/events/">Etkinlikler</List.Item>
                                     <List.Item as={NavLink} to="/stats/">İstatistikler</List.Item>
                                     <List.Item as={NavLink} to="/about/">Hakkımızda</List.Item>
                                     <List.Item as={NavLink} to="/support-us/">Bizi Destekle!</List.Item>
