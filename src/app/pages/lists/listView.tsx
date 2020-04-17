@@ -35,19 +35,29 @@ function ListView(props: ViewProps) {
     }, 400);
 
     function filterData(data) {
-        const currentFilter = filter.trim().toLocaleLowerCase();
+        const currentFilter = filter.trim();
         let filteredData;
 
         if (currentFilter.length >= 3) {
             filteredData = data.filter((item) => {
                 const name = item.name.toLocaleLowerCase();
                 const content = item.content.toLocaleLowerCase();
+                const technologies = [ ...item.technologies ];
 
-                return name.includes(currentFilter) || content.includes(currentFilter);
+                return (
+                    name.includes(currentFilter.toLocaleLowerCase()) ||
+                    content.includes(currentFilter.toLocaleLowerCase()) ||
+                    technologies.includes(currentFilter)
+                );
             });
         }
 
         return filteredData || data;
+    }
+
+    function filterByTag(searchVal) {
+        searchRef.current.inputRef.current.value = searchVal;
+        onFilterChanged();
     }
 
     function renderCatHashLink() {
@@ -83,7 +93,7 @@ function ListView(props: ViewProps) {
 
                     <Item.Group divided>
                         {filteredData.map(item => (
-                            <props.listItemView data={item} key={`${category}.${item.name}.${encodeURIComponent(item.githubUrl)}`} />
+                            <props.listItemView data={item} filter={searchVal => filterByTag(searchVal)} key={`${category}.${item.name}.${encodeURIComponent(item.githubUrl)}`} />
                         ))}
                     </Item.Group>
                 </Segment>
