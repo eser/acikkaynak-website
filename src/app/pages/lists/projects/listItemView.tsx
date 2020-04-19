@@ -8,6 +8,12 @@ import { faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 
 import localStyles from './style.less';
 
+function technologieTag(filter, item) {
+    return (
+        <Label basic className={localStyles.pointer} onClick={() => filter(item)}>{item}</Label>
+    );
+}
+
 function ListItemView(props) {
     return (
         <Item className={localStyles.project}>
@@ -24,7 +30,7 @@ function ListItemView(props) {
                 </Item.Header>
                 <Item.Meta>
                     <Label.Group>
-                        {props.data.technologies.map(item => <Label basic>{item}</Label>)}
+                        {props.data.technologies.map(item => technologieTag(props.filter, item))}
                     </Label.Group>
                 </Item.Meta>
                 <Item.Description>
