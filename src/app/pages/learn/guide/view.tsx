@@ -16,7 +16,7 @@ function getPathDirname(pathString: string): string {
         return '';
     }
 
-    return pathString.substr(0, lastSlashIndex);
+    return `../${pathString.substr(0, lastSlashIndex)}`;
 }
 
 interface ViewProps {
