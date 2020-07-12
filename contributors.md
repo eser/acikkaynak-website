@@ -9,6 +9,7 @@
 * Berat Bozkurt - @beratbozkurt0
 * Tuğsan Ünlü - @tugsanunlu
 * Kaan Gökdemir - @KaanGokdemir
+* Atakan Ermiş - @AtakanErmis
 
 ## Destekleyenler
 
