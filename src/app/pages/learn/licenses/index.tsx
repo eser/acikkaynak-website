@@ -289,13 +289,14 @@ function Licenses() {
                         <Grid.Row>
                             <Grid.Column width={7} className={`${globalStyles.text} ${globalStyles.mini}`}>
                                 Bu zayıf copyleft lisansın koşulu lisanslanmış kaynak kodunun ve bu
-                                koddaki değişikliklerin kaynak kodunun aynı lisansla herkese açılmasıdır
-                                (ya da başka durumlar için GNU lisanslarından biri ile). Telif hakkı ve
-                                lisans uyarılarının korunması gereklidir. Ayrıca katılımcılar kodun
-                                bir patent altında kullanımına izin verirler. Ancak, lisanslanmış kodu
-                                kullanan daha büyük bir proje daha farklı koşullarda ve daha büyük projedeki
-                                kaynak kodlarının açılmadan (sadece alınan ve düzenlenen lisanslı kodun
-                                dosyalarının aynı lisansla yayınlanmasıyla) dağıtılması mümkündür.
+                                koddaki değişikliklerin kaynak kodunun aynı lisansla herkese
+                                açılmasıdır(ya da başka durumlar için GNU lisanslarından biri ile).
+                                Telif hakkı velisans uyarılarının korunması gereklidir. Ayrıca
+                                katılımcılar kodunbir patent altında kullanımına izin verirler.
+                                Ancak, lisanslanmış kodukullanan daha büyük bir proje daha farklı
+                                koşullarda ve daha büyük projedekikaynak kodlarının açılmadan
+                                (sadece alınan ve düzenlenen lisanslı kodun dosyalarının aynı
+                                lisansla yayınlanmasıyla) dağıtılması mümkündür.
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <div>
@@ -344,9 +345,10 @@ function Licenses() {
                     <Grid stackable>
                         <Grid.Row>
                             <Grid.Column width={7} className={`${globalStyles.text} ${globalStyles.mini}`}>
-                                Yalnızca kaynak için telif hakkı ve lisans uyarılarının korunması gereksinimini
-                                içeren basit bir lisans. Lisanslanmış işler, düzenlemeler ve daha büyük projeler
-                                farklı koşullarda ve kaynak kodunu açmaksızın dağıtılabilir.
+                                Yalnızca kaynak için telif hakkı ve lisans uyarılarının korunması
+                                gereksinimini içeren basit bir lisans. Lisanslanmış işler,
+                                düzenlemeler ve daha büyük projeler farklı koşullarda ve kaynak
+                                kodunu açmaksızın dağıtılabilir.
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <div>
@@ -391,9 +393,10 @@ function Licenses() {
                     <Grid stackable>
                         <Grid.Row>
                             <Grid.Column width={7} className={`${globalStyles.text} ${globalStyles.mini}`}>
-                                Herhangi bir koşulu olmayan ve tüm işi kamu malı olarak adamayı sağlayan
-                                bir lisans. Unlicense ile lisanslanan tüm işler, değişiklikler ve daha büyük
-                                işler farklı koşullarda ve kaynak kodu olmaksızın dağıtılabilir.
+                                Herhangi bir koşulu olmayan ve tüm işi kamu malı olarak adamayı
+                                sağlayan bir lisans. Unlicense ile lisanslanan tüm işler,
+                                değişiklikler ve daha büyük işler farklı koşullarda ve kaynak
+                                kodu olmaksızın dağıtılabilir.
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <div>
@@ -435,12 +438,14 @@ function Licenses() {
                     <Grid stackable>
                         <Grid.Row>
                             <Grid.Column width={7} className={`${globalStyles.text} ${globalStyles.mini}`}>
-                                Telif hakkı ve lisans uyarılarının korunması gereklidir. BSD 4-clause ile
-                                lisanslanan yazılımı kullanan herhangi birisi ürününün reklam materyallerinde
-                                eğer lisanslanmış yazılımın bir özelliğini ya da kullanımını gösterecek ise
-                                "Bu ürün &lt;organizasyon&gt; tarafından geliştirilen bir yazılımı kullanır" ibaresi
-                                bulunmalıdır. Bu yazılımdan türeyen herhangi bir ürünün tanıtımında Organizasyonun
-                                veya katılımcıların ismi özel izin alınmaksızın kullanılamaz.
+                                Telif hakkı ve lisans uyarılarının korunması gereklidir.
+                                BSD 4-clause ile lisanslanan yazılımı kullanan herhangi birisi
+                                ürününün reklam materyallerinde eğer lisanslanmış yazılımın bir
+                                özelliğini ya da kullanımını gösterecek ise "Bu ürün
+                                &lt;organizasyon&gt;vtarafından geliştirilen bir yazılımı kullanır"
+                                ibaresi bulunmalıdır. Bu yazılımdan türeyen herhangi bir ürünün
+                                tanıtımında Organizasyonun veya katılımcıların ismi özel izin
+                                alınmaksızın kullanılamaz.
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <div>
@@ -534,7 +539,8 @@ function Licenses() {
                     <Grid stackable>
                         <Grid.Row>
                             <Grid.Column width={7} className={`${globalStyles.text} ${globalStyles.mini}`}>
-                                3 Maddeli BSD lisansının "İsim kullanımı" şartının kaldırılmış sürümüdür.
+                                3 Maddeli BSD lisansının "İsim kullanımı" şartının kaldırılmış
+                                sürümüdür.
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <div>
@@ -579,7 +585,8 @@ function Licenses() {
                     <Grid stackable>
                         <Grid.Row>
                             <Grid.Column width={7} className={`${globalStyles.text} ${globalStyles.mini}`}>
-                                Herhangi bir koşulu olmayan bir kamu malı lisansıdır (The Unlicense'a benzer).
+                                Herhangi bir koşulu olmayan bir kamu malı lisansıdır
+                                (The Unlicense'a benzer).
                             </Grid.Column>
                             <Grid.Column width={3}>
                                 <div>
