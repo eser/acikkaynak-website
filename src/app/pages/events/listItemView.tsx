@@ -27,35 +27,35 @@ function ListItemView(props) {
                     <Label.Group>
                         <Label>
                             <FontAwesomeIcon icon={faCalendar} />
-                            { ' ' }
-                            { startDate.toLocaleDateString() }
+                            {' '}
+                            {startDate.toLocaleDateString()}
                         </Label>
 
                         <Label>
                             <FontAwesomeIcon icon={faClock} />
-                            { ' ' }
-                            { startDate.toLocaleTimeString() }
-                            { ' - ' }
-                            { endDate.toLocaleTimeString() }
+                            {' '}
+                            {startDate.toLocaleTimeString()}
+                            {' - '}
+                            {endDate.toLocaleTimeString()}
                         </Label>
 
                         <Label>
                             <FontAwesomeIcon icon={faMapMarkerAlt} />
-                            { ' ' }
-                            { props.data.venue.name }
+                            {' '}
+                            {props.data.venue.name}
                         </Label>
 
                         <Label>
                             <FontAwesomeIcon icon={faUsers} />
-                            { ' ' }
-                            { props.data.users_count }
-                            { ' / ' }
-                            { props.data.rsvp_limit }
+                            {' '}
+                            {props.data.users_count}
+                            {' / '}
+                            {props.data.rsvp_limit}
                         </Label>
                     </Label.Group>
 
                     {/* eslint-disable-next-line react/no-danger */}
-                    <div dangerouslySetInnerHTML={{ __html: props.data.detail }}></div>
+                    <div dangerouslySetInnerHTML={{ __html: props.data.detail }} />
                 </Item.Description>
             </Item.Content>
         </Item>
