@@ -18,10 +18,8 @@ function debounce(callback, wait) {
     let timeout;
 
     return (...args) => {
-        const context = this;
-
         clearTimeout(timeout);
-        timeout = setTimeout(() => callback.apply(context, args), wait);
+        timeout = setTimeout(() => callback.apply(this, args), wait);
     };
 }
 
@@ -73,7 +71,7 @@ function ListView(props: ViewProps) {
                 <Segment id={category} className={localStyles.categorySegment} key={category}>
                     <h2 className="title is-spaced">
                         <FontAwesomeIcon icon={faCalendarCheck} />
-                        { ' ' }
+                        {' '}
                         {category}
                     </h2>
                     <Divider />

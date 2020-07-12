@@ -17,10 +17,8 @@ function debounce(callback, wait) {
     let timeout;
 
     return (...args) => {
-        const context = this;
-
         clearTimeout(timeout);
-        timeout = setTimeout(() => callback.apply(context, args), wait);
+        timeout = setTimeout(() => callback.apply(this, args), wait);
     };
 }
 
@@ -42,7 +40,7 @@ function ListView(props: ViewProps) {
             filteredData = data.filter((item) => {
                 const name = item.name.toLocaleLowerCase();
                 const content = item.content.toLocaleLowerCase();
-                const technologies = [ ...item.technologies ];
+                const technologies = item.technologies || [];
 
                 return (
                     name.includes(currentFilter.toLocaleLowerCase()) ||
@@ -84,7 +82,7 @@ function ListView(props: ViewProps) {
                         {props.categoryIcon && (
                             <>
                                 <FontAwesomeIcon icon={props.categoryIcon} />
-                                { ' ' }
+                                {' '}
                             </>
                         )}
                         {category}
