@@ -55,6 +55,13 @@ const Header = (props: HeaderProps) => {
             </Link>
           </li>
           <li>
+            <Link href="/projects">
+              <a>
+                projeler
+              </a>
+            </Link>
+          </li>
+          <li>
             <Link href="/about">
               <a>
                 hakkında
