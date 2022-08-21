@@ -1,11 +1,11 @@
-.hero-section {
+.section {
   @apply container flex flex-col justify-center mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between;
 
   .left-side {
     @apply flex flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left mb-12;
 
     p {
-      @apply mt-6 mb-8 text-lg sm:mb-12;
+      @apply mb-8 text-lg sm:mb-12 leading-relaxed text-justify;
     }
   }
 

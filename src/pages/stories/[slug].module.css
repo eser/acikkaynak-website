@@ -1,0 +1,15 @@
+.article {
+  @apply container mx-auto max-w-4xl sm:py-12 lg:py-24;
+
+  .story {
+    time {
+      @apply block text-xs text-gray-600 mb-2;
+    }
+
+    .content {
+      p {
+        @apply leading-relaxed text-justify mb-5;
+      }
+    }
+  }
+}

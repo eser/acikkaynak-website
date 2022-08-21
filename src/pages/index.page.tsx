@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/future/image";
 import { NextSeo } from "next-seo";
 import { type CustomPage } from "@webclient/pages/_app.types";
@@ -7,21 +8,24 @@ import openSourceImage from "./open-source.svg";
 const Home: CustomPage = function Home() {
   return (
     <>
-      <NextSeo title="Home" />
+      <NextSeo />
 
-      <section className={styles["hero-section"]}>
+      <section className={styles.section}>
         <div className={styles["left-side"]}>
+          <h2>Hoşgeldiniz 👋</h2>
           <p>
-            2015&apos;ten bu yana açık kaynak farkındalığı oluşturuyor, topluluk
-            faaliyetleri yürütüyor, proje geliştiriyor ve yardımlaşıyoruz
+            2015&apos;ten bu yana Türkiye&apos;deki ve Türkçe konuşan
+            geliştiricilerin oluşturduğu açık kaynak ekosistemine katkıda
+            bulunmak, insanları açık kaynak geliştirmeye motive etmek,
+            farkındalık oluşturmak ve engelleri ortadan kaldırmak için faaliyet
+            gösteriyoruz.
           </p>
           <div className="button">
-            <a
-              rel="noopener noreferrer"
-              href="#"
-            >
-              Bilgi
-            </a>
+            <Link href="/about">
+              <a>
+                Bilgi
+              </a>
+            </Link>
           </div>
         </div>
         <div className={styles["right-side"]}>

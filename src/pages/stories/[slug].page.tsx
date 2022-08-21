@@ -1,46 +1,54 @@
-import Head from "next/head";
-import { allStories } from "contentlayer/generated";
+import { NextSeo } from "next-seo";
+import { type CustomPage } from "@webclient/pages/_app.types";
+import { allStories, Story } from "contentlayer/generated";
+import styles from "./[slug].module.css";
 
-export async function getStaticPaths() {
+const getStaticPaths = async function getStaticPaths() {
   const paths = allStories.map((story) => story.url);
+
   return {
     paths,
     fallback: false,
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  const story = allStories.find((story) => story._raw.flattenedPath === `stories/${params.slug}`);
+const getStaticProps = async function getStaticProps({ params }) {
+  const story = allStories.find((story) =>
+    story._raw.flattenedPath === `stories/${params.slug}`
+  );
 
   return {
     props: {
       story,
     },
   };
+};
+
+interface StoryProps {
+  story: Story;
 }
 
-const StoryLayout = ({ story }) => {
-  const date = new Date(story.date).toLocaleString("tr-TR");
+const Story: CustomPage = function Story(props: StoryProps) {
+  const date = new Date(props.story.date).toLocaleString("tr-TR");
 
   return (
     <>
-      <Head>
-        <title>{story.title}</title>
-      </Head>
-      <article className="mx-auto max-w-2xl py-16">
-        <div className="mb-6 text-center">
-          <h1 className="mb-1 text-3xl font-bold">{story.title}</h1>
-          <time dateTime={date} className="text-sm text-slate-600">
+      <NextSeo title={`Yazılar - ${props.story.title}`} />
+
+      <article className={styles.article}>
+        <div className={styles.story}>
+          <h1>{props.story.title}</h1>
+          <time dateTime={date}>
             {date}
           </time>
+          <div
+            className={styles.content}
+            dangerouslySetInnerHTML={{ __html: props.story.body.html }}
+          />
         </div>
-        <div
-          className="cl-story-body"
-          dangerouslySetInnerHTML={{ __html: story.body.html }}
-        />
       </article>
     </>
   );
 };
 
-export default StoryLayout;
+export { getStaticPaths, getStaticProps, Story, Story as default };

@@ -27,7 +27,7 @@ const Header = (props: HeaderProps) => {
           <a>
             <Image
               src={(theme === "dark") ? LogoDarkImage : LogoImage}
-              alt="açık-kaynak.org Logo"
+              alt="açık-kaynak.org"
               width="350"
               height="70"
             />
@@ -55,14 +55,14 @@ const Header = (props: HeaderProps) => {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/about">
               <a>
                 hakkında
               </a>
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="/contributing">
               <a>
                 destek
               </a>

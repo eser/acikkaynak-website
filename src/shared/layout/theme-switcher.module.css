@@ -1,5 +1,5 @@
 .icon {
-  @apply h-8 w-8 flex-shrink-0 dark:!text-yellow-300 !text-slate-700;
+  @apply h-8 w-8 flex-shrink-0 dark:!text-yellow-300 !text-purple-900;
 
   /* unfortunately tailwind doesn't support dark:!text-yellow-300 in nested css */
   :global(.dark) & {
