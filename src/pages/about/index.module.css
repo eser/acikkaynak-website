@@ -1,7 +1,0 @@
-.section {
-  @apply container mx-auto max-w-4xl sm:py-12 lg:py-24;
-
-  p {
-    @apply leading-relaxed text-justify;
-  }
-}

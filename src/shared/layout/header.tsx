@@ -64,7 +64,7 @@ const Header = (props: HeaderProps) => {
           <li>
             <Link href="/contributing">
               <a>
-                destek
+                katkı
               </a>
             </Link>
           </li>

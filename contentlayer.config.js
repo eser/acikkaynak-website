@@ -1,5 +1,28 @@
 import { defineDocumentType, makeSource } from "contentlayer/source-files";
 
+const StaticPage = defineDocumentType(() => ({
+  name: "StaticPage",
+  filePathPattern: `static/**/*.md`,
+  fields: {
+    title: {
+      type: "string",
+      description: "The title of the static page",
+      required: true,
+    },
+    date: {
+      type: "date",
+      description: "The date of the static page",
+      required: true,
+    },
+  },
+  computedFields: {
+    url: {
+      type: "string",
+      resolve: (staticPage) => `/${staticPage._raw.flattenedPath}`,
+    },
+  },
+}));
+
 const Story = defineDocumentType(() => ({
   name: "Story",
   filePathPattern: `stories/**/*.md`,
@@ -25,7 +48,7 @@ const Story = defineDocumentType(() => ({
 
 const source = makeSource({
   contentDirPath: "content",
-  documentTypes: [Story],
+  documentTypes: [StaticPage, Story],
 });
 
-export { Story, source, source as default };
+export { source, source as default, StaticPage, Story };
