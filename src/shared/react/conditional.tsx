@@ -1,10 +1,10 @@
-import { type ReactNode } from "react";
+import { type ReactElement } from "react";
 
 interface ConditionalProps {
   if: boolean;
-  children?: ReactNode;
-  then?: ReactNode;
-  otherwise?: ReactNode;
+  children?: ReactElement<any, any>;
+  then?: ReactElement<any, any>;
+  otherwise?: ReactElement<any, any>;
 }
 
 function Conditional(props: ConditionalProps) {

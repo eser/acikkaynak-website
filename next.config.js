@@ -25,7 +25,7 @@ const nextConfig = {
   ],
   experimental: {
     esmExternals: true,
-    images: { allowFutureImage: true },
+    images: { allowFutureImage: true, unoptimized: true },
   },
 };
 
