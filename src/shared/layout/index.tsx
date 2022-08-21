@@ -1,6 +1,7 @@
 import { type ReactNode } from "react";
 import Head from "next/head";
 import { Header } from "./header";
+import { Footer } from "./footer";
 import { type CustomAppProps } from "@webclient/pages/_app.types";
 
 interface LayoutProps {
@@ -19,11 +20,11 @@ const Layout = function Layout(props: LayoutProps) {
           content="width=device-width, initial-scale=1.0"
         />
       </Head>
+      <Header />
       <main>
-        <Header />
-
         {props.children}
       </main>
+      <Footer />
     </>
   );
 };

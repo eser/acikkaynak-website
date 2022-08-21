@@ -2,7 +2,7 @@
   @apply w-full container mx-auto flex flex-wrap items-center justify-between py-6;
 
   .button-menu {
-    @apply block lg:hidden pr-4;
+    @apply block lg:hidden;
 
     button {
       @apply flex items-center p-1 text-white focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out;

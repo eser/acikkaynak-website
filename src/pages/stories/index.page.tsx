@@ -43,7 +43,7 @@ const Stories: CustomPage = function Stories(props: StoriesProps) {
       <NextSeo title="Yazılar" />
 
       <section className={styles.section}>
-        <h2>Yazılar</h2>
+        <h1>Yazılar</h1>
 
         <div className={styles.stories}>
           {props.stories.map((story, idx) => (

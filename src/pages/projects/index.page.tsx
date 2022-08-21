@@ -34,7 +34,7 @@ const Projects: CustomPage = function Projects() {
       <NextSeo title="Projeler" />
 
       <section className={styles.section}>
-        <h2>Projeler</h2>
+        <h1>Projeler</h1>
 
         <ProjectList />
       </section>

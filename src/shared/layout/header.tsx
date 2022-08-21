@@ -47,10 +47,19 @@ const Header = (props: HeaderProps) => {
       </div>
       <div className={styles.links}>
         <ul>
-        <li>
+          {
+            /* <li>
             <Link href="/stories">
               <a>
                 yazılar
+              </a>
+            </Link>
+          </li> */
+          }
+          <li>
+            <Link href="/">
+              <a>
+                öğrenim
               </a>
             </Link>
           </li>
@@ -71,7 +80,7 @@ const Header = (props: HeaderProps) => {
           <li>
             <Link href="/contributing">
               <a>
-                katkı
+                katkı sağlamak
               </a>
             </Link>
           </li>

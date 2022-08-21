@@ -10,7 +10,7 @@ const Home: CustomPage = function Home() {
     <>
       <NextSeo />
 
-      <section className={styles.section}>
+      <section className={styles["hero-section"]}>
         <div className={styles["left-side"]}>
           <h2>Hoşgeldiniz 👋</h2>
           <p>
@@ -38,50 +38,13 @@ const Home: CustomPage = function Home() {
         </div>
       </section>
 
-      <p>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-      </p>
+      <section className={styles["learn-section"]}>
+        <h1>Öğrenim</h1>
+
+        <p>
+          - bu alan henüz tasarlanmamıştır -
+        </p>
+      </section>
     </>
   );
 };

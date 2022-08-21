@@ -7,6 +7,10 @@
       Helvetica Neue, sans-serif;
   }
 
+  main {
+    @apply mx-8;
+  }
+
   h1 {
     @apply text-4xl mb-8;
   }
@@ -35,7 +39,7 @@
     @apply flex flex-col space-y-4 sm:flex-row sm:items-center sm:justify-center sm:space-y-0 sm:space-x-4 lg:justify-start;
 
     a {
-      @apply mx-8 md:mx-0 px-8 py-3 text-lg font-semibold rounded bg-secondary text-white no-underline transform transition hover:scale-105 duration-300 ease-in-out;
+      @apply px-8 py-3 text-lg font-semibold rounded bg-secondary text-white no-underline transform transition hover:scale-105 duration-300 ease-in-out;
     }
   }
 }

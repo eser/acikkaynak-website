@@ -3,42 +3,32 @@ title: Hakkında
 date: 2022-08-21
 ---
 
-açık-kaynak.org organizasyonu Türkiye'deki ve Türkçe konuşan geliştiricilerin
-oluşturduğu açık kaynak ekosisteminin lokomotifi olmak, insanları açık kaynak
-geliştirmeye motive etmek, farkındalık yaratmak ve engelleri ortadan kaldırmak
-amacıyla kurulmuştur.
+açık-kaynak.org 2015'de Türkiye'deki ve Türkçe konuşan geliştiricilerin
+oluşturduğu açık kaynak ekosistemine katkıda bulunmak, insanları açık kaynak
+geliştirmeye motive etmek, farkındalık oluşturmak ve engelleri ortadan kaldırmak
+kurulmuştur.
 
-Bugün yürüttüğümüz faaliyetleri açık kaynak geliştirmeye yönelik içerik üretmek,
-bir şemsiye altında projeleri - paydaşları - toplulukları bir araya getirmek,
-yeni kişi ve kuruluşları ekosistemin içerisine çekmek, topluluk oluşturmak,
-etkinlikleri desteklemek ve yardımlaşmak olarak özetleyebiliriz.
+İlk sürümü acikkaynak.info adresinde yer alan, GitHub'ın kendi kaynaklarını
+kullanarak geliştiriciler için açık kaynak proje indeksi sağlayan bir haftasonu
+projesi olarak ortaya çıktı.
 
-## Geçmiş
+Bugünlerde ise daha çok bir portal kimliği ile, açık kaynak geliştiricileri ve
+açık kaynak ile ilgilenmek isteyen kimseler için içerikler, proje ve yazı
+listeleri, ve networking imkanları sunmaya çalışıyoruz. Bu sayede açık kaynak
+ekosistemine dahil olmak isteyenler için imkanlar oluşturacağımıza ve
+halihazırda ekosistemin içerisindeki aktörleri de birbirleri ile iletişim
+kurabilecekleri şekilde yakınlaştırabileceğimize inanıyoruz.
 
-2015'de harekete geçtiğimizde gelişmeye oldukça açık bir ekosistem içerisinde ne
-kadar küçük adımlarla başlarsak başlayalım bir noktadaki eksikliği gidermiş
-olacağımızı fark ettik. Ve en ufaktan başladık. Önce GitHub'ın kendi kaynakları
-ile geliştiricilerin açık kaynak proje indeksi görevi gördük. Ama halen bunun
-sosyal tarafıyla ilgili yapacak çok işimiz vardı.
+Eğer ilginizi çektiyse, daha da yakından takipte kalmak istiyorsanız
+[katkı sağlamak](/contributing) bölümünde de belirttiğimiz gibi iletişim
+kanallarımızdan takipçimiz olmanız aramıza katılmanız için tek kriterimizdir.
 
-Belirli bir topluluk gücüne ulaştıktan sonra ekosistemimizdeki açık kaynak
-geliştiricilerini, açık kaynak geliştiricilerinin projelerine hizmet edecek,
-onları tanıtacak ve ihtiyaçlarını gözükür hale getirecek şekilde misyon
-kapsamımızı genişlettik.
+### Künye
 
-2020'de artık açık kaynak için daha net içerikler üretmek, canlı yayınlar
-yapmak, topluluğu bir araya getirecek etkinlikler ve proje çalışmaları
-düzenlemek için yeni bir yol haritası oluşturduk. Bugün de bu çalışmalarımızı
-sürdürmekteyiz.
-
-## Ne sağlıyoruz?
-
-Bir şemsiye organizasyon görevi görerek topluluğa bir "networking" platformu
-oluşturuyoruz. Açık kaynak ekosistemine dahil olmak isteyenler için imkanlar
-oluşturup, halihazırda ekosistemin içerisindeki aktörleri de birbirleri ile
-iletişim kurabilecekleri şekilde yakınlaştırıyoruz.
-
-## Nasıl dahil olunur?
-
-Bugün için [Bizi Destekle!](/contributing)'de belirttiğimiz gibi iletişim
-kanallarımızdan bizi takip etmeniz bize katılmanız için tek kriterimizdir.
+Sitenin mevcut proje liderliğini aynı zamanda kurucu da olan
+[Eser Özvataf](https://eser.ozvataf.com/) yürütmektedir. Şu ana kadar
+[içerik eklenmesinde](https://github.com/acikkaynak/acikkaynak/graphs/contributors)
+ve
+[web sitesinin oluşmasında](https://github.com/acikkaynak/acikkaynak-website/graphs/contributors)
+topluluktan eşsiz katkılar alınmış olup her biri için sonsuz teşekkürü bir borç
+biliriz.

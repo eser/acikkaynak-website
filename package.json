@@ -42,7 +42,7 @@
   "dependencies": {
     "@heroicons/react": "^1.0.6",
     "contentlayer": "^0.2.7",
-    "fetchp": "^0.0.32",
+    "fetchp": "^0.0.34",
     "markdown-wasm": "^1.2.0",
     "next": "12.2.5",
     "next-contentlayer": "^0.2.7",
@@ -54,7 +54,7 @@
   "devDependencies": {
     "@serverless/cloud": "^2.10.14",
     "@tailwindcss/typography": "^0.5.4",
-    "@types/node": "18.7.8",
+    "@types/node": "18.7.9",
     "@types/react": "18.0.17",
     "adr-tool": "^0.3.0",
     "autoprefixer": "^10.4.8",
