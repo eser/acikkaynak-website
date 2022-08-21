@@ -22,7 +22,8 @@
     "paths": {
       "@webclient/*": [
         "./src/*"
-      ]
+      ],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
   "include": [

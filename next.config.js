@@ -1,15 +1,10 @@
 import withServerlessCloud from "@serverless/cloud/nextjs";
-import MDX from "@next/mdx";
+import { withContentlayer } from "next-contentlayer";
 import nextTranspileModules from "next-transpile-modules";
 
 const withTM = nextTranspileModules([
   "fetchp",
 ]);
-
-const withMDX = MDX({
-  extension: /\.mdx?$/,
-  options: { providerImportSource: "@mdx-js/react" },
-});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -20,8 +15,6 @@ const nextConfig = {
     "page.ts",
     "page.jsx",
     "page.js",
-    "page.mdx",
-    "page.md",
   ],
   experimental: {
     esmExternals: true,
@@ -29,7 +22,7 @@ const nextConfig = {
   },
 };
 
-let withMiddlewares = withTM(withMDX(nextConfig));
+let withMiddlewares = withTM(withContentlayer(nextConfig));
 
 if (process.env.NO_CLOUD !== "1") {
   withMiddlewares = withServerlessCloud(withMiddlewares);

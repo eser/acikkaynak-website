@@ -43,3 +43,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+
+# Contentlayer
+.contentlayer

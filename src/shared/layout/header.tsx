@@ -47,6 +47,13 @@ const Header = (props: HeaderProps) => {
       </div>
       <div className={styles.links}>
         <ul>
+        <li>
+            <Link href="/stories">
+              <a>
+                yazılar
+              </a>
+            </Link>
+          </li>
           <li>
             <Link href="/">
               <a>
@@ -62,7 +69,7 @@ const Header = (props: HeaderProps) => {
             </Link>
           </li>
           <li>
-            <Link href="/">
+            <Link href="https://github.com/acikkaynak/acikkaynak">
               <button>
                 GitHub
               </button>

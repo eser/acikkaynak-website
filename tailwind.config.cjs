@@ -3,7 +3,7 @@
 
 module.exports = {
   content: [
-    `${__dirname}/src/**/*.{tsx,ts,jsx,js,mdx,md}`,
+    `${__dirname}/src/**/*.{tsx,ts,jsx,js}`,
     `${__dirname}/next.config.js`,
   ],
   safelist: [
