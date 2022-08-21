@@ -33,7 +33,7 @@ const StaticPage: CustomPage = function StaticPage(props: StaticPageProps) {
 
   return (
     <>
-      <NextSeo title={`Yazılar - ${props.staticPage.title}`} />
+      <NextSeo title={props.staticPage.title} />
 
       <article className={styles.article}>
         <div className={styles.page}>
