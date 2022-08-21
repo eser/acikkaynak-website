@@ -1,0 +1,79 @@
+{
+  "name": "acikkaynak-website",
+  "private": false,
+  "description": "açık-kaynak.org web site",
+  "keywords": [
+    "acik",
+    "kaynak",
+    "web",
+    "site"
+  ],
+  "version": "0.11.0",
+  "homepage": "https://acik-kaynak.org",
+  "author": "açık-kaynak.org <bilgi@acik-kaynak.org> (https://twitter.com/_acikkaynak)",
+  "contributors": [
+    {
+      "name": "Eser Ozvataf",
+      "email": "eser@ozvataf.com",
+      "url": "https://eser.ozvataf.com/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acikkaynak/acikkaynak-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/acikkaynak/acikkaynak-website/issues"
+  },
+  "license": "Apache-2.0",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "cloud:build": "next build",
+    "cloud:dev": "next dev",
+    "cleanup": "rm -rf yarn.lock package-lock.json node_modules/ .next/",
+    "build": "NO_CLOUD=1 next build",
+    "dev": "NO_CLOUD=1 next dev",
+    "lint": "next lint",
+    "adr": "adr-tool",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@heroicons/react": "^1.0.6",
+    "@mdx-js/loader": "^2.1.3",
+    "@mdx-js/react": "^2.1.3",
+    "@next/mdx": "^12.2.5",
+    "fetchp": "^0.0.32",
+    "next": "12.2.5",
+    "next-seo": "^5.5.0",
+    "next-themes": "^0.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@serverless/cloud": "^2.10.14",
+    "@tailwindcss/typography": "^0.5.4",
+    "@types/node": "18.7.8",
+    "@types/react": "18.0.17",
+    "adr-tool": "^0.3.0",
+    "autoprefixer": "^10.4.8",
+    "eslint": "8.22.0",
+    "eslint-config-next": "12.2.5",
+    "husky": "^8.0.1",
+    "next-transpile-modules": "^9.0.0",
+    "pinst": "^3.0.0",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8",
+    "typescript": "4.7.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "next lint",
+      "pre-push": "next lint"
+    }
+  },
+  "serverless": {
+    "app": "acikkaynakorg",
+    "org": "eserozvataf"
+  }
+}
