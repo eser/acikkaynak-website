@@ -19,7 +19,7 @@ jobs:
           node-version: latest
           cache: yarn
       - name: Setup Yarn
-        uses: mskelton/setup-yarn@latest
+        uses: mskelton/setup-yarn@v1.2.1
       - name: Install NPM Dependencies
         run: yarn install --frozen-lockfile
       - name: Generate Static Export with Next.js
