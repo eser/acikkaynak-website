@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+      - new-site
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Deploy to Cloudflare Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: latest
+          cache: npm
+      - name: Build
+        run: npm ci && npm run export
+      - name: Publish
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: acikkaynak-website
+          directory: out
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
