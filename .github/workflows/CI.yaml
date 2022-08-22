@@ -13,13 +13,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
           node-version: latest
-          cache: npm
-      - name: Build
-        run: npm ci && npm run export
-      - name: Publish
+          cache: yarn
+      - name: Setup Yarn
+        uses: mskelton/setup-yarn@latest
+      - name: Install NPM Dependencies
+        run: yarn install --frozen-lockfile
+      - name: Generate Static Export with Next.js
+        run: yarn export
+      - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
