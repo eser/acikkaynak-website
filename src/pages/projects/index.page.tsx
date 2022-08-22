@@ -1,15 +1,16 @@
+import { memo } from "react";
 import { NextSeo } from "next-seo";
 import { useFetchp } from "fetchp";
 import { type CustomPage } from "@webclient/pages/_app.types";
 import styles from "./index.module.css";
 
 const ProjectList = function ProjectList() {
-  const { data, isLoading, error } = useFetchp(
+  const { data, isFetching, error } = useFetchp(
     "GET",
     "https://api.github.com/search/repositories?q=topic:acikkaynak",
   );
 
-  if (isLoading) {
+  if (isFetching) {
     return <div>Yükleniyor...</div>;
   }
 
@@ -18,15 +19,22 @@ const ProjectList = function ProjectList() {
   }
 
   return (
-    <ul>
+    <ul className={styles.projects}>
       {data?.items?.map((item) => (
         <li key={item.id}>
-          <a href={item.html_url}>{item.full_name}</a>: {item.description}
+          <a href={item.html_url}>
+            <h4>
+              {item.full_name}
+            </h4>
+            <div>{item.description}</div>
+          </a>
         </li>
       ))}
     </ul>
   );
 };
+
+const ProjectListMemoized = memo(ProjectList);
 
 const Projects: CustomPage = function Projects() {
   return (
@@ -36,7 +44,7 @@ const Projects: CustomPage = function Projects() {
       <section className={styles.section}>
         <h1>Projeler</h1>
 
-        <ProjectList />
+        <ProjectListMemoized />
       </section>
     </>
   );

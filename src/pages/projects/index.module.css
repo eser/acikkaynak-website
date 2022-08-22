@@ -1,7 +1,21 @@
 .section {
   @apply container mx-auto max-w-4xl sm:py-12 lg:py-24;
 
-  p {
-    @apply leading-relaxed text-justify;
+  ul.projects {
+    li {
+      @apply mx-auto rounded-md mb-8 shadow shadow-slate-400 focus:outline-none;
+
+      a {
+        @apply w-full block py-4 px-8 no-underline;
+
+        h4 {
+          @apply text-inherit hover:underline;
+        }
+
+        div {
+          @apply text-gray-800;
+        }
+      }
+    }
   }
 }
