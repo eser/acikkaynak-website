@@ -59,7 +59,7 @@ const Header = (props: HeaderProps) => {
           <li>
             <Link href="/">
               <a>
-                öğrenim
+                rehber
               </a>
             </Link>
           </li>
