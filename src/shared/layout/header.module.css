@@ -1,11 +1,16 @@
 .nav {
-  @apply w-full container mx-auto flex flex-wrap items-center justify-between py-6;
+  @apply w-full container mx-auto flex flex-wrap items-center justify-between py-6 dark:text-slate-200 text-slate-800;
+
+  /* unfortunately tailwind doesn't support dark:text-slate-200 in nested css */
+  :global(.dark) & {
+    @apply text-slate-200;
+  }
 
   .button-menu {
     @apply block lg:hidden;
 
     button {
-      @apply flex items-center p-1 text-white focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out;
+      @apply flex items-center p-1 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out;
 
       svg {
         @apply fill-current h-6 w-6;
@@ -14,12 +19,7 @@
   }
 
   .links {
-    @apply w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 p-4 lg:p-0 dark:text-slate-200 text-slate-800;
-
-    /* unfortunately tailwind doesn't support dark:text-slate-200 in nested css */
-    :global(.dark) & {
-      @apply text-slate-200;
-    }
+    @apply w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 p-4 lg:p-0;
 
     ul {
       @apply lg:flex justify-end flex-1 items-center;
@@ -32,7 +32,7 @@
         }
 
         button {
-          @apply mx-auto lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out;
+          @apply lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out;
         }
       }
     }

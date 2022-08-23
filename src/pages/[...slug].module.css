@@ -1,5 +1,5 @@
 .article {
-  @apply container mx-auto max-w-4xl sm:py-12 lg:py-24;
+  @apply mx-auto container max-w-4xl sm:py-12 lg:py-24;
 
   .page {
     time {

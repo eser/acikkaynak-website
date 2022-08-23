@@ -1,6 +1,6 @@
 .hero-section,
 .learn-section {
-  @apply container mx-auto sm:pt-12 lg:pt-24;
+  @apply container sm:pt-12 lg:pt-24;
 }
 
 .hero-section {
@@ -33,7 +33,12 @@
       @apply grid grid-cols-1 md:grid-cols-2 gap-4 mb-12;
 
       li {
-        @apply rounded-md shadow shadow-slate-400 focus:outline-none;
+        @apply rounded-md shadow dark:shadow-black shadow-slate-400 focus:outline-none;
+
+        /* unfortunately tailwind doesn't support dark:black in nested css */
+        :global(.dark) & {
+          @apply shadow-black
+        }
 
         &.draft a {
           @apply cursor-not-allowed;
@@ -47,7 +52,12 @@
           }
 
           div {
-            @apply text-gray-800;
+            @apply dark:text-slate-200 text-slate-800;
+
+            /* unfortunately tailwind doesn't support dark:text-slate-200 in nested css */
+            :global(.dark) & {
+              @apply text-slate-200;
+            }
           }
         }
       }

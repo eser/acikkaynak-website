@@ -1,9 +1,14 @@
 .section {
-  @apply container mx-auto max-w-4xl sm:py-12 lg:py-24;
+  @apply mx-auto container max-w-4xl sm:py-12 lg:py-24;
 
   ul.projects {
     li {
-      @apply mx-auto rounded-md mb-8 shadow shadow-slate-400 focus:outline-none;
+      @apply rounded-md mb-8 shadow dark:shadow-black shadow-slate-400 focus:outline-none;
+
+      /* unfortunately tailwind doesn't support dark:black in nested css */
+      :global(.dark) & {
+        @apply shadow-black
+      }
 
       a {
         @apply w-full block py-4 px-8 no-underline;
@@ -13,7 +18,12 @@
         }
 
         div {
-          @apply text-gray-800;
+          @apply dark:text-slate-200 text-slate-800;
+
+          /* unfortunately tailwind doesn't support dark:text-slate-200 in nested css */
+          :global(.dark) & {
+            @apply text-slate-200;
+          }
         }
       }
     }

@@ -1,5 +1,5 @@
 .footer {
-  @apply w-full flex flex-col gap-y-3 container mx-auto py-6 text-slate-600 mt-12;
+  @apply w-full container mx-auto flex flex-col gap-y-3 container mx-auto py-6 text-slate-600 mt-12;
 
   hr {
     @apply border border-slate-600;

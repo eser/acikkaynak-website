@@ -22,7 +22,7 @@ const Header = (props: HeaderProps) => {
 
   return (
     <nav className={styles.nav}>
-      <div>
+      <div className={styles.logo}>
         <Link href="/">
           <a>
             <Image
