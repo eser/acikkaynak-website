@@ -1,0 +1,112 @@
+{
+  "categories": [
+    {
+      "id": 0,
+      "title": "Açık Kaynak Yazılım",
+      "items": [
+        {
+          "id": 1,
+          "isDraft": true,
+          "title": "Açık Kaynak Yazılım Nedir?",
+          "url": "",
+          "description": "Bu yazı henüz hazır değildir"
+        },
+        {
+          "id": 2,
+          "isDraft": true,
+          "title": "Özgür Yazılım ve Açık Kaynak arasındaki farklar",
+          "url": "",
+          "description": "Bu yazı henüz hazır değildir"
+        },
+        {
+          "id": 3,
+          "isDraft": true,
+          "title": "Lisanslar",
+          "url": "",
+          "description": "Bu yazı henüz hazır değildir"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "title": "Açık Kaynak Geliştirme",
+      "items": [
+        {
+          "id": 1,
+          "isDraft": true,
+          "title": "Sürüm Kontrol Sistemleri",
+          "url": "",
+          "description": "Bu yazı henüz hazır değildir"
+        },
+        {
+          "id": 2,
+          "isDraft": true,
+          "title": "GitHub Platformu",
+          "url": "",
+          "description": "Bu yazı henüz hazır değildir"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Katılım",
+      "items": [
+        {
+          "id": 1,
+          "isDraft": true,
+          "title": "Açık Kaynak projelerde katılım tanımlaması",
+          "url": "",
+          "description": "Bu yazı henüz hazır değildir"
+        },
+        {
+          "id": 2,
+          "isDraft": true,
+          "title": "Nasıl katılım sağlarım?",
+          "url": "",
+          "description": "Bu yazı henüz hazır değildir"
+        },
+        {
+          "id": 3,
+          "isDraft": true,
+          "title": "GitHub üzerinden katılım sağlamak",
+          "url": "",
+          "description": "Bu yazı henüz hazır değildir"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Organizasyon",
+      "items": [
+        {
+          "id": 1,
+          "isDraft": true,
+          "title": "Açık Kaynak projeme katılımcı nasıl bulabilirim?",
+          "url": "",
+          "description": "Bu yazı henüz hazır değildir"
+        },
+        {
+          "id": 2,
+          "isDraft": true,
+          "title": "Katılım fıkrım var ama ingilizce eksiğim var",
+          "url": "",
+          "description": "Bu yazı henüz hazır değildir"
+        },
+        {
+          "id": 3,
+          "isDraft": true,
+          "title": "Katılım fikrim var ama teknik eksiğim var",
+          "url": "",
+          "description": "Bu yazı henüz hazır değildir"
+        },
+        {
+          "id": 4,
+          "isDraft": true,
+          "title": "Katılım fikrim var ama fikir danışmaya ihtiyacım var",
+          "url": "",
+          "description": "Bu yazı henüz hazır değildir"
+        }
+      ]
+    }
+  ]
+}
