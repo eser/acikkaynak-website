@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - new-site
+      - master
 
 jobs:
   deploy:
