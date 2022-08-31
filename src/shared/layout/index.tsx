@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Header } from "./header";
 import { Footer } from "./footer";
 import { type CustomAppProps } from "@webclient/pages/_app.types";
+import styles from "./index.module.css";
 
 interface LayoutProps {
   appProps: CustomAppProps;
@@ -15,16 +16,13 @@ const Layout = function Layout(props: LayoutProps) {
       <Head>
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <Header />
-      <main>
-        {props.children}
-      </main>
-      <Footer />
+      <div className={styles.app}>
+        <Header />
+        <main>{props.children}</main>
+        <Footer />
+      </div>
     </>
   );
 };
