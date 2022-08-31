@@ -4,7 +4,6 @@
   ul.projects {
     li {
       @apply rounded-md mb-8 shadow dark:shadow-black shadow-slate-400 focus:outline-none;
-
       /* unfortunately tailwind doesn't support dark:black in nested css */
       :global(.dark) & {
         @apply shadow-black
@@ -25,6 +24,19 @@
             @apply text-slate-200;
           }
         }
+      }
+    }
+  }
+  ul.projects-skeleton {
+    li {
+      @apply animate-pulse;
+    }
+    a {
+      div:nth-child(1) {
+        @apply w-48 h-7 rounded-sm bg-gray-200;
+      }
+      div:nth-child(2) {
+        @apply mt-2 w-full h-6 rounded-sm bg-gray-200;
       }
     }
   }

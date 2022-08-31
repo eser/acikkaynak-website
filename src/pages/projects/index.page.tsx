@@ -11,7 +11,7 @@ const ProjectList = function ProjectList() {
   );
 
   if (isFetching) {
-    return <div>Yükleniyor...</div>;
+    return <ProjectsListSkeletonView />;
   }
 
   if (error) {
@@ -23,13 +23,28 @@ const ProjectList = function ProjectList() {
       {data?.items?.map((item) => (
         <li key={item.id}>
           <a href={item.html_url}>
-            <h4>
-              {item.full_name}
-            </h4>
+            <h4>{item.full_name}</h4>
             <div>{item.description}</div>
           </a>
         </li>
       ))}
+    </ul>
+  );
+};
+
+const ProjectsListSkeletonView = function ProjectsListSkeletonView() {
+  return (
+    <ul className={[styles.projects, styles["projects-skeleton"]].join(" ")}>
+      {Array(10)
+        .fill(null)
+        .map((_, index) => (
+          <li key={index}>
+            <a>
+              <div />
+              <div />
+            </a>
+          </li>
+        ))}
     </ul>
   );
 };
