@@ -1,5 +1,5 @@
 import { useTheme } from "next-themes";
-import { MoonIcon, SunIcon } from "@heroicons/react/solid";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { Conditional } from "@webclient/shared/react/conditional";
 import Link from "next/link";
 import styles from "./theme-switcher.module.css";

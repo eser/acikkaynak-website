@@ -40,7 +40,7 @@ const ProjectsListSkeletonView = function ProjectsListSkeletonView() {
         .map((_, index) => (
           <li key={index}>
             <a>
-              <div />
+              <h4 />
               <div />
             </a>
           </li>
