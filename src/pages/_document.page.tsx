@@ -2,7 +2,7 @@ import { Head, Html, Main, NextScript } from "next/document";
 
 const CustomDocument = function CustomDocument() {
   return (
-    <Html>
+    <Html lang="tr-TR">
       <Head />
       <body>
         <Main />
