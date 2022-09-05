@@ -7,38 +7,35 @@ import styles from "./theme-switcher.module.css";
 interface ThemeSwitcherProps {
 }
 
-const ThemeSwitcher = (props: ThemeSwitcherProps) => {
+const ThemeSwitcher = (_props: ThemeSwitcherProps) => {
   const { theme, setTheme } = useTheme();
+
+  const switchToTheme = function switchToTheme(targetTheme: string) {
+    return (event: React.MouseEvent) => {
+      event.preventDefault();
+      setTheme(targetTheme);
+    };
+  };
 
   return (
     <div>
-      <Link href="/">
-        <Conditional
-          if={theme !== "dark"}
-          then={
-            <a
-              href="/"
-              onClick={(e) => {
-                setTheme("dark");
-                e.preventDefault();
-              }}
-            >
+      <Conditional
+        if={theme !== "dark"}
+        then={
+          <Link href="/">
+            <a onClick={switchToTheme("dark")}>
               <MoonIcon className={styles.icon} />
             </a>
-          }
-          otherwise={
-            <a
-              href="/"
-              onClick={(e) => {
-                setTheme("light");
-                e.preventDefault();
-              }}
-            >
+          </Link>
+        }
+        otherwise={
+          <Link href="/">
+            <a onClick={switchToTheme("light")}>
               <SunIcon className={styles.icon} />
             </a>
-          }
-        />
-      </Link>
+          </Link>
+        }
+      />
     </div>
   );
 };

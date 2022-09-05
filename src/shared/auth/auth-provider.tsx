@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
-import { ReactNode, useEffect, useMemo, useState } from "react";
+import { ReactNode, useCallback, useEffect, useMemo, useState } from "react";
 import * as sessions from "./sessions";
 import { AuthContext } from "./auth-context";
-import { type User } from "./types";
+import { type Provider, type User } from "./types";
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -22,7 +22,12 @@ const AuthProvider = function AuthProvider(
     if (error !== null) {
       setError(null);
     }
-  }, [router.pathname /*location.pathname*/]);
+  }, [error, router.pathname /*location.pathname*/]);
+
+  const validateCurrentUser = async function validateCurrentUser() {
+    const user = await sessions.get();
+    setUser(user);
+  };
 
   // Check if there is a currently active session
   // when the provider is mounted for the first time.
@@ -32,16 +37,15 @@ const AuthProvider = function AuthProvider(
   // Finally, just signal the component that the initial load
   // is over.
   useEffect(() => {
-    const getCurrentUser = async function getCurrentUser() {
+    const doGetCurrentUser = async function doGetCurrentUser() {
       try {
-        const user = await sessions.get();
-        setUser(user);
+        await validateCurrentUser();
       } finally {
         setLoadingInitial(false);
       }
     };
 
-    getCurrentUser();
+    doGetCurrentUser();
   }, []);
 
   // Flags the component loading state and posts the login
@@ -52,31 +56,39 @@ const AuthProvider = function AuthProvider(
   //
   // Finally, just signal the component that loading the
   // loading state is over.
-  async function login(token: string) {
-    setLoading(true);
+  const login = useCallback(function login(provider: Provider, token: string) {
+    const doLogin = async function doLogin(provider: Provider, token: string) {
+      setLoading(true);
 
-    try {
-      const loggedUser = await sessions.login(token);
-      setUser(loggedUser);
-    } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
-  }
+      try {
+        await sessions.login(provider, token);
+        await validateCurrentUser();
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    doLogin(provider, token);
+  }, []);
 
   // Call the logout endpoint and then remove the user
   // from the state.
-  async function logout() {
-    setLoading(true);
+  const logout = useCallback(function logout(provider: Provider) {
+    const doLogout = async function doLogout(provider: Provider) {
+      setLoading(true);
 
-    try {
-      await sessions.logout();
-      setUser(undefined);
-    } finally {
-      setLoading(false);
-    }
-  }
+      try {
+        await sessions.logout(provider);
+        await validateCurrentUser();
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    doLogout(provider);
+  }, []);
 
   // Make the provider update only when it should.
   // We only want to force re-renders if the user,
@@ -91,11 +103,12 @@ const AuthProvider = function AuthProvider(
     () => ({
       user,
       loading,
+      ready: !loadingInitial,
       error,
       login,
       logout,
     }),
-    [user, loading, error],
+    [user, loading, loadingInitial, error, login, logout],
   );
 
   // We only want to render the underlying app after we

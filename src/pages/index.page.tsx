@@ -88,12 +88,15 @@ const Home: CustomPage = function Home() {
             alt="Open Source"
             width="498"
             height="328"
+            priority={true}
           />
         </div>
       </section>
 
       <section ref={sectionRef} className={styles["learn-section"]}>
-        <h1>Rehber</h1>
+        <a id="guide">
+          <h1>Rehber</h1>
+        </a>
 
         <TopicsListMemoized />
       </section>

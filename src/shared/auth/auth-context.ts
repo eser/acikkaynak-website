@@ -1,12 +1,13 @@
 import { createContext } from "react";
-import { type User } from "./types";
+import { type Provider, type User } from "./types";
 
 interface AuthContextType {
   user: User;
   loading: boolean;
+  ready: boolean;
   error?: any;
-  login: (token: string) => void;
-  logout: () => void;
+  login: (provider: Provider, token: string) => void;
+  logout: (provider: Provider) => void;
 }
 
 const AuthContext = createContext<AuthContextType>(

@@ -18,7 +18,7 @@
     @apply hidden lg:block;
 
     img {
-      @apply object-contain;
+      @apply object-contain w-auto h-auto;
     }
   }
 }

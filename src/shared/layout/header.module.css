@@ -29,6 +29,10 @@
 
         a {
           @apply no-underline hover:underline text-inherit;
+
+          &.active {
+            @apply font-bold;
+          }
         }
 
         button {

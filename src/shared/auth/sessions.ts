@@ -1,21 +1,48 @@
-import { type User } from "./types";
+import { type Provider, type User } from "./types";
 
-const login = async function login(token: string): Promise<User> {
-  localStorage.setItem("auth_token", token);
+const getProviders = function getProviders(): Provider[] {
+  const providers = localStorage.getItem("auth_providers");
 
-  return { isAuthenticated: false };
+  if (providers === null) {
+    return [];
+  }
+
+  return JSON.parse(providers);
 };
 
-const logout = async function logout(): Promise<void> {
-  localStorage.removeItem("auth_token");
+const setProviders = function setProviders(providers: Provider[]): void {
+  localStorage.setItem("auth_providers", JSON.stringify(providers));
+};
+
+const login = async function login(
+  provider: Provider,
+  token: string,
+): Promise<void> {
+  const providers = getProviders();
+
+  localStorage.setItem(`auth_${provider}_token`, token);
+  setProviders([provider, ...providers.filter((p) => p !== provider)]);
+};
+
+const logout = async function logout(provider: Provider): Promise<void> {
+  const providers = getProviders();
+
+  localStorage.removeItem(`auth_${provider}_token`);
+  setProviders(providers.filter((p) => p !== provider));
 };
 
 const get = async function get(): Promise<User> {
-  const token = localStorage.getItem("auth_token");
+  const providers = getProviders();
 
-  if (token === null) {
+  if (providers.length === 0) {
     return { isAuthenticated: false };
   }
+
+  return {
+    isAuthenticated: true,
+    provider: providers[0],
+    username: "anonymous",
+  };
 };
 
 export { get, login, logout };

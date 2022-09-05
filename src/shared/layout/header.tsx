@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import Image from "next/future/image";
 import { useAuth } from "@webclient/shared/auth/use-auth";
+import { ActiveLink } from "@webclient/shared/react/next-link-active";
 import { ThemeSwitcher } from "./theme-switcher";
 import LogoImage from "./logo.svg";
 import LogoDarkImage from "./logo-dark.svg";
@@ -26,16 +27,17 @@ const Header = (props: HeaderProps) => {
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
-        <Link href="/">
+        <ActiveLink href="/" activeClassName={styles.active}>
           <a>
             <Image
               src={(theme === "dark") ? LogoDarkImage : LogoImage}
               alt="açık-kaynak.org"
               width="350"
               height="70"
+              priority={true}
             />
           </a>
-        </Link>
+        </ActiveLink>
       </div>
       <div className={styles["button-menu"]}>
         <button>
@@ -51,8 +53,8 @@ const Header = (props: HeaderProps) => {
       <div className={styles.links}>
         <ul>
           <li>
-            <Conditional if={auth.user.isAuthenticated}>
-              Hoş geldin {auth.user.username}
+            <Conditional if={auth.ready && auth.user.isAuthenticated}>
+              Hoş geldin {auth.user.username} ({auth.user.provider})
             </Conditional>
           </li>
           {
@@ -65,32 +67,32 @@ const Header = (props: HeaderProps) => {
           </li> */
           }
           <li>
-            <Link href="/">
+            <ActiveLink href="/" activeClassName={styles.active}>
               <a>
                 rehber
               </a>
-            </Link>
+            </ActiveLink>
           </li>
           <li>
-            <Link href="/projects">
+            <ActiveLink href="/projects/" activeClassName={styles.active}>
               <a>
                 projeler
               </a>
-            </Link>
+            </ActiveLink>
           </li>
           <li>
-            <Link href="/about">
+            <ActiveLink href="/about/" activeClassName={styles.active}>
               <a>
                 hakkında
               </a>
-            </Link>
+            </ActiveLink>
           </li>
           <li>
-            <Link href="/contributing">
+            <ActiveLink href="/contributing/" activeClassName={styles.active}>
               <a>
                 katkı sağlamak
               </a>
-            </Link>
+            </ActiveLink>
           </li>
           <li>
             <Link href="https://github.com/acikkaynak/acikkaynak">
