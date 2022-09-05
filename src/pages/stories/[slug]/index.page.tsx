@@ -1,7 +1,7 @@
 import { NextSeo } from "next-seo";
 import { type CustomPage } from "@webclient/pages/_app.types";
-import { allStories, Story } from "contentlayer/generated";
-import styles from "./[slug].module.css";
+import { allStories, Story } from "@contentlayer/generated";
+import styles from "./index.module.css";
 
 const getStaticPaths = async function getStaticPaths() {
   const paths = allStories.map((story) => story.url);

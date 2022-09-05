@@ -1,0 +1,56 @@
+.section {
+  @apply mx-auto container max-w-4xl sm:py-12 lg:py-24;
+
+  ul.users {
+    li {
+      @apply rounded-md mb-8 shadow dark:shadow-black shadow-slate-400 focus:outline-none;
+      /* unfortunately tailwind doesn't support dark:black in nested css */
+      :global(.dark) & {
+        @apply shadow-black;
+      }
+
+      a {
+        @apply w-full block py-4 px-8 no-underline;
+
+        h4 {
+          @apply text-inherit hover:underline;
+        }
+
+        div {
+          @apply dark:text-slate-200 text-slate-800;
+
+          /* unfortunately tailwind doesn't support dark:text-slate-200 in nested css */
+          :global(.dark) & {
+            @apply text-slate-200;
+          }
+        }
+      }
+    }
+  }
+
+  ul.users-skeleton {
+    li {
+      @apply animate-pulse;
+
+      a {
+        h4 {
+          @apply w-48 h-7 rounded-sm dark:bg-skeleton-dark bg-skeleton;
+
+          /* unfortunately tailwind doesn't support dark:bg-skeleton-dark in nested css */
+          :global(.dark) & {
+            @apply bg-skeleton-dark;
+          }
+        }
+
+        div {
+          @apply mt-2 w-full h-6 rounded-sm dark:bg-skeleton-dark bg-skeleton;
+
+          /* unfortunately tailwind doesn't support dark:bg-skeleton-dark in nested css */
+          :global(.dark) & {
+            @apply bg-skeleton-dark;
+          }
+        }
+      }
+    }
+  }
+}

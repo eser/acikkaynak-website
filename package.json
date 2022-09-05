@@ -37,12 +37,14 @@
     "export": "NO_CLOUD=1 next build && NO_CLOUD=1 next export",
     "lint": "next lint",
     "adr": "adr-tool",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "http:preview": "cd out && http-server"
   },
   "dependencies": {
     "@heroicons/react": "^2.0.10",
     "contentlayer": "^0.2.7",
     "fetchp": "^0.0.34",
+    "graphql.js": "^0.6.8",
     "markdown-wasm": "^1.2.0",
     "next": "12.2.5",
     "next-contentlayer": "^0.2.7",
@@ -52,8 +54,8 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@serverless/cloud": "^2.10.14",
-    "@tailwindcss/typography": "^0.5.4",
+    "@serverless/cloud": "^2.10.15",
+    "@tailwindcss/typography": "^0.5.7",
     "@types/node": "18.7.14",
     "@types/react": "18.0.18",
     "adr-tool": "^0.3.0",

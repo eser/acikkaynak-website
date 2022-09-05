@@ -2,16 +2,19 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import Image from "next/future/image";
+import { useAuth } from "@webclient/shared/auth/use-auth";
 import { ThemeSwitcher } from "./theme-switcher";
 import LogoImage from "./logo.svg";
 import LogoDarkImage from "./logo-dark.svg";
 import styles from "./header.module.css";
+import Conditional from "../react/conditional";
 
 interface HeaderProps {
 }
 
 const Header = (props: HeaderProps) => {
   const [mounted, setMounted] = useState(false);
+  const auth = useAuth();
   const { theme } = useTheme();
 
   useEffect(() => setMounted(true), []);
@@ -47,6 +50,11 @@ const Header = (props: HeaderProps) => {
       </div>
       <div className={styles.links}>
         <ul>
+          <li>
+            <Conditional if={auth.user.isAuthenticated}>
+              Hoş geldin {auth.user.username}
+            </Conditional>
+          </li>
           {
             /* <li>
             <Link href="/stories">

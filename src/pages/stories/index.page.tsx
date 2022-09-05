@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { NextSeo } from "next-seo";
 import { type CustomPage } from "@webclient/pages/_app.types";
-import { allStories, Story } from "contentlayer/generated";
+import { allStories, Story } from "@contentlayer/generated";
 import styles from "./index.module.css";
 
 const getStaticProps = async function getStaticProps() {

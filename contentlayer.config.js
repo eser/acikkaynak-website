@@ -18,7 +18,14 @@ const StaticPage = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: "string",
-      resolve: (staticPage) => `/${staticPage._raw.flattenedPath}`,
+      resolve: (staticPage) => {
+        // const [, filename, _fileext] = /static\/(.*)\.(\w+)$/.exec(
+          const [, filename] = /static\/(.*)$/.exec(
+          staticPage._raw.flattenedPath,
+        );
+
+        return `/${filename}`;
+      },
     },
   },
 }));
@@ -41,7 +48,14 @@ const Story = defineDocumentType(() => ({
   computedFields: {
     url: {
       type: "string",
-      resolve: (story) => `/${story._raw.flattenedPath}`,
+      resolve: (story) => {
+        // const [, filename, _fileext] = /stories\/(.*)\.(\w+)$/.exec(
+        const [, filename] = /stories\/(.*)$/.exec(
+          story._raw.flattenedPath,
+        );
+
+        return `/stories/${filename}`;
+      },
     },
   },
 }));

@@ -1,10 +1,10 @@
 import { NextSeo } from "next-seo";
 import { type CustomPage } from "@webclient/pages/_app.types";
-import { allStaticPages, StaticPage } from "contentlayer/generated";
-import styles from "./[...slug].module.css";
+import { allStaticPages, StaticPage } from "@contentlayer/generated";
+import styles from "./index.module.css";
 
 const getStaticPaths = async function getStaticPaths() {
-  const paths = allStaticPages.map((staticPage) => staticPage.url.substr(7));
+  const paths = allStaticPages.map((staticPage) => staticPage.url);
 
   return {
     paths,

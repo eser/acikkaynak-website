@@ -1,18 +1,28 @@
-import { type ReactElement } from "react";
+import React from "react";
 
 interface ConditionalProps {
   if: boolean;
-  children?: ReactElement<any, any>;
-  then?: ReactElement<any, any>;
-  otherwise?: ReactElement<any, any>;
+  children?: React.ReactNode;
+  then?: React.ReactNode;
+  otherwise?: React.ReactNode;
 }
 
-function Conditional(props: ConditionalProps) {
+const Conditional = function Conditional(
+  props: ConditionalProps,
+): JSX.Element {
+  let result;
+
   if (props.if) {
-    return props.then ?? props.children ?? null;
+    result = props.then ?? props.children;
+  } else {
+    result = props.otherwise;
   }
 
-  return props.otherwise ?? null;
-}
+  if (result === null || result === undefined) {
+    return null;
+  }
+
+  return <>{result}</>;
+};
 
 export { Conditional, Conditional as default };

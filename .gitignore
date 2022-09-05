@@ -1,49 +1,43 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
+node_modules/
+.pnp/
 .pnp.js
 
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-/static
+# OS metadata
+.DS_Store
+Thumbs.db
 
 # Editor metadata
 .vscode/
 !.vscode/extensions.json
 .idea/
 
-# OS metadata
-.DS_Store
-Thumbs.db
+# npm
+node_modules/
 
-# sensitive files
-*.pem
+# test coverage data
+coverage/
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# local env files
+# local API keys and secrets
 .env.local
 .env.*.local
 
-# vercel
-.vercel
+# sensitive files
+*.pem
+*.swp
+
+# hot updates
+dist/*.hot-update.*
+build/
+
+# next.js
+.next/
+out/
 
 # typescript
 *.tsbuildinfo
-
 
 # Contentlayer
 .contentlayer
