@@ -1,5 +1,5 @@
 .nav {
-  @apply w-full container mx-auto flex flex-wrap items-center justify-between py-6 dark:text-slate-200 text-slate-800;
+  @apply w-full relative container mx-auto flex flex-wrap items-center py-6 dark:text-slate-200 text-slate-800;
 
   /* unfortunately tailwind doesn't support dark:text-slate-200 in nested css */
   :global(.dark) & {
@@ -14,29 +14,78 @@
 
       svg {
         @apply fill-current h-6 w-6;
+
+        &[data-hide='true'] {
+          @apply hidden;
+        }
       }
     }
   }
 
-  .links {
-    @apply w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 p-4 lg:p-0;
+  .button-menu-logo-wrapper {
+    @apply w-full lg:w-auto flex justify-between items-center;
+  }
+
+  .logo {
+    @apply order-first;
+
+    img {
+      @apply w-auto h-12 lg:h-16 xl:h-[70px];
+    }
+  }
+
+  .search {
+    @apply hidden ml-auto lg:order-3 lg:ml-0;
+  }
+
+  .theme-switcher-wrapper {
+    @apply flex items-center my-8 lg:my-0 lg:px-2 xl:px-5;
+  }
+
+  .menu-outer {
+    @apply relative w-full lg:ml-auto lg:w-auto;
+  }
+
+  .menu-inner {
+    @apply absolute left-0 z-50 mt-4 flex min-h-screen w-full flex-col bg-white lg:static lg:z-auto lg:mt-0 lg:min-h-0 lg:flex-row lg:items-center lg:bg-transparent;
+
+    /* main content box-shadow visibility fix on mobile appearance */
+    @apply w-[calc(100%+0.5rem)] -ml-1 px-1 lg:w-full lg:ml-0 lg:px-0;
+
+    /* unfortunately tailwind doesn't support dark:bg-background-dark in nested css */
+    :global(.dark) & {
+      @apply bg-background-dark;
+    }
+
+    &:not(.open){
+     @apply hidden lg:flex;
+    }
 
     ul {
-      @apply lg:flex justify-end flex-1 items-center;
+      @apply flex flex-col lg:flex-row lg:items-center;
 
       li {
-        @apply px-5;
+        @apply mt-4 border-b border-slate-300 last:border-none lg:border-0 lg:mt-0 lg:px-5;
+
+        /* unfortunately tailwind doesn't support dark:border-slate-700 in nested css */
+        :global(.dark) & {
+          @apply border-slate-700;
+        }
 
         a {
-          @apply no-underline hover:underline text-inherit;
+          @apply block w-auto pb-4 no-underline hover:underline text-inherit lg:p-0;
 
           &.active {
             @apply font-bold;
           }
+
+          &.btn {
+            @apply inline-block no-underline;
+          }
         }
 
-        button {
-          @apply lg:mx-0 bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out;
+        .btn {
+          @apply lg:mx-0 bg-white text-gray-800 text-sm lg:text-base font-bold rounded-full py-2 px-4 lg:py-4 lg:px-8 shadow opacity-75 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out;
         }
       }
     }
