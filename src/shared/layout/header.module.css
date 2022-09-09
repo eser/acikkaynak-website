@@ -13,10 +13,10 @@
       @apply flex items-center p-1 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out;
 
       svg {
-        @apply fill-current h-6 w-6;
+        @apply visible h-6 w-6 fill-current opacity-100 transition-[opacity,visibility] duration-300 ease-in;
 
         &[data-hide='true'] {
-          @apply hidden;
+          @apply opacity-0 w-0 h-0 invisible;
         }
       }
     }
@@ -47,7 +47,7 @@
   }
 
   .menu-inner {
-    @apply absolute left-0 z-50 mt-4 flex min-h-screen w-full flex-col bg-white lg:static lg:z-auto lg:mt-0 lg:min-h-0 lg:flex-row lg:items-center lg:bg-transparent;
+    @apply visible absolute left-0 z-50 mt-4 flex min-h-screen w-full flex-col bg-white opacity-100 transition-[opacity,visibility] duration-300 lg:static lg:z-auto lg:mt-0 lg:min-h-0 lg:flex-row lg:items-center lg:bg-transparent lg:transition-none;
 
     /* main content box-shadow visibility fix on mobile appearance */
     @apply w-[calc(100%+0.5rem)] -ml-1 px-1 lg:w-full lg:ml-0 lg:px-0;
@@ -58,7 +58,7 @@
     }
 
     &:not(.open){
-     @apply hidden lg:flex;
+     @apply invisible opacity-0 lg:visible lg:opacity-100;
     }
 
     ul {
