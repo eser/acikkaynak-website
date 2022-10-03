@@ -1,7 +1,40 @@
 .footer {
-  @apply w-full container mx-auto flex flex-col gap-y-3 py-6 mt-12;
+  @apply w-full container mx-auto flex flex-col gap-y-3 mt-12;
 
-  hr {
-    @apply border border-slate-600;
+  .footer-inner {
+    @apply flex flex-col justify-center items-center gap-y-4 border-t border-slate-900/5 py-8;
+
+    /* unfortunately tailwind doesn't support border-slate-50/5 in nested css */
+    :global(.dark) & {
+      @apply border-slate-50/5;
+    }
+
+    .logo {
+      @apply h-10 w-auto;
+    }
+
+    p {
+      @apply max-w-2xl text-center text-sm leading-6 text-slate-500;
+    }
+
+    .nav {
+      @apply mt-4 flex items-center justify-center space-x-4 text-sm font-semibold leading-6;
+
+      a {
+        @apply text-slate-700;
+        /* unfortunately tailwind doesn't support text-slate-200 in nested css */
+        :global(.dark) & {
+          @apply text-slate-200;
+        }
+      }
+
+      .vr {
+        @apply h-4 w-px bg-slate-500/20;
+        /* unfortunately tailwind doesn't support bg-slate-200/20 in nested css */
+        :global(.dark) & {
+          @apply bg-slate-200/20;
+        }
+      }
+    }
   }
 }
