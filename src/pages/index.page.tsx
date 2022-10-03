@@ -5,6 +5,7 @@ import { NextSeo } from "next-seo";
 import { type CustomPage } from "@webclient/pages/_app.types";
 import styles from "./index.module.css";
 import openSourceImage from "./open-source.svg";
+import topicImage from "./topic.svg";
 import topics from "./topics.json";
 
 const TopicsList = function TopicsList() {
@@ -26,10 +27,21 @@ const TopicsList = function TopicsList() {
                 }}
               >
                 <a href={item.url}>
-                  <h3>
-                    {item.title}
-                  </h3>
-                  <div>{item.description}</div>
+                  <div className={styles["topic-content-left"]}>
+                    <Image
+                      src={topicImage}
+                      alt="Topic"
+                      width="32"
+                      height="32"
+                      priority={true}
+                    />
+                  </div>
+                  <div className={styles["topic-content-right"]}>
+                    <h3>
+                      {item.title}
+                    </h3>
+                    <div>{item.description}</div>
+                  </div>
                 </a>
               </li>
             ))}
@@ -56,8 +68,19 @@ const Home: CustomPage = function Home() {
             2015&apos;ten bu yana Türkiye&apos;deki ve Türkçe konuşan
             geliştiricilerin oluşturduğu açık kaynak ekosistemine katkıda
             bulunmak, insanları açık kaynak geliştirmeye motive etmek,
-            farkındalık oluşturmak ve engelleri ortadan kaldırmak için faaliyet
-            gösteriyoruz.
+            farkındalık oluşturmak ve engelleri ortadan kaldırmak için
+            çalışıyoruz.
+            <br />
+            <br />
+            Bu girişim üzerinde açık kaynak hakkında
+            {" "}
+            <strong>içeriklere</strong>
+            {" "}
+            ve açık kaynak
+            {" "}
+            <strong>projelere</strong>
+            {" "}
+            erişebileceksiniz.
           </p>
           <div>
             <div className="buttons">

@@ -12,8 +12,8 @@ kurulmuştur.
 kullanarak geliştiriciler için açık kaynak proje indeksi sağlayan bir haftasonu
 projesi olarak ortaya çıktı.
 
-Bugünlerde ise daha çok bir portal kimliği ile, açık kaynak geliştiricileri ve
-açık kaynak ile ilgilenmek isteyen kimseler için içerikler, proje ve yazı
+Bugünlerde ise daha çok bir rehber kimliği ile, açık kaynak geliştiricileri ve
+açık kaynak ile ilgilenmek isteyen kimseler için içerikler, proje ve içerik
 listeleri, ve networking imkanları sunmaya çalışıyoruz. Bu sayede açık kaynak
 ekosistemine dahil olmak isteyenler için imkanlar oluşturacağımıza ve
 halihazırda ekosistemin içerisindeki aktörleri de birbirleri ile iletişim
@@ -22,6 +22,7 @@ kurabilecekleri şekilde yakınlaştırabileceğimize inanıyoruz.
 Eğer ilginizi çektiyse, daha da yakından takipte kalmak istiyorsanız
 [katkı sağlamak](/contributing) bölümünde de belirttiğimiz gibi iletişim
 kanallarımızdan takipçimiz olmanız aramıza katılmanız için tek kriterimizdir.
+
 
 ### Künye
 
