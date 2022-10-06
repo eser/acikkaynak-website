@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/future/image";
-import { useAuth } from "@webclient/shared/auth/use-auth";
 import { ActiveLink } from "@webclient/shared/react/next-link-active";
 import { ThemeSwitcher } from "./theme-switcher";
 import LogoImage from "./logo.svg";
 import LogoDarkImage from "./logo-dark.svg";
 import styles from "./header.module.css";
-import Conditional from "../react/conditional";
 import { useRouter } from "next/router";
 
 interface HeaderProps {
@@ -17,7 +15,6 @@ const Header = (props: HeaderProps) => {
   const [mounted, setMounted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { events: routerEvents } = useRouter();
-  const auth = useAuth();
   const { theme } = useTheme();
 
   const toggleMenu = () => {
@@ -86,11 +83,6 @@ const Header = (props: HeaderProps) => {
       </div>
       <div className={styles["menu-outer"] }>
         <div className={[styles["menu-inner"], isMenuOpen ? styles.open : []].join(" ")}>
-          <Conditional if={auth.ready && auth.user.isAuthenticated}>
-            <span>
-              Hoş geldin {auth.user.username} ({auth.user.provider})
-            </span>
-          </Conditional>
           <ul>
             {
             /* <li>
@@ -137,10 +129,6 @@ const Header = (props: HeaderProps) => {
           </ul>
           <div className={styles['theme-switcher-wrapper']}>
             <ThemeSwitcher />
-          </div>
-          <div className="hidden">
-            {/* TODO: auth */}
-            giriş yap
           </div>
         </div>
       </div>
