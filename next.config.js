@@ -24,10 +24,9 @@ const nextConfig = {
 
   trailingSlash: true,
   productionBrowserSourceMaps: true,
-
+  images: { unoptimized: true },
   experimental: {
     esmExternals: true,
-    images: { allowFutureImage: true, unoptimized: true },
   },
 };
 
