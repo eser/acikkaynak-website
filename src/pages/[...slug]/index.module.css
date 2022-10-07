@@ -1,14 +1,24 @@
 .article {
-  @apply mx-auto container max-w-4xl sm:py-12 lg:py-24;
+  @apply container mx-auto max-w-4xl sm:py-12 lg:py-24;
 
   .page {
+    h1 {
+      @apply mb-4;
+    }
+
     time {
-      @apply block text-xs text-gray-600 mb-2;
+      @apply mb-2 block text-xs text-gray-600;
+    }
+
+    .topic {
+      @apply font-semibold [word-spacing:-4px] before:content-['#'];
     }
 
     .content {
+      @apply mt-4;
+
       p {
-        @apply leading-relaxed text-justify mb-5;
+        @apply my-6 text-justify leading-relaxed;
       }
     }
   }
