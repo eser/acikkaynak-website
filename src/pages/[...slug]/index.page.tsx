@@ -13,8 +13,8 @@ const getStaticPaths = async function getStaticPaths() {
 };
 
 const getStaticProps = async function getStaticProps({ params }) {
-  const staticPage = allStaticPages.find((staticPage) =>
-    staticPage._raw.flattenedPath === `static/${params.slug}`
+  const staticPage = allStaticPages.find(
+    (staticPage) => staticPage._raw.flattenedPath === `static/${params.slug}`,
   );
 
   return {
@@ -38,12 +38,12 @@ const StaticPage: CustomPage = function StaticPage(props: StaticPageProps) {
       <article className={styles.article}>
         <div className={styles.page}>
           <h1>{props.staticPage.title}</h1>
-          <time dateTime={date}>
-            {date}
-          </time>
+          <time dateTime={date}>{date}</time>
           <div
             className={styles.content}
-            dangerouslySetInnerHTML={{ __html: props.staticPage.body.html }}
+            dangerouslySetInnerHTML={{
+              __html: props.staticPage.body.html,
+            }}
           />
         </div>
       </article>

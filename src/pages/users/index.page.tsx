@@ -51,7 +51,10 @@ const UserList = function UserList() {
         <li key={item.node.id}>
           <a href={item.node.url}>
             <h4>{item.node.name}</h4>
-            <div>https://github.com/sponsors/{item.node.login}</div>
+            <div>
+              https://github.com/sponsors/
+              {item.node.login}
+            </div>
           </a>
         </li>
       ))}

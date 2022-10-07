@@ -8,8 +8,7 @@ import LogoDarkImage from "./logo-dark.svg";
 import styles from "./header.module.css";
 import { useRouter } from "next/router";
 
-interface HeaderProps {
-}
+interface HeaderProps {}
 
 const Header = (props: HeaderProps) => {
   const [mounted, setMounted] = useState(false);
@@ -53,14 +52,22 @@ const Header = (props: HeaderProps) => {
 
   return (
     <nav className={styles.nav}>
-      <div className={styles['button-menu-logo-wrapper']}>
+      <div className={styles["button-menu-logo-wrapper"]}>
         <div className={styles["button-menu"]}>
           <button onClick={toggleMenu}>
-           <svg data-hide={isMenuOpen} viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              data-hide={isMenuOpen}
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <title>Open menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
-            <svg data-hide={!isMenuOpen} viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              data-hide={!isMenuOpen}
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <title>Close menu</title>
               <path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z" />
             </svg>
@@ -70,7 +77,7 @@ const Header = (props: HeaderProps) => {
           <ActiveLink href="/" activeClassName={styles.active}>
             <a>
               <Image
-                src={(theme === "dark") ? LogoDarkImage : LogoImage}
+                src={theme === "dark" ? LogoDarkImage : LogoImage}
                 alt="açık-kaynak.org"
                 priority={true}
               />
@@ -78,42 +85,39 @@ const Header = (props: HeaderProps) => {
           </ActiveLink>
         </div>
       </div>
-      <div className={styles.search}>
-        {/* TODO: search */}
-      </div>
-      <div className={styles["menu-outer"] }>
-        <div className={[styles["menu-inner"], isMenuOpen ? styles.open : []].join(" ")}>
+      <div className={styles.search}>{/* TODO: search */}</div>
+      <div className={styles["menu-outer"]}>
+        <div
+          className={[styles["menu-inner"], isMenuOpen ? styles.open : []].join(
+            " ",
+          )}
+        >
           <ul>
             <li>
               <ActiveLink href="/" activeClassName={styles.active}>
-                <a>
-                  rehber
-                </a>
+                <a>rehber</a>
               </ActiveLink>
             </li>
             <li>
               <ActiveLink href="/projects/" activeClassName={styles.active}>
-                <a>
-                  projeler
-                </a>
+                <a>projeler</a>
               </ActiveLink>
             </li>
             <li>
               <ActiveLink href="/about/" activeClassName={styles.active}>
-                <a>
-                  hakkında
-                </a>
+                <a>hakkında</a>
               </ActiveLink>
             </li>
             <li>
               <ActiveLink href="/contributing/" activeClassName={styles.active}>
-                <a>
-                  katkı sağlamak
-                </a>
+                <a>katkı sağlamak</a>
               </ActiveLink>
             </li>
             <li>
-              <a className={styles.btn} href="https://github.com/acikkaynak/acikkaynak">
+              <a
+                className={styles.btn}
+                href="https://github.com/acikkaynak/acikkaynak"
+              >
                 <svg
                   aria-hidden="true"
                   role="img"
@@ -129,7 +133,7 @@ const Header = (props: HeaderProps) => {
               </a>
             </li>
           </ul>
-          <div className={styles['theme-switcher-wrapper']}>
+          <div className={styles["theme-switcher-wrapper"]}>
             <ThemeSwitcher />
           </div>
         </div>

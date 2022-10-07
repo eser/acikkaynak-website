@@ -9,7 +9,11 @@ const getStaticProps = async function getStaticProps() {
     return new Date(a.date).getTime() - new Date(b.date).getTime();
   });
 
-  return { props: { stories } };
+  return {
+    props: {
+      stories,
+    },
+  };
 };
 
 const StoryCard = function StoryCard(story: Story) {
@@ -22,12 +26,12 @@ const StoryCard = function StoryCard(story: Story) {
           <a>{story.title}</a>
         </Link>
       </h3>
-      <time dateTime={date}>
-        {date}
-      </time>
+      <time dateTime={date}>{date}</time>
       <div
         className={styles.content}
-        dangerouslySetInnerHTML={{ __html: story.body.html }}
+        dangerouslySetInnerHTML={{
+          __html: story.body.html,
+        }}
       />
     </div>
   );
@@ -47,10 +51,7 @@ const Stories: CustomPage = function Stories(props: StoriesProps) {
 
         <div className={styles.stories}>
           {props.stories.map((story, idx) => (
-            <StoryCard
-              key={idx}
-              {...story}
-            />
+            <StoryCard key={idx} {...story} />
           ))}
         </div>
       </section>

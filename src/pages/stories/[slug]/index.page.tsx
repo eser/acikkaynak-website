@@ -13,8 +13,8 @@ const getStaticPaths = async function getStaticPaths() {
 };
 
 const getStaticProps = async function getStaticProps({ params }) {
-  const story = allStories.find((story) =>
-    story._raw.flattenedPath === `stories/${params.slug}`
+  const story = allStories.find(
+    (story) => story._raw.flattenedPath === `stories/${params.slug}`,
   );
 
   return {
@@ -38,12 +38,12 @@ const Story: CustomPage = function Story(props: StoryProps) {
       <article className={styles.article}>
         <div className={styles.story}>
           <h1>{props.story.title}</h1>
-          <time dateTime={date}>
-            {date}
-          </time>
+          <time dateTime={date}>{date}</time>
           <div
             className={styles.content}
-            dangerouslySetInnerHTML={{ __html: props.story.body.html }}
+            dangerouslySetInnerHTML={{
+              __html: props.story.body.html,
+            }}
           />
         </div>
       </article>

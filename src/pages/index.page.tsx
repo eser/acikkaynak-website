@@ -48,9 +48,7 @@ const TopicsList = function TopicsList() {
                     </svg>
                   </div>
                   <div className={styles["topic-content-right"]}>
-                    <h3>
-                      {item.title}
-                    </h3>
+                    <h3>{item.title}</h3>
                     <span>{item.description}</span>
                   </div>
                 </a>
@@ -83,22 +81,15 @@ const Home: CustomPage = function Home() {
             çalışıyoruz.
             <br />
             <br />
-            Bu girişim üzerinde açık kaynak hakkında
-            {" "}
-            <strong>içeriklere</strong>
-            {" "}
-            ve açık kaynak
-            {" "}
-            <strong>projelere</strong>
-            {" "}
-            erişebileceksiniz.
+            Bu girişim üzerinde açık kaynak hakkında <strong>
+              içeriklere
+            </strong>{" "}
+            ve açık kaynak <strong>projelere</strong> erişebileceksiniz.
           </p>
           <div>
             <div className="buttons">
               <Link href="/about">
-                <a>
-                  Bilgi
-                </a>
+                <a>Bilgi</a>
               </Link>
               <Link href="/">
                 <a
@@ -131,14 +122,12 @@ const Home: CustomPage = function Home() {
         <div className={styles["section-heading"]}>
           <h1>Rehber</h1>
           <Link href="/stories">
-            <a>
-              Tüm Yazılar
-            </a>
+            <a>Tüm Yazılar</a>
           </Link>
         </div>
         <TopicsListMemoized />
       </section>
-        {/* TODO: styled button that navigates to the projects page */}
+      {/* TODO: styled button that navigates to the projects page */}
     </>
   );
 };
