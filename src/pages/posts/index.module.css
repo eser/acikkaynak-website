@@ -1,0 +1,27 @@
+.section {
+  @apply container mx-auto max-w-4xl sm:py-12 lg:py-24;
+
+  .posts {
+    @apply flex flex-col items-center justify-center gap-y-12;
+
+    .post {
+      h3 {
+        @apply mb-2;
+      }
+
+      time {
+        @apply mb-2 block text-xs text-gray-600;
+      }
+
+      .topic {
+        @apply font-semibold [word-spacing:-4px] before:content-['#'];
+      }
+
+      .content {
+        p {
+          @apply my-5 text-justify leading-relaxed line-clamp-3;
+        }
+      }
+    }
+  }
+}
