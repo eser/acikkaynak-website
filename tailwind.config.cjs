@@ -27,13 +27,13 @@ module.exports = {
         // "sans": ["SF Pro Rounded", defaultTheme.fontFamily.sans],
       },
       colors: {
-        "background": "rgb(255, 255, 255)",
+        background: "rgb(255, 255, 255)",
         "background-dark": "rgb(21, 42, 53)",
-        "skeleton": "rgb(226, 232, 240)",
+        skeleton: "rgb(226, 232, 240)",
         "skeleton-dark": "rgb(41, 62, 73)",
-        "transparent": "transparent",
-        "primary": "rgb(36, 124, 196)",
-        "secondary": "rgb(77, 161, 59)",
+        transparent: "transparent",
+        primary: "rgb(36, 124, 196)",
+        secondary: "rgb(77, 161, 59)",
         "lead-black": {
           100: "#F3F2F3",
           200: "#E8E5E8",
@@ -62,5 +62,6 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
   ],
 };

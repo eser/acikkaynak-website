@@ -1,0 +1,3 @@
+[submodule "content/acikkaynak"]
+	path = content/acikkaynak
+	url = https://github.com/acikkaynak/acikkaynak

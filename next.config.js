@@ -2,9 +2,7 @@ import withServerlessCloud from "@serverless/cloud/nextjs";
 import { withContentlayer } from "next-contentlayer";
 import nextTranspileModules from "next-transpile-modules";
 
-const withTM = nextTranspileModules([
-  "fetchp",
-]);
+const withTM = nextTranspileModules(["fetchp"]);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -24,10 +22,9 @@ const nextConfig = {
 
   trailingSlash: true,
   productionBrowserSourceMaps: true,
-
+  images: { unoptimized: true },
   experimental: {
     esmExternals: true,
-    images: { allowFutureImage: true, unoptimized: true },
   },
 };
 

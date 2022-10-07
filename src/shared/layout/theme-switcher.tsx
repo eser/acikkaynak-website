@@ -3,8 +3,7 @@ import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import { Conditional } from "@webclient/shared/react/conditional";
 import styles from "./theme-switcher.module.css";
 
-interface ThemeSwitcherProps {
-}
+interface ThemeSwitcherProps {}
 
 const ThemeSwitcher = (_props: ThemeSwitcherProps) => {
   const { theme, setTheme } = useTheme();

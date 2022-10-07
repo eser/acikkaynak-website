@@ -31,9 +31,10 @@ const ActiveLink = ({
       // Using URL().pathname to get rid of query and hash
       const activePathname = new URL(asPath, location.href).pathname;
 
-      const newClassName = linkPathname === activePathname
-        ? `${childClassName} ${activeClassName}`.trim()
-        : childClassName;
+      const newClassName =
+        linkPathname === activePathname
+          ? `${childClassName} ${activeClassName}`.trim()
+          : childClassName;
 
       if (newClassName !== className) {
         setClassName(newClassName);
