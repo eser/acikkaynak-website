@@ -2,9 +2,7 @@ import withServerlessCloud from "@serverless/cloud/nextjs";
 import { withContentlayer } from "next-contentlayer";
 import nextTranspileModules from "next-transpile-modules";
 
-const withTM = nextTranspileModules([
-  "fetchp",
-]);
+const withTM = nextTranspileModules(["fetchp"]);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

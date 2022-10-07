@@ -20,7 +20,7 @@ const StaticPage = defineDocumentType(() => ({
       type: "string",
       resolve: (staticPage) => {
         // const [, filename, _fileext] = /static\/(.*)\.(\w+)$/.exec(
-          const [, filename] = /static\/(.*)$/.exec(
+        const [, filename] = /static\/(.*)$/.exec(
           staticPage._raw.flattenedPath,
         );
 
@@ -50,9 +50,7 @@ const Story = defineDocumentType(() => ({
       type: "string",
       resolve: (story) => {
         // const [, filename, _fileext] = /stories\/(.*)\.(\w+)$/.exec(
-        const [, filename] = /stories\/(.*)$/.exec(
-          story._raw.flattenedPath,
-        );
+        const [, filename] = /stories\/(.*)$/.exec(story._raw.flattenedPath);
 
         return `/stories/${filename}`;
       },
