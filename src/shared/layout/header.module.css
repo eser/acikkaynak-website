@@ -1,5 +1,5 @@
 .nav {
-  @apply w-full relative container mx-auto flex flex-wrap items-center py-6 dark:text-slate-200 text-slate-800;
+  @apply w-full relative container mx-auto lg:max-w-7xl flex flex-wrap items-center py-3 dark:text-slate-200 text-slate-800;
 
   /* unfortunately tailwind doesn't support dark:text-slate-200 in nested css */
   :global(.dark) & {
@@ -30,7 +30,7 @@
     @apply order-first;
 
     img {
-      @apply w-auto h-12 lg:h-16 xl:h-[70px];
+      @apply w-auto h-12;
     }
   }
 
@@ -58,7 +58,7 @@
     }
 
     &:not(.open){
-     @apply invisible opacity-0 lg:visible lg:opacity-100;
+      @apply invisible opacity-0 lg:visible lg:opacity-100;
     }
 
     ul {
@@ -80,12 +80,21 @@
           }
 
           &.btn {
-            @apply inline-block no-underline;
+            @apply inline-flex no-underline;
           }
         }
 
         .btn {
-          @apply lg:mx-0 bg-white text-gray-800 text-sm lg:text-base font-bold rounded-full py-2 px-4 lg:py-4 lg:px-8 shadow opacity-75 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out;
+          @apply text-center items-center shadow-lg focus:ring-4 ring-black/70 focus:outline-none font-bold rounded-full px-5 py-2.5 transform transition hover:scale-105 duration-300 ease-in-out;
+
+          /* unfortunately tailwind doesn't support dark:bg-slate-200 dark:text-black dark:shadow-slate-200/20 dark:ring-slate-200/70 in nested css */
+          :global(.dark) & {
+            @apply bg-slate-200 text-black shadow-slate-200/20 ring-slate-200/70;
+          }
+
+          svg {
+            @apply mr-2 -ml-1 w-6 h-6;
+          }
         }
       }
     }
