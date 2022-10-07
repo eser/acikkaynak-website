@@ -1,10 +1,22 @@
 .hero-section,
 .learn-section {
-  @apply container sm:pt-12 lg:pt-24;
+  @apply container lg:max-w-7xl mx-auto pt-6 sm:pt-12 lg:pt-28;
+
+  .section-heading {
+    @apply flex flex-col justify-center items-center mb-4;
+
+    h1 {
+      @apply font-bold text-5xl;
+    }
+  }
 }
 
 .hero-section {
   @apply flex flex-col justify-center lg:flex-row lg:justify-between;
+
+  span.welcome {
+    @apply font-semibold text-3xl lg:text-4xl mb-6;
+  }
 
   .left-side {
     @apply flex flex-col justify-center text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left mb-12;
@@ -29,15 +41,19 @@
   }
 
   div.topics {
+    h2 {
+      @apply font-bold before:content-['#'] [word-spacing:-8px];
+    }
+
     ul {
       @apply grid grid-cols-1 md:grid-cols-2 gap-4 mb-12;
 
       li {
-        @apply rounded-md shadow dark:shadow-black shadow-slate-400 focus:outline-none;
+        @apply block p-2 rounded-lg border border-gray-200 shadow-md hover:bg-gray-100;
 
-        /* unfortunately tailwind doesn't support dark:black in nested css */
+        /* unfortunately tailwind doesn't support dark:border-gray-700 dark:bg-gray-700 in nested css */
         :global(.dark) & {
-          @apply shadow-black
+          @apply border-gray-700 hover:bg-gray-700;
         }
 
         &.draft a {
@@ -45,24 +61,34 @@
         }
 
         a {
-          @apply flex flex-row w-full block px-2 py-3 no-underline;
+          @apply flex flex-row w-full px-2 py-3 gap-x-2 no-underline text-slate-900;
+
+          /* unfortunately tailwind doesn't support dark:text-slate-200 in nested css */
+          :global(.dark) & {
+            @apply text-slate-200;
+          }
+
+          /* unfortunately tailwind doesn't support dark:border-gray-700 dark:bg-gray-700 in nested css */
+          :global(.dark) & {
+            @apply border-gray-700 hover:bg-gray-700;
+          }
 
           div.topic-content-left {
             @apply px-2 py-1 min-w-fit;
+
+            svg {
+              @apply fill-gray-900;
+
+              /* unfortunately tailwind doesn't support dark:fill-gray-100 in nested css */
+              :global(.dark) & {
+                @apply fill-gray-100;
+              }
+            }
           }
 
           div.topic-content-right {
             h3 {
-              @apply text-inherit hover:underline;
-            }
-
-            div {
-              @apply dark:text-slate-200 text-slate-800;
-
-              /* unfortunately tailwind doesn't support dark:text-slate-200 in nested css */
-              :global(.dark) & {
-                @apply text-slate-200;
-              }
+              @apply text-xl font-semibold tracking-tight;
             }
           }
         }
