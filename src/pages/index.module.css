@@ -42,7 +42,7 @@
 
   div.topics {
     h2 {
-      @apply font-bold before:content-['#'] [word-spacing:-8px];
+      @apply text-2xl md:text-3xl font-bold before:content-['#'] [word-spacing:-6px] md:[word-spacing:-8px];
     }
 
     ul {
