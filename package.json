@@ -57,6 +57,7 @@
   },
   "devDependencies": {
     "@serverless/cloud": "^2.10.15",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.7",
     "@types/node": "18.7.14",
     "@types/react": "18.0.18",
