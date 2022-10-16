@@ -1,4 +1,3 @@
-import withServerlessCloud from "@serverless/cloud/nextjs";
 import { withContentlayer } from "next-contentlayer";
 import nextTranspileModules from "next-transpile-modules";
 
@@ -32,9 +31,5 @@ const nextConfig = {
 };
 
 let withMiddlewares = withTM(withContentlayer(nextConfig));
-
-if (process.env.NO_CLOUD !== "1") {
-  withMiddlewares = withServerlessCloud(withMiddlewares);
-}
 
 export default withMiddlewares;

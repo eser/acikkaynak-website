@@ -1,6 +1,6 @@
 import styles from "./footer.module.css";
-import LogoImage from "./logo.svg";
-import LogoDarkImage from "./logo-dark.svg";
+import TenFwdLogoImage from "./10forward-logo.svg";
+import TenFwdLogoDarkImage from "./10forward-logo-dark.svg";
 import Image from "next/future/image";
 import Link from "next/link";
 import CcByNcSaImage from "./cc-by-nc-sa.svg";
@@ -14,15 +14,13 @@ const Footer = (props: FooterProps) => {
   return (
     <footer className={styles.footer}>
       <div className={styles["footer-inner"]}>
-        <Link href="/">
-          <a>
-            <Image
-              src={theme === "dark" ? LogoDarkImage : LogoImage}
-              alt="açık-kaynak.org"
-              className={styles.logo}
-            />
-          </a>
-        </Link>
+        <a href="https://10forward.io/">
+          <Image
+            src={theme === "dark" ? TenFwdLogoDarkImage : TenFwdLogoImage}
+            alt="10forward"
+            className={styles.logo}
+          />
+        </a>
         <p>
           Site içerisinde gördüğünüz içerikler&nbsp;
           <a
@@ -46,12 +44,12 @@ const Footer = (props: FooterProps) => {
         </a>
 
         <div className={styles.nav}>
-          <Link href="/about/">
-            <a>hakkında</a>
+          <Link href="/projects/" passHref>
+            <a>projeler</a>
           </Link>
           <div className={styles.vr}></div>
-          <Link href="/contributing/">
-            <a>katkı sağlamak</a>
+          <Link href="/about/" passHref>
+            <a>hakkında</a>
           </Link>
           <div className={styles.vr}></div>
           <a
@@ -59,7 +57,7 @@ const Footer = (props: FooterProps) => {
             target="_blank"
             href="https://github.com/acikkaynak"
           >
-            GitHub
+            github
           </a>
         </div>
       </div>

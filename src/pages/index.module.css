@@ -25,7 +25,7 @@
 
 .learn-section {
   p {
-    @apply italic text-gray-400;
+    @apply italic text-slate-400;
   }
 
   div.topics {
@@ -33,11 +33,11 @@
       @apply grid grid-cols-1 md:grid-cols-2 gap-4 mb-12;
 
       li {
-        @apply rounded-md shadow dark:shadow-black shadow-slate-400 focus:outline-none;
+        @apply rounded-md border border-slate-200 shadow shadow-slate-400 focus:outline-none;
 
-        /* unfortunately tailwind doesn't support dark:black in nested css */
+        /* unfortunately tailwind doesn't support dark:border-slate-700 and dark:shadow-slate-900 in nested css */
         :global(.dark) & {
-          @apply shadow-black
+          @apply border-slate-700 shadow-slate-900;
         }
 
         &.draft a {
@@ -48,7 +48,12 @@
           @apply flex flex-row w-full block px-2 py-3 no-underline;
 
           div.topic-content-left {
-            @apply px-2 py-1 min-w-fit;
+            @apply px-2 py-1 min-w-fit text-slate-900;
+
+            /* unfortunately tailwind doesn't support dark:text-slate-300 in nested css */
+            :global(.dark) & {
+              @apply text-slate-300;
+            }
           }
 
           div.topic-content-right {
@@ -57,7 +62,7 @@
             }
 
             div {
-              @apply dark:text-slate-200 text-slate-800;
+              @apply text-slate-800;
 
               /* unfortunately tailwind doesn't support dark:text-slate-200 in nested css */
               :global(.dark) & {

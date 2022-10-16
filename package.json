@@ -10,7 +10,7 @@
   ],
   "version": "0.11.0",
   "homepage": "https://acik-kaynak.org",
-  "author": "açık-kaynak.org <bilgi@acik-kaynak.org> (https://twitter.com/_acikkaynak)",
+  "author": "açık-kaynak.org <bilgi@acik-kaynak.org>",
   "contributors": [
     {
       "name": "Eser Ozvataf",
@@ -29,12 +29,10 @@
   "main": "index.ts",
   "type": "module",
   "scripts": {
-    "cloud:build": "next build",
-    "cloud:dev": "next dev",
     "cleanup": "rm -rf yarn.lock package-lock.json node_modules/ .next/",
-    "build": "NO_CLOUD=1 next build",
-    "dev": "NO_CLOUD=1 next dev",
-    "export": "NO_CLOUD=1 next build && NO_CLOUD=1 next export",
+    "build": "next build",
+    "dev": "next dev",
+    "export": "next build && next export",
     "lint": "next lint",
     "adr": "adr-tool",
     "prepare": "husky install",
@@ -54,7 +52,6 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@serverless/cloud": "^2.10.15",
     "@tailwindcss/typography": "^0.5.7",
     "@types/node": "18.7.14",
     "@types/react": "18.0.18",
@@ -73,9 +70,5 @@
       "pre-commit": "next lint",
       "pre-push": "next lint"
     }
-  },
-  "serverless": {
-    "app": "acikkaynakorg",
-    "org": "eserozvataf"
   }
 }

@@ -1,12 +1,17 @@
 .section {
   @apply mx-auto container max-w-4xl sm:py-12 lg:py-24;
 
+  & > p {
+    @apply mb-10;
+  }
+
   ul.projects {
     li {
-      @apply rounded-md mb-8 shadow dark:shadow-black shadow-slate-400 focus:outline-none;
-      /* unfortunately tailwind doesn't support dark:black in nested css */
+      @apply rounded-md mb-8 shadow shadow-slate-400 focus:outline-none;
+
+      /* unfortunately tailwind doesn't support dark:border-slate-700 and dark:shadow-slate-900 in nested css */
       :global(.dark) & {
-        @apply shadow-black;
+        @apply border-slate-700 shadow-slate-900;
       }
 
       a {
@@ -17,7 +22,7 @@
         }
 
         div {
-          @apply dark:text-slate-200 text-slate-800;
+          @apply text-slate-800;
 
           /* unfortunately tailwind doesn't support dark:text-slate-200 in nested css */
           :global(.dark) & {
@@ -34,7 +39,7 @@
 
       a {
         h4 {
-          @apply w-48 h-7 rounded-sm dark:bg-skeleton-dark bg-skeleton;
+          @apply w-48 h-7 rounded-sm bg-skeleton;
 
           /* unfortunately tailwind doesn't support dark:bg-skeleton-dark in nested css */
           :global(.dark) & {
@@ -43,7 +48,7 @@
         }
 
         div {
-          @apply mt-2 w-full h-6 rounded-sm dark:bg-skeleton-dark bg-skeleton;
+          @apply mt-2 w-full h-6 rounded-sm bg-skeleton;
 
           /* unfortunately tailwind doesn't support dark:bg-skeleton-dark in nested css */
           :global(.dark) & {

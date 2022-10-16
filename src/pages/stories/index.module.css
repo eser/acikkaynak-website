@@ -4,7 +4,7 @@
   .stories {
     .story {
       time {
-        @apply block text-xs text-gray-600 mb-2;
+        @apply block text-xs text-slate-600 mb-2;
       }
 
       .content {

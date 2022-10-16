@@ -18,7 +18,7 @@ const StoryCard = function StoryCard(story: Story) {
   return (
     <div className={styles.story}>
       <h3>
-        <Link href={story.url}>
+        <Link href={story.url} passHref>
           <a>{story.title}</a>
         </Link>
       </h3>

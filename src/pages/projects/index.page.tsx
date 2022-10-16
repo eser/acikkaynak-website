@@ -59,6 +59,14 @@ const Projects: CustomPage = function Projects() {
       <section className={styles.section}>
         <h1>Projeler</h1>
 
+        <p>
+          Açık kaynak projelerinizi burada yayınlamak için tek yapmanız gereken
+          {" "}
+          <a href="https://github.com/topics/acikkaynak">GitHub</a>{" "}
+          üzerinden projelerinizi <strong>#acikkaynak</strong>{" "}
+          tag&apos;i ile etiketlemek olacak.
+        </p>
+
         <ProjectListMemoized />
       </section>
     </>
