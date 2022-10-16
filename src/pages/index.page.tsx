@@ -81,7 +81,7 @@ const Home: CustomPage = function Home() {
             geliştirmeye motive etmek, farkındalık oluşturmak ve bu alanda
             içerik sağlamak için <a href="https://10forward.io/">10forward</a>
             {" "}
-            topluluğunun bir alt mecrası olarak ilgililere rehber olmaya
+            meta-topluluğunun bir alt mecrası olarak ilgililere rehber olmaya
             çalışıyoruz.
             <br />
             <br />

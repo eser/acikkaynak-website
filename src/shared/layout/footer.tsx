@@ -44,13 +44,25 @@ const Footer = (props: FooterProps) => {
         </a>
 
         <div className={styles.nav}>
+          <Link href="/" passHref>
+            <a rel="noopener noreferrer">rehber</a>
+          </Link>
+          <div className={styles.vr}></div>
           <Link href="/projects/" passHref>
-            <a>projeler</a>
+            <a rel="noopener noreferrer">projeler</a>
           </Link>
           <div className={styles.vr}></div>
           <Link href="/about/" passHref>
-            <a>hakkında</a>
+            <a rel="noopener noreferrer">hakkında</a>
           </Link>
+          <div className={styles.vr}></div>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://10forward.io/code-of-conduct/"
+          >
+            topluluk sözleşmesi
+          </a>
           <div className={styles.vr}></div>
           <a
             rel="noopener noreferrer"

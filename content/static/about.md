@@ -33,7 +33,7 @@ sağlayacaktır.
 
 ### Künye
 
-Sitenin mevcut proje liderliğini aynı zamanda kurucu da olan
+Girişimin mevcut proje liderliğini aynı zamanda kurucu da olan
 [Eser Özvataf](https://eser.ozvataf.com/) yürütmektedir. Şu ana kadar
 [içerik eklenmesinde](https://github.com/acikkaynak/acikkaynak/graphs/contributors)
 ve
