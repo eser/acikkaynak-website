@@ -7,6 +7,23 @@
     }
 
     .content {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        @apply mt-12;
+      }
+
+      ul {
+        @apply list-disc list-inside;
+      }
+
+      strong {
+        @apply font-semibold;
+      }
+
       p {
         @apply leading-relaxed text-justify mb-5;
       }
