@@ -17,7 +17,7 @@ jobs:
       - name: Configuration for production
         if: ${{ github.ref_name == 'master' }}
         run: |
-          echo "CFPAGES_BRANCH=main" >> $GITHUB_ENV
+          echo "CFPAGES_BRANCH=master" >> $GITHUB_ENV
       - name: Configuration for non-production
         if: ${{ github.ref_name != 'master' }}
         run: |
