@@ -3,6 +3,7 @@ import { NextSeo } from "next-seo";
 import { useFetchp } from "fetchp";
 import { type CustomPage } from "@webclient/pages/_app.types";
 import styles from "./index.module.css";
+import Image from "next/image";
 
 const ProjectList = function ProjectList() {
   const { data, isFetching, error } = useFetchp(
@@ -22,9 +23,11 @@ const ProjectList = function ProjectList() {
     <ul className={styles.projects}>
       {data?.items?.map((item) => (
         <li key={item.id}>
-          <a href={item.html_url}>
+          <a href={item.html_url} target="_blank" rel="noreferrer">
+            <Image src={item.owner?.avatar_url} width={"75px"} height={"75px"} alt="owner avatar" />
             <h4>{item.full_name}</h4>
             <div>{item.description}</div>
+            {item.language &&  <span>{item.language}</span>}
           </a>
         </li>
       ))}
