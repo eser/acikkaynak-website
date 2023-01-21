@@ -6,8 +6,9 @@
   }
 
   ul.projects {
+    @apply grid grid-cols-3 gap-5;
     li {
-      @apply rounded-md mb-8 shadow shadow-slate-400 focus:outline-none;
+      @apply rounded-md mb-8 shadow shadow-slate-400 focus:outline-none hover:bg-skeleton;
 
       /* unfortunately tailwind doesn't support dark:border-slate-700 and dark:shadow-slate-900 in nested css */
       :global(.dark) & {
@@ -15,7 +16,7 @@
       }
 
       a {
-        @apply w-full block py-4 px-8 no-underline;
+        @apply w-full flex justify-center items-center flex-col text-center gap-3 py-4 px-8 no-underline;
 
         h4 {
           @apply text-inherit hover:underline;
@@ -28,6 +29,14 @@
           :global(.dark) & {
             @apply text-slate-200;
           }
+        }
+
+        img {
+          @apply rounded-full;
+        }
+
+        span {
+          @apply text-xs inline-flex items-center font-bold uppercase px-3 py-1 bg-blue-200 text-blue-700 rounded-full;
         }
       }
     }
