@@ -10,7 +10,6 @@ const ProjectList = function ProjectList() {
     "GET",
     "https://api.github.com/search/repositories?q=topic:acikkaynak",
   );
-  console.log("🚀 ~ file: index.page.tsx:10 ~ ProjectList ~ data", data)
 
   if (isFetching) {
     return <ProjectsListSkeletonView />;
