@@ -93,7 +93,7 @@ Apache 2.0, daha fazla detay için lütfen [LICENSE](LICENSE) dosyasını incele
 
 ## Katkı Sağlayanlar
 
-[contributors.md](contributors.md) dosyasını inceleyebilirsiniz.
+[contributors.md](CONTRIBUTORS.md) dosyasını inceleyebilirsiniz.
 
 Herhangi bir katkıya açıktır. Hata düzenlemeleri, yeni özellik ve modüller
 ekleyebilirsiniz.
